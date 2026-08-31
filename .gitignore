@@ -1,0 +1,12 @@
+# System / OS
+.DS_Store
+Thumbs.db
+*.log
+.wrangler/
+node_modules/
+
+# Local build artifacts
+*.zip
+*.ftl
+*.dmp
+*.exe
