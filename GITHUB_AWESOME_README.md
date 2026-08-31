@@ -27,48 +27,48 @@
 
 ### Table of Contents
 
-- [🏛️ Master Engineering, sCO2 & Industrial Turbomachinery](#tools-vault) (276 Tools)
+- [🏛️ Master Engineering, sCO2 & Industrial Turbomachinery](#tools-vault) (278 Tools)
 - [🏷️ Reselling, Arbitrage & Multi-Channel Inventory](#reseller-profit-hub) (63 Tools)
 - [💻 Freelance Rate Sizing & Retainer Modeling](#freelance-flow) (46 Tools)
 - [🏭 Wholesale Distribution & Margin Calculations](#wholesale-matrix) (48 Tools)
-- [💼 B2B Fractional C-Suite Retainers & Agency Models](#creator-studio) (74 Tools)
-- [🏢 Commercial Real Estate, Life Science & Cleanrooms](#property-yield) (154 Tools)
-- [☀️ Agrivoltaics, Commercial Solar Canopies & Microgrids](#solar-roi) (78 Tools)
+- [💼 B2B Fractional C-Suite Retainers & Agency Models](#creator-studio) (75 Tools)
+- [🏢 Commercial Real Estate, Life Science & Cleanrooms](#property-yield) (156 Tools)
+- [☀️ Agrivoltaics, Commercial Solar Canopies & Microgrids](#solar-roi) (79 Tools)
 - [🛡️ Asset Protection, Dynasty Trusts & Tax Shields](#fire-flow) (97 Tools)
-- [🛰️ DePIN, Satellite Constellations & Proof of Physical Work](#crypto-yield) (124 Tools)
-- [💉 Mobile Medical Clinics, Cryo & Longevity Protocols](#health-matrix) (102 Tools)
+- [🛰️ DePIN, Satellite Constellations & Proof of Physical Work](#crypto-yield) (125 Tools)
+- [💉 Mobile Medical Clinics, Cryo & Longevity Protocols](#health-matrix) (103 Tools)
 - [🛠️ Developer Productivity & Engineering Math](#dev-toolkit) (34 Tools)
-- [🚛 Autonomous Fleet Electrification, Metrology & 1,000V Balancers](#auto-matrix) (141 Tools)
-- [🐕 Mobile Veterinary Surgical Suites & CBCT Fluoroscopy](#pet-yield) (107 Tools)
+- [🚛 Autonomous Fleet Electrification, Metrology & 1,000V Balancers](#auto-matrix) (143 Tools)
+- [🐕 Mobile Veterinary Surgical Suites & CBCT Fluoroscopy](#pet-yield) (108 Tools)
 - [🌍 Digital Nomad Cost of Living & Tax Arbitrage](#nomad-stack) (46 Tools)
 - [💍 Event, Wedding & Hospitality Budgeting](#vow-calc) (45 Tools)
 - [✂️ Subscription Audit & Recurring Expense Slashers](#sub-slash) (8 Tools)
 - [🏡 Tiny Home Construction & Off-Grid Living Economics](#tiny-living) (46 Tools)
-- [⚡ Grid-Scale Energy Storage, Flow Batteries & Cleantech](#energy-yield) (129 Tools)
-- [🐟 Land-Based Aquaculture (RAS) & Controlled Maritime Farms](#marine-yield) (99 Tools)
-- [☁️ Cloud FinOps, Kubernetes & Open-Source Spend Slashers](#cloud-yield) (106 Tools)
-- [📈 Structured Capital Protection & Index Strategies](#annuity-yield) (109 Tools)
-- [🚢 Maritime Shipping, Bulk Carriers & Dividend Portfolios](#dividend-yield) (136 Tools)
+- [⚡ Grid-Scale Energy Storage, Flow Batteries & Cleantech](#energy-yield) (130 Tools)
+- [🐟 Land-Based Aquaculture (RAS) & Controlled Maritime Farms](#marine-yield) (100 Tools)
+- [☁️ Cloud FinOps, Kubernetes & Open-Source Spend Slashers](#cloud-yield) (107 Tools)
+- [📈 Structured Capital Protection & Index Strategies](#annuity-yield) (110 Tools)
+- [🚢 Maritime Shipping, Bulk Carriers & Dividend Portfolios](#dividend-yield) (137 Tools)
 - [💎 Alternative Assets, Vaulted Collectibles & High-Yield Storage](#storage-yield) (86 Tools)
-- [🥐 Autonomous Robotics, Unattended Retail & Gourmet Vending](#vending-yield) (99 Tools)
+- [🥐 Autonomous Robotics, Unattended Retail & Gourmet Vending](#vending-yield) (100 Tools)
 - [🚗 Commercial Car Wash & Fleet Detailing ROI](#wash-yield) (46 Tools)
 - [🏖️ Short-Term Rental & Vacation Property Yields](#str-matrix) (40 Tools)
 - [🚚 Bulk Liquid Tanker Transport & Specialized Freight Rates](#freight-matrix) (85 Tools)
-- [📊 SaaS Metrics, Churn Friction & Multiple Compression](#saas-matrix) (112 Tools)
-- [🩺 Longevity Spas, Cryotherapy & Niche Small Business](#biz-matrix) (110 Tools)
+- [📊 SaaS Metrics, Churn Friction & Multiple Compression](#saas-matrix) (113 Tools)
+- [🩺 Longevity Spas, Cryotherapy & Niche Small Business](#biz-matrix) (111 Tools)
 - [🚜 Heavy Machinery, Excavation & Mining Asset Yields](#heavy-yield) (45 Tools)
-- [🔧 Mobile Industrial Laser Cladding & In-Situ Repair Rigs](#repair-yield) (107 Tools)
-- [🌋 Geothermal Luxury STRs & Eco-Tourism Hospitality](#glamp-yield) (112 Tools)
-- [📦 Supply Chain, Packaging Automation & E-Commerce Logistics](#fba-matrix) (107 Tools)
+- [🔧 Mobile Industrial Laser Cladding & In-Situ Repair Rigs](#repair-yield) (108 Tools)
+- [🌋 Geothermal Luxury STRs & Eco-Tourism Hospitality](#glamp-yield) (113 Tools)
+- [📦 Supply Chain, Packaging Automation & E-Commerce Logistics](#fba-matrix) (108 Tools)
 - [📈 RevOps Telemetry & Multi-Funnel Attribution](#revenue-desk) (58 Tools)
-- [🪧 Intermodal Transportation & Optical Scanning Billboards](#billboard-yield) (110 Tools)
-- [♻️ Post-Industrial Advanced Polymer Regrind & Compounding](#dumpster-yield) (101 Tools)
+- [🪧 Intermodal Transportation & Optical Scanning Billboards](#billboard-yield) (111 Tools)
+- [♻️ Post-Industrial Advanced Polymer Regrind & Compounding](#dumpster-yield) (102 Tools)
 - [⛺ Luxury Glamping Tent & Yurt Hospitality](#glamping-yield) (5 Tools)
-- [⚓ Floating Offshore Wind Staging Yards & Heavy IOS](#parking-yield) (106 Tools)
+- [⚓ Floating Offshore Wind Staging Yards & Heavy IOS](#parking-yield) (107 Tools)
 
 ---
 
-### <a id="tools-vault"></a>🏛️ Master Engineering, sCO2 & Industrial Turbomachinery (276 Tools)
+### <a id="tools-vault"></a>🏛️ Master Engineering, sCO2 & Industrial Turbomachinery (278 Tools)
 
 > **Live Hub**: [https://tools-vault-4ml.pages.dev](https://tools-vault-4ml.pages.dev)
 
@@ -82,7 +82,7 @@
 - **[Independent ATM Route &amp; Surcharge Cash Flow Engine | YieldEmpire](https://tools-vault-4ml.pages.dev/atm-route.html)** — *Underwrite independent ATM routes, surcharge fee economics ($3.50/trans), location commission splits, vault cash lines of credit, and route valuations.*
 - **[Doubloon Bot Sneaker &amp; Streetwear Authentication Studio | YieldEmpire](https://tools-vault-4ml.pages.dev/authentication-checklist.html)** — *12-point forensic sneaker and luxury streetwear authentication checklist. Evaluates UV blacklight stitching, size tag typography, and insole glue patterns.*
 - **[Doubloon Bot Printable SKU Barcode &amp; QR Price Tag Studio | YieldEmpire](https://tools-vault-4ml.pages.dev/barcode-generator.html)** — *Generate printable Code 128 barcodes and QR price tags for antique booths, flea markets, and physical resale shops with 1-click Avery label sheet printing.*
-- *...and [266 more specialized solvers on the live tools vault hub](https://tools-vault-4ml.pages.dev)*
+- *...and [268 more specialized solvers on the live tools vault hub](https://tools-vault-4ml.pages.dev)*
 
 ### <a id="reseller-profit-hub"></a>🏷️ Reselling, Arbitrage & Multi-Channel Inventory (63 Tools)
 
@@ -132,7 +132,7 @@
 - **[Wholesale Heavy Excavator Hydraulic Boom & Arm Cylinder Seal Kit Sourcing Calculator 2026 — WholesaleMatrix](https://wholesale-matrix.pages.dev/hydraulic-cylinder-rod-seal-kit-wholesale-calculator.html)** — *Calculate wholesale polyurethane & PTFE hydraulic cylinder repacking seal kits (Hallite / Parker style: $14 FOB vs $58 resale: 4,500 kits/container), and parts distributor ROIC.*
 - *...and [38 more specialized solvers on the live wholesale matrix hub](https://wholesale-matrix.pages.dev)*
 
-### <a id="creator-studio"></a>💼 B2B Fractional C-Suite Retainers & Agency Models (74 Tools)
+### <a id="creator-studio"></a>💼 B2B Fractional C-Suite Retainers & Agency Models (75 Tools)
 
 > **Live Hub**: [https://creator-studio.pages.dev](https://creator-studio.pages.dev)
 
@@ -146,9 +146,9 @@
 - **[Digital Course & Cohort-Based Community Launch Margin Calculator 2026 — CreatorStudio](https://creator-studio.pages.dev/digital-course-cohort-launch-calculator.html)** — *Calculate digital course & live cohort launch economics, email list conversion rates (1%–3%), ticket tiers ($497–$1,997), student completion rates, and net creator margins (85%+).*
 - **[Low-Ticket Micro-Membership ($19/mo) Template Vault Funnel Compounding Calculator 2026 — CreatorStudio](https://creator-studio.pages.dev/digital-product-micro-membership-funnel-calculator.html)** — *Calculate low-ticket digital template clubs ($19/mo: 1,800 active subscribers: monthly design assets: 4.2% churn: $410k/yr ARR with zero fulfillment overhead), and creator net profit.*
 - **[5-Day Email Mini-Course ($37 Tripwire + $497 Core Course) Automated Funnel Calculator 2026 — CreatorStudio](https://creator-studio.pages.dev/email-mini-course-automated-tripwire-funnel-calculator.html)** — *Calculate 5-day automated educational email sequences converting free leads into $37 tripwire template buyers (8.5% conversion) + $497 core course upsells (14% conversion: $48k/mo gross).*
-- *...and [64 more specialized solvers on the live creator studio hub](https://creator-studio.pages.dev)*
+- *...and [65 more specialized solvers on the live creator studio hub](https://creator-studio.pages.dev)*
 
-### <a id="property-yield"></a>🏢 Commercial Real Estate, Life Science & Cleanrooms (154 Tools)
+### <a id="property-yield"></a>🏢 Commercial Real Estate, Life Science & Cleanrooms (156 Tools)
 
 > **Live Hub**: [https://property-yield.pages.dev](https://property-yield.pages.dev)
 
@@ -162,9 +162,9 @@
 - **[Automated High-Bay Cold Storage Refrigerated Warehouse Cap Rate Calculator 2026 — PropertyYield](https://property-yield.pages.dev/automated-cold-storage-warehouse-cap-rate-calculator.html)** — *Calculate 100-foot high-bay ASRS automated -20°F frozen cold storage logistics facilities ($32–$48/sq ft NNN lease: grocery e-commerce & pharma), NOI, and commercial asset valuation.*
 - **[Automated Cryogenic Liquid Nitrogen (-196°C Vapor) Cell Banking Terminal Cap Rate 2026 — PropertyYield](https://property-yield.pages.dev/automated-cryogenic-cell-banking-hub-cap-rate.html)** — *Calculate automated robotic liquid nitrogen vapor (-196°C LN2) master cell banking logistics hubs ($58.50/sqft NNN lease: Novartis/Gilead tenant), commanding commercial valuation (4.75% Cap).*
 - **[Automated Sterile Pharmaceutical Freeze-Drying Lyophilization Production Hub Cap Rate Calculator 2026 — PropertyYield](https://property-yield.pages.dev/automated-lyophilization-hub-cap-rate.html)** — *Calculate 80,000 sqft automated robotic freeze-drying & sterile vial capping facilities ($62.50/sqft NNN lease: Pfizer/Eli Lilly tenant), commanding asset valuation (4.70% Cap).*
-- *...and [144 more specialized solvers on the live property yield hub](https://property-yield.pages.dev)*
+- *...and [146 more specialized solvers on the live property yield hub](https://property-yield.pages.dev)*
 
-### <a id="solar-roi"></a>☀️ Agrivoltaics, Commercial Solar Canopies & Microgrids (78 Tools)
+### <a id="solar-roi"></a>☀️ Agrivoltaics, Commercial Solar Canopies & Microgrids (79 Tools)
 
 > **Live Hub**: [https://solar-roi.pages.dev](https://solar-roi.pages.dev)
 
@@ -178,7 +178,7 @@
 - **[Commercial Agrivoltaic Calimyrna Fig Canopy Overhead Solar Array ROI 2026](https://solar-roi.pages.dev/agrivoltaic-calimyrna-fig-canopy-solar-calculator.html)** — *Underwrite 18-foot elevated overhead bifacial solar photovoltaic canopies over commercial Calimyrna fig orchards, preventing extreme heat sunburn and producing clean solar electricity.*
 - **[Commercial Agrivoltaic Conadria Fig Canopy Overhead Solar Array ROI 2026](https://solar-roi.pages.dev/agrivoltaic-conadria-fig-canopy-solar-calculator.html)** — *Underwrite 18-foot elevated overhead bifacial solar photovoltaic canopies over commercial light green Conadria fig orchards, preventing extreme heat sunburn and producing clean solar electricity.*
 - **[Commercial Agrivoltaic Cranberry Bog Elevated Overhead Solar PV Array ROI Calculator 2026](https://solar-roi.pages.dev/agrivoltaic-cranberry-bog-overhead-solar-calculator.html)** — *Underwrite 16-foot elevated galvanized pile-mounted solar photovoltaic arrays over wet/dry harvest cranberry bogs, frost mitigation heat trapping, and clean agricultural megawatt-hours.*
-- *...and [68 more specialized solvers on the live solar roi hub](https://solar-roi.pages.dev)*
+- *...and [69 more specialized solvers on the live solar roi hub](https://solar-roi.pages.dev)*
 
 ### <a id="fire-flow"></a>🛡️ Asset Protection, Dynasty Trusts & Tax Shields (97 Tools)
 
@@ -196,7 +196,7 @@
 - **[Dynasty Colorado Non-Grantor CO-ING Trust Capital Gains Tax Shield 2026](https://fire-flow.pages.dev/colorado-coing-trust-capital-gains-tax-shield-calculator.html)** — *Model Colorado Incomplete Gift Non-Grantor Trusts (CO-ING) avoiding the 4.40% flat state individual income tax and statutory fiduciary capital gains taxes while retaining asset protection.*
 - *...and [87 more specialized solvers on the live fire flow hub](https://fire-flow.pages.dev)*
 
-### <a id="crypto-yield"></a>🛰️ DePIN, Satellite Constellations & Proof of Physical Work (124 Tools)
+### <a id="crypto-yield"></a>🛰️ DePIN, Satellite Constellations & Proof of Physical Work (125 Tools)
 
 > **Live Hub**: [https://crypto-yield.pages.dev](https://crypto-yield.pages.dev)
 
@@ -210,9 +210,9 @@
 - **[DePIN Decentralized Wireless 5G CBRS Small Cell Mining Yield Calculator 2026 — CryptoYield](https://crypto-yield.pages.dev/depin-5g-cbrs-wireless-miner-calculator.html)** — *Calculate decentralized physical infrastructure network (DePIN: Helium Mobile 5G / Pollen / XNET CBRS small cell radios), commercial building rooftop leases, data offloading tokens, and ROI.*
 - **[DePIN Air Quality Particulate (PM2.5/PM10 Laser Counter) Network Staking APY Calculator 2026](https://crypto-yield.pages.dev/depin-air-quality-laser-counter-staking-calculator.html)** — *Calculate token rewards, environmental compliance data oracle monetization, and hardware ROI for solar laser-optical particulate matter (PM2.5/PM10) atmospheric sensor nodes.*
 - **[DePIN Orbital Hyperspectral Amundsen Coast Ice Stream Melt Staking 2026](https://crypto-yield.pages.dev/depin-amundsen-coast-ice-stream-cavity-melt-satellite-mesh-staking-calculator.html)** — *Calculate token rewards, international sovereign Ross Ice Shelf Amundsen Coast sub-ice shelf grounding line melt rate telemetry sales, and hardware staking APY for satellite radar altimetry constellations.*
-- *...and [114 more specialized solvers on the live crypto yield hub](https://crypto-yield.pages.dev)*
+- *...and [115 more specialized solvers on the live crypto yield hub](https://crypto-yield.pages.dev)*
 
-### <a id="health-matrix"></a>💉 Mobile Medical Clinics, Cryo & Longevity Protocols (102 Tools)
+### <a id="health-matrix"></a>💉 Mobile Medical Clinics, Cryo & Longevity Protocols (103 Tools)
 
 > **Live Hub**: [https://health-matrix.pages.dev](https://health-matrix.pages.dev)
 
@@ -226,7 +226,7 @@
 - **[googlef71d154201a93dc9](https://health-matrix.pages.dev/googlef71d154201a93dc9.html)** — *Interactive quantitative underwriting engine.*
 - **[IV Hydration & Vitamin Drip Lounge ROI Calculator 2026 — HealthMatrix](https://health-matrix.pages.dev/iv-hydration-vitamin-drip-bar-calculator.html)** — *Calculate boutique IV hydration & wellness drip lounge profitability (Myers Cocktail, NAD+, Glutathione), nurse injector payroll, $175–$350 tickets, and 65%+ clinic margins.*
 - **[2026 Weekly Meal Prep & Macro Tracker | Printable Nutrition One-Pager](https://health-matrix.pages.dev/meal-prep-macro-sheet.html)** — *Printable 1-page weekly meal prep and macro nutrition tracker. Log daily protein, calories, water intake, and gym performance. 100% free.*
-- *...and [92 more specialized solvers on the live health matrix hub](https://health-matrix.pages.dev)*
+- *...and [93 more specialized solvers on the live health matrix hub](https://health-matrix.pages.dev)*
 
 ### <a id="dev-toolkit"></a>🛠️ Developer Productivity & Engineering Math (34 Tools)
 
@@ -244,7 +244,7 @@
 - **[DuckDB vs SQLite In-Process Analytical Query Benchmark & Memory Calculator 2026 — DevToolkit](https://dev-toolkit.pages.dev/duckdb-vs-sqlite-benchmark-calculator.html)** — *Calculate embedded DuckDB vectorized columnar SQL execution vs row-based SQLite for OLAP aggregations (GROUP BY, Parquet scans), query speedups (15x–80x), and RAM limits.*
 - *...and [24 more specialized solvers on the live dev toolkit hub](https://dev-toolkit.pages.dev)*
 
-### <a id="auto-matrix"></a>🚛 Autonomous Fleet Electrification, Metrology & 1,000V Balancers (141 Tools)
+### <a id="auto-matrix"></a>🚛 Autonomous Fleet Electrification, Metrology & 1,000V Balancers (143 Tools)
 
 > **Live Hub**: [https://auto-matrix.pages.dev](https://auto-matrix.pages.dev)
 
@@ -258,9 +258,9 @@
 - **[Mobile Fleet Autonomous Class 8 Battery Asphalt Paver 1,000V Balancer 2026](https://auto-matrix.pages.dev/mobile-asphalt-paver-1000v-balancer-van-profit-calculator.html)** — *Model mobile metrology vans performing 1,000V DC electric screed thermal battery pack balancing and automated heavy highway paving machine DC fast-charging telemetry ($3,100/fleet audit).*
 - **[Mobile Automotive Exotic Car Dry Ice Engine Bay & Undercarriage Detailing Van ROI Calculator 2026 — AutoMatrix](https://auto-matrix.pages.dev/mobile-auto-dry-ice-cleaning-van-calculator.html)** — *Calculate mobile cryogenic dry ice detailing vans (stripping cosmoline, baked oil, and road grime from Porsche/Ferrari undercarriages without water/solvents: $1,450/car), and technician EBITDA.*
 - **[Mobile Automotive Smart Key & Transponder FOB Programming Van ROI Calculator 2026 — AutoMatrix](https://auto-matrix.pages.dev/mobile-auto-key-fob-programming-van-calculator.html)** — *Calculate mobile automotive locksmith & push-to-start smart key FOB programming van profitability (Autel MaxiIM / Xhorse: $185–$385/key), roadside all-keys-lost calls, and tech EBITDA.*
-- *...and [131 more specialized solvers on the live auto matrix hub](https://auto-matrix.pages.dev)*
+- *...and [133 more specialized solvers on the live auto matrix hub](https://auto-matrix.pages.dev)*
 
-### <a id="pet-yield"></a>🐕 Mobile Veterinary Surgical Suites & CBCT Fluoroscopy (107 Tools)
+### <a id="pet-yield"></a>🐕 Mobile Veterinary Surgical Suites & CBCT Fluoroscopy (108 Tools)
 
 > **Live Hub**: [https://pet-yield.pages.dev](https://pet-yield.pages.dev)
 
@@ -274,7 +274,7 @@
 - **[Mobile Canine 3D Bioprinted Bone Graft & Orthopedic Trauma Van Profit Calculator 2026](https://pet-yield.pages.dev/mobile-canine-3d-bioprinted-bone-graft-orthopedic-van-calculator.html)** — *Model specialized veterinary mobile orthopedic vans equipped with point-of-care bio-ceramic 3D scaffold printers and titanium osteosynthesis plating systems for complex canine bone fractures ($2,850/procedure).*
 - **[Mobile Canine 3D CT Cone-Beam Dental Scanning & Exodontia Van Profit Calculator 2026](https://pet-yield.pages.dev/mobile-canine-3d-ct-cone-beam-dental-van-calculator.html)** — *Model specialized veterinary mobile dental vans equipped with 3D cone-beam computed tomography (CBCT) imaging and piezosurgery dental units ($1,250/procedure package).*
 - **[Mobile Canine Dynamic 3D Fluoroscopy & Sports Rehab Van Profit Calculator 2026](https://pet-yield.pages.dev/mobile-canine-3d-fluoroscopy-joint-kinematics-van-calculator.html)** — *Model specialized veterinary mobile vans equipped with dynamic biplanar continuous fluoroscopy and force-plate gait analysis for canine ACL tears and agility athlete conditioning ($950/study).*
-- *...and [97 more specialized solvers on the live pet yield hub](https://pet-yield.pages.dev)*
+- *...and [98 more specialized solvers on the live pet yield hub](https://pet-yield.pages.dev)*
 
 ### <a id="nomad-stack"></a>🌍 Digital Nomad Cost of Living & Tax Arbitrage (46 Tools)
 
@@ -337,7 +337,7 @@
 - **[High-Density Compressed Straw (Stramit) Structural Wall Panel Tiny Home ROI Calculator 2026 — TinyLiving](https://tiny-living.pages.dev/compressed-straw-stramit-tiny-home-calculator.html)** — *Calculate compressed wheat straw panels (Stramit technology: natural straw resin bonding under 400°F heat: 2-hour fire resistance: R-38 insulation), zero VOCs, and HVAC energy savings.*
 - *...and [36 more specialized solvers on the live tiny living hub](https://tiny-living.pages.dev)*
 
-### <a id="energy-yield"></a>⚡ Grid-Scale Energy Storage, Flow Batteries & Cleantech (129 Tools)
+### <a id="energy-yield"></a>⚡ Grid-Scale Energy Storage, Flow Batteries & Cleantech (130 Tools)
 
 > **Live Hub**: [https://energy-yield.pages.dev](https://energy-yield.pages.dev)
 
@@ -351,9 +351,9 @@
 - **[Aqueous All-Iron High-Temperature Flow Battery (Fe-Fe 50MW / 400MWh) LCOS 2026](https://energy-yield.pages.dev/aqueous-all-iron-high-temperature-flow-battery-calculator.html)** — *Model 50MW / 400MWh non-toxic aqueous all-iron redox flow batteries (Fe2+/Fe3+ chemistry, 8-hour discharge duration, 30-year unlimited cycle life utilizing zero scarce minerals) calculating LCOS.*
 - **[Aqueous All-Iron Mega-Scale Flow Battery (Fe-Fe 80MW / 640MWh) LCOS 2026](https://energy-yield.pages.dev/aqueous-all-iron-mega-scale-flow-battery-calculator.html)** — *Model 80MW / 640MWh ultra-low-cost non-toxic all-iron redox flow batteries (Fe2+/Fe3+ and Fe0/Fe2+ reactions utilizing abundant iron chloride electrolyte for 8-hour grid storage) calculating LCOS.*
 - **[Aqueous All-Manganese Flow Battery (Mn-Mn 60MW / 480MWh) LCOS 2026](https://energy-yield.pages.dev/aqueous-all-manganese-flow-battery-calculator.html)** — *Model 60MW / 480MWh earth-abundant manganese redox flow batteries (Mn2+/Mn3+ and Mn0/Mn2+ reactions utilizing abundant manganese sulfate electrolyte for 8-hour grid storage) calculating LCOS.*
-- *...and [119 more specialized solvers on the live energy yield hub](https://energy-yield.pages.dev)*
+- *...and [120 more specialized solvers on the live energy yield hub](https://energy-yield.pages.dev)*
 
-### <a id="marine-yield"></a>🐟 Land-Based Aquaculture (RAS) & Controlled Maritime Farms (99 Tools)
+### <a id="marine-yield"></a>🐟 Land-Based Aquaculture (RAS) & Controlled Maritime Farms (100 Tools)
 
 > **Live Hub**: [https://marine-yield.pages.dev](https://marine-yield.pages.dev)
 
@@ -367,9 +367,9 @@
 - **[Commercial Sea Scallop Dredge Fishing Vessel Profit Calculator 2026 — MarineYield](https://marine-yield.pages.dev/commercial-scallop-dredge-vessel-calculator.html)** — *Calculate offshore New Bedford / Georges Bank sea scallop dredge fishing vessels (U-10 count sea scallops: $15–$24/lb dockside price), deckhand crew shares, and captain seasonal net.*
 - **[Dry Stack Boat Marina Slip Storage & Forklift Rack Facility ROI Calculator 2026 — MarineYield](https://marine-yield.pages.dev/dry-stack-marina-slip-storage-calculator.html)** — *Calculate dry stack boat storage marina development returns, enclosed 3-to-5 tier forklift steel racks, monthly slip lease rates ($25–$45/foot/mo), and 6.75% cap rate valuation.*
 - **[Commercial Geoduck Clam Subtidal Aquaculture Harvest ROI Calculator 2026 — MarineYield](https://marine-yield.pages.dev/geoduck-clam-subtidal-aquaculture-calculator.html)** — *Calculate Puget Sound / BC subtidal geoduck clam (Panopea generosa) aquaculture farms (PVC tube nursery, 5-year growout: $18.50/lb live wholesale export), and multi-year farm IRR.*
-- *...and [89 more specialized solvers on the live marine yield hub](https://marine-yield.pages.dev)*
+- *...and [90 more specialized solvers on the live marine yield hub](https://marine-yield.pages.dev)*
 
-### <a id="cloud-yield"></a>☁️ Cloud FinOps, Kubernetes & Open-Source Spend Slashers (106 Tools)
+### <a id="cloud-yield"></a>☁️ Cloud FinOps, Kubernetes & Open-Source Spend Slashers (107 Tools)
 
 > **Live Hub**: [https://cloud-yield.pages.dev](https://cloud-yield.pages.dev)
 
@@ -383,9 +383,9 @@
 - **[Serverless Edge Chroma DB Serverless vs Milvus Cloud Vector Spend Slasher 2026](https://cloud-yield.pages.dev/chromadb-serverless-vs-milvus-cloud-calculator.html)** — *Calculate embeddings search and LLM context cache infrastructure spend reduction by replacing Milvus Cloud dedicated compute clusters with auto-scaling Chroma DB Serverless vector storage.*
 - **[Serverless Edge ClickHouse Cloud vs Snowflake Serverless Warehouse Spend Slasher 2026](https://cloud-yield.pages.dev/clickhouse-cloud-vs-snowflake-serverless-calculator.html)** — *Calculate high-throughput real-time analytical SQL query spend reduction by replacing Snowflake Enterprise compute credits with provisioned ClickHouse Cloud columnar clusters.*
 - **[2026 Cloud FinOps & AI Architecture Audit Sheet | Printable One-Pager](https://cloud-yield.pages.dev/cloud-migration-sheet.html)** — *Printable 1-page cloud architecture and FinOps cost audit checklist. Verify GPU cluster utilization, zero-egress storage, serverless thresholds, and AWS budget alarms. 100% free.*
-- *...and [96 more specialized solvers on the live cloud yield hub](https://cloud-yield.pages.dev)*
+- *...and [97 more specialized solvers on the live cloud yield hub](https://cloud-yield.pages.dev)*
 
-### <a id="annuity-yield"></a>📈 Structured Capital Protection & Index Strategies (109 Tools)
+### <a id="annuity-yield"></a>📈 Structured Capital Protection & Index Strategies (110 Tools)
 
 > **Live Hub**: [https://annuity-yield.pages.dev](https://annuity-yield.pages.dev)
 
@@ -399,9 +399,9 @@
 - **[Fixed Indexed Annuity (FIA) 10,500% 10-Year Warp Soliton Strategy 2026](https://annuity-yield.pages.dev/fia-10500pct-10yr-warp-soliton-envelope-strategy-calculator.html)** — *Calculate 10-year point-to-point structured fixed indexed annuities offering an uncapped 10,500% participation rate on volatility-controlled sub-light metric warp soliton envelope and quantum vacuum geometry indices.*
 - **[Fixed Indexed Annuity (FIA) 10-Year Dual-Index Performance Trigger 8.5% Guaranteed Yield Calculator 2026](https://annuity-yield.pages.dev/fia-10yr-dual-index-performance-trigger-calculator.html)** — *Calculate 10-year dual-index performance trigger structured annuities crediting an 8.50% flat interest rate whenever either benchmark index (S&P 500 or MSCI EAFE) finishes positive or flat (>= 0%).*
 - **[Fixed Indexed Annuity (FIA) 11,000% 10-Year Alcubierre Warp Metric Strategy 2026](https://annuity-yield.pages.dev/fia-11000pct-10yr-alcubierre-warp-metric-strategy-calculator.html)** — *Calculate 10-year point-to-point structured fixed indexed annuities offering an uncapped 11,000% participation rate on volatility-controlled metric tensor distortion and quantum vacuum energy density indices.*
-- *...and [99 more specialized solvers on the live annuity yield hub](https://annuity-yield.pages.dev)*
+- *...and [100 more specialized solvers on the live annuity yield hub](https://annuity-yield.pages.dev)*
 
-### <a id="dividend-yield"></a>🚢 Maritime Shipping, Bulk Carriers & Dividend Portfolios (136 Tools)
+### <a id="dividend-yield"></a>🚢 Maritime Shipping, Bulk Carriers & Dividend Portfolios (137 Tools)
 
 > **Live Hub**: [https://dividend-yield.pages.dev](https://dividend-yield.pages.dev)
 
@@ -415,7 +415,7 @@
 - **[180,000 DWT Capesize Dry Bulk Carrier Vessel 5-Year Time Charter 11.5% Yield Calculator 2026 — DividendYield](https://dividend-yield.pages.dev/capesize-bulk-carrier-time-charter-yield-calculator.html)** — *Calculate 180,000 DWT Capesize dry bulk ships hauling iron ore & bauxite on 5-year fixed time charters ($34,500/day net lease: Vale / Rio Tinto credit), distributing 11.5% cash dividend yield.*
 - **[175,000 DWT Capesize Dual-Fuel LNG Ore Carrier 10-Year Charter Yield Calculator 2026](https://dividend-yield.pages.dev/capesize-lng-dual-ore-carrier-charter-yield-calculator.html)** — *Underwrite 175,000 DWT Capesize Newcastle-route iron ore carriers with LNG dual-fuel propulsion on 10-year major miner contracts ($32,000/day TCE) and cash dividend yields.*
 - **[Closed-End Fund (CEF) NAV Discount Arbitrage & Yield Calculator 2026 — DividendYield](https://dividend-yield.pages.dev/cef-nav-discount-arbitrage-calculator.html)** — *Calculate Closed-End Fund (CEF) Net Asset Value (NAV) discount widening & narrowing, leveraged distribution yields (8%–14%), activist liquidation catalyst returns, and annual alpha.*
-- *...and [126 more specialized solvers on the live dividend yield hub](https://dividend-yield.pages.dev)*
+- *...and [127 more specialized solvers on the live dividend yield hub](https://dividend-yield.pages.dev)*
 
 ### <a id="storage-yield"></a>💎 Alternative Assets, Vaulted Collectibles & High-Yield Storage (86 Tools)
 
@@ -433,7 +433,7 @@
 - **[High-Security Climate-Controlled (60°F / 40% RH) Deadstock Sneaker Vault ROI Calculator 2026 — StorageYield](https://storage-yield.pages.dev/deadstock-sneaker-streetwear-vault-storage-calculator.html)** — *Calculate 60°F / 40% RH anti-hydrolysis vaults for rare vintage deadstock sneakers (Jordan 1s & Travis Scott grails: 25,000 shoe capacity: $4.50/box/mo: prevents polyurethane crumbling), and vault EBITDA.*
 - *...and [76 more specialized solvers on the live storage yield hub](https://storage-yield.pages.dev)*
 
-### <a id="vending-yield"></a>🥐 Autonomous Robotics, Unattended Retail & Gourmet Vending (99 Tools)
+### <a id="vending-yield"></a>🥐 Autonomous Robotics, Unattended Retail & Gourmet Vending (100 Tools)
 
 > **Live Hub**: [https://vending-yield.pages.dev](https://vending-yield.pages.dev)
 
@@ -447,7 +447,7 @@
 - **[Automated Fresh Artisan Churro & Warm Belgian Chocolate Dip Robot Kiosk ROI Calculator 2026 — VendingYield](https://vending-yield.pages.dev/churro-robot-vending-kiosk-calculator.html)** — *Calculate 60-second automated star-extruded churro robots frying dough loops, rolling in cinnamon sugar, & dispensing warm dark chocolate dip ($5.45/order: 90 orders/day), and kiosk EBITDA.*
 - **[Automated Fresh-Baked Warm Gourmet Chocolate Chip Cookie Robot Kiosk ROI Calculator 2026 — VendingYield](https://vending-yield.pages.dev/cookie-robot-baking-vending-kiosk-calculator.html)** — *Calculate 90-second automated convection baking robot kiosks (dispensing warm molten chocolate chip cookies + organic chilled milk: $5.25/cookie: 85 cookies/day), and kiosk EBITDA.*
 - **[Automated 3D Floral Shape Fresh Cotton Candy Robot Kiosk ROI Calculator 2026 — VendingYield](https://vending-yield.pages.dev/cotton-candy-robot-vending-kiosk-calculator.html)** — *Calculate 90-second 3D floral art fresh cotton candy robotic kiosks ($7.00/flower: $0.18 sugar COGS: 97.4% gross margin: 45 units/day), and tourist mall kiosk EBITDA.*
-- *...and [89 more specialized solvers on the live vending yield hub](https://vending-yield.pages.dev)*
+- *...and [90 more specialized solvers on the live vending yield hub](https://vending-yield.pages.dev)*
 
 ### <a id="wash-yield"></a>🚗 Commercial Car Wash & Fleet Detailing ROI (46 Tools)
 
@@ -497,7 +497,7 @@
 - **[Bulk Cryogenic Liquid Oxygen (LOX: -183°C) Aerospace Tanker Transport Margin Calculator 2026 — FreightMatrix](https://freight-matrix.pages.dev/cryogenic-liquid-oxygen-tanker-rate-calculator.html)** — *Calculate cryogenic liquid oxygen (LOX: -297°F: rocket propulsion propellant & hospital cryogenic oxygen: $6.25/mile), pneumatic pressure transfer, and specialized carrier EBITDA.*
 - *...and [75 more specialized solvers on the live freight matrix hub](https://freight-matrix.pages.dev)*
 
-### <a id="saas-matrix"></a>📊 SaaS Metrics, Churn Friction & Multiple Compression (112 Tools)
+### <a id="saas-matrix"></a>📊 SaaS Metrics, Churn Friction & Multiple Compression (113 Tools)
 
 > **Live Hub**: [https://saas-matrix.pages.dev](https://saas-matrix.pages.dev)
 
@@ -511,9 +511,9 @@
 - **[SaaS CAC Payback by Inbound vs Outbound SDR Motion Slasher Calculator 2026](https://saas-matrix.pages.dev/cac-payback-inbound-vs-outbound-sdr-slasher-calculator.html)** — *Calculate enterprise SaaS CAC Payback Period (Months to recover customer acquisition cost) comparing low-friction high-intent Inbound Marketing against high-touch Outbound SDR Sales motions.*
 - **[SaaS Customer Acquisition Cost (CAC) Payback by Inbound vs Paid Search Slasher 2026](https://saas-matrix.pages.dev/cac-payback-inbound-vs-paid-search-slasher-calculator.html)** — *Calculate enterprise SaaS CAC Payback Period (Months to recover customer acquisition cost) comparing high-intent Organic Inbound content motions against Google Search PPC Paid Acquisition.*
 - **[SaaS CAC Payback by Sales-Led vs Product-Led Cohort Slasher Calculator 2026](https://saas-matrix.pages.dev/cac-payback-sales-led-vs-product-led-slasher-calculator.html)** — *Calculate enterprise SaaS CAC Payback Period (Months to recover customer acquisition cost via gross margin ARR) comparing high-velocity Product-Led Growth (PLG) tiers against Enterprise Sales-Led motions.*
-- *...and [102 more specialized solvers on the live saas matrix hub](https://saas-matrix.pages.dev)*
+- *...and [103 more specialized solvers on the live saas matrix hub](https://saas-matrix.pages.dev)*
 
-### <a id="biz-matrix"></a>🩺 Longevity Spas, Cryotherapy & Niche Small Business (110 Tools)
+### <a id="biz-matrix"></a>🩺 Longevity Spas, Cryotherapy & Niche Small Business (111 Tools)
 
 > **Live Hub**: [https://biz-matrix.pages.dev](https://biz-matrix.pages.dev)
 
@@ -527,7 +527,7 @@
 - **[Commercial Medical 2.0 ATA Hard-Shell Hyperbaric Oxygen (HBOT) Wellness Lounge ROI 2026 — BizMatrix](https://biz-matrix.pages.dev/commercial-hbot-hard-chamber-lounge-calculator.html)** — *Calculate 4-chamber clinical 2.0 ATA steel/acrylic monoplace hyperbaric oxygen suites ($165/session: 24 sessions/day: telomere & stem cell activation), and wellness clinic EBITDA.*
 - **[Commercial Hyperbaric Oxygen Therapy (HBOT 2.0 ATA Multiplace) Wellness Lounge ROI Calculator 2026](https://biz-matrix.pages.dev/commercial-hbot-multiplace-chamber-lounge-roi-calculator.html)** — *Underwrite commercial multiplace hard-shell hyperbaric oxygen chambers (2.0 ATA), medical liquid O2 vaporization, hourly treatment session pricing ($175/hr), and unit EBITDA margins.*
 - **[Commercial Hyperbaric Oxygen Therapy (Multi-Chamber 2.4 ATA Medical) Clinic ROI Calculator 2026](https://biz-matrix.pages.dev/commercial-multichamber-hbot-medical-clinic-roi-calculator.html)** — *Underwrite ASME PVHO medical-grade 2.4 ATA multiplace hyperbaric oxygen chambers with hood systems, hospital referral partnerships, treatment session fees ($240/dive), and clinic EBITDA.*
-- *...and [100 more specialized solvers on the live biz matrix hub](https://biz-matrix.pages.dev)*
+- *...and [101 more specialized solvers on the live biz matrix hub](https://biz-matrix.pages.dev)*
 
 ### <a id="heavy-yield"></a>🚜 Heavy Machinery, Excavation & Mining Asset Yields (45 Tools)
 
@@ -545,7 +545,7 @@
 - **[Heavy Track Excavator Fleet Rental ROI & Utilization Calculator 2026 — HeavyYield](https://heavy-yield.pages.dev/highway-excavator-fleet-rental-calculator.html)** — *Calculate 20-to-35 ton heavy hydraulic track excavator rental fleet cash flow, monthly commercial contractor dry rates ($4,500–$8,500/mo), telematics maintenance, and fleet EBITDA.*
 - *...and [35 more specialized solvers on the live heavy yield hub](https://heavy-yield.pages.dev)*
 
-### <a id="repair-yield"></a>🔧 Mobile Industrial Laser Cladding & In-Situ Repair Rigs (107 Tools)
+### <a id="repair-yield"></a>🔧 Mobile Industrial Laser Cladding & In-Situ Repair Rigs (108 Tools)
 
 > **Live Hub**: [https://repair-yield.pages.dev](https://repair-yield.pages.dev)
 
@@ -559,9 +559,9 @@
 - **[Mobile Ultra-High Pressure (UHP 55,000 PSI) Waterjet Hydro-Demolition Rig Profit 2026](https://repair-yield.pages.dev/mobile-55000psi-uhp-waterjet-hydrodemolition-rig-profit-calculator.html)** — *Underwrite mobile ultra-high pressure (55,000 PSI) automated robotic waterjet rigs stripping heavy maritime anti-fouling coatings and selective concrete hydro-demolition on bridge piers ($6,800/day rate).*
 - **[Mobile Alloy Wheel Diamond Cut CNC Lathe Repair Van ROI Calculator 2026 — RepairYield](https://repair-yield.pages.dev/mobile-alloy-wheel-repair-van-calculator.html)** — *Calculate mobile alloy wheel curb rash & diamond-cut CNC lathe rim repair van profitability, dealership wholesale rates ($75–$120/wheel), retail curb repairs, and route EBITDA.*
 - **[Mobile On-Site CNC Portable Line Boring & Automated Bore Welding Rig ROI Calculator 2026 — RepairYield](https://repair-yield.pages.dev/mobile-cnc-line-boring-bore-welding-rig-calculator.html)** — *Calculate portable hydraulic line boring machines & automated rotary bore welders (restoring ovalized excavator pivot pin bores on job sites: $3,450/shift), and field machinist EBITDA.*
-- *...and [97 more specialized solvers on the live repair yield hub](https://repair-yield.pages.dev)*
+- *...and [98 more specialized solvers on the live repair yield hub](https://repair-yield.pages.dev)*
 
-### <a id="glamp-yield"></a>🌋 Geothermal Luxury STRs & Eco-Tourism Hospitality (112 Tools)
+### <a id="glamp-yield"></a>🌋 Geothermal Luxury STRs & Eco-Tourism Hospitality (113 Tools)
 
 > **Live Hub**: [https://glamp-yield.pages.dev](https://glamp-yield.pages.dev)
 
@@ -575,9 +575,9 @@
 - **[Geothermal Blue Lagoon Basalt Thermal Springs & Panoramic Glass Villa STR 2026](https://glamp-yield.pages.dev/blue-lagoon-basalt-thermal-springs-villa-str-calculator.html)** — *Underwrite luxury private silica geothermal mineral lagoon villas with outdoor natural basalt hot springs soaking tubs and heated timber decks, $1,350/night ADR, and annual net cash flows.*
 - **[Geothermal Blue Lagoon Grindavík Sunken Silica Pool Chalet STR 2026](https://glamp-yield.pages.dev/blue-lagoon-grindavik-sunken-silica-pool-chalet-str-calculator.html)** — *Underwrite luxury private architectural suites featuring private subterranean silica hot spring pools in the Grindavík volcanic fissure zone, $1,490/night ADR, and annual net cash flows.*
 - **[Off-Grid Luxury Canvas Wall Tent Glamping Solar Microgrid ROI Calculator 2026 — GlampYield](https://glamp-yield.pages.dev/canvas-wall-tent-solar-microgrid-calculator.html)** — *Calculate heavy-duty safari canvas wall tent glamping resorts powered by dedicated 5kW LiFePO4 solar microgrids (king bed, wood burning stove, ensuite bath: $285–$450/night), and ROI.*
-- *...and [102 more specialized solvers on the live glamp yield hub](https://glamp-yield.pages.dev)*
+- *...and [103 more specialized solvers on the live glamp yield hub](https://glamp-yield.pages.dev)*
 
-### <a id="fba-matrix"></a>📦 Supply Chain, Packaging Automation & E-Commerce Logistics (107 Tools)
+### <a id="fba-matrix"></a>📦 Supply Chain, Packaging Automation & E-Commerce Logistics (108 Tools)
 
 > **Live Hub**: [https://fba-matrix.pages.dev](https://fba-matrix.pages.dev)
 
@@ -591,7 +591,7 @@
 - **[Amazon FBA Fulfillment Fee &amp; Tier Size Calculator (2026)](https://fba-matrix.pages.dev/amazon-fba-fee-calculator.html)** — *Calculate Amazon FBA fulfillment fees, Alibaba unit manufacturing, sea freight CBM landed costs, referral fee cuts, and net profit margins.*
 - **[Amazon FBA Dangerous Goods (Hazmat: Aerosol / Lithium) Surcharge & Margin Calculator 2026 — FBAMatrix](https://fba-matrix.pages.dev/amazon-fba-hazmat-dangerous-goods-storage-calculator.html)** — *Calculate Amazon FBA Dangerous Goods program inventory storage surcharges ($0.99–$3.63/cu ft/mo hazmat storage for lithium batteries & perfumes: limited seller quotas), and product margin impact.*
 - **[Amazon FBA Inbound Placement Service Fee (Minimal vs Partial vs Amazon-Optimized Split) 2026 — FBAMatrix](https://fba-matrix.pages.dev/amazon-fba-inbound-placement-fee-split-calculator.html)** — *Calculate 2026 Amazon Inbound Placement Service Fees ($0.21–$0.68/unit: comparing Minimal Shipment Split vs Partial Split vs 5+ Location Amazon-Optimized: +$42k/yr freight savings).*
-- *...and [97 more specialized solvers on the live fba matrix hub](https://fba-matrix.pages.dev)*
+- *...and [98 more specialized solvers on the live fba matrix hub](https://fba-matrix.pages.dev)*
 
 ### <a id="revenue-desk"></a>📈 RevOps Telemetry & Multi-Funnel Attribution (58 Tools)
 
@@ -609,7 +609,7 @@
 - **[Leads & B2B Telemetry Console — RevenueDesk](https://revenue-desk.pages.dev/leads-console.html)** — *Real-time telemetry and management console for advisor inquiries, custom SOWs, and API waitlist signups across the 1,600+ tool network.*
 - *...and [48 more specialized solvers on the live revenue desk hub](https://revenue-desk.pages.dev)*
 
-### <a id="billboard-yield"></a>🪧 Intermodal Transportation & Optical Scanning Billboards (110 Tools)
+### <a id="billboard-yield"></a>🪧 Intermodal Transportation & Optical Scanning Billboards (111 Tools)
 
 > **Live Hub**: [https://billboard-yield.pages.dev](https://billboard-yield.pages.dev)
 
@@ -623,9 +623,9 @@
 - **[International Airport Runway Flight Approach Dual-Sided 14x48 Digital LED Billboard ROI 2026 — BillboardYield](https://billboard-yield.pages.dev/airport-runway-approach-digital-billboard-calculator.html)** — *Calculate 14x48 dual-sided P10 digital LED billboard structures on flight final approach corridors ($6,850/mo per ad slot x 16 advertisers x 2 faces), FAA lighting approval, and media EBITDA.*
 - **[Airport Terminal Baggage Claim & Concourse Digital Screen ROI Calculator 2026 — BillboardYield](https://billboard-yield.pages.dev/airport-terminal-digital-billboard-calculator.html)** — *Calculate commercial airport terminal concourse & baggage claim digital LCD/LED advertising network concessions, business traveler CPMs ($45–$95), and concession splits.*
 - **[3D Anamorphic Curved Corner Digital Billboard (DOOH) ROI Calculator 2026 — BillboardYield](https://billboard-yield.pages.dev/anamorphic-3d-curved-billboard-calculator.html)** — *Calculate high-impact 3D anamorphic curved corner LED digital billboards (Times Square / Piccadilly Circus / Shinjuku style: $15k–$45k/mo per slot), viral social media CPMs, and display EBITDA.*
-- *...and [100 more specialized solvers on the live billboard yield hub](https://billboard-yield.pages.dev)*
+- *...and [101 more specialized solvers on the live billboard yield hub](https://billboard-yield.pages.dev)*
 
-### <a id="dumpster-yield"></a>♻️ Post-Industrial Advanced Polymer Regrind & Compounding (101 Tools)
+### <a id="dumpster-yield"></a>♻️ Post-Industrial Advanced Polymer Regrind & Compounding (102 Tools)
 
 > **Live Hub**: [https://dumpster-yield.pages.dev](https://dumpster-yield.pages.dev)
 
@@ -633,13 +633,13 @@
 - **[Post-Industrial Acrylonitrile Butadiene Styrene (ABS Polymer) Regrind Line ROI Calculator 2026 — DumpsterYield](https://dumpster-yield.pages.dev/abs-polymer-automotive-regrind-calculator.html)** — *Calculate electrostatic separators & granulators stripping chrome plating from automotive ABS bumper trims & appliance housings ($0.62/lb clean ABS regrind: 1.6M lbs/yr throughput).*
 - **[Roofing Tear-Off Asphalt Shingle Recycling Roll-Off Route ROI Calculator 2026 — DumpsterYield](https://dumpster-yield.pages.dev/asphalt-shingle-recycling-route-calculator.html)** — *Calculate collecting roofing tear-off asphalt shingles (separating nails & grinding into Recycled Asphalt Shingle RAS: $185/haul tip fee + $28/ton hot-mix asphalt plant sales), and hauler EBITDA.*
 - **[Post-Industrial Carbon-Reinforced PEEK Scrap Precision Regrind Yield 2026](https://dumpster-yield.pages.dev/carbon-reinforced-peek-scrap-precision-regrind-calculator.html)** — *Calculate aerospace bracket and implantable medical carbon-fiber-reinforced PEEK scrap purchase costs ($12.50/lb), cryogenic milling power, pure high-temperature 30% CF-PEEK regrind resale ($48.00/lb), and compounding margins.*
+- **[Post-Industrial Polybenzimidazole (Celazole PBI Scrap) Precision Regrind Yield 2026](https://dumpster-yield.pages.dev/celazole-pbi-scrap-precision-regrind-calculator.html)** — *Calculate aerospace extreme-temperature semiconductor and aerospace plasma furnace Celazole PBI scrap purchase costs ($11.50/lb), cleanroom cryo-milling power, extreme-temperature PBI pellet regrind resale ($38.00/lb), and compounding margins.*
 - **[Commercial Cardboard Baler Placement & OCC Pulp Mill Route ROI Calculator 2026 — DumpsterYield](https://dumpster-yield.pages.dev/commercial-cardboard-baler-occ-route-calculator.html)** — *Calculate placing vertical hydraulic cardboard balers at retail supermarkets (1,000 lb mill-size Old Corrugated Cardboard OCC bales: $140/ton export price), and hauler route EBITDA.*
 - **[Commercial Waste Compactor & Cardboard Baler Leasing ROI Calculator 2026 — DumpsterYield](https://dumpster-yield.pages.dev/commercial-compactor-baler-leasing-calculator.html)** — *Calculate commercial self-contained waste compactor & vertical cardboard baler long-term rental contracts ($450–$950/mo), reduced haul frequency savings, and route EBITDA.*
 - **[Commercial Waste Compactor & Cardboard Baler Rental ROI Calculator 2026 — DumpsterYield](https://dumpster-yield.pages.dev/commercial-compactor-cardboard-baler-leasing-calculator.html)** — *Calculate commercial self-contained waste compactors & hydraulic vertical cardboard baler long-term leases ($450–$950/mo), OCC mill recycling commodity revenue, and fleet EBITDA.*
 - **[Supermarket Organic Food Waste Depackaging & Compost Route ROI Calculator 2026 — DumpsterYield](https://dumpster-yield.pages.dev/commercial-food-waste-depackaging-route-calculator.html)** — *Calculate collecting packaged grocery supermarket expired food waste (mechanical depackaging separating plastic wrap from pure organic slurry: $85/ton tipping fee + anaerobic digester sales), and EBITDA.*
 - **[Commercial Restaurant Grease Trap Pumping & Yellow Grease Route ROI Calculator 2026 — DumpsterYield](https://dumpster-yield.pages.dev/commercial-grease-trap-pumping-route-calculator.html)** — *Calculate commercial restaurant grease trap vacuum truck pumping routes ($225–$450/pump), FOG disposal fees, yellow grease biodiesel rendering sales, and route EBITDA.*
-- **[Restaurant Waste Cooking Oil (WCO) Biodiesel Collection Route ROI Calculator 2026 — DumpsterYield](https://dumpster-yield.pages.dev/commercial-waste-cooking-oil-collection-calculator.html)** — *Calculate vacuum tank truck restaurant yellow grease & waste cooking oil (WCO) collection routes (25k–80k gallons/mo: $0.42/lb refined feedstock for Sustainable Aviation Fuel SAF), and route EBITDA.*
-- *...and [91 more specialized solvers on the live dumpster yield hub](https://dumpster-yield.pages.dev)*
+- *...and [92 more specialized solvers on the live dumpster yield hub](https://dumpster-yield.pages.dev)*
 
 ### <a id="glamping-yield"></a>⛺ Luxury Glamping Tent & Yurt Hospitality (5 Tools)
 
@@ -651,7 +651,7 @@
 - **[Glamping Land Lease & Revenue Share Agreement Sheet 2026 | GlampingYield](https://glamping-yield.pages.dev/glamping-land-lease-sheet.html)** — *1-page printable legal agreement for placing glamping domes on private land with a percentage revenue share.*
 - **[Luxury Treehouse & A-Frame Glamping Cabin ROI Calculator 2026 — GlampYield](https://glamping-yield.pages.dev/treehouse-glamping-rental-calculator.html)** — *Calculate luxury treehouse and elevated A-frame glamping resort cash flow, structural engineering capex, elevated deck hot tubs, premium ADR, and payback ROI.*
 
-### <a id="parking-yield"></a>⚓ Floating Offshore Wind Staging Yards & Heavy IOS (106 Tools)
+### <a id="parking-yield"></a>⚓ Floating Offshore Wind Staging Yards & Heavy IOS (107 Tools)
 
 > **Live Hub**: [https://parking-yield.pages.dev](https://parking-yield.pages.dev)
 
@@ -665,7 +665,7 @@
 - **[ALPR Automated Surface Parking Lot Cash Flow Calculator 2026 — ParkingYield](https://parking-yield.pages.dev/alpr-parking-lot-cashflow-calculator.html)** — *Calculate automated commercial surface parking lot revenues, gate-less ALPR camera capture rates, transient hourly pricing, monthly contract permits, and net NOI per stall.*
 - **[Autonomous Electric Terminal Tractor (Yard Mule) Shunting ROI Calculator 2026 — ParkingYield](https://parking-yield.pages.dev/automated-trailer-jockey-shunting-yard-calculator.html)** — *Calculate autonomous cab-less electric yard trucks (Outrider model: moving 220 semi-trailers/day between dock doors and drop lot stalls: $0.18/kWh electricity vs diesel), and logistics terminal ROI.*
 - **[Double-Deep 3-Level Mechanical Puzzle Parking Stacker (29 Cars in 10-Car Area) Cap Rate 2026 — ParkingYield](https://parking-yield.pages.dev/double-deep-puzzle-parking-stacker-cap-rate.html)** — *Calculate semi-automated double-deep 3-level puzzle parking lifts parking 29 vehicles in a 10-car surface footprint ($385/space/mo: automated matrix shifting), and commercial property valuation.*
-- *...and [96 more specialized solvers on the live parking yield hub](https://parking-yield.pages.dev)*
+- *...and [97 more specialized solvers on the live parking yield hub](https://parking-yield.pages.dev)*
 
 ---
 
