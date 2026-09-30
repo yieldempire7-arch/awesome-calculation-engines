@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToolsVault Friday Contractor Closing Desk & Weekly Revenue Hub</title>
+  <meta name="description" content="Friday executive closing desk to aggregate weekly contractor outreach telemetry, manage live negotiations, and dispatch high-converting partnership agreements.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #060911;
+      --card-bg: #0c121e;
+      --border: #1e293b;
+      --accent: #10b981;
+    }
+    body {
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .glass-card {
+      background: rgba(12, 18, 30, 0.85);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .stage-card {
+      background: #090d16;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 14px;
+      transition: all 0.2s;
+    }
+    .stage-card:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #020617;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 13px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      display: none;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 flex flex-col justify-between">
+
+  <div class="max-w-7xl mx-auto w-full space-y-8">
+    
+    <!-- Top Header -->
+    
+    <!-- Weekly Commercial Outbound Suite Navigation Ribbon -->
+    <nav style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 24px; padding: 12px 18px; background: rgba(15, 23, 42, 0.95); border: 1px solid #1e293b; border-radius: 14px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #38bdf8; box-shadow: 0 0 10px #38bdf8;"></span>
+        <span style="color: #f1f5f9; text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em;">Weekly Commercial Outbound Suite:</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <a href="monday_outbound_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Mon: Wave 1 (50)</a>
+        <a href="tuesday_contractor_followup_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Tue: Follow-Ups (95)</a>
+        <a href="wednesday_contractor_expansion_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Wed: Wave 2 (100)</a>
+        <a href="thursday_contractor_scale_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Thu: Wave 3 (106)</a>
+        <a href="friday_contractor_closing_desk.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #059669; color: #ffffff; border: 1px solid #34d399; box-shadow: 0 0 12px rgba(5,150,105,0.5); font-weight: 800;">Fri: Closing Desk &amp; CRM</a>
+      </div>
+    </nav>
+    <header class="glass-card rounded-2xl p-6 shadow-2xl border border-emerald-500/30 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <div class="flex items-center space-x-2 text-emerald-400 text-xs font-black tracking-wider uppercase mb-1">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Friday Commercial Deal Desk & Weekly Closing Pipeline</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">Contractor Closing & Partner Lock Desk</h1>
+        <p class="text-xs md:text-sm text-slate-400 mt-1 max-w-2xl leading-relaxed">
+          Aggregate weekly dispatch telemetry, track active commercial negotiations, and close exclusive territory reservations ($299/mo) and enterprise software licenses.
+        </p>
+      </div>
+
+      <!-- Quick Launch Links to Daily Engines -->
+      <div class="flex items-center gap-2 flex-wrap text-xs font-bold">
+        <a href="monday_outbound_launcher.html" class="px-3 py-2 bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 rounded-xl transition">
+          Mon (Wave 1)
+        </a>
+        <a href="tuesday_contractor_followup_launcher.html" class="px-3 py-2 bg-slate-900 hover:bg-slate-800 text-sky-400 border border-slate-700 rounded-xl transition">
+          Tue (Follow-ups)
+        </a>
+        <a href="wednesday_contractor_expansion_launcher.html" class="px-3 py-2 bg-slate-900 hover:bg-slate-800 text-purple-400 border border-slate-700 rounded-xl transition">
+          Wed (Wave 2)
+        </a>
+        <a href="thursday_contractor_scale_launcher.html" class="px-3 py-2 bg-slate-900 hover:bg-slate-800 text-amber-400 border border-slate-700 rounded-xl transition">
+          Thu (Wave 3)
+        </a>
+      </div>
+    </header>
+
+    <!-- Weekly Outbound Performance Telemetry -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="glass-card p-5 rounded-2xl border-t-2 border-t-sky-500 text-center">
+        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Monday Dispatched</span>
+        <span id="stat-mon" class="text-3xl font-black text-white mt-1 block font-mono">0</span>
+        <span class="text-[10px] text-slate-500 block mt-1">Accounts 1–50</span>
+      </div>
+
+      <div class="glass-card p-5 rounded-2xl border-t-2 border-t-blue-500 text-center">
+        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Tuesday Bumps</span>
+        <span id="stat-tue" class="text-3xl font-black text-sky-400 mt-1 block font-mono">0</span>
+        <span class="text-[10px] text-slate-500 block mt-1">95 Follow-ups</span>
+      </div>
+
+      <div class="glass-card p-5 rounded-2xl border-t-2 border-t-purple-500 text-center">
+        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Wednesday Expansion</span>
+        <span id="stat-wed" class="text-3xl font-black text-purple-400 mt-1 block font-mono">0</span>
+        <span class="text-[10px] text-slate-500 block mt-1">100 Wave 2 Accounts</span>
+      </div>
+
+      <div class="glass-card p-5 rounded-2xl border-t-2 border-t-amber-500 text-center">
+        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Thursday Scale</span>
+        <span id="stat-thu" class="text-3xl font-black text-amber-400 mt-1 block font-mono">0</span>
+        <span class="text-[10px] text-slate-500 block mt-1">106 Wave 3 Accounts</span>
+      </div>
+
+      <div class="glass-card p-5 rounded-2xl border-t-2 border-t-emerald-500 text-center col-span-2 md:col-span-1">
+        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Total Fleet Reach</span>
+        <span id="stat-total" class="text-3xl font-black text-emerald-400 mt-1 block font-mono">0</span>
+        <span class="text-[10px] text-emerald-500 block mt-1 font-bold" id="stat-arr">$0 ARR Pipeline</span>
+      </div>
+    </div>
+
+    <!-- Active Deal Closing Studio & Reply Composer -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- Reply Generator Controls -->
+      <div class="lg:col-span-6 glass-card rounded-2xl p-6 space-y-5 border border-slate-800">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div class="flex items-center gap-2 text-white font-black text-lg">
+            <i class="fa-solid fa-bolt text-emerald-400"></i>
+            <span>Instant Closing Response Studio</span>
+          </div>
+          <span class="text-xs text-slate-400">Select scenario to auto-draft</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+          <button type="button" onclick="selectScenario('A', this)" class="scenario-pill active py-2 px-3 rounded-lg border border-emerald-500 bg-emerald-500/10 text-emerald-400 text-xs font-bold transition text-center">
+            Scenario A<br><span class="text-[10px] text-slate-400 font-normal">Pricing / How it Works</span>
+          </button>
+          <button type="button" onclick="selectScenario('B', this)" class="scenario-pill py-2 px-3 rounded-lg border border-slate-700 bg-slate-900 text-slate-300 text-xs font-bold transition text-center hover:border-slate-500">
+            Scenario B<br><span class="text-[10px] text-slate-400 font-normal">Demo & Links</span>
+          </button>
+          <button type="button" onclick="selectScenario('C', this)" class="scenario-pill py-2 px-3 rounded-lg border border-slate-700 bg-slate-900 text-slate-300 text-xs font-bold transition text-center hover:border-slate-500">
+            Scenario C<br><span class="text-[10px] text-slate-400 font-normal">Exclusivity vs Angi</span>
+          </button>
+          <button type="button" onclick="selectScenario('D', this)" class="scenario-pill py-2 px-3 rounded-lg border border-slate-700 bg-slate-900 text-slate-300 text-xs font-bold transition text-center hover:border-slate-500">
+            Scenario D<br><span class="text-[10px] text-slate-400 font-normal">$19 Starter Downsell</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Contractor Contact:</label>
+            <input type="text" id="deal-contact" value="Mike" oninput="updateReplyText()" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-emerald-500">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Commercial Trade:</label>
+            <input type="text" id="deal-trade" value="Roofing" oninput="updateReplyText()" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-emerald-500">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Target Metro:</label>
+            <input type="text" id="deal-metro" value="Charlotte, NC" oninput="updateReplyText()" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-white outline-none focus:border-emerald-500">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Contractor Email:</label>
+          <input type="email" id="deal-email" value="estimating@contractor.com" oninput="updateReplyText()" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-sky-400 font-mono outline-none focus:border-emerald-500">
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Pre-Composed Closing Response:</label>
+          <textarea id="deal-reply-body" readonly class="w-full h-44 bg-slate-950 border border-slate-800 rounded-xl p-3 text-[11.5px] font-mono text-slate-300 resize-none outline-none leading-relaxed"></textarea>
+        </div>
+
+        <div class="flex gap-3">
+          <a id="deal-gmail-btn" href="#" target="_blank" class="flex-1 py-3 bg-red-600 hover:bg-red-500 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-red-600/20 transition">
+            <i class="fa-brands fa-google"></i>
+            <span>⚡ Open Draft in Business Gmail</span>
+          </a>
+          <button type="button" onclick="copyReplyText()" class="px-5 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl flex items-center gap-2 border border-slate-700 transition">
+            <i class="fa-solid fa-copy"></i>
+            <span>Copy</span>
+          </button>
+          <button type="button" onclick="addActiveDeal()" class="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-black text-xs rounded-xl flex items-center gap-2 shadow-lg shadow-emerald-600/20 transition">
+            <i class="fa-solid fa-plus"></i>
+            <span>Log Deal</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Active Pipeline Kanban / CRM -->
+      <div class="lg:col-span-6 glass-card rounded-2xl p-6 space-y-4 border border-slate-800 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+            <div class="flex items-center gap-2 text-white font-black text-lg">
+              <i class="fa-solid fa-handshake text-sky-400"></i>
+              <span>Active Negotiation Pipeline</span>
+            </div>
+            <button onclick="exportDealsCsv()" class="text-xs text-emerald-400 hover:underline font-bold">
+              Export Deals CSV &#8595;
+            </button>
+          </div>
+
+          <!-- Deals Container -->
+          <div id="deals-list" class="space-y-3 max-h-[440px] overflow-y-auto pr-1">
+            <!-- Dynamically populated or empty state -->
+          </div>
+        </div>
+
+        <!-- Deal Value Summary Footer -->
+        <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-4 flex justify-between items-center text-xs">
+          <div>
+            <span class="text-slate-400">Target Deal Terms:</span>
+            <span class="text-white font-black ml-1">$299/mo Exclusive Regional Lock</span>
+          </div>
+          <a href="https://buy.stripe.com/9B68wI0z72t422McoEaMU04" target="_blank" rel="noopener" class="text-sky-400 font-bold hover:underline flex items-center gap-1">
+            Stripe Gateway &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="toast" class="toast">✓ Copied to clipboard! Ready to paste into Gmail.</div>
+
+  <script>
+    let currentScenario = 'A';
+    let deals = JSON.parse(localStorage.getItem('tv_friday_deals') || '[]');
+
+    function refreshTelemetry() {
+      const monData = JSON.parse(localStorage.getItem('tv_monday_sent_targets_v2') || '{}');
+      const monCount = Object.keys(monData).length;
+      document.getElementById('stat-mon').innerText = monCount;
+
+      const tueData = JSON.parse(localStorage.getItem('tv_tuesday_sent_targets') || '{}');
+      const tueCount = Object.keys(tueData).length;
+      document.getElementById('stat-tue').innerText = tueCount;
+
+      const wedData = JSON.parse(localStorage.getItem('tv_wednesday_sent_targets') || '{}');
+      const wedCount = Object.keys(wedData).length;
+      document.getElementById('stat-wed').innerText = wedCount;
+
+      const thuData = JSON.parse(localStorage.getItem('tv_thursday_sent_targets') || '{}');
+      const thuCount = Object.keys(thuData).length;
+      document.getElementById('stat-thu').innerText = thuCount;
+
+      const total = monCount + tueCount + wedCount + thuCount;
+      document.getElementById('stat-total').innerText = total;
+
+      const estPartners = Math.max(1, Math.round(total * 0.03));
+      const arr = estPartners * 3588;
+      document.getElementById('stat-arr').innerText = '$' + arr.toLocaleString() + ' Est. Active ARR Pipeline';
+    }
+
+    function selectScenario(sc, btn) {
+      currentScenario = sc;
+      document.querySelectorAll('.scenario-pill').forEach(p => {
+        p.classList.remove('active', 'border-emerald-500', 'bg-emerald-500/10', 'text-emerald-400');
+        p.classList.add('border-slate-700', 'bg-slate-900', 'text-slate-300');
+      });
+      if (btn) {
+        btn.classList.add('active', 'border-emerald-500', 'bg-emerald-500/10', 'text-emerald-400');
+        btn.classList.remove('border-slate-700', 'bg-slate-900', 'text-slate-300');
+      }
+      updateReplyText();
+    }
+
+    function normalizeTrade(trade) {
+      if (!trade) return "Subcontracting";
+      return trade.replace(/^commercial\s+/i, '').trim();
+    }
+
+    function updateReplyText() {
+      const contact = document.getElementById('deal-contact').value.trim() || 'Team';
+      const rawTrade = document.getElementById('deal-trade').value.trim() || 'Subcontracting';
+      const trade = normalizeTrade(rawTrade);
+      const metro = document.getElementById('deal-metro').value.trim() || 'Regional Market';
+      const email = document.getElementById('deal-email').value.trim() || '';
+
+      let body = '';
+      let subject = '';
+
+      if (currentScenario === 'A') {
+        subject = `Partnership Terms: Commercial ${trade} Exclusive Scope (${metro})`;
+        body = `Hi ${contact},\n\n` +
+          `Thanks for following up. We operate a direct engineering & estimating network that routes commercial ${trade} bid inquiries across ${metro}.\n\n` +
+          `We offer two partnership tiers:\n` +
+          `1. Exclusive Regional Territory: You lock down exclusive project routing for ${trade} in ${metro} on our directory: https://tools-vault-4ml.pages.dev/contractor_network ($299/mo, cancel anytime).\n` +
+          `2. Custom Estimating Suite: Embed our CSI MasterFormat estimating solver directly on your website to capture high-margin inbound bids: https://tools-vault-4ml.pages.dev/white_label_enterprise_licensing\n\n` +
+          `Do you have 10 minutes Wednesday morning for a quick phone call to see if your team has the field capacity to handle the scope?\n\n` +
+          `Best regards,\nJohn Granbridge\nToolsVault Commercial Network\ntoolsvault78@gmail.com`;
+      } else if (currentScenario === 'B') {
+        subject = `Demo Links: Commercial ${trade} Subcontractor Bid Estimator`;
+        body = `Hi ${contact},\n\n` +
+          `Here is the direct link to the live tools built for your sector:\n` +
+          `• Live Subcontractor Bid Estimator: https://tools-vault-4ml.pages.dev/commercial_subcontractor_bid_estimator\n` +
+          `• Territory Reservation Portal: https://tools-vault-4ml.pages.dev/contractor_network\n\n` +
+          `You can run sample square footages, burdened labor rates, and CSI line items right on the page. We are finalizing our certified trade partner list for ${metro} this week.\n\n` +
+          `Let me know if your team is taking on additional commercial jobs this quarter.\n\n` +
+          `Best regards,\nJohn Granbridge\nToolsVault Commercial Network\ntoolsvault78@gmail.com`;
+      } else if (currentScenario === 'C') {
+        subject = `ToolsVault vs Shared Leads: Commercial ${trade} Exclusivity`;
+        body = `Hi ${contact},\n\n` +
+          `Both. We provide institutional client-facing estimating calculators that contractors embed on their websites, combined with an exclusive territory registry that funnels local bid requests directly to vetted contractors in ${metro}.\n\n` +
+          `We don't sell shared leads to 10 different companies like Angi or Networx—each territory is locked exclusively to one certified partner per trade.\n\n` +
+          `Best regards,\nJohn Granbridge\nToolsVault Commercial Network\ntoolsvault78@gmail.com`;
+      } else {
+        subject = `Commercial ${trade} Estimating Spreadsheets & Toolkit ($19 One-Time)`;
+        body = `Hi ${contact},\n\n` +
+          `Understood! If you're not looking for monthly network placements right now, many contractors start with our offline Commercial Estimating & Field Toolkit instead.\n\n` +
+          `It equips your estimators with:\n` +
+          `• Unlocked CSI MasterFormat Bidding & burdened labor spreadsheet (.xlsx)\n` +
+          `• 4 Trade Field Quality & Safety Inspection Sheets (AIA/OSHA compliant)\n` +
+          `• Subcontractor Pre-Qual & Lien Release templates\n\n` +
+          `You can grab the full commercial starter bundle directly for $19 (one-time, no subscription):\n` +
+          `https://buy.stripe.com/7sYcMY6Xv3x822M88oaMU03\n\n` +
+          `Or inspect our digital operations store here: https://tools-vault-4ml.pages.dev/store\n\n` +
+          `Best regards,\nJohn Granbridge\nToolsVault Commercial Network\ntoolsvault78@gmail.com`;
+      }
+
+      document.getElementById('deal-reply-body').value = body;
+
+      const gmailBtn = document.getElementById('deal-gmail-btn');
+      const gmailUrl = "https://mail.google.com/mail/?authuser=toolsvault78%40gmail.com&view=cm&fs=1" +
+        "&to=" + encodeURIComponent(email) +
+        "&su=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+      gmailBtn.href = gmailUrl;
+    }
+
+    function copyReplyText() {
+      const text = document.getElementById('deal-reply-body').value;
+      navigator.clipboard.writeText(text).then(showToast).catch(showToast);
+    }
+
+    function showToast() {
+      const t = document.getElementById('toast');
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 2400);
+    }
+
+    function addActiveDeal() {
+      const contact = document.getElementById('deal-contact').value.trim();
+      const trade = document.getElementById('deal-trade').value.trim();
+      const metro = document.getElementById('deal-metro').value.trim();
+      const email = document.getElementById('deal-email').value.trim();
+
+      if (!email) {
+        alert("Please enter an email address for this deal.");
+        return;
+      }
+
+      deals.unshift({
+        id: 'DEAL-' + Date.now().toString(36).toUpperCase(),
+        contact: contact,
+        trade: trade,
+        metro: metro,
+        email: email,
+        stage: 'In Conversation',
+        date: new Date().toLocaleDateString()
+      });
+
+      localStorage.setItem('tv_friday_deals', JSON.stringify(deals));
+      renderDeals();
+      showToast();
+    }
+
+    function updateDealStage(idx, newStage) {
+      if (deals[idx]) {
+        deals[idx].stage = newStage;
+        localStorage.setItem('tv_friday_deals', JSON.stringify(deals));
+        renderDeals();
+      }
+    }
+
+    function deleteDeal(idx) {
+      if (confirm("Delete this negotiation record?")) {
+        deals.splice(idx, 1);
+        localStorage.setItem('tv_friday_deals', JSON.stringify(deals));
+        renderDeals();
+      }
+    }
+
+    function renderDeals() {
+      const container = document.getElementById('deals-list');
+      if (!deals.length) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-slate-500 space-y-2">
+            <i class="fa-solid fa-inbox text-3xl text-slate-600 block"></i>
+            <p class="text-xs">No active contractor negotiations logged yet.</p>
+            <p class="text-[11px] text-slate-600">Enter details on the left and click <b>[ Log Deal ]</b> when contractors reply to your pitches.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = deals.map((d, idx) => `
+        <div class="stage-card flex justify-between items-center gap-3">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <strong class="text-white text-xs">${d.contact}</strong>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">${d.trade}</span>
+              <span class="text-[11px] text-slate-400">${d.metro}</span>
+            </div>
+            <div class="text-[11px] text-slate-500 font-mono">${d.email} &bull; Logged ${d.date}</div>
+          </div>
+          <div class="flex items-center gap-2">
+            <select onchange="updateDealStage(${idx}, this.value)" class="bg-slate-900 border border-slate-700 text-xs rounded-lg px-2.5 py-1.5 text-white font-bold outline-none">
+              <option value="In Conversation" ${d.stage === 'In Conversation' ? 'selected' : ''}>In Conversation</option>
+              <option value="Demo Sent" ${d.stage === 'Demo Sent' ? 'selected' : ''}>Demo Sent</option>
+              <option value="Term Sheet Out ($299/mo)" ${d.stage === 'Term Sheet Out ($299/mo)' ? 'selected' : ''}>Term Sheet Out ($299/mo)</option>
+              <option value="Closed Partner ($299/mo)" ${d.stage === 'Closed Partner ($299/mo)' ? 'selected' : ''}>Closed Partner ($299/mo) 🏆</option>
+            </select>
+            <button onclick="deleteDeal(${idx})" class="text-slate-600 hover:text-red-400 text-xs px-2 py-1 transition">&times;</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function exportDealsCsv() {
+      if (!deals.length) {
+        alert("No deals to export.");
+        return;
+      }
+      let csv = 'ID,Contact,Trade,Metro,Email,Stage,Date\n';
+      deals.forEach(d => {
+        csv += `"${d.id}","${d.contact}","${d.trade}","${d.metro}","${d.email}","${d.stage}","${d.date}"\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `toolsvault_contractor_deals_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    refreshTelemetry();
+    updateReplyText();
+    renderDeals();
+  </script>
+
+</body>
+</html>
