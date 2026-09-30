@@ -1,0 +1,3234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToolsVault Tuesday Contractor Follow-Up Engine (All 276 Commercial Accounts)</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #0f172a;
+      --border: #1e293b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --green: #22c55e;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    h1 { margin: 0; font-size: 24px; font-weight: 800; color: #fff; }
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-val { font-size: 28px; font-weight: 800; color: var(--accent); }
+    .stat-lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; font-weight: 700; margin-top: 4px; }
+    
+    .controls-bar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    .search-input {
+      background: #0b1120;
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      flex: 1;
+      min-width: 240px;
+    }
+    .filter-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: var(--accent); }
+    .filter-btn.active {
+      background: var(--accent);
+      color: #0f172a;
+      border-color: var(--accent);
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 13px;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #0b1120;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    tr:hover { background: rgba(30, 41, 59, 0.5); }
+    .status-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .status-pending { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    
+    .btn-bump {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #38bdf8;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-bump:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+    
+    .btn-launch {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid #22c55e;
+      color: #4ade80;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-launch:hover {
+      background: #22c55e;
+      color: #022c22;
+    }
+    
+    
+    .btn-gmail {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid #ef4444;
+      color: #fca5a5;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-gmail:hover {
+      background: #ef4444;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+    }
+    .status-sent {
+      background: rgba(34, 197, 94, 0.2);
+      color: #4ade80;
+      border: 1px solid #22c55e;
+      cursor: pointer;
+    }
+    .status-pending {
+      cursor: pointer;
+    }
+    .email-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .email-modal-box {
+      background: #0f172a;
+      border: 1px solid #38bdf8;
+      border-radius: 16px;
+      max-width: 680px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.9);
+      color: #f8fafc;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--green);
+      color: #022c22;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13px;
+      display: none;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+    }
+  </style>
+  <meta property="og:image" content="https://tools-vault-4ml.pages.dev/downloads/og_card_contractor_takeoff.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://tools-vault-4ml.pages.dev/downloads/og_card_contractor_takeoff.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Weekly Commercial Outbound Suite Navigation Ribbon -->
+    <nav style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 24px; padding: 12px 18px; background: rgba(15, 23, 42, 0.95); border: 1px solid #1e293b; border-radius: 14px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #38bdf8; box-shadow: 0 0 10px #38bdf8;"></span>
+        <span style="color: #f1f5f9; text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em;">Weekly Commercial Outbound Suite:</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <a href="monday_outbound_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Mon: Wave 1 (50)</a>
+        <a href="tuesday_contractor_followup_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0284c7; color: #ffffff; border: 1px solid #38bdf8; box-shadow: 0 0 12px rgba(2,132,199,0.5); font-weight: 800;">Tue: Follow-Ups (95)</a>
+        <a href="wednesday_contractor_expansion_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Wed: Wave 2 (100)</a>
+        <a href="thursday_contractor_scale_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Thu: Wave 3 (106)</a>
+        <a href="friday_contractor_closing_desk.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Fri: Closing Desk &amp; CRM</a>
+      </div>
+    </nav>
+    <header>
+      <div>
+        <h1>⚡ ToolsVault Tuesday Contractor Follow-Up Engine</h1>
+        <p style="margin: 6px 0 0 0; color: var(--muted); font-size: 13px;">Full master portfolio of all 95 verified commercial contractors across 14 major metros. 1-click tailored bumps.</p>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="contractor_network.html" style="background: #1e293b; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: 700; font-size: 13px;">
+          Live Contractor Network ↗
+        </a>
+        <a href="commercial_subcontractor_bid_estimator.html" style="background: #1e293b; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: 700; font-size: 13px;">
+          Commercial Estimator ↗
+        </a>
+        <a href="https://buy.stripe.com/9B68wI0z72t422McoEaMU04" target="_blank" style="background: var(--green); color: #022c22; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 800; font-size: 13px;">
+          Live Stripe Checkout ($49/mo) ↗
+        </a>
+      </div>
+    </header>
+
+    
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-val" id="totalCount">95</div>
+        <div class="stat-lbl">Active Enterprise Targets</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="sentCountStat" style="color: #22c55e;">0</div>
+        <div class="stat-lbl">Dispatched Follow-Ups</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="pendingCountStat" style="color: #fbbf24;">95</div>
+        <div class="stat-lbl">Pending Outreach</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #38bdf8;">toolsvault78</div>
+        <div class="stat-lbl">Connected Business Gmail</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #22c55e;">14</div>
+        <div class="stat-lbl">Major Metro Corridors</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #f59e0b;">$4,655/mo</div>
+        <div class="stat-lbl">Territory Run-Rate Potential</div>
+      </div>
+    </div>
+
+    <!-- Previous Session Alert Banner (Displays when all 95 are marked dispatched in browser storage) -->
+    <div id="allSentBanner" style="display: none; background: rgba(14, 165, 233, 0.12); border: 1.5px solid #38bdf8; border-radius: 16px; padding: 18px 24px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(56, 189, 248, 0.25);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="font-size: 28px;">📋</div>
+          <div>
+            <div style="font-weight: 900; color: #38bdf8; font-size: 15px;">Previous Session State: All 95 Targets Marked Dispatched in Browser</div>
+            <div style="font-size: 12px; color: #cbd5e1; margin-top: 3px;">
+              Your browser saved earlier sent records from a previous test/run. Ready to execute today's live follow-up wave?
+            </div>
+          </div>
+        </div>
+        <button onclick="resetSentHistory(false)" style="background: linear-gradient(135deg, #0284c7 0%, #22c55e 100%); color: #022c22; font-weight: 900; font-size: 13px; padding: 12px 22px; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4); display: inline-flex; align-items: center; gap: 8px;">
+          <span>↺</span> Start Today's Wave (Reset All 95 to Pending)
+        </button>
+      </div>
+    </div>
+    
+    <!-- Business Gmail Link & Sequential Dispatcher -->
+    <div style="background: linear-gradient(135deg, #090d16 0%, #0f172a 100%); border: 1.5px solid #0284c7; border-radius: 16px; padding: 22px 28px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(2, 132, 199, 0.25);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 22px;">🏢</span>
+            <span style="font-size: 11px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.1em;">Connected Outbound Engine</span>
+            <span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid #22c55e; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 800;">AUTHENTICATED</span>
+          </div>
+          <h2 style="margin: 4px 0 0 0; font-size: 20px; font-weight: 900; color: #ffffff;">
+            Business Gmail: <span id="activeGmailDisplay" style="color: #38bdf8;">toolsvault78@gmail.com</span>
+          </h2>
+          <p style="margin: 4px 0 0 0; font-size: 12px; color: #94a3b8;">
+            All 1-click links open directly inside your business Google account with pre-filled recipient, subject, and <strong>John Granbridge</strong> signature.
+          </p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <input type="email" id="businessGmailInput" value="toolsvault78@gmail.com" style="background: #020617; border: 1px solid #334155; border-radius: 8px; padding: 8px 12px; color: #fff; font-size: 12px; min-width: 220px;" placeholder="Business Gmail address">
+          <button onclick="saveBusinessGmail()" style="background: #1e293b; border: 1px solid #38bdf8; color: #38bdf8; padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;">
+            Save Account
+          </button>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; border-top: 1px solid #1e293b; padding-top: 16px;">
+        <div style="flex: 1; min-width: 280px;">
+          <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px;">
+            <span style="color: #94a3b8; font-weight: 700;">Outreach Progress</span>
+            <span style="color: #38bdf8; font-weight: 800;"><span id="progressCount">0</span> / 95 Dispatched (<span id="progressPct">0%</span>)</span>
+          </div>
+          <div style="background: #020617; border-radius: 9999px; height: 10px; overflow: hidden; border: 1px solid #1e293b;">
+            <div id="progressBar" style="background: linear-gradient(90deg, #0284c7, #22c55e); height: 100%; width: 0%; transition: width 0.3s ease;"></div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          <a id="launchNextHeroBtn" href="#" target="_blank" rel="noopener noreferrer" onclick="handleHeroClick(event)" style="background: linear-gradient(135deg, #0284c7 0%, #22c55e 100%); color: #022c22; font-weight: 900; font-size: 14px; text-decoration: none; padding: 12px 24px; border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4); transition: transform 0.15s, box-shadow 0.15s;">
+            <span>🚀</span>
+            <span id="launchNextHeroText">Launch Next Pending in Business Gmail</span>
+          </a>
+          <button onclick="resetSentHistory(false)" style="background: #1e293b; color: #38bdf8; border: 1.5px solid #0284c7; padding: 12px 18px; border-radius: 10px; font-size: 13px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Reset all 95 statuses back to Pending">
+            ↺ Reset Batch (0/95)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-bar">
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search company, email, metro, or trade..." oninput="applyFilters()">
+      <button class="filter-btn active" onclick="setTradeFilter('all', this)">All Disciplines (276)</button>
+      <button class="filter-btn" onclick="setTradeFilter('refreshed', this)" style="border-color: #10b981; color: #34d399; font-weight: 700; background: rgba(16, 185, 129, 0.1);"><i class="fa-solid fa-bolt mr-1"></i> ⚡ Refreshed Re-Attempts (26)</button>
+      <button class="filter-btn" onclick="setTradeFilter('Roofing', this)">Roofing</button>
+      <button class="filter-btn" onclick="setTradeFilter('Solar', this)">Solar & Storage</button>
+      <button class="filter-btn" onclick="setTradeFilter('HVAC', this)">HVAC / Mechanical</button>
+      <button class="filter-btn" onclick="setTradeFilter('Electrical', this)">Electrical</button>
+      <button class="filter-btn" onclick="setTradeFilter('Asset Management', this)">Asset Managers</button>
+    </div>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 15px;">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 40px;">#</th>
+            <th>Company Name</th>
+            <th>Discipline</th>
+            <th>Metro Corridor</th>
+            <th>Recipient Email</th>
+            <th>Status</th>
+            <th>Tuesday Follow-Up Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Injected dynamically -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="toast" id="toast">✓ Tailored follow-up copied to clipboard!</div>
+  </div>
+
+  <script>
+    const allTargets = [
+  {
+    "id": 83,
+    "name": "KL Commercial Electrical Services",
+    "trade": "Electrical",
+    "metro": "Houston, TX",
+    "email": "KLelectricalservices1@gmail.com",
+    "contact": "KL Electrical Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 121,
+    "name": "Laz Call Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "Rosemont, IL",
+    "email": "lazcallconstruction@gmail.com",
+    "contact": "Laz Call Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 126,
+    "name": "Commercial Roofers Houston TX",
+    "trade": "Roofing",
+    "metro": "Houston, TX",
+    "email": "commercialroofershoustontx@gmail.com",
+    "contact": "Commercial Roofers Houston Team",
+    "refreshed": true
+  },
+  {
+    "id": 127,
+    "name": "American Standard Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "Detroit, MI",
+    "email": "info@asrmi.com",
+    "contact": "American Standard Commercial Estimating",
+    "refreshed": true
+  },
+  {
+    "id": 131,
+    "name": "Fair Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "Fort Lauderdale, FL",
+    "email": "faircontractorllc@gmail.com",
+    "contact": "Fair Commercial Roofing Team",
+    "refreshed": true
+  },
+  {
+    "id": 132,
+    "name": "Denver Commercial Roof Pros",
+    "trade": "Roofing",
+    "metro": "Denver, CO",
+    "email": "info@denverroofpros.com",
+    "contact": "Denver Commercial Roof Pros Team",
+    "refreshed": true
+  },
+  {
+    "id": 136,
+    "name": "Almeida Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "Phoenix, AZ",
+    "email": "almeidaroofinginc1@gmail.com",
+    "contact": "Almeida Commercial Roofing Team",
+    "refreshed": true
+  },
+  {
+    "id": 138,
+    "name": "Iowa Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "Cedar Rapids, IA",
+    "email": "skyace33@gmail.com",
+    "contact": "Iowa Commercial Roofing Team",
+    "refreshed": true
+  },
+  {
+    "id": 147,
+    "name": "King Mechanical Company",
+    "trade": "HVAC & Mechanical",
+    "metro": "Baltimore, MD",
+    "email": "service.kingmechanicalco@gmail.com",
+    "contact": "King Mechanical Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 149,
+    "name": "Art HVAC NY Commercial Mechanical",
+    "trade": "HVAC & Mechanical",
+    "metro": "New York, NY",
+    "email": "arthvac.nyc@gmail.com",
+    "contact": "Art HVAC Commercial Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 157,
+    "name": "South Texas Air Force Commercial HVAC",
+    "trade": "HVAC",
+    "metro": "San Antonio, TX",
+    "email": "airforceac2010@gmail.com",
+    "contact": "South Texas Air Force Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 161,
+    "name": "Twin Cities Commercial Construction LLC",
+    "trade": "General Contracting",
+    "metro": "Minneapolis, MN",
+    "email": "twincitiesconstructionllc@gmail.com",
+    "contact": "Twin Cities Construction Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 163,
+    "name": "Young Design Build & Restoration",
+    "trade": "General Contracting",
+    "metro": "Boston, MA",
+    "email": "ydbuildcorp@gmail.com",
+    "contact": "Young Design Build Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 171,
+    "name": "AER Roofing Company",
+    "trade": "Roofing",
+    "metro": "Houston, TX",
+    "email": "AER.Roofing@gmail.com",
+    "contact": "AER Roofing Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 172,
+    "name": "Emanuel Air Systems Commercial HVAC",
+    "trade": "HVAC",
+    "metro": "Houston, TX",
+    "email": "houstontxhvac@gmail.com",
+    "contact": "Emanuel Air Systems Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 173,
+    "name": "ThreeCore Commercial Power Electric",
+    "trade": "Electrical",
+    "metro": "Houston, TX",
+    "email": "Threecorepower@gmail.com",
+    "contact": "ThreeCore Electric Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 178,
+    "name": "Martech Commercial HVAC Dallas",
+    "trade": "HVAC",
+    "metro": "Dallas, TX",
+    "email": "dfwairconditioner@gmail.com",
+    "contact": "Martech HVAC Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 179,
+    "name": "Voltracor Commercial Electric Dallas",
+    "trade": "Electrical",
+    "metro": "Dallas, TX",
+    "email": "voltracorelectric@gmail.com",
+    "contact": "Voltracor Electric Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 184,
+    "name": "Western Sky Commercial Mechanical",
+    "trade": "HVAC",
+    "metro": "Phoenix, AZ",
+    "email": "Westernskymechanicalaz@gmail.com",
+    "contact": "Western Sky Mechanical Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 195,
+    "name": "Miami Flat Roofing & Replacement",
+    "trade": "Roofing",
+    "metro": "Miami, FL",
+    "email": "mymiamiroofing@gmail.com",
+    "contact": "Miami Flat Roofing Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 207,
+    "name": "RC Commercial Roofing Denver",
+    "trade": "Roofing",
+    "metro": "Denver, CO",
+    "email": "Opmjram@gmail.com",
+    "contact": "RC Roofing Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 210,
+    "name": "Mountaintop Commercial Roofing & Solar",
+    "trade": "Roofing",
+    "metro": "Denver, CO",
+    "email": "mountaintoproofing@gmail.com",
+    "contact": "Mountaintop Roofing Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 224,
+    "name": "Z Mechanical Solutions",
+    "trade": "Mechanical",
+    "metro": "Nashville, TN",
+    "email": "zmechanicalsolutions@gmail.com",
+    "contact": "Z Mechanical Solutions Team",
+    "refreshed": true
+  },
+  {
+    "id": 225,
+    "name": "Western Single Ply",
+    "trade": "Roofing",
+    "metro": "Las Vegas, NV",
+    "email": "wspestimating@gmail.com",
+    "contact": "Western Single Ply Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 237,
+    "name": "Green World Construction & Roofing",
+    "trade": "Roofing",
+    "metro": "Chicago, IL",
+    "email": "Greenworldroofing@gmail.com",
+    "contact": "Green World Roofing Team",
+    "refreshed": true
+  },
+  {
+    "id": 251,
+    "name": "Roland's Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "San Antonio, TX",
+    "email": "rolands.roofing1970@gmail.com",
+    "contact": "Roland's Roofing Team",
+    "refreshed": true
+  },
+  {
+    "id": 1,
+    "name": "Exact Solar",
+    "trade": "Solar",
+    "metro": "Philadelphia, PA",
+    "email": "info@exactsolar.com",
+    "contact": "Exact Solar Team",
+    "refreshed": false
+  },
+  {
+    "id": 2,
+    "name": "Russell Roofing",
+    "trade": "Roofing",
+    "metro": "Philadelphia, PA",
+    "email": "info@russellroofing.com",
+    "contact": "Russell Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 3,
+    "name": "Solar States",
+    "trade": "Solar",
+    "metro": "Philadelphia, PA",
+    "email": "info@solar-states.com",
+    "contact": "Solar States Team",
+    "refreshed": false
+  },
+  {
+    "id": 4,
+    "name": "Devine Brothers",
+    "trade": "HVAC",
+    "metro": "Philadelphia, PA",
+    "email": "info@devinebrosinc.com",
+    "contact": "Devine Brothers Team",
+    "refreshed": false
+  },
+  {
+    "id": 5,
+    "name": "EDA Contractors (Roofing & Envelope)",
+    "trade": "Roofing",
+    "metro": "Philadelphia, PA",
+    "email": "service@edacontractors.com",
+    "contact": "EDA Precon & Service Team",
+    "refreshed": false
+  },
+  {
+    "id": 6,
+    "name": "Oliver Heating",
+    "trade": "HVAC",
+    "metro": "Philadelphia, PA",
+    "email": "info@oliverhvac.com",
+    "contact": "Oliver Heating Team",
+    "refreshed": false
+  },
+  {
+    "id": 7,
+    "name": "Jewell Mechanical",
+    "trade": "HVAC",
+    "metro": "Nashville, TN",
+    "email": "ServiceRequests@jewellmechanical.com",
+    "contact": "Jewell Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 8,
+    "name": "Lee Company",
+    "trade": "HVAC",
+    "metro": "Nashville, TN",
+    "email": "info@leecompany.com",
+    "contact": "Lee Company Team",
+    "refreshed": false
+  },
+  {
+    "id": 9,
+    "name": "Music City Roofers",
+    "trade": "Roofing",
+    "metro": "Nashville, TN",
+    "email": "info@musiccityroofers.com",
+    "contact": "Music City Roofers Team",
+    "refreshed": false
+  },
+  {
+    "id": 10,
+    "name": "LightWave Solar",
+    "trade": "Solar",
+    "metro": "Nashville, TN",
+    "email": "info@lightwavesolar.com",
+    "contact": "LightWave Solar Team",
+    "refreshed": false
+  },
+  {
+    "id": 11,
+    "name": "Five Points Roofing",
+    "trade": "Roofing",
+    "metro": "Nashville, TN",
+    "email": "info@5prc.com",
+    "contact": "Five Points Team",
+    "refreshed": false
+  },
+  {
+    "id": 12,
+    "name": "Harpeth Air",
+    "trade": "HVAC",
+    "metro": "Nashville, TN",
+    "email": "service@harpethair.com",
+    "contact": "Harpeth Air Team",
+    "refreshed": false
+  },
+  {
+    "id": 13,
+    "name": "Cumberland Cooling",
+    "trade": "HVAC",
+    "metro": "Nashville, TN",
+    "email": "cci@cumberlandcooling.com",
+    "contact": "Cumberland Cooling Team",
+    "refreshed": false
+  },
+  {
+    "id": 14,
+    "name": "Southern Energy Management",
+    "trade": "Solar",
+    "metro": "Charlotte, NC",
+    "email": "shine@southern-energy.com",
+    "contact": "Southern Energy Team",
+    "refreshed": false
+  },
+  {
+    "id": 15,
+    "name": "Baker Roofing Company",
+    "trade": "Roofing",
+    "metro": "Charlotte, NC",
+    "email": "contact@bakerroofing.com",
+    "contact": "Baker Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 16,
+    "name": "Brothers Air & Heating",
+    "trade": "HVAC",
+    "metro": "Charlotte, NC",
+    "email": "service@brothersair.com",
+    "contact": "Brothers Air Team",
+    "refreshed": false
+  },
+  {
+    "id": 17,
+    "name": "Emerald Energy NC",
+    "trade": "Solar",
+    "metro": "Charlotte, NC",
+    "email": "Info@emeraldenergync.com",
+    "contact": "Emerald Energy Team",
+    "refreshed": false
+  },
+  {
+    "id": 18,
+    "name": "Integrity Roofing NC",
+    "trade": "Roofing",
+    "metro": "Charlotte, NC",
+    "email": "office@integrityroofingnc.com",
+    "contact": "Integrity Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 19,
+    "name": "Charlotte Comfort Systems",
+    "trade": "HVAC",
+    "metro": "Charlotte, NC",
+    "email": "info@charlottecomfortsystems.com",
+    "contact": "Charlotte Comfort Team",
+    "refreshed": false
+  },
+  {
+    "id": 20,
+    "name": "Alba Energy",
+    "trade": "Solar",
+    "metro": "San Antonio, TX",
+    "email": "info@albaenergy.com",
+    "contact": "Alba Energy Team",
+    "refreshed": false
+  },
+  {
+    "id": 21,
+    "name": "Apex Roofing Texas",
+    "trade": "Roofing",
+    "metro": "San Antonio, TX",
+    "email": "mr.joelmoreno1984@gmail.com",
+    "contact": "Joel",
+    "refreshed": false
+  },
+  {
+    "id": 22,
+    "name": "Big Sun Solar",
+    "trade": "Solar",
+    "metro": "San Antonio, TX",
+    "email": "info@bigsunsolar.com",
+    "contact": "Big Sun Team",
+    "refreshed": false
+  },
+  {
+    "id": 23,
+    "name": "Freedom Solar Power",
+    "trade": "Solar",
+    "metro": "San Antonio, TX",
+    "email": "commercial@freedomsolarpower.com",
+    "contact": "Freedom Solar Team",
+    "refreshed": false
+  },
+  {
+    "id": 24,
+    "name": "Ironhorn Enterprises",
+    "trade": "Asset Management",
+    "metro": "National / Sunbelt",
+    "email": "sales@ironhornenterprises.com",
+    "contact": "Ironhorn Team",
+    "refreshed": false
+  },
+  {
+    "id": 25,
+    "name": "Holt Lunsford Commercial",
+    "trade": "Asset Management",
+    "metro": "Dallas / Houston, TX",
+    "email": "marketing@holtlunsford.com",
+    "contact": "Holt Lunsford Team",
+    "refreshed": false
+  },
+  {
+    "id": 26,
+    "name": "Crest Commercial",
+    "trade": "Asset Management",
+    "metro": "Texas Corridors",
+    "email": "info@crestcommercial.com",
+    "contact": "Crest Commercial Team",
+    "refreshed": false
+  },
+  {
+    "id": 27,
+    "name": "Hall Group",
+    "trade": "Asset Management",
+    "metro": "Texas Corridors",
+    "email": "info@hallgroup.com",
+    "contact": "Hall Group Team",
+    "refreshed": false
+  },
+  {
+    "id": 28,
+    "name": "Superior Roofing Atlanta",
+    "trade": "Roofing",
+    "metro": "Atlanta, GA",
+    "email": "info@superiorroofing.com",
+    "contact": "Superior Roofing Atlanta Team",
+    "refreshed": false
+  },
+  {
+    "id": 29,
+    "name": "Bell Roofing Company",
+    "trade": "Roofing",
+    "metro": "Atlanta, GA",
+    "email": "service@bellroofingco.com",
+    "contact": "Bell Roofing Company Team",
+    "refreshed": false
+  },
+  {
+    "id": 30,
+    "name": "Estes Services",
+    "trade": "HVAC",
+    "metro": "Atlanta, GA",
+    "email": "info@estesair.com",
+    "contact": "Estes Services Team",
+    "refreshed": false
+  },
+  {
+    "id": 31,
+    "name": "Reliable Heating & Air",
+    "trade": "HVAC",
+    "metro": "Atlanta, GA",
+    "email": "info@reliableair.com",
+    "contact": "Reliable Heating & Air Team",
+    "refreshed": false
+  },
+  {
+    "id": 32,
+    "name": "Patriot Commercial HVAC",
+    "trade": "HVAC",
+    "metro": "Atlanta, GA",
+    "email": "patriothvacga@gmail.com",
+    "contact": "Patriot HVAC Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 33,
+    "name": "TE Certified Electrical",
+    "trade": "Electrical",
+    "metro": "Atlanta, GA",
+    "email": "info@tecertifiedelectricians.com",
+    "contact": "TE Certified Electrical Team",
+    "refreshed": false
+  },
+  {
+    "id": 34,
+    "name": "MP Commercial Electric",
+    "trade": "Electrical",
+    "metro": "Atlanta, GA",
+    "email": "mporter.electric@gmail.com",
+    "contact": "MP Electric Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 35,
+    "name": "We Renew Atlanta Commercial Solar",
+    "trade": "Solar",
+    "metro": "Atlanta, GA",
+    "email": "werenewatlanta@gmail.com",
+    "contact": "We Renew Solar Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 36,
+    "name": "TMS Commercial Roofing & Steel",
+    "trade": "Roofing",
+    "metro": "Houston, TX",
+    "email": "tmsroofingandsteel@gmail.com",
+    "contact": "TMS Roofing Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 37,
+    "name": "Amstill Roofing",
+    "trade": "Roofing",
+    "metro": "Houston, TX",
+    "email": "info@amstillroofing.com",
+    "contact": "Amstill Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 38,
+    "name": "Velocity Air A/C & Heating",
+    "trade": "HVAC",
+    "metro": "Houston, TX",
+    "email": "houghvelocityair@gmail.com",
+    "contact": "Velocity Air Team",
+    "refreshed": false
+  },
+  {
+    "id": 39,
+    "name": "HR Mechanical LLC",
+    "trade": "HVAC",
+    "metro": "Houston, TX",
+    "email": "go4hrmechanical@gmail.com",
+    "contact": "HR Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 40,
+    "name": "Village Plumbing & Air",
+    "trade": "HVAC",
+    "metro": "Houston, TX",
+    "email": "info@villageplumbing.com",
+    "contact": "Village Plumbing & Air Team",
+    "refreshed": false
+  },
+  {
+    "id": 41,
+    "name": "Silos Electric LLC",
+    "trade": "Electrical",
+    "metro": "Houston, TX",
+    "email": "siloselectric@gmail.com",
+    "contact": "Silos Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 42,
+    "name": "Universal Home Experts",
+    "trade": "Electrical",
+    "metro": "Houston, TX",
+    "email": "service@universalhomeexperts.com",
+    "contact": "Universal Home Experts Team",
+    "refreshed": false
+  },
+  {
+    "id": 43,
+    "name": "TriSMART Solar Houston",
+    "trade": "Solar",
+    "metro": "Houston, TX",
+    "email": "info@trismartsolar.com",
+    "contact": "TriSMART Solar Houston Team",
+    "refreshed": false
+  },
+  {
+    "id": 44,
+    "name": "Westfall Roofing",
+    "trade": "Roofing",
+    "metro": "Tampa, FL",
+    "email": "info@westfallroofing.com",
+    "contact": "Westfall Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 45,
+    "name": "Arry's Roofing Services",
+    "trade": "Roofing",
+    "metro": "Tampa, FL",
+    "email": "info@arrysroofing.com",
+    "contact": "Arry's Roofing Services Team",
+    "refreshed": false
+  },
+  {
+    "id": 46,
+    "name": "Cirsco Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "Tampa, FL",
+    "email": "cirscocommercialroofing@gmail.com",
+    "contact": "Cirsco Commercial Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 47,
+    "name": "Air Dynamics of Florida, LLC",
+    "trade": "HVAC",
+    "metro": "Tampa, FL",
+    "email": "airdynamicsfl@gmail.com",
+    "contact": "Air Dynamics Team",
+    "refreshed": false
+  },
+  {
+    "id": 48,
+    "name": "Polar Bay A/C",
+    "trade": "HVAC",
+    "metro": "Tampa, FL",
+    "email": "polarbayac@gmail.com",
+    "contact": "Polar Bay A/C Team",
+    "refreshed": false
+  },
+  {
+    "id": 49,
+    "name": "Hoffman Electrical",
+    "trade": "Electrical",
+    "metro": "Tampa, FL",
+    "email": "info@hoffmanelectrical.com",
+    "contact": "Hoffman Electrical Team",
+    "refreshed": false
+  },
+  {
+    "id": 50,
+    "name": "Solar Bear Tampa",
+    "trade": "Solar",
+    "metro": "Tampa, FL",
+    "email": "info@solarbear.com",
+    "contact": "Solar Bear Tampa Team",
+    "refreshed": false
+  },
+  {
+    "id": 51,
+    "name": "Florida Solar Design Group",
+    "trade": "Solar",
+    "metro": "Tampa, FL",
+    "email": "sales@floridasolardesigngroup.com",
+    "contact": "Florida Solar Design Group Team",
+    "refreshed": false
+  },
+  {
+    "id": 52,
+    "name": "Baker Roofing Charlotte",
+    "trade": "Roofing",
+    "metro": "Charlotte, NC",
+    "email": "info@bakerroofing.com",
+    "contact": "Baker Roofing Charlotte Team",
+    "refreshed": false
+  },
+  {
+    "id": 53,
+    "name": "High Top Roofing",
+    "trade": "Roofing",
+    "metro": "Charlotte, NC",
+    "email": "info@hightoproofing.com",
+    "contact": "High Top Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 54,
+    "name": "Horne Heating & Air",
+    "trade": "HVAC",
+    "metro": "Charlotte, NC",
+    "email": "service@horneheating.com",
+    "contact": "Horne Heating & Air Team",
+    "refreshed": false
+  },
+  {
+    "id": 55,
+    "name": "Brothers Heating & Air",
+    "trade": "HVAC",
+    "metro": "Charlotte, NC",
+    "email": "info@brothersair.com",
+    "contact": "Brothers Heating & Air Team",
+    "refreshed": false
+  },
+  {
+    "id": 56,
+    "name": "Yes! Solar Solutions NC",
+    "trade": "Solar",
+    "metro": "Charlotte, NC",
+    "email": "info@yessolarsolutions.com",
+    "contact": "Yes! Solar Solutions NC Team",
+    "refreshed": false
+  },
+  {
+    "id": 57,
+    "name": "Renewable Energy Design",
+    "trade": "Solar",
+    "metro": "Charlotte, NC",
+    "email": "info@redgroupnc.com",
+    "contact": "Renewable Energy Design Team",
+    "refreshed": false
+  },
+  {
+    "id": 58,
+    "name": "Music City Roofers",
+    "trade": "Roofing",
+    "metro": "Nashville, TN",
+    "email": "info@musiccityroofers.com",
+    "contact": "Music City Roofers Team",
+    "refreshed": false
+  },
+  {
+    "id": 59,
+    "name": "Lee Company HVAC",
+    "trade": "HVAC",
+    "metro": "Nashville, TN",
+    "email": "info@leecompany.com",
+    "contact": "Lee Company HVAC Team",
+    "refreshed": false
+  },
+  {
+    "id": 60,
+    "name": "Hiller Plumbing Heating Cooling",
+    "trade": "HVAC",
+    "metro": "Nashville, TN",
+    "email": "info@happyhiller.com",
+    "contact": "Hiller Plumbing Heating Cooling Team",
+    "refreshed": false
+  },
+  {
+    "id": 61,
+    "name": "Stansell Electric",
+    "trade": "Electrical",
+    "metro": "Nashville, TN",
+    "email": "info@stansellelectric.com",
+    "contact": "Stansell Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 62,
+    "name": "Lightwave Solar Nashville",
+    "trade": "Solar",
+    "metro": "Nashville, TN",
+    "email": "info@lightwavesolar.com",
+    "contact": "Lightwave Solar Nashville Team",
+    "refreshed": false
+  },
+  {
+    "id": 63,
+    "name": "Cooper Roofing & Solar",
+    "trade": "Roofing",
+    "metro": "Las Vegas, NV",
+    "email": "info@cooperroofing.com",
+    "contact": "Cooper Roofing & Solar Team",
+    "refreshed": false
+  },
+  {
+    "id": 64,
+    "name": "First Quality Roofing",
+    "trade": "Roofing",
+    "metro": "Las Vegas, NV",
+    "email": "info@firstqualityroof.com",
+    "contact": "First Quality Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 65,
+    "name": "Goettl Air Conditioning",
+    "trade": "HVAC",
+    "metro": "Las Vegas, NV",
+    "email": "service@goettl.com",
+    "contact": "Goettl Air Conditioning Team",
+    "refreshed": false
+  },
+  {
+    "id": 66,
+    "name": "Sierra Air Conditioning",
+    "trade": "HVAC",
+    "metro": "Las Vegas, NV",
+    "email": "info@sierraairconditioning.com",
+    "contact": "Sierra Air Conditioning Team",
+    "refreshed": false
+  },
+  {
+    "id": 67,
+    "name": "Helix Electric Las Vegas",
+    "trade": "Electrical",
+    "metro": "Las Vegas, NV",
+    "email": "info@helixelectric.com",
+    "contact": "Helix Electric Las Vegas Team",
+    "refreshed": false
+  },
+  {
+    "id": 68,
+    "name": "Robco Electric Solar",
+    "trade": "Solar",
+    "metro": "Las Vegas, NV",
+    "email": "info@robcoelectriclv.com",
+    "contact": "Robco Electric Solar Team",
+    "refreshed": false
+  },
+  {
+    "id": 69,
+    "name": "Sol-Up Solar Las Vegas",
+    "trade": "Solar",
+    "metro": "Las Vegas, NV",
+    "email": "info@solup.com",
+    "contact": "Sol-Up Solar Las Vegas Team",
+    "refreshed": false
+  },
+  {
+    "id": 70,
+    "name": "Rosendin Electric",
+    "trade": "Electrical",
+    "metro": "Dallas, TX",
+    "email": "info@rosendin.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 71,
+    "name": "Bergelectric Corp",
+    "trade": "Electrical",
+    "metro": "Los Angeles, CA",
+    "email": "estimating@bergelectric.com",
+    "contact": "Commercial Preconstruction",
+    "refreshed": false
+  },
+  {
+    "id": 72,
+    "name": "Helix Electric",
+    "trade": "Electrical",
+    "metro": "San Diego, CA",
+    "email": "bids@helixelectric.com",
+    "contact": "Commercial Bidding Desk",
+    "refreshed": false
+  },
+  {
+    "id": 73,
+    "name": "Commonwealth Electric",
+    "trade": "Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "service@commonwealthelectric.com",
+    "contact": "Service & Diagnostics",
+    "refreshed": false
+  },
+  {
+    "id": 74,
+    "name": "Wesling Commercial Electric",
+    "trade": "Electrical",
+    "metro": "St. Louis, MO",
+    "email": "weslingelectric@gmail.com",
+    "contact": "Wesling Electric Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 75,
+    "name": "Faith Technologies",
+    "trade": "Electrical",
+    "metro": "Atlanta, GA",
+    "email": "info@faithtechnologies.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 76,
+    "name": "E-J Electric Installation",
+    "trade": "Electrical",
+    "metro": "New York, NY",
+    "email": "info@ej1899.com",
+    "contact": "Commercial Operations",
+    "refreshed": false
+  },
+  {
+    "id": 77,
+    "name": "Miller Electric Company",
+    "trade": "Electrical",
+    "metro": "Jacksonville, FL",
+    "email": "info@mecojax.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 78,
+    "name": "Inglett & Stubbs",
+    "trade": "Electrical",
+    "metro": "Atlanta, GA",
+    "email": "estimating@inglett-stubbs.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 79,
+    "name": "Morrow-Meadows Corp",
+    "trade": "Electrical",
+    "metro": "City of Industry, CA",
+    "email": "estimating@morrow-meadows.com",
+    "contact": "Preconstruction Team",
+    "refreshed": false
+  },
+  {
+    "id": 80,
+    "name": "Sachs Electric",
+    "trade": "Electrical",
+    "metro": "St. Louis, MO",
+    "email": "estimating@sachsco.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 81,
+    "name": "Wayne J. Griffin Electric",
+    "trade": "Electrical",
+    "metro": "Boston, MA",
+    "email": "estimating@wjgelectric.com",
+    "contact": "Commercial Bids",
+    "refreshed": false
+  },
+  {
+    "id": 82,
+    "name": "Cupertino Electric",
+    "trade": "Electrical",
+    "metro": "San Jose, CA",
+    "email": "info@cei.com",
+    "contact": "Commercial Projects Team",
+    "refreshed": false
+  },
+  {
+    "id": 84,
+    "name": "Hunt Electric",
+    "trade": "Electrical",
+    "metro": "Salt Lake City, UT",
+    "email": "estimating@huntelectric.com",
+    "contact": "Preconstruction Group",
+    "refreshed": false
+  },
+  {
+    "id": 85,
+    "name": "Aldridge Electric",
+    "trade": "Electrical",
+    "metro": "Chicago, IL",
+    "email": "info@aldridgegroup.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 86,
+    "name": "ArchKey Solutions",
+    "trade": "Electrical",
+    "metro": "Minneapolis, MN",
+    "email": "info@archkey.com",
+    "contact": "Commercial Preconstruction",
+    "refreshed": false
+  },
+  {
+    "id": 87,
+    "name": "Interstate Electrical Services",
+    "trade": "Electrical",
+    "metro": "North Billerica, MA",
+    "email": "service@iesc1.com",
+    "contact": "Commercial Service Desk",
+    "refreshed": false
+  },
+  {
+    "id": 88,
+    "name": "Tri-City Electrical Contractors",
+    "trade": "Electrical",
+    "metro": "Orlando, FL",
+    "email": "estimating@tcelectric.com",
+    "contact": "Commercial Bids",
+    "refreshed": false
+  },
+  {
+    "id": 89,
+    "name": "Encore Electric",
+    "trade": "Electrical",
+    "metro": "Denver, CO",
+    "email": "estimating@encoreelectric.com",
+    "contact": "Preconstruction Group",
+    "refreshed": false
+  },
+  {
+    "id": 90,
+    "name": "Alterman Electric",
+    "trade": "Electrical",
+    "metro": "San Antonio, TX",
+    "email": "estimating@goalterman.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 91,
+    "name": "Gaylor Electric",
+    "trade": "Electrical",
+    "metro": "Indianapolis, IN",
+    "email": "info@gaylor.com",
+    "contact": "Commercial Bids Desk",
+    "refreshed": false
+  },
+  {
+    "id": 92,
+    "name": "Continental Electrical Construction",
+    "trade": "Electrical",
+    "metro": "Chicago, IL",
+    "email": "estimating@cecco.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 93,
+    "name": "Huen Electric",
+    "trade": "Electrical",
+    "metro": "Chicago, IL",
+    "email": "info@huenelectric.com",
+    "contact": "Commercial Bids",
+    "refreshed": false
+  },
+  {
+    "id": 94,
+    "name": "O'Connell Electric",
+    "trade": "Electrical",
+    "metro": "Rochester, NY",
+    "email": "info@oconnellelectric.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 95,
+    "name": "Rescue Air Commercial Plumbing & Mechanical",
+    "trade": "Plumbing & Mechanical",
+    "metro": "Dallas, TX",
+    "email": "info@rescueairtx.com",
+    "contact": "Rescue Air Commercial Team",
+    "refreshed": false
+  },
+  {
+    "id": 96,
+    "name": "Southland Industries",
+    "trade": "Mechanical & Plumbing",
+    "metro": "Garden Grove, CA",
+    "email": "info@southlandind.com",
+    "contact": "Preconstruction Desk",
+    "refreshed": false
+  },
+  {
+    "id": 97,
+    "name": "MMC Corp",
+    "trade": "Mechanical & Plumbing",
+    "metro": "Kansas City, MO",
+    "email": "info@mmccorp.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 98,
+    "name": "Comfort Systems USA",
+    "trade": "HVAC & Mechanical",
+    "metro": "Houston, TX",
+    "email": "service@comfortsystemsusa.com",
+    "contact": "Commercial Service",
+    "refreshed": false
+  },
+  {
+    "id": 99,
+    "name": "Dynamic Systems Inc",
+    "trade": "Plumbing & Piping",
+    "metro": "Austin, TX",
+    "email": "estimating@dynamicsystemsusa.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 100,
+    "name": "Limbach Holdings",
+    "trade": "Mechanical & Plumbing",
+    "metro": "Pittsburgh, PA",
+    "email": "info@limbachinc.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 101,
+    "name": "McKinstry",
+    "trade": "Mechanical & Plumbing",
+    "metro": "Seattle, WA",
+    "email": "info@mckinstry.com",
+    "contact": "Commercial Preconstruction",
+    "refreshed": false
+  },
+  {
+    "id": 102,
+    "name": "Diamond Products & Services Mechanical",
+    "trade": "Mechanical & HVAC",
+    "metro": "Dallas, TX",
+    "email": "info@diamondproductsandservices.com",
+    "contact": "Diamond Products Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 103,
+    "name": "A&R Mechanical Contractors",
+    "trade": "Plumbing & HVAC",
+    "metro": "Urbana, IL",
+    "email": "estimating@ar-mech.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 104,
+    "name": "Harder Mechanical",
+    "trade": "Mechanical & Piping",
+    "metro": "Portland, OR",
+    "email": "info@harder.com",
+    "contact": "Industrial & Commercial",
+    "refreshed": false
+  },
+  {
+    "id": 105,
+    "name": "Murphy Company",
+    "trade": "Mechanical & Plumbing",
+    "metro": "St. Louis, MO",
+    "email": "estimating@murphynet.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 106,
+    "name": "Shambaugh & Son",
+    "trade": "Mechanical & Fire",
+    "metro": "Fort Wayne, IN",
+    "email": "info@shambaugh.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 107,
+    "name": "Tweet/Garot Mechanical",
+    "trade": "Mechanical & Piping",
+    "metro": "Green Bay, WI",
+    "email": "info@tweetgarot.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 108,
+    "name": "J.F. Ahern Co",
+    "trade": "Mechanical & Plumbing",
+    "metro": "Fond du Lac, WI",
+    "email": "estimating@jfahern.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 109,
+    "name": "Binsky & Snyder",
+    "trade": "Mechanical & Plumbing",
+    "metro": "Piscataway, NJ",
+    "email": "info@binsky.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 110,
+    "name": "C.J. Erickson Plumbing",
+    "trade": "Plumbing",
+    "metro": "Alsip, IL",
+    "email": "service@cjerickson.com",
+    "contact": "Commercial Service Desk",
+    "refreshed": false
+  },
+  {
+    "id": 111,
+    "name": "Allied Mechanical",
+    "trade": "HVAC & Mechanical",
+    "metro": "San Jose, CA",
+    "email": "service@alliedmechanical.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 112,
+    "name": "Harris Companies",
+    "trade": "Mechanical & Plumbing",
+    "metro": "St. Paul, MN",
+    "email": "info@harriscompany.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 113,
+    "name": "University Mechanical",
+    "trade": "Mechanical & Plumbing",
+    "metro": "San Diego, CA",
+    "email": "info@umec.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 114,
+    "name": "E.M. Duggan Inc",
+    "trade": "Plumbing & HVAC",
+    "metro": "Canton, MA",
+    "email": "info@emduggan.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 115,
+    "name": "John W. Danforth Company",
+    "trade": "Mechanical & Plumbing",
+    "metro": "Buffalo, NY",
+    "email": "info@jwdanforth.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 116,
+    "name": "Total Mechanical",
+    "trade": "Mechanical & Plumbing",
+    "metro": "Pewaukee, WI",
+    "email": "service@total-mechanical.com",
+    "contact": "Commercial Service",
+    "refreshed": false
+  },
+  {
+    "id": 117,
+    "name": "Waldinger Corporation",
+    "trade": "Mechanical & Electrical",
+    "metro": "Des Moines, IA",
+    "email": "info@waldinger.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 118,
+    "name": "Apollo Mechanical Contractors",
+    "trade": "Mechanical & Piping",
+    "metro": "Kennewick, WA",
+    "email": "estimating@apollomech.com",
+    "contact": "Preconstruction Desk",
+    "refreshed": false
+  },
+  {
+    "id": 119,
+    "name": "P1 Group",
+    "trade": "Mechanical & Electrical",
+    "metro": "Lenexa, KS",
+    "email": "info@p1group.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 120,
+    "name": "CentiMark Corporation",
+    "trade": "Roofing",
+    "metro": "Canonsburg, PA",
+    "email": "commercial.roofing@centimark.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 122,
+    "name": "Nations Roof",
+    "trade": "Roofing",
+    "metro": "Mobile, AL",
+    "email": "service@nationsroof.com",
+    "contact": "National Commercial Accounts",
+    "refreshed": false
+  },
+  {
+    "id": 123,
+    "name": "Baker Roofing Company",
+    "trade": "Roofing",
+    "metro": "Raleigh, NC",
+    "email": "estimating@bakerroofing.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 124,
+    "name": "Flynn Group of Companies",
+    "trade": "Roofing & Glazing",
+    "metro": "Denver, CO",
+    "email": "info@flynncompanies.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 125,
+    "name": "Kalkreuth Roofing & Sheet Metal",
+    "trade": "Roofing",
+    "metro": "Wheeling, WV",
+    "email": "estimating@krsm.net",
+    "contact": "Commercial Bids",
+    "refreshed": false
+  },
+  {
+    "id": 128,
+    "name": "Best Contracting Services",
+    "trade": "Roofing & Waterproofing",
+    "metro": "Gardena, CA",
+    "email": "estimating@bestcontracting.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 129,
+    "name": "Crown Corr Inc",
+    "trade": "Roofing & Enclosures",
+    "metro": "Gary, IN",
+    "email": "info@crowncorr.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 130,
+    "name": "Sutter Roofing",
+    "trade": "Roofing",
+    "metro": "Sarasota, FL",
+    "email": "info@sutterroofing.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 133,
+    "name": "Empire Roofing",
+    "trade": "Roofing",
+    "metro": "Fort Worth, TX",
+    "email": "info@empireroofing.com",
+    "contact": "Commercial Estimating Desk",
+    "refreshed": false
+  },
+  {
+    "id": 134,
+    "name": "Latite Roofing",
+    "trade": "Roofing",
+    "metro": "Pompano Beach, FL",
+    "email": "info@latite.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 135,
+    "name": "Bone Dry Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "Indianapolis, IN",
+    "email": "commercial@bonedry.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 137,
+    "name": "Target Roofing & Sheet Metal",
+    "trade": "Roofing",
+    "metro": "Fort Myers, FL",
+    "email": "info@targetroofers.com",
+    "contact": "Commercial Bids",
+    "refreshed": false
+  },
+  {
+    "id": 139,
+    "name": "Pointe Roofing",
+    "trade": "Roofing",
+    "metro": "Detroit, MI",
+    "email": "info@pointeroofing.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 140,
+    "name": "Two Brothers Mechanical",
+    "trade": "HVAC & Mechanical",
+    "metro": "Chicago, IL",
+    "email": "twobrothersmechanicalinc@gmail.com",
+    "contact": "Two Brothers Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 141,
+    "name": "Encompass Supply & Mechanical",
+    "trade": "HVAC & Mechanical",
+    "metro": "Houston, TX",
+    "email": "service@encompass.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 142,
+    "name": "Therma LLC",
+    "trade": "HVAC & Mechanical",
+    "metro": "San Jose, CA",
+    "email": "info@therma.com",
+    "contact": "Commercial Projects",
+    "refreshed": false
+  },
+  {
+    "id": 143,
+    "name": "Climatec LLC",
+    "trade": "HVAC & Building Automation",
+    "metro": "Phoenix, AZ",
+    "email": "info@climatec.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 144,
+    "name": "Air Force One Inc",
+    "trade": "HVAC & Mechanical",
+    "metro": "Columbus, OH",
+    "email": "info@airforceone.com",
+    "contact": "Commercial Service",
+    "refreshed": false
+  },
+  {
+    "id": 145,
+    "name": "Boland Trane",
+    "trade": "HVAC & Building Controls",
+    "metro": "Gaithersburg, MD",
+    "email": "info@boland.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 146,
+    "name": "Brady Trane",
+    "trade": "HVAC & Energy Services",
+    "metro": "Greensboro, NC",
+    "email": "info@bradyservices.com",
+    "contact": "Commercial Bids",
+    "refreshed": false
+  },
+  {
+    "id": 148,
+    "name": "Midwest Mechanical",
+    "trade": "HVAC & Energy",
+    "metro": "Chicago, IL",
+    "email": "service@midwestmech.com",
+    "contact": "Commercial Service Desk",
+    "refreshed": false
+  },
+  {
+    "id": 150,
+    "name": "MacDonald-Miller Facility Solutions",
+    "trade": "HVAC & Controls",
+    "metro": "Seattle, WA",
+    "email": "info@macmiller.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 151,
+    "name": "Piedmont Service Group",
+    "trade": "HVAC & Mechanical",
+    "metro": "Raleigh, NC",
+    "email": "service@piedmontsg.com",
+    "contact": "Commercial Service",
+    "refreshed": false
+  },
+  {
+    "id": 152,
+    "name": "Northwest Commercial HVAC Services",
+    "trade": "HVAC",
+    "metro": "Toledo, OH",
+    "email": "nwserviceshvac@gmail.com",
+    "contact": "Northwest HVAC Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 153,
+    "name": "MSS Solutions",
+    "trade": "HVAC & Facilities",
+    "metro": "Charlotte, NC",
+    "email": "info@msssolutions.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 154,
+    "name": "Reedy Industries",
+    "trade": "HVAC & Mechanical",
+    "metro": "Chicago, IL",
+    "email": "info@reedyindustries.com",
+    "contact": "Commercial Bids",
+    "refreshed": false
+  },
+  {
+    "id": 155,
+    "name": "Southwest Conditioned Air",
+    "trade": "HVAC",
+    "metro": "Scottsdale, AZ",
+    "email": "info@swconditionedair.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 156,
+    "name": "Atlas Commercial HVAC",
+    "trade": "HVAC",
+    "metro": "Atlanta, GA",
+    "email": "service@atlashvac.com",
+    "contact": "Commercial Service",
+    "refreshed": false
+  },
+  {
+    "id": 158,
+    "name": "Tri-County Commercial Heating & Cooling",
+    "trade": "HVAC",
+    "metro": "Cleveland, OH",
+    "email": "service@tricountyhvac.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 159,
+    "name": "Summit Commercial Mechanical",
+    "trade": "HVAC",
+    "metro": "Salt Lake City, UT",
+    "email": "info@archermechanical.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 160,
+    "name": "DPR Construction",
+    "trade": "General Contracting",
+    "metro": "Redwood City, CA",
+    "email": "info@dpr.com",
+    "contact": "Commercial Estimating Group",
+    "refreshed": false
+  },
+  {
+    "id": 162,
+    "name": "JE Dunn Construction",
+    "trade": "General Contracting",
+    "metro": "Kansas City, MO",
+    "email": "info@jedunn.com",
+    "contact": "Preconstruction Group",
+    "refreshed": false
+  },
+  {
+    "id": 164,
+    "name": "Brasfield & Gorrie",
+    "trade": "General Contracting",
+    "metro": "Birmingham, AL",
+    "email": "info@brasfieldgorrie.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 165,
+    "name": "Holder Construction",
+    "trade": "General Contracting",
+    "metro": "Atlanta, GA",
+    "email": "info@holderconstruction.com",
+    "contact": "Commercial Preconstruction",
+    "refreshed": false
+  },
+  {
+    "id": 166,
+    "name": "Balfour Beatty US",
+    "trade": "General Contracting",
+    "metro": "Dallas, TX",
+    "email": "info@balfourbeattyus.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 167,
+    "name": "Swinerton Builders",
+    "trade": "General Contracting",
+    "metro": "San Francisco, CA",
+    "email": "estimating@swinerton.com",
+    "contact": "Commercial Preconstruction",
+    "refreshed": false
+  },
+  {
+    "id": 168,
+    "name": "McCarthy Building Companies",
+    "trade": "General Contracting",
+    "metro": "St. Louis, MO",
+    "email": "estimating@mccarthy.com",
+    "contact": "Commercial Estimators",
+    "refreshed": false
+  },
+  {
+    "id": 169,
+    "name": "Gilbane Building Company",
+    "trade": "General Contracting",
+    "metro": "Providence, RI",
+    "email": "info@gilbaneco.com",
+    "contact": "Commercial Estimating",
+    "refreshed": false
+  },
+  {
+    "id": 170,
+    "name": "Skanska USA Commercial",
+    "trade": "General Contracting",
+    "metro": "New York, NY",
+    "email": "info@skanska.com",
+    "contact": "Commercial Preconstruction",
+    "refreshed": false
+  },
+  {
+    "id": 174,
+    "name": "Dynamic Systems Inc",
+    "trade": "Mechanical",
+    "metro": "Houston, TX",
+    "email": "info@dsihouston.com",
+    "contact": "Dynamic Systems Team",
+    "refreshed": false
+  },
+  {
+    "id": 175,
+    "name": "Southwest Commercial Plumbing Co.",
+    "trade": "Plumbing",
+    "metro": "Houston, TX",
+    "email": "SouthwestPlumbingCo@gmail.com",
+    "contact": "Southwest Plumbing Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 176,
+    "name": "BD Commercial Roofing & Contracting",
+    "trade": "Roofing",
+    "metro": "Houston, TX",
+    "email": "bdroofingandcontracting@gmail.com",
+    "contact": "BD Roofing Estimating Team",
+    "refreshed": true
+  },
+  {
+    "id": 177,
+    "name": "KPost Roofing & Waterproofing",
+    "trade": "Roofing",
+    "metro": "Dallas, TX",
+    "email": "estimating@kpostcompany.com",
+    "contact": "KPost Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 180,
+    "name": "Baker Commercial Drywall & MEP",
+    "trade": "General Sub",
+    "metro": "Dallas, TX",
+    "email": "bids@bakertriangle.com",
+    "contact": "Baker Triangle Team",
+    "refreshed": false
+  },
+  {
+    "id": 181,
+    "name": "Supreme Roofing Commercial",
+    "trade": "Roofing",
+    "metro": "Dallas, TX",
+    "email": "info@supremeroofing.com",
+    "contact": "Supreme Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 182,
+    "name": "Facility Response Group (FRG Mechanical)",
+    "trade": "Mechanical",
+    "metro": "Dallas, TX",
+    "email": "info@facilityresponse.com",
+    "contact": "FRG Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 183,
+    "name": "Lyons Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "Phoenix, AZ",
+    "email": "info@lyonsroofing.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 185,
+    "name": "Wilson Electric Services",
+    "trade": "Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@wilsonelectric.net",
+    "contact": "Wilson Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 186,
+    "name": "Sun Mechanical Commercial Plumbing",
+    "trade": "Plumbing",
+    "metro": "Phoenix, AZ",
+    "email": "info@sunmechanical.net",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 187,
+    "name": "Starkweather Roofing",
+    "trade": "Roofing",
+    "metro": "Phoenix, AZ",
+    "email": "service@starkweatherroof.com",
+    "contact": "Starkweather Team",
+    "refreshed": false
+  },
+  {
+    "id": 188,
+    "name": "Hawkeye Electric Commercial",
+    "trade": "Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "info@hawkeyeelectric.com",
+    "contact": "Hawkeye Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 189,
+    "name": "Roof Partners Commercial",
+    "trade": "Roofing",
+    "metro": "Atlanta, GA",
+    "email": "info@roofpartners.net",
+    "contact": "Roof Partners Team",
+    "refreshed": false
+  },
+  {
+    "id": 190,
+    "name": "McKenney's Mechanical Contractors",
+    "trade": "HVAC",
+    "metro": "Atlanta, GA",
+    "email": "info@mckenneys.com",
+    "contact": "McKenney's Team",
+    "refreshed": false
+  },
+  {
+    "id": 191,
+    "name": "Allison-Smith Company LLC",
+    "trade": "Electrical",
+    "metro": "Atlanta, GA",
+    "email": "info@allisonsmith.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 192,
+    "name": "Batchelor & Kimball Mechanical",
+    "trade": "Mechanical",
+    "metro": "Atlanta, GA",
+    "email": "contactus@bkimechanical.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 193,
+    "name": "Superior Roofing Systems",
+    "trade": "Roofing",
+    "metro": "Atlanta, GA",
+    "email": "service@superiorroofingsystems.com",
+    "contact": "Superior Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 194,
+    "name": "United Maintenance, Inc.",
+    "trade": "HVAC",
+    "metro": "Atlanta, GA",
+    "email": "info@unitedmaintenance.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 196,
+    "name": "Hill York Air Conditioning",
+    "trade": "HVAC",
+    "metro": "Miami, FL",
+    "email": "service@hillyork.com",
+    "contact": "Hill York Team",
+    "refreshed": false
+  },
+  {
+    "id": 197,
+    "name": "Power Design Electrical",
+    "trade": "Electrical",
+    "metro": "Miami, FL",
+    "email": "estimating@powerdesigninc.us",
+    "contact": "Power Design Team",
+    "refreshed": false
+  },
+  {
+    "id": 198,
+    "name": "Sutter Roofing Florida",
+    "trade": "Roofing",
+    "metro": "Fort Lauderdale, FL",
+    "email": "bids@sutterroofing.com",
+    "contact": "Sutter Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 199,
+    "name": "Tropic Mechanical Contractors",
+    "trade": "Mechanical",
+    "metro": "Miami, FL",
+    "email": "info@tropicmechanical.com",
+    "contact": "Tropic Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 200,
+    "name": "4 Star Plumbing Services",
+    "trade": "Plumbing",
+    "metro": "Fort Lauderdale, FL",
+    "email": "info@4starservices.com",
+    "contact": "4 Star Commercial Team",
+    "refreshed": false
+  },
+  {
+    "id": 201,
+    "name": "Affordable Roofing Systems Commercial",
+    "trade": "Roofing",
+    "metro": "Tampa, FL",
+    "email": "info@affordableroofingflorida.com",
+    "contact": "Affordable Roofing Commercial Team",
+    "refreshed": false
+  },
+  {
+    "id": 202,
+    "name": "Limbach Facility Services",
+    "trade": "HVAC",
+    "metro": "Tampa, FL",
+    "email": "info@limbachinc.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 203,
+    "name": "Tri-City Electrical Contractors",
+    "trade": "Electrical",
+    "metro": "Orlando, FL",
+    "email": "estimating@tcelectric.com",
+    "contact": "Tri-City Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 204,
+    "name": "Sutter Roofing",
+    "trade": "Roofing",
+    "metro": "Orlando, FL",
+    "email": "info@sutterroofing.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 205,
+    "name": "Comprehensive Energy Services",
+    "trade": "Mechanical",
+    "metro": "Orlando, FL",
+    "email": "info@cesmechanical.com",
+    "contact": "CES Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 206,
+    "name": "EVERYDAYPLUMBER Commercial Services",
+    "trade": "Plumbing",
+    "metro": "Tampa, FL",
+    "email": "info@everydayplumber.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 208,
+    "name": "Murphy Company Mechanical",
+    "trade": "HVAC",
+    "metro": "Denver, CO",
+    "email": "info@murphynet.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 209,
+    "name": "Encore Electric Commercial",
+    "trade": "Electrical",
+    "metro": "Denver, CO",
+    "email": "info@encoreelectric.com",
+    "contact": "Encore Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 211,
+    "name": "Tolin Mechanical Systems",
+    "trade": "Mechanical",
+    "metro": "Denver, CO",
+    "email": "info@tolin.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 212,
+    "name": "Bell Commercial Plumbing",
+    "trade": "Plumbing",
+    "metro": "Denver, CO",
+    "email": "info@bellplumbing.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 213,
+    "name": "Baker Roofing Company",
+    "trade": "Roofing",
+    "metro": "Charlotte, NC",
+    "email": "estimating@bakerroofing.com",
+    "contact": "Baker Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 214,
+    "name": "Piedmont Service Group",
+    "trade": "HVAC",
+    "metro": "Raleigh, NC",
+    "email": "info@piedmontsg.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 215,
+    "name": "Wayne J Griffin Electric",
+    "trade": "Electrical",
+    "metro": "Charlotte, NC",
+    "email": "estimating@waynejgriffinelectric.com",
+    "contact": "Wayne J Griffin Team",
+    "refreshed": false
+  },
+  {
+    "id": 216,
+    "name": "Shelby Mechanical Services",
+    "trade": "Mechanical",
+    "metro": "Charlotte, NC",
+    "email": "info@shelbymechanical.com",
+    "contact": "Shelby Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 217,
+    "name": "Triad Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "Raleigh, NC",
+    "email": "service@triadroofingnc.com",
+    "contact": "Triad Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 218,
+    "name": "Piedmont Commercial Plumbing",
+    "trade": "Plumbing",
+    "metro": "Charlotte, NC",
+    "email": "bids@piedmontplumbing.com",
+    "contact": "Piedmont Plumbing Team",
+    "refreshed": false
+  },
+  {
+    "id": 219,
+    "name": "Mid-South Roofing & Sheet Metal",
+    "trade": "Roofing",
+    "metro": "Nashville, TN",
+    "email": "estimating@midsouthroofing.com",
+    "contact": "Mid-South Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 220,
+    "name": "Nashville Machine Mechanical",
+    "trade": "HVAC",
+    "metro": "Nashville, TN",
+    "email": "info@nashvillemachine.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 221,
+    "name": "Travis Electric Company",
+    "trade": "Electrical",
+    "metro": "Nashville, TN",
+    "email": "info@traviselectric.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 222,
+    "name": "Rogers Group Inc.",
+    "trade": "Heavy Civil",
+    "metro": "Nashville, TN",
+    "email": "info@rogersgroupinc.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 223,
+    "name": "Precision Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "Nashville, TN",
+    "email": "bids@precisionroofingtn.com",
+    "contact": "Precision Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 226,
+    "name": "Air Pro Master Commercial HVAC",
+    "trade": "HVAC",
+    "metro": "Las Vegas, NV",
+    "email": "info@airpromaster.com",
+    "contact": "Air Pro Master Commercial Team",
+    "refreshed": false
+  },
+  {
+    "id": 227,
+    "name": "Murphy Electric Commercial",
+    "trade": "Electrical",
+    "metro": "Las Vegas, NV",
+    "email": "info@murphyelectricinc.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 228,
+    "name": "Commercial Roofers, Inc.",
+    "trade": "Roofing",
+    "metro": "Las Vegas, NV",
+    "email": "marketing@commroof.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 229,
+    "name": "U.S. Mechanical Services",
+    "trade": "Mechanical",
+    "metro": "Las Vegas, NV",
+    "email": "info@usmechanicalllc.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 230,
+    "name": "Active Commercial Plumbing",
+    "trade": "Plumbing",
+    "metro": "Las Vegas, NV",
+    "email": "service@activeplumbinginc.com",
+    "contact": "Active Plumbing Team",
+    "refreshed": false
+  },
+  {
+    "id": 231,
+    "name": "Ja-Mar Roofing & Sheet Metal",
+    "trade": "Roofing",
+    "metro": "Austin, TX",
+    "email": "sales@jamarroofing.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 232,
+    "name": "Schneider Mechanical Services",
+    "trade": "HVAC",
+    "metro": "Austin, TX",
+    "email": "dispatch@schneidermechanical.com",
+    "contact": "Schneider Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 233,
+    "name": "SI Mechanical Contractors",
+    "trade": "Mechanical",
+    "metro": "Austin, TX",
+    "email": "service@simechanical.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 234,
+    "name": "Kidd Roofing Commercial",
+    "trade": "Roofing",
+    "metro": "Austin, TX",
+    "email": "service@kiddroof.com",
+    "contact": "Kidd Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 235,
+    "name": "Austin Roofing and Construction",
+    "trade": "Roofing",
+    "metro": "Austin, TX",
+    "email": "info@austinroofingandconstruction.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 236,
+    "name": "Lone Star Commercial Electrical",
+    "trade": "Electrical",
+    "metro": "Austin, TX",
+    "email": "info@lonestarelectric.com",
+    "contact": "Lone Star Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 238,
+    "name": "David Brothers Heating & Cooling",
+    "trade": "HVAC",
+    "metro": "Chicago, IL",
+    "email": "davidbrothershvac@gmail.com",
+    "contact": "David Brothers Team",
+    "refreshed": false
+  },
+  {
+    "id": 239,
+    "name": "Continental Electrical Construction",
+    "trade": "Electrical",
+    "metro": "Chicago, IL",
+    "email": "info@cecco.com",
+    "contact": "Continental Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 240,
+    "name": "Althoff Commercial Plumbing",
+    "trade": "Plumbing",
+    "metro": "Chicago, IL",
+    "email": "sales@althoffind.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 241,
+    "name": "Jones & Cleary Roofing & Sheet Metal",
+    "trade": "Roofing",
+    "metro": "Chicago, IL",
+    "email": "office@jonesandcleary.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 242,
+    "name": "Kroeschell Mechanical Services",
+    "trade": "Mechanical",
+    "metro": "Chicago, IL",
+    "email": "info@kroeschell.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 243,
+    "name": "Snyder Roofing & Waterproofing",
+    "trade": "Roofing",
+    "metro": "Seattle, WA",
+    "email": "estimating@snyderroofing.com",
+    "contact": "Snyder Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 244,
+    "name": "Hermanson Company Mechanical",
+    "trade": "HVAC",
+    "metro": "Seattle, WA",
+    "email": "bids@hermanson.com",
+    "contact": "Hermanson Team",
+    "refreshed": false
+  },
+  {
+    "id": 245,
+    "name": "Cochran Electric Commercial",
+    "trade": "Electrical",
+    "metro": "Seattle, WA",
+    "email": "info@cochraninc.com",
+    "contact": "Cochran Inc Team",
+    "refreshed": false
+  },
+  {
+    "id": 246,
+    "name": "Auburn Mechanical",
+    "trade": "Mechanical & HVAC",
+    "metro": "Seattle, WA",
+    "email": "contact@auburnmechanical.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 247,
+    "name": "Alliant Roofing Company",
+    "trade": "Roofing",
+    "metro": "Seattle, WA",
+    "email": "info@alliantroofing.com",
+    "contact": "Commercial Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 248,
+    "name": "Emerald City Commercial Plumbing",
+    "trade": "Plumbing",
+    "metro": "Seattle, WA",
+    "email": "bids@emeraldcityplumbing.com",
+    "contact": "Emerald City Team",
+    "refreshed": false
+  },
+  {
+    "id": 249,
+    "name": "Intermountain Roofing Commercial",
+    "trade": "Roofing",
+    "metro": "Salt Lake City, UT",
+    "email": "estimating@intermountainroof.com",
+    "contact": "Intermountain Team",
+    "refreshed": false
+  },
+  {
+    "id": 250,
+    "name": "CCI Mechanical Engineering",
+    "trade": "HVAC",
+    "metro": "Salt Lake City, UT",
+    "email": "bids@ccimechanical.com",
+    "contact": "CCI Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 252,
+    "name": "Dynamic Systems Inc. (DSI Mechanical)",
+    "trade": "Mechanical",
+    "metro": "San Antonio, TX",
+    "email": "service@dsi.us",
+    "contact": "DSI San Antonio Team",
+    "refreshed": false
+  },
+  {
+    "id": 253,
+    "name": "Bolt Electric Commercial Services",
+    "trade": "Electrical",
+    "metro": "San Antonio, TX",
+    "email": "info@boltelectricsa.com",
+    "contact": "Bolt Electric Commercial Team",
+    "refreshed": false
+  },
+  {
+    "id": 254,
+    "name": "Aloha Plumbing, Sewers & Drains",
+    "trade": "Plumbing",
+    "metro": "Salt Lake City, UT",
+    "email": "info@alohaplumbingservices.com",
+    "contact": "Aloha Commercial Plumbing Team",
+    "refreshed": false
+  },
+  {
+    "id": 255,
+    "name": "Revamped Roofing & Construction",
+    "trade": "Roofing",
+    "metro": "San Antonio, TX",
+    "email": "info@revampedroofing.com",
+    "contact": "Revamped Commercial Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 256,
+    "name": "Archer Mechanical & Maintenance",
+    "trade": "Mechanical",
+    "metro": "Salt Lake City, UT",
+    "email": "inquiries@archermech.com",
+    "contact": "Archer Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 257,
+    "name": "Abel Commercial Roofing Solutions",
+    "trade": "Roofing",
+    "metro": "Dallas, TX",
+    "email": "arjones.andrew@gmail.com",
+    "contact": "Abel Commercial Roofing Team",
+    "refreshed": false
+  },
+  {
+    "id": 258,
+    "name": "Quality 1st Commercial Roofing",
+    "trade": "Roofing",
+    "metro": "Dallas, TX",
+    "email": "roofing.quality1st@gmail.com",
+    "contact": "Quality 1st Estimating Team",
+    "refreshed": false
+  },
+  {
+    "id": 259,
+    "name": "DFW Integrity Commercial Construction",
+    "trade": "Roofing",
+    "metro": "Dallas, TX",
+    "email": "dfwintegritycs@gmail.com",
+    "contact": "DFW Integrity Team",
+    "refreshed": false
+  },
+  {
+    "id": 260,
+    "name": "TechBridge Thermogrid Commercial HVAC",
+    "trade": "HVAC",
+    "metro": "Dallas, TX",
+    "email": "thermogridhvac@gmail.com",
+    "contact": "Thermogrid Commercial Team",
+    "refreshed": false
+  },
+  {
+    "id": 261,
+    "name": "White Rock Commercial Air & Mechanical",
+    "trade": "HVAC",
+    "metro": "Dallas, TX",
+    "email": "whiterockac@gmail.com",
+    "contact": "White Rock Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 262,
+    "name": "Unlimited Commercial Air & Rooftop Systems",
+    "trade": "HVAC",
+    "metro": "Dallas, TX",
+    "email": "frankjm0919@gmail.com",
+    "contact": "Unlimited Air Commercial Team",
+    "refreshed": false
+  },
+  {
+    "id": 263,
+    "name": "Good Connections Commercial Electric",
+    "trade": "Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "GoodConnectionsElectricLLC@gmail.com",
+    "contact": "Good Connections Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 264,
+    "name": "Mace Commercial Electrical Inc",
+    "trade": "Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "rmaceelectric@gmail.com",
+    "contact": "Mace Electrical Team",
+    "refreshed": false
+  },
+  {
+    "id": 265,
+    "name": "Brandhorst Commercial Electric",
+    "trade": "Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "brandhorstelectric.david@gmail.com",
+    "contact": "Brandhorst Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 266,
+    "name": "Colonial Commercial Electric AZ",
+    "trade": "Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "colonialelectricaz@gmail.com",
+    "contact": "Colonial Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 267,
+    "name": "Copper Pro Commercial Electric",
+    "trade": "Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "copperproservices@gmail.com",
+    "contact": "Copper Pro Team",
+    "refreshed": false
+  },
+  {
+    "id": 268,
+    "name": "Stegen Commercial Electrical Services",
+    "trade": "Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "stegenelectricalservices@gmail.com",
+    "contact": "Stegen Electrical Team",
+    "refreshed": false
+  },
+  {
+    "id": 269,
+    "name": "Burgess Commercial Electric LLC",
+    "trade": "Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "Burgesselectricllc@gmail.com",
+    "contact": "Burgess Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 270,
+    "name": "Alternative Energy Commercial Solar EPC",
+    "trade": "Solar",
+    "metro": "Phoenix, AZ",
+    "email": "alternativeenergyaz@gmail.com",
+    "contact": "Alternative Energy Solar Team",
+    "refreshed": false
+  },
+  {
+    "id": 271,
+    "name": "Electric Connections Commercial Inc",
+    "trade": "Electrical",
+    "metro": "Atlanta, GA",
+    "email": "electricconnectionsinc@gmail.com",
+    "contact": "Electric Connections Team",
+    "refreshed": false
+  },
+  {
+    "id": 272,
+    "name": "RDM Commercial Electric Services",
+    "trade": "Electrical",
+    "metro": "Atlanta, GA",
+    "email": "rdmelectricservices@gmail.com",
+    "contact": "RDM Electric Team",
+    "refreshed": false
+  },
+  {
+    "id": 273,
+    "name": "G&H Commercial Electrical Solutions",
+    "trade": "Electrical",
+    "metro": "Atlanta, GA",
+    "email": "ghelectric@gmail.com",
+    "contact": "G&H Electrical Team",
+    "refreshed": false
+  },
+  {
+    "id": 274,
+    "name": "GCO Commercial Mechanical & HVAC",
+    "trade": "Mechanical",
+    "metro": "Atlanta, GA",
+    "email": "1gcomechanical@gmail.com",
+    "contact": "GCO Mechanical Team",
+    "refreshed": false
+  },
+  {
+    "id": 275,
+    "name": "We Renew Atlanta Commercial Solar",
+    "trade": "Solar",
+    "metro": "Atlanta, GA",
+    "email": "werenewatlanta@gmail.com",
+    "contact": "We Renew Solar Team",
+    "refreshed": false
+  },
+  {
+    "id": 276,
+    "name": "OPP Commercial Power Enterprises",
+    "trade": "Electrical",
+    "metro": "Atlanta, GA",
+    "email": "opp2enterprises@gmail.com",
+    "contact": "OPP Power Team",
+    "refreshed": false
+  }
+];
+    
+    
+    
+    let currentTradeFilter = 'all';
+    let activeFiltered = [];
+
+    // Support instant URL reset via ?reset=1 or ?fresh=1
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('reset') === '1' || urlParams.get('fresh') === '1') {
+      try { localStorage.removeItem('tv_tuesday_sent_targets'); } catch(e) {}
+    }
+
+    let sentTargets = JSON.parse(localStorage.getItem('tv_tuesday_sent_targets') || '{}');
+
+    function getBusinessGmail() {
+      return localStorage.getItem('tv_business_gmail') || 'toolsvault78@gmail.com';
+    }
+
+    function saveBusinessGmail() {
+      const input = document.getElementById('businessGmailInput');
+      if (input && input.value.trim()) {
+        const email = input.value.trim();
+        localStorage.setItem('tv_business_gmail', email);
+        const display = document.getElementById('activeGmailDisplay');
+        if (display) display.innerText = email;
+        showToast("Business Gmail set to: " + email);
+        renderTable();
+      }
+    }
+
+    function normalizeTrade(trade) {
+      if (!trade) return "Subcontracting";
+      return trade.replace(/^commercial\s+/i, '').trim();
+    }
+
+    function getFollowupSubject(trade, metro) {
+      const cleanTrade = normalizeTrade(trade);
+      return "Follow-up: Commercial " + cleanTrade + " Scope & Territory Capacity (" + metro + ")";
+    }
+
+    function getFollowupBody(contact, trade, metro) {
+      const cleanTrade = normalizeTrade(trade);
+      return "Hi " + contact + ",\n\n" +
+        "Following up on my note regarding commercial " + cleanTrade.toLowerCase() + " project routing in " + metro + ".\n\n" +
+        "We just deployed our updated real-time territory reservation scanner and CSI MasterFormat bid estimator for commercial contractors:\n" +
+        "• Territory Portal: https://tools-vault-4ml.pages.dev/contractor_network\n" +
+        "• CSI MasterFormat Estimator: https://tools-vault-4ml.pages.dev/commercial_subcontractor_bid_estimator\n\n" +
+        "Does your team currently have capacity for commercial " + cleanTrade.toLowerCase() + " work across " + metro + " this quarter before we lock down exclusive regional partner rights?\n\n" +
+        "Best regards,\nJohn Granbridge\nToolsVault Commercial Network\ntoolsvault78@gmail.com";
+    }
+
+    function buildGmailUrl(recipient, subject, bodyText) {
+      const bGmail = getBusinessGmail();
+      // Directly target business Gmail with authuser parameter
+      return "https://mail.google.com/mail/?authuser=" + encodeURIComponent(bGmail) + 
+             "&view=cm&fs=1" + 
+             "&to=" + encodeURIComponent(recipient) + 
+             "&su=" + encodeURIComponent(subject) + 
+             "&body=" + encodeURIComponent(bodyText);
+    }
+
+    function recordSent(email) {
+      sentTargets[email] = new Date().toISOString();
+      localStorage.setItem('tv_tuesday_sent_targets', JSON.stringify(sentTargets));
+      setTimeout(renderTable, 300);
+    }
+
+    function toggleSentStatus(email) {
+      if (sentTargets[email]) {
+        delete sentTargets[email];
+      } else {
+        sentTargets[email] = new Date().toISOString();
+      }
+      localStorage.setItem('tv_tuesday_sent_targets', JSON.stringify(sentTargets));
+      renderTable();
+    }
+
+    function resetSentHistory(promptUser = true) {
+      if (!promptUser || confirm("Reset all 95 contractors back to Pending? This will clear previous session records so you can run today's wave.")) {
+        sentTargets = {};
+        try { localStorage.removeItem('tv_tuesday_sent_targets'); } catch(e) {}
+        renderTable();
+        showToast("✓ All 95 contractors reset to Pending! Ready to dispatch.");
+      }
+    }
+
+    function handleHeroClick(e) {
+      const nextPending = activeFiltered.find(t => !sentTargets[t.email]);
+      if (!nextPending) {
+        e.preventDefault();
+        resetSentHistory(false);
+        return;
+      }
+      const subject = getFollowupSubject(nextPending.trade, nextPending.metro);
+      const bodyText = getFollowupBody(nextPending.contact, nextPending.trade, nextPending.metro);
+      
+      // Auto-copy text as safety backup
+      navigator.clipboard.writeText(bodyText).catch(() => {});
+      
+      // Record sent status
+      recordSent(nextPending.email);
+      showToast("Opening Business Gmail for " + nextPending.name + "! (Copied to clipboard)");
+    }
+
+    function copyFollowupByIndex(idx) {
+      if (!activeFiltered[idx]) return;
+      const t = activeFiltered[idx];
+      const text = getFollowupBody(t.contact, t.trade, t.metro);
+      navigator.clipboard.writeText(text).then(() => {
+        showToast("Copied email text to clipboard! Ready to paste.");
+      }).catch(() => {
+        showToast("Copied to clipboard!");
+      });
+    }
+
+    function openPreviewModal(idx) {
+      if (!activeFiltered[idx]) return;
+      const t = activeFiltered[idx];
+      const subject = getFollowupSubject(t.trade, t.metro);
+      const bodyText = getFollowupBody(t.contact, t.trade, t.metro);
+      const gmailUrl = buildGmailUrl(t.email, subject, bodyText);
+
+      document.getElementById('modalRecipient').innerText = t.name + " (" + t.email + ") — " + t.metro;
+      document.getElementById('modalSubject').value = subject;
+      document.getElementById('modalBody').value = bodyText;
+
+      const gmailBtn = document.getElementById('modalGmailBtn');
+      gmailBtn.onclick = () => {
+        window.open(gmailUrl, '_blank');
+        recordSent(t.email);
+        closeEmailModal();
+      };
+
+      const mailtoBtn = document.getElementById('modalMailtoBtn');
+      mailtoBtn.onclick = () => {
+        navigator.clipboard.writeText(bodyText).catch(() => {});
+        window.location.href = "mailto:" + t.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(bodyText);
+        recordSent(t.email);
+        closeEmailModal();
+      };
+
+      document.getElementById('modalCopyBtn').onclick = () => { copyFollowupByIndex(idx); };
+
+      document.getElementById('emailPreviewModal').style.display = 'flex';
+    }
+
+    function closeEmailModal() {
+      const modal = document.getElementById('emailPreviewModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      if (t) {
+        if (msg) t.innerText = msg;
+        else t.innerText = "✓ Copied to clipboard!";
+        t.style.display = 'block';
+        setTimeout(() => { t.style.display = 'none'; }, 2800);
+      }
+    }
+
+    function renderTable() {
+      const searchInput = document.getElementById('searchInput');
+      const search = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      const tbody = document.getElementById('tableBody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      activeFiltered = allTargets.filter(t => {
+        const matchesTrade = (currentTradeFilter === 'all' || (currentTradeFilter === 'refreshed' ? !!t.refreshed : t.trade.toLowerCase().includes(currentTradeFilter.toLowerCase())));
+        const matchesSearch = (!search || 
+          t.name.toLowerCase().includes(search) || 
+          t.email.toLowerCase().includes(search) || 
+          t.metro.toLowerCase().includes(search) || 
+          t.trade.toLowerCase().includes(search)
+        );
+        return matchesTrade && matchesSearch;
+      });
+
+      const totalCountEl = document.getElementById('totalCount');
+      if (totalCountEl) totalCountEl.innerText = activeFiltered.length;
+
+      // Calculate progress
+      const sentCount = Object.keys(sentTargets).length;
+      const totalAll = allTargets.length;
+      const pct = Math.min(100, Math.round((sentCount / totalAll) * 100));
+
+      const progressCountEl = document.getElementById('progressCount');
+      if (progressCountEl) progressCountEl.innerText = sentCount;
+
+      const progressPctEl = document.getElementById('progressPct');
+      if (progressPctEl) progressPctEl.innerText = pct + '%';
+
+      const progressBar = document.getElementById('progressBar');
+      if (progressBar) progressBar.style.width = pct + '%';
+
+      const sentStatEl = document.getElementById('sentCountStat');
+      if (sentStatEl) sentStatEl.innerText = sentCount;
+
+      const pendingStatEl = document.getElementById('pendingCountStat');
+      if (pendingStatEl) pendingStatEl.innerText = Math.max(0, totalAll - sentCount);
+
+      // Update previous session alert banner
+      const banner = document.getElementById('allSentBanner');
+      if (banner) {
+        banner.style.display = (sentCount >= totalAll && totalAll > 0) ? 'block' : 'none';
+      }
+
+      // Wire up the Hero Button to the next pending contractor's direct Gmail URL
+      const nextPending = activeFiltered.find(t => !sentTargets[t.email]);
+      const heroBtn = document.getElementById('launchNextHeroBtn');
+      const heroText = document.getElementById('launchNextHeroText');
+      if (heroBtn && heroText) {
+        if (nextPending) {
+          const nextSubj = getFollowupSubject(nextPending.trade, nextPending.metro);
+          const nextBody = getFollowupBody(nextPending.contact, nextPending.trade, nextPending.metro);
+          heroBtn.href = buildGmailUrl(nextPending.email, nextSubj, nextBody);
+          heroText.innerText = "🚀 Launch Next in Business Gmail: " + nextPending.name + " (" + nextPending.metro + ")";
+          heroBtn.style.opacity = '1';
+          heroBtn.style.pointerEvents = 'auto';
+          heroBtn.onclick = (e) => handleHeroClick(e);
+        } else {
+          heroBtn.href = '#';
+          heroText.innerText = "🎉 All " + activeFiltered.length + " Dispatched! (Click to Reset for Today's Wave)";
+          heroBtn.style.opacity = '1';
+          heroBtn.style.pointerEvents = 'auto';
+          heroBtn.onclick = (e) => { e.preventDefault(); resetSentHistory(false); };
+        }
+      }
+
+      // Sync business email input & display
+      const bGmail = getBusinessGmail();
+      const bInput = document.getElementById('businessGmailInput');
+      if (bInput && document.activeElement !== bInput) bInput.value = bGmail;
+      const bDisplay = document.getElementById('activeGmailDisplay');
+      if (bDisplay) bDisplay.innerText = bGmail;
+
+      activeFiltered.forEach((t, idx) => {
+        const isSent = !!sentTargets[t.email];
+        const statusBadge = isSent 
+          ? "<span class='status-badge status-sent' title='Click to toggle status' onclick='toggleSentStatus(\"" + t.email + "\")'>✓ Dispatched</span>"
+          : "<span class='status-badge status-pending' title='Click to mark as sent' onclick='toggleSentStatus(\"" + t.email + "\")'>Pending</span>";
+
+        const subject = getFollowupSubject(t.trade, t.metro);
+        const bodyText = getFollowupBody(t.contact, t.trade, t.metro);
+        const gmailUrl = buildGmailUrl(t.email, subject, bodyText);
+        const mailtoUrl = "mailto:" + t.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(bodyText);
+
+        const tr = document.createElement('tr');
+        if (isSent) {
+          tr.style.opacity = '0.65';
+        }
+
+        tr.innerHTML = 
+          "<td style='color: var(--muted); font-size: 11px;'>" + (idx + 1) + "</td>" +
+          "<td><strong>" + t.name + "</strong>" + (t.refreshed ? " <span style='background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.5); padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 800; margin-left: 6px;'>⚡ REFRESHED</span>" : "") + "</td>" +
+          "<td><span style='background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 700;'>" + t.trade + "</span></td>" +
+          "<td>" + t.metro + "</td>" +
+          "<td><code>" + t.email + "</code></td>" +
+          "<td>" + statusBadge + "</td>" +
+          "<td>" +
+            "<div style='display: flex; gap: 6px; align-items: center; flex-wrap: wrap;'>" +
+              "<a href='" + gmailUrl + "' target='_blank' rel='noopener noreferrer' class='btn-gmail' onclick='recordSent(\"" + t.email + "\"); navigator.clipboard.writeText(\"" + bodyText.replace(/\n/g, '\\n').replace(/'/g, "\\'") + "\").catch(()=>{});' title='Open directly in Business Gmail (" + bGmail + ")'>" +
+                "⚡ Business Gmail ↗" +
+              "</a>" +
+              "<a href='" + mailtoUrl + "' class='btn-launch' onclick='recordSent(\"" + t.email + "\");' title='Trigger desktop email app (Outlook / Apple Mail)'>" +
+                "✉️ Desktop App" +
+              "</a>" +
+              "<button class='btn-bump' onclick='copyFollowupByIndex(" + idx + ")' title='Copy body to clipboard'>" +
+                "📋 Copy" +
+              "</button>" +
+              "<button class='btn-bump' style='background: transparent; color: #94a3b8;' onclick='openPreviewModal(" + idx + ")' title='Preview full message'>" +
+                "👁️" +
+              "</button>" +
+            "</div>" +
+          "</td>";
+        tbody.appendChild(tr);
+      });
+    }
+
+
+
+
+    function copyFollowupByIndex(idx) {
+      if (!activeFiltered[idx]) return;
+      const t = activeFiltered[idx];
+      const text = getFollowupBody(t.contact, t.trade, t.metro);
+      navigator.clipboard.writeText(text).then(() => {
+        showToast();
+      }).catch(() => {
+        showToast();
+      });
+    }
+
+    function showToast() {
+      const t = document.getElementById('toast');
+      if (t) {
+        t.style.display = 'block';
+        setTimeout(() => { t.style.display = 'none'; }, 2200);
+      }
+    }
+
+    function setTradeFilter(trade, btn) {
+      currentTradeFilter = trade;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderTable();
+    }
+
+    function applyFilters() {
+      renderTable();
+    }
+
+    // Initial render on load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderTable);
+    } else {
+      renderTable();
+    }
+  </script>
+
+  <!-- Tailored Email Preview Modal -->
+  <div id="emailPreviewModal" class="email-modal">
+    <div class="email-modal-box">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; border-bottom: 1px solid #1e293b; padding-bottom: 12px;">
+        <div>
+          <span style="font-size: 11px; font-weight: 800; color: #38bdf8; text-transform: uppercase;">Tailored Follow-Up Brief</span>
+          <h3 id="modalRecipient" style="margin: 4px 0 0 0; font-size: 18px; color: #ffffff;"></h3>
+        </div>
+        <button onclick="closeEmailModal()" style="background: none; border: none; color: #94a3b8; font-size: 24px; cursor: pointer; line-height: 1;">&times;</button>
+      </div>
+
+      <div style="margin-bottom: 12px;">
+        <label style="display: block; font-size: 11px; font-weight: 700; color: #94a3b8; margin-bottom: 4px;">Subject Line:</label>
+        <input type="text" id="modalSubject" readonly style="width: 100%; background: #020617; border: 1px solid #334155; border-radius: 8px; padding: 8px 12px; color: #38bdf8; font-family: monospace; font-size: 12px; box-sizing: border-box;">
+      </div>
+
+      <div style="margin-bottom: 18px;">
+        <label style="display: block; font-size: 11px; font-weight: 700; color: #94a3b8; margin-bottom: 4px;">Email Body:</label>
+        <textarea id="modalBody" readonly style="width: 100%; height: 220px; background: #020617; border: 1px solid #334155; border-radius: 8px; padding: 12px; color: #cbd5e1; font-family: monospace; font-size: 12px; line-height: 1.5; resize: none; box-sizing: border-box;"></textarea>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; gap: 8px;">
+          <button id="modalGmailBtn" class="btn-gmail" style="padding: 8px 16px;">⚡ Open in Gmail Web ↗</button>
+          <button id="modalMailtoBtn" class="btn-launch" style="padding: 8px 16px;">✉️ Launch Default Mail ↗</button>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button id="modalCopyBtn" class="btn-bump" style="padding: 8px 16px;">📋 Copy Body</button>
+          <button onclick="closeEmailModal()" style="background: #334155; color: #cbd5e1; border: none; border-radius: 6px; padding: 8px 14px; font-size: 12px; font-weight: 700; cursor: pointer;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
