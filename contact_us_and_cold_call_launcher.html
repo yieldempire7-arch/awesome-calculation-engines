@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us & Cold Outreach Operations Hub | ToolsVault</title>
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- Top Sticky Status Bar -->
+  <div class="bg-slate-900 border-b border-slate-800 px-4 py-2.5 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white font-black text-sm shadow-lg shadow-emerald-500/20">
+          V
+        </div>
+        <div>
+          <h1 class="text-sm font-bold text-white flex items-center gap-2">
+            <span>Commercial Contractor Outreach Hub</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              FORM + EMAIL DUAL-CHANNEL
+            </span>
+          </h1>
+          <p class="text-[11px] text-slate-400">Web Form Submission + 1-Click Direct Email Fallback (Bypasses Broken Captchas).</p>
+        </div>
+      </div>
+
+      <!-- Quick Metrics & Batch Switcher -->
+      <div class="flex items-center gap-3 text-xs">
+        <select id="batchSelect" onchange="switchBatch(this.value)" class="bg-slate-950 border border-emerald-500/40 rounded-lg px-2.5 py-1.5 text-xs text-emerald-300 font-bold focus:outline-none">
+          <option value="enterprise_refreshed" selected>Batch 5: Corporate & Enterprise Commercial Builders (Web Form Blitz - 20 Primes) [ACTIVE]</option>
+          <option value="midatlantic">Batch 4: Mid-Atlantic & Southeast Primes (VA, MD, DC, NC, GA) [ACTIVE]</option>
+          <option value="midwest">Batch 3: Midwest Commercial Primes (Completed - 15 Primes)</option>
+          <option value="wednesday">Batch 2: TX, FL, GA, NC Primes (Completed / TDIndustries Replied)</option>
+          <option value="tuesday">Batch 1: Nashville & TN Primes (Completed)</option>
+        </select>
+
+        <div class="flex items-center gap-1.5 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
+          <span class="text-slate-400 font-mono text-[10px] uppercase">Sent:</span>
+          <span class="font-mono font-bold text-emerald-400" id="metricForms">0</span>
+        </div>
+        <button onclick="exportActivityCSV()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition flex items-center gap-1.5 border border-slate-700">
+          <i class="fa-solid fa-file-csv text-emerald-400"></i> Export Log
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sender Profile Ribbon -->
+  <div class="bg-slate-950/90 border-b border-slate-850 px-4 py-2 text-xs">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-emerald-400 uppercase text-[10px] tracking-wider"><i class="fa-solid fa-id-card mr-1"></i> Active Sender:</span>
+        <span class="text-white font-semibold">John Granbridge</span>
+        <span class="text-slate-500">&bull;</span>
+        <span class="text-slate-300 font-mono">toolsvault78@gmail.com</span>
+        <span class="text-slate-500">&bull;</span>
+        <span class="text-slate-300 font-mono">(971) 200-9432</span>
+        <span class="text-slate-500">&bull;</span>
+        <span class="text-emerald-400 font-medium">Nashville, TN</span>
+      </div>
+      <div class="text-[11px] text-amber-400 flex items-center gap-1.5">
+        <i class="fa-solid fa-bolt"></i> If web form fails or has a broken captcha, use the <strong>1-Click Email Fallback</strong> button below!
+      </div>
+    </div>
+  </div>
+
+  <!-- Workspace Container -->
+  <div class="max-w-7xl mx-auto px-4 py-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-6 flex-grow">
+
+    <!-- Left Column: Active Prospect & Dual Action Dock (5 Cols) -->
+    <div class="lg:col-span-5 space-y-6">
+
+      <!-- Current Prospect Card -->
+      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider" id="prospectIndex">
+            TARGET #1 OF 15
+          </span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30" id="prospectType">
+            Commercial General Contractor
+          </span>
+        </div>
+
+        <h2 class="text-2xl font-black text-white" id="prospectName">Joeris General Contractors</h2>
+        <div class="flex items-center gap-3 mt-2 text-xs text-slate-400">
+          <span class="flex items-center gap-1"><i class="fa-solid fa-location-dot text-slate-500"></i> <span id="prospectMetro">Dallas & Central Texas</span></span>
+          <span>&bull;</span>
+          <span class="flex items-center gap-1 font-mono font-bold text-slate-300"><i class="fa-solid fa-phone text-emerald-400"></i> <span id="prospectPhone">(817) 488-8200</span></span>
+        </div>
+
+        <!-- Direct Email Display -->
+        <div class="mt-3 p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-between text-xs font-mono">
+          <span class="text-slate-400 text-[11px]">Direct Bids / Estimating:</span>
+          <span class="text-teal-400 font-bold" id="prospectEmail">bidsdfw@joeris.com</span>
+        </div>
+
+        <!-- Action Channel 1: Web Form -->
+        <div class="grid grid-cols-2 gap-3 mt-5">
+          <button onclick="openWebsiteContact()" class="w-full py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> 1. Open Web Form
+          </button>
+          <button onclick="copyFormMessage()" id="btnCopy" class="w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition flex items-center justify-center gap-2 border border-slate-700">
+            <i class="fa-solid fa-copy text-teal-400"></i> 2. Copy Pitch Text
+          </button>
+        </div>
+
+        <!-- Action Channel 2: Direct Email Fallback (When Captcha Fails) -->
+        <div class="mt-3 p-3 rounded-xl bg-gradient-to-r from-teal-950/60 to-slate-900 border border-teal-500/30">
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-teal-400">
+              <i class="fa-solid fa-envelope-circle-check mr-1"></i> Captcha Glitch? Direct Email Fallback
+            </span>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <a id="emailClientLink" href="#" class="py-2 px-3 rounded-lg bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs transition flex items-center justify-center gap-1.5 shadow-md text-center">
+              <i class="fa-solid fa-paper-plane"></i> 1-Click Send Email
+            </a>
+            <button onclick="copyDirectEmail()" id="btnCopyEmail" class="py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition flex items-center justify-center gap-1.5 border border-slate-700">
+              <i class="fa-solid fa-clone text-teal-400"></i> Copy Email Address
+            </button>
+          </div>
+        </div>
+
+        <!-- Phone Call Direct Dial -->
+        <div class="mt-3">
+          <a id="callLink" href="tel:8174888200" class="w-full py-2 px-3 rounded-lg bg-slate-950 hover:bg-slate-800 text-amber-400 font-bold text-xs transition flex items-center justify-center gap-2 border border-slate-800">
+            <i class="fa-solid fa-phone"></i> Call Direct Line: <span id="callPhoneEcho">(817) 488-8200</span>
+          </a>
+        </div>
+
+        <!-- Status Tagging Form -->
+        <div class="mt-6 pt-4 border-t border-slate-800">
+          <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Log Outcome & Auto-Advance</label>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <button onclick="logOutcome('Form Submitted')" class="p-2 rounded-lg bg-slate-950 hover:bg-emerald-950/60 border border-slate-800 hover:border-emerald-500/40 text-slate-300 hover:text-emerald-300 font-semibold transition text-left flex items-center gap-2">
+              <i class="fa-solid fa-check text-emerald-400"></i> Form Submitted
+            </button>
+            <button onclick="logOutcome('Direct Email Sent')" class="p-2 rounded-lg bg-slate-950 hover:bg-teal-950/60 border border-slate-800 hover:border-teal-500/40 text-slate-300 hover:text-teal-300 font-semibold transition text-left flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-teal-400"></i> Email Sent (Fallback)
+            </button>
+            <button onclick="logOutcome('Called - Left Voicemail')" class="p-2 rounded-lg bg-slate-950 hover:bg-amber-950/60 border border-slate-800 hover:border-amber-500/40 text-slate-300 hover:text-amber-300 font-semibold transition text-left flex items-center gap-2">
+              <i class="fa-solid fa-phone text-amber-400"></i> Left Voicemail
+            </button>
+            <button onclick="logOutcome('Broken Form / Skipped')" class="p-2 rounded-lg bg-slate-950 hover:bg-rose-950/40 border border-slate-800 text-slate-400 hover:text-rose-300 font-semibold transition text-left flex items-center gap-2">
+              <i class="fa-solid fa-forward text-rose-400"></i> Skipped / Bad Form
+            </button>
+          </div>
+
+          <!-- Notes Input -->
+          <div class="mt-3 flex items-center gap-2">
+            <input type="text" id="actionNote" placeholder="Notes (e.g. sent directly to bidsdfw@...)" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-emerald-500">
+            <button onclick="nextProspect()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition border border-slate-700 whitespace-nowrap">
+              Skip &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Teleprompter -->
+      <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 leading-relaxed">
+        <span class="text-amber-400 font-bold block mb-1">Gatekeeper Phone Script:</span>
+        <p class="italic text-slate-300 text-[11px]">
+          "Hi, good morning! I'm looking to direct a commercial subcontractor prequal package and trade takeoff—who heads up commercial estimating for your <span class="text-emerald-400 font-bold" id="scriptMetroEcho">Texas</span> projects, or what's their direct bids email?"
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Queue & Dynamic Form Pitch (7 Cols) -->
+    <div class="lg:col-span-7 space-y-6">
+
+      <!-- Dynamic Website Form Text Viewer -->
+      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-file-lines text-teal-400"></i> Auto-Generated Pitch (John Granbridge)
+          </h3>
+          <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase">Ready to Paste</span>
+        </div>
+        <p class="text-xs text-slate-400 mb-3">
+          Customized for <strong class="text-white" id="pitchTargetEcho">Joeris General Contractors</strong>. Click "Copy Pitch Text" on the left and paste into their form or email.
+        </p>
+
+        <div class="relative">
+          <textarea id="formPitchText" rows="12" readonly class="w-full bg-slate-950 border border-slate-850 rounded-xl p-4 text-xs font-mono text-slate-200 leading-relaxed focus:outline-none selection:bg-emerald-500 selection:text-white"></textarea>
+        </div>
+      </div>
+
+      <!-- Outreach Queue Table -->
+      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4">
+          <div>
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-building text-emerald-400"></i> <span id="queueTitle">Wednesday Batch: Texas, Florida, Southeast Primes</span>
+            </h3>
+            <p class="text-xs text-slate-400">Form URLs + verified direct estimating emails.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="text" id="filterInput" onkeyup="filterQueue()" placeholder="Filter by metro..." class="bg-slate-950 border border-slate-800 rounded-lg px-3 py-1 text-xs text-white focus:outline-none">
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-800 max-h-96">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead class="bg-slate-950 text-slate-400 sticky top-0 font-mono text-[11px] uppercase border-b border-slate-800">
+              <tr>
+                <th class="p-3">#</th>
+                <th class="p-3">Company Name</th>
+                <th class="p-3">Metro</th>
+                <th class="p-3">Direct Email</th>
+                <th class="p-3">Status</th>
+                <th class="p-3 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody id="queueTableBody" class="divide-y divide-slate-800/60 bg-slate-900/40 font-mono">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Application Logic -->
+  <script>
+    const batches = {
+      enterprise_refreshed: [
+        {
+                "name": "Mortenson Construction",
+                "metro": "Minneapolis, MN & Nationwide",
+                "phone": "(763) 540-5200",
+                "url": "https://www.mortenson.com/contact-us",
+                "email": "estimating@mortenson.com",
+                "type": "Commercial Prime Builder / GC",
+                "status": "Ready"
+        },
+        {
+                "name": "Suffolk Construction",
+                "metro": "Boston, MA / NY / FL / CA",
+                "phone": "(617) 445-3500",
+                "url": "https://www.suffolk.com/contact-us/",
+                "email": "estimating@suffolk.com",
+                "type": "Commercial GC / Mega Prime",
+                "status": "Ready"
+        },
+        {
+                "name": "Tecta America Corp",
+                "metro": "Rosemont, IL / Houston / National",
+                "phone": "(847) 581-3800",
+                "url": "https://www.tectaamerica.com/contact-us/",
+                "email": "info@tectaamerica.com",
+                "type": "National Commercial Roofing",
+                "status": "Ready"
+        },
+        {
+                "name": "TDIndustries",
+                "metro": "Houston, Dallas, Austin, Phoenix",
+                "phone": "(713) 686-8900",
+                "url": "https://www.tdindustries.com/contact-us",
+                "email": "houston@tdindustries.com",
+                "type": "Premier Commercial Mechanical & Facilities",
+                "status": "Ready"
+        },
+        {
+                "name": "Fisk Electric Company",
+                "metro": "Houston & Dallas, TX",
+                "phone": "(713) 868-6111",
+                "url": "https://fiskcorp.com/contact/",
+                "email": "info@fiskcorp.com",
+                "type": "Commercial Electrical & Power",
+                "status": "Ready"
+        },
+        {
+                "name": "Beldon Roofing Company",
+                "metro": "San Antonio, TX",
+                "phone": "(210) 341-3100",
+                "url": "https://beldon.com/contact-us/",
+                "email": "info@beldon.com",
+                "type": "Commercial Roofing",
+                "status": "Ready"
+        },
+        {
+                "name": "ABM Industries",
+                "metro": "New York, NY & Nationwide",
+                "phone": "(866) 624-1520",
+                "url": "https://www.abm.com/contact-us/",
+                "email": "service@abm.com",
+                "type": "Facility Services & Mechanical",
+                "status": "Ready"
+        },
+        {
+                "name": "Havtech Commercial HVAC",
+                "metro": "Baltimore, MD / Washington DC",
+                "phone": "(800) 843-8009",
+                "url": "https://www.havtech.com/contact/",
+                "email": "sales@havtech.com",
+                "type": "Commercial HVAC Systems",
+                "status": "Ready"
+        },
+        {
+                "name": "Douglass Colony Group",
+                "metro": "Denver & Greeley, CO",
+                "phone": "(303) 288-2635",
+                "url": "https://douglasscolony.com/contact/",
+                "email": "estimating@douglasscolony.com",
+                "type": "Commercial Roofing & Metals",
+                "status": "Ready"
+        },
+        {
+                "name": "Advanced Roofing Inc.",
+                "metro": "Fort Lauderdale, Miami, Tampa, FL",
+                "phone": "(800) 638-6869",
+                "url": "https://www.advancedroofing.com/contact-us/",
+                "email": "commercial@advancedroofing.com",
+                "type": "Commercial Roofing & Solar",
+                "status": "Ready"
+        },
+        {
+                "name": "D.C. Taylor Co.",
+                "metro": "Cedar Rapids, IA & Midwest",
+                "phone": "(319) 363-2073",
+                "url": "https://www.dctaylorco.com/contact-us/",
+                "email": "service@dctaylorco.com",
+                "type": "Commercial Roofing Specialist",
+                "status": "Ready"
+        },
+        {
+                "name": "Schreiber Corporation",
+                "metro": "Detroit / Wixom, MI",
+                "phone": "(248) 926-1500",
+                "url": "https://schreiberroofing.com/contact-us/",
+                "email": "info@schreiberroofing.com",
+                "type": "Commercial Roofing & Exterior",
+                "status": "Ready"
+        },
+        {
+                "name": "Beyer Mechanical",
+                "metro": "San Antonio, TX",
+                "phone": "(210) 656-9027",
+                "url": "https://www.beyermechanical.com/contact-us/",
+                "email": "service@beyermechanical.com",
+                "type": "Commercial Mechanical & HVAC",
+                "status": "Ready"
+        },
+        {
+                "name": "Prism Electric",
+                "metro": "Dallas & Fort Worth, TX",
+                "phone": "(972) 247-9700",
+                "url": "https://prismelectric.com/contact/",
+                "email": "info@prismelectric.com",
+                "type": "Commercial Electrical Engineering",
+                "status": "Ready"
+        },
+        {
+                "name": "Bel-Aire Mechanical",
+                "metro": "Phoenix, AZ",
+                "phone": "(602) 275-8591",
+                "url": "https://www.belairemechanical.com/contact/",
+                "email": "info@belairemechanical.com",
+                "type": "Commercial Mechanical & Piping",
+                "status": "Ready"
+        },
+        {
+                "name": "B&M Roofing",
+                "metro": "Denver & Boulder, CO",
+                "phone": "(303) 443-5843",
+                "url": "https://bmroofing.com/contact-us/",
+                "email": "info@bmroofing.com",
+                "type": "Commercial Roofing Systems",
+                "status": "Ready"
+        },
+        {
+                "name": "Academy Roofing",
+                "metro": "Denver, CO",
+                "phone": "(303) 360-0708",
+                "url": "https://academyroofing.com/contact-us/",
+                "email": "info@academyroofing.com",
+                "type": "Commercial Roofing",
+                "status": "Ready"
+        },
+        {
+                "name": "American Mechanical Services",
+                "metro": "Nashville, TN",
+                "phone": "(615) 321-4140",
+                "url": "https://www.ammechservices.com/contact/",
+                "email": "info@ammechservices.com",
+                "type": "Commercial Mechanical & HVAC",
+                "status": "Ready"
+        },
+        {
+                "name": "The Original Roofing Company",
+                "metro": "Las Vegas, NV",
+                "phone": "(702) 739-7663",
+                "url": "https://originalroofing.com/contact-us/",
+                "email": "info@originalroofing.com",
+                "type": "Commercial Roofing",
+                "status": "Ready"
+        },
+        {
+                "name": "Olsson Roofing Company",
+                "metro": "Chicago & Aurora, IL",
+                "phone": "(630) 892-0449",
+                "url": "https://olssonroofing.com/contact-us/",
+                "email": "estimating@olssonroofing.com",
+                "type": "Commercial Roofing Specialist",
+                "status": "Ready"
+        }
+],
+
+      midwest: [
+        { name: "Campbell Inc. Commercial HVAC", metro: "Toledo & Northwest Ohio", phone: "(800) 482-2911", url: "https://www.campbellinc.com/contact-us/", email: "service@campbellinc.com", type: "Commercial HVAC & Building Automation", status: "Ready" },
+        { name: "Guarantee Electrical Company", metro: "St. Louis, MO & Midwest", phone: "(314) 772-5400", url: "https://www.geco.com/contact-us", email: "gecoestimating@geco.com", type: "Commercial Electrical Prime", status: "Ready" },
+        { name: "Pepper Construction", metro: "Chicago, IL / Indianapolis / Columbus", phone: "(312) 266-4700", url: "https://www.pepperconstruction.com/contact", email: "info@pepperconstruction.com", type: "Commercial Prime Builder", status: "Submitted" },
+        { name: "Power Construction", metro: "Chicago & Midwest", phone: "(847) 928-6700", url: "https://www.powerconstruction.net/contact", email: "info@powerconstruction.net", type: "Commercial Prime Builder", status: "Submitted" },
+        { name: "Bulley & Andrews", metro: "Chicago, IL", phone: "(773) 235-2433", url: "https://bulley.com/contact/", email: "info@bulley.com", type: "Commercial Prime GC", status: "Submitted" },
+        { name: "F.H. Paschen", metro: "Chicago & Nationwide Infrastructure", phone: "(773) 444-3474", url: "https://www.fhpaschen.com/contact/", email: "info@fhpaschen.com", type: "Commercial & Civil Prime", status: "Submitted" },
+        { name: "James McHugh Construction", metro: "Chicago & High-Rise", phone: "(312) 986-8000", url: "https://mchughconstruction.com/contact-us/", email: "info@mchughconstruction.com", type: "Commercial Concrete & GC", status: "Submitted" },
+        { name: "Shiel Sexton", metro: "Indianapolis, IN & Charlotte, NC", phone: "(317) 656-3800", url: "https://shielsexton.com/contact/", email: "info@shielsexton.com", type: "Commercial Prime GC", status: "Submitted" },
+        { name: "F.A. Wilhelm Construction", metro: "Indianapolis & Midwest", phone: "(317) 359-5411", url: "https://fa-wilhelm.com/contact/", email: "info@fa-wilhelm.com", type: "Heavy Commercial & Industrial", status: "Submitted" },
+        { name: "Messer Construction Co.", metro: "Cincinnati, Columbus, Indianapolis, Nashville", phone: "(513) 242-1541", url: "https://www.messer.com/contact-us/", email: "info@messer.com", type: "Commercial Prime Builder", status: "Submitted" },
+        { name: "Danis Building Construction", metro: "Dayton, Columbus, Cincinnati, Raleigh", phone: "(937) 228-1225", url: "https://danis.com/contact/", email: "info@danis.com", type: "Commercial & Healthcare GC", status: "Submitted" },
+        { name: "Barton Malow", metro: "Detroit, MI & National", phone: "(248) 436-5000", url: "https://www.bartonmalow.com/contact/", email: "info@bartonmalow.com", type: "Commercial & Industrial Prime", status: "Submitted" },
+        { name: "The Christman Company", metro: "Lansing, Detroit, MI & Knoxville, TN", phone: "(517) 482-1488", url: "https://www.christmanco.com/contact", email: "info@christmanco.com", type: "Commercial Prime Builder", status: "Submitted" },
+        { name: "Kraus-Anderson", metro: "Minneapolis, MN & Midwest", phone: "(612) 332-7281", url: "https://www.krausanderson.com/contact-us/", email: "info@krausanderson.com", type: "Commercial Prime GC", status: "Submitted" },
+        { name: "Ryan Companies US", metro: "Minneapolis, Chicago, Dallas, Tampa", phone: "(612) 492-4000", url: "https://www.ryancompanies.com/contact", email: "info@ryancompanies.com", type: "Commercial Developer & GC", status: "Submitted" },
+        { name: "Mortenson Construction", metro: "Minneapolis, Chicago, Denver, Phoenix", phone: "(763) 522-2100", url: "https://www.mortenson.com/contact", email: "info@mortenson.com", type: "National Commercial & Renewable", status: "Submitted" },
+        { name: "McCarthy Building Companies", metro: "St. Louis, Dallas, Atlanta, Phoenix", phone: "(314) 968-3300", url: "https://www.mccarthy.com/contact", email: "info@mccarthy.com", type: "National Top 10 Commercial GC", status: "Submitted" }
+      ],
+      midatlantic: [
+        { name: "Creative Solar USA Commercial", metro: "Atlanta & North Georgia", phone: "(770) 485-7438", url: "https://creativesolarusa.com/contact-us/", email: "service@creativesolarusa.com", type: "Commercial Solar & Battery EPC", status: "Ready" },
+        { name: "Clark Construction Group", metro: "Bethesda, MD / Washington DC / VA", phone: "(301) 272-8100", url: "https://www.clarkconstruction.com/contact-us", email: "info@clarkconstruction.com", type: "National Commercial Prime", status: "Ready" },
+        { name: "The Whiting-Turner Contracting Co.", metro: "Baltimore, MD & Nationwide", phone: "(410) 821-1100", url: "https://www.whiting-turner.com/contact/", email: "info@whiting-turner.com", type: "National Commercial Mega Prime", status: "Ready" },
+        { name: "HITT Contracting", metro: "Falls Church, VA / DC / National", phone: "(703) 846-9000", url: "https://www.hitt.com/contact/", email: "info@hitt.com", type: "Commercial & Data Center GC", status: "Ready" },
+        { name: "DPR Construction", metro: "Reston, VA / Charlotte / Atlanta", phone: "(650) 474-1450", url: "https://www.dpr.com/contact", email: "info@dpr.com", type: "Commercial Tech & Healthcare GC", status: "Ready" },
+        { name: "DAVIS Construction", metro: "Rockville, MD & Washington DC", phone: "(301) 601-0400", url: "https://davisconstruction.com/contact", email: "info@davisconstruction.com", type: "Commercial Prime Builder", status: "Ready" },
+        { name: "Grunley Construction", metro: "Rockville, MD & DC Metro", phone: "(240) 399-2000", url: "https://www.grunley.com/contact", email: "info@grunley.com", type: "Institutional & Commercial Prime", status: "Ready" },
+        { name: "Hourigan", metro: "Richmond & Virginia Beach, VA", phone: "(804) 282-5300", url: "https://www.hourigan.group/contact/", email: "info@hourigan.group", type: "Commercial Prime Builder", status: "Ready" },
+        { name: "Clancy & Theys Construction", metro: "Raleigh, Wilmington, NC / VA / FL", phone: "(919) 834-3601", url: "https://www.clancytheys.com/contact/", email: "info@clancytheys.com", type: "Commercial Prime GC", status: "Ready" },
+        { name: "Samet Corporation", metro: "Greensboro, Charlotte, Raleigh, NC", phone: "(336) 544-2600", url: "https://sametcorp.com/contact/", email: "info@sametcorp.com", type: "Commercial & Industrial GC", status: "Ready" },
+        { name: "Choate Construction", metro: "Atlanta, GA / Charlotte / Raleigh, NC", phone: "(770) 662-5888", url: "https://www.choateco.com/contact/", email: "info@choateco.com", type: "Commercial Prime Builder", status: "Ready" },
+        { name: "Brasfield & Gorrie", metro: "Birmingham, AL / Atlanta / Nashville / Raleigh", phone: "(205) 328-4000", url: "https://www.brasfieldgorrie.com/contact/", email: "info@brasfieldgorrie.com", type: "Top Commercial Prime", status: "Ready" },
+        { name: "Holder Construction", metro: "Atlanta, GA / Charlotte / Dallas", phone: "(770) 988-3000", url: "https://www.holderconstruction.com/contact", email: "info@holderconstruction.com", type: "Commercial & Mission Critical GC", status: "Ready" },
+        { name: "Balfour Beatty US", metro: "Atlanta, GA / Charlotte / DC Metro", phone: "(214) 468-4700", url: "https://www.balfourbeattyus.com/contact", email: "info@balfourbeattyus.com", type: "Commercial & Civil Prime", status: "Ready" },
+        { name: "Hannah Solar", metro: "Atlanta, GA & Southeast Commercial Solar", phone: "(404) 609-7005", url: "https://hannahsolar.com/contact/", email: "info@hannahsolar.com", type: "Commercial Solar & BESS EPC", status: "Ready" },
+        { name: "Gilbane Building Company", metro: "DC Metro, Atlanta, Chicago, Providence", phone: "(401) 456-5800", url: "https://www.gilbaneco.com/contact-us/", email: "info@gilbaneco.com", type: "National Commercial Prime", status: "Ready" }
+      ],
+      wednesday: [
+        { name: "Joeris General Contractors", metro: "Dallas & Central Texas", phone: "(817) 488-8200", url: "https://joeris.com/contact/", email: "bidsdfw@joeris.com", type: "Commercial Prime GC", status: "Ready" },
+        { name: "Structure Tone Southwest", metro: "Dallas & Houston, TX", phone: "(214) 520-3353", url: "https://structuretone.com/contact-us/", email: "bd@stobuildinggroup.com", type: "Commercial Prime Builder", status: "Ready" },
+        { name: "Kaufman Lynn Construction", metro: "South Florida (Delray/Miami)", phone: "(561) 361-6700", url: "https://kaufmanlynn.com/contact/", email: "info@kaufmanlynn.com", type: "Commercial GC", status: "Ready" },
+        { name: "Stiles Construction", metro: "Fort Lauderdale & Miami, FL", phone: "(954) 627-9000", url: "https://www.stiles.com/contact", email: "TPM@stiles.com", type: "Commercial Developer & GC", status: "Ready" },
+        { name: "Ajax Building Company", metro: "Florida & Georgia", phone: "(850) 224-9915", url: "https://ajaxbuilding.com/contact/", email: "Ajax@ajaxbuilding.com", type: "Commercial Institutional GC", status: "Ready" },
+        { name: "Winter Construction", metro: "Atlanta, GA", phone: "(404) 588-3300", url: "https://winter-construction.com/contact/", email: "experiencebuilder@winter-construction.com", type: "Commercial & Hospitality GC", status: "Ready" },
+        { name: "Rogers-O'Brien Construction", metro: "Dallas, Austin, Houston, TX", phone: "(469) 310-3300", url: "https://www.r-o.com/contact", email: "info@r-o.com", type: "Texas Commercial Prime", status: "Submitted" },
+        { name: "Harvey | Harvey-Cleary Builders", metro: "Houston & Austin, TX", phone: "(713) 783-8710", url: "https://harveycleary.com/contact/", email: "info@harveycleary.com", type: "Commercial Prime Builder", status: "Ready" },
+        { name: "Anslow-Bryant Construction", metro: "Houston, TX", phone: "(713) 626-1216", url: "https://anslowbryant.com/contact/", email: "info@anslowbryant.com", type: "Commercial GC", status: "Ready" },
+        { name: "Rodgers Builders", metro: "Charlotte & Raleigh, NC", phone: "(704) 537-6044", url: "https://www.rodgersbuilders.com/contact/", email: "info@rodgersbuilders.com", type: "Commercial Prime Builder", status: "Ready" },
+        { name: "Edifice Construction", metro: "Charlotte, NC", phone: "(704) 332-0900", url: "https://edificeinc.com/contact/", email: "info@edificeinc.com", type: "Commercial GC", status: "Ready" },
+        { name: "Vannoy Construction", metro: "Carolinas & Southeast", phone: "(336) 846-7141", url: "https://jrvannoy.com/contact/", email: "info@jrvannoy.com", type: "Commercial Prime", status: "Ready" },
+        { name: "Barnhill Contracting", metro: "North Carolina", phone: "(252) 823-1021", url: "https://www.barnhillcontracting.com/contact/", email: "info@barnhillcontracting.com", type: "Commercial & Civil Prime", status: "Ready" },
+        { name: "Baker Concrete Construction", metro: "Nationwide Prime", phone: "(513) 539-4000", url: "https://bakerconcrete.com/contact/", email: "info@bakerconcrete.com", type: "Commercial Concrete Leader", status: "Ready" },
+        { name: "TDIndustries", metro: "Texas & Southeast", phone: "(972) 888-9500", url: "https://www.tdindustries.com/contact-us", email: "info@tdindustries.com", type: "Commercial MEP Prime", status: "Ready" }
+      ],
+      tuesday: [
+        { name: "Air Hawk Heating & Cooling Commercial", metro: "Tampa, FL", phone: "(813) 929-4295", url: "https://www.airhawkac.com/contact-us/", email: "info@airhawkac.com", type: "Commercial & Residential HVAC", status: "Ready" },
+        { name: "Cornerstone Pros Commercial", metro: "Tampa, FL", phone: "(813) 995-2365", url: "https://www.cornerstonepros.com/contact-us/", email: "info@cornerstonepros.com", type: "Commercial HVAC & Plumbing", status: "Ready" },
+        { name: "Imperial Roofing Contractor Commercial", metro: "Tampa, FL", phone: "(813) 996-2773", url: "https://www.imperialroofing.com/contact-us/", email: "service@imperialroofing.com", type: "Commercial Roofing Specialist", status: "Ready" },
+        { name: "Mister Sparky Houston Commercial", metro: "Houston, TX", phone: "(713) 428-2120", url: "https://www.mistersparkyhouston.com/contact-us/", email: "info@mistersparkyhouston.com", type: "Commercial & Residential Electrical", status: "Ready" },
+        { name: "Abacus Plumbing & Air Commercial", metro: "Houston, TX", phone: "(713) 766-3605", url: "https://www.abacusplumbing.net/contact/", email: "service@abacusplumbing.net", type: "Commercial HVAC, Plumbing & Electrical", status: "Ready" },
+        { name: "John Moore Services Commercial", metro: "Houston, TX", phone: "(713) 730-2525", url: "https://www.johnmooreservices.com/contact-us/", email: "service@johnmooreservices.com", type: "Commercial HVAC, Plumbing & Electrical", status: "Ready" },
+        { name: "Moncrief Heating & Air Commercial", metro: "Atlanta, GA", phone: "(404) 350-2300", url: "https://moncriefair.com/contact-us/", email: "service@moncriefair.com", type: "Commercial HVAC Specialist", status: "Ready" },
+        { name: "Hardaway Construction", metro: "Nashville, TN", phone: "(615) 254-5461", url: "https://hardaway.net/contact/", email: "info@hardaway.net", type: "Commercial GC", status: "Form Submitted" },
+        { name: "Crain Construction", metro: "Nashville, TN", phone: "(615) 255-2771", url: "https://www.crainconstructioninc.com/contact/", email: "info@crainconstructioninc.com", type: "Commercial GC", status: "Ready" },
+        { name: "T.W. Frierson Contractor", metro: "Nashville, TN", phone: "(615) 367-1333", url: "https://www.twfrierson.com/contact/", email: "info@twfrierson.com", type: "Design-Build Commercial GC", status: "Ready" },
+        { name: "Doster Construction", metro: "Nashville & Southeast", phone: "(205) 443-3800", url: "https://www.dosterconstruction.com/contact/", email: "info@dosterconstruction.com", type: "Commercial Healthcare & Institutional", status: "Ready" },
+        { name: "JE Dunn Construction", metro: "Nashville & National", phone: "(615) 726-2611", url: "https://www.jedunn.com/contact-us", email: "contact@jedunn.com", type: "National Commercial GC", status: "Ready" },
+        { name: "Robins & Morton", metro: "Nashville & Southeast", phone: "(205) 870-1000", url: "https://www.robinsmorton.com/contact/", email: "nashvillebuilders@robinsmorton.com", type: "Commercial & Healthcare GC", status: "Ready" },
+        { name: "McCrory Construction", metro: "Southeast Commercial", phone: "(803) 779-3210", url: "https://mccroryconstruction.com/contact/", email: "info@mccroryconstruction.com", type: "Commercial Prime Builder", status: "Ready" },
+        { name: "Reeves Young", metro: "Heavy Civil & Commercial", phone: "(770) 271-1159", url: "https://reevesyoung.com/contact-us/", email: "PreCon@ReevesYoung.com", type: "Heavy Civil & Commercial GC", status: "Ready" },
+        { name: "Linbeck Group", metro: "Houston & Dallas, TX", phone: "(713) 621-2095", url: "https://linbeck.com/contact/", email: "acrawford@linbeck.com", type: "Commercial Prime Builder", status: "Ready" },
+        { name: "Batson-Cook Construction", metro: "Atlanta & Southeast", phone: "(770) 955-1951", url: "https://www.batson-cook.com/contact", email: "info@batson-cook.com", type: "Commercial GC", status: "Ready" },
+        { name: "Juneau Construction Company", metro: "Atlanta, GA", phone: "(404) 287-6000", url: "https://juneaucc.com/contact/", email: "info@juneaucc.com", type: "Commercial & Multifamily GC", status: "Ready" },
+        { name: "Kitchell Contractors", metro: "Phoenix & Southwest", phone: "(602) 264-4411", url: "https://www.kitchell.com/contact/", email: "info@kitchell.com", type: "Commercial Healthcare & Tech GC", status: "Ready" },
+        { name: "Sundt Construction", metro: "Phoenix & Southwest", phone: "(480) 293-3000", url: "https://www.sundt.com/contact/", email: "info@sundt.com", type: "Commercial & Industrial GC", status: "Ready" }
+      ]
+    };
+
+    let activeBatchKey = "enterprise_refreshed";
+    let targets = batches[activeBatchKey];
+    let currentIndex = 0;
+
+    const sender = {
+      name: "John Granbridge",
+      org: "ToolsVault Commercial Network",
+      email: "toolsvault78@gmail.com",
+      phone: "(971) 200-9432",
+      location: "Nashville, TN"
+    };
+
+    let activityLog = [];
+
+    function init() {
+      const saved = localStorage.getItem("tv_contact_log_v3");
+      if (saved) {
+        try { activityLog = JSON.parse(saved); } catch(e) {}
+      }
+      updateMetrics();
+      loadCurrentProspect();
+      renderQueue();
+    }
+
+    function switchBatch(key) {
+      activeBatchKey = key;
+      targets = batches[key];
+      currentIndex = 0;
+      const titles = {
+        enterprise_refreshed: "Batch 5: Corporate & Enterprise Commercial Builders (Web Form Blitz - 20 Primes)",
+        wednesday: "Wednesday Batch 2: Texas, Florida, Southeast Primes",
+        midwest: "Batch 3: Midwest Commercial Primes (IL, OH, IN, MI, MN)",
+        midatlantic: "Batch 4: Mid-Atlantic & Southeast Primes (VA, MD, DC, NC, GA)",
+        tuesday: "Tuesday Batch 1: Nashville & TN Primes"
+      };
+      document.getElementById("queueTitle").innerText = titles[key] || "Commercial Prime Queue";
+      loadCurrentProspect();
+      renderQueue();
+    }
+
+    function loadCurrentProspect() {
+      const p = targets[currentIndex];
+      document.getElementById("prospectIndex").innerText = `TARGET #${currentIndex + 1} OF ${targets.length}`;
+      document.getElementById("prospectName").innerText = p.name;
+      document.getElementById("prospectMetro").innerText = p.metro;
+      document.getElementById("prospectPhone").innerText = p.phone;
+      document.getElementById("prospectEmail").innerText = p.email || "info@" + p.url.split('/')[2].replace('www.', '');
+      document.getElementById("prospectType").innerText = p.type;
+      document.getElementById("callLink").href = `tel:${p.phone.replace(/[^0-9]/g, '')}`;
+      document.getElementById("callPhoneEcho").innerText = p.phone;
+      
+      document.getElementById("scriptMetroEcho").innerText = p.metro;
+      document.getElementById("pitchTargetEcho").innerText = p.name;
+
+      const subject = `Subcontractor Bidding & Commercial Takeoffs - ${p.metro}`;
+      const pitch = `Name: ${sender.name} (${sender.org})
+Email: ${sender.email}
+Phone: ${sender.phone}
+Subject: ${subject}
+
+Hi ${p.name} Preconstruction & Estimating Team,
+
+We frequently review commercial project plans, tenant improvement scopes, and facility takeoffs across the ${p.metro} region.
+
+We are looking to connect with your estimating department to review upcoming commercial bid invitations for trade packages (Division 03 Concrete, Division 07 Roofing, Division 22 Plumbing, Division 23 HVAC, and Division 26 Electrical).
+
+We also provide free commercial operations software (AIA G702/G703 progress billing generators and CSI MasterFormat sizers) used by regional subcontractors to accelerate bid submittals and pay applications.
+
+Please let us know the direct email or subcontractor prequalification link for your commercial estimating department so we can submit qualifications for your upcoming projects.
+
+Thank you,
+${sender.name} | ${sender.org}
+${sender.location}`;
+
+      document.getElementById("formPitchText").value = pitch;
+
+      // Mailto link for 1-click email fallback
+      const targetEmail = p.email || "info@" + p.url.split('/')[2].replace('www.', '');
+      const mailtoUrl = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(pitch)}`;
+      document.getElementById("emailClientLink").href = mailtoUrl;
+    }
+
+    function openWebsiteContact() {
+      const p = targets[currentIndex];
+      window.open(p.url, "_blank");
+    }
+
+    function copyFormMessage() {
+      const text = document.getElementById("formPitchText").value;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById("btnCopy");
+        btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i> Copied to Clipboard!';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-solid fa-copy text-teal-400"></i> 2. Copy Pitch Text';
+        }, 2000);
+      });
+    }
+
+    function copyDirectEmail() {
+      const p = targets[currentIndex];
+      const targetEmail = p.email || "info@" + p.url.split('/')[2].replace('www.', '');
+      navigator.clipboard.writeText(targetEmail).then(() => {
+        const btn = document.getElementById("btnCopyEmail");
+        btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i> Copied!';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-solid fa-clone text-teal-400"></i> Copy Email Address';
+        }, 2000);
+      });
+    }
+
+    function logOutcome(outcome) {
+      const p = targets[currentIndex];
+      const note = document.getElementById("actionNote").value.trim();
+      p.status = outcome;
+
+      activityLog.push({
+        timestamp: new Date().toISOString(),
+        company: p.name,
+        metro: p.metro,
+        phone: p.phone,
+        email: p.email,
+        action: outcome,
+        note: note
+      });
+
+      localStorage.setItem("tv_contact_log_v3", JSON.stringify(activityLog));
+      document.getElementById("actionNote").value = "";
+      updateMetrics();
+      renderQueue();
+
+      nextProspect();
+    }
+
+    function nextProspect() {
+      if (currentIndex < targets.length - 1) {
+        currentIndex++;
+        loadCurrentProspect();
+      } else {
+        alert("Completed all targets in this batch! Excellent work.");
+      }
+    }
+
+    function selectProspect(idx) {
+      currentIndex = idx;
+      loadCurrentProspect();
+    }
+
+    function renderQueue() {
+      const tbody = document.getElementById("queueTableBody");
+      tbody.innerHTML = "";
+
+      targets.forEach((t, i) => {
+        const tr = document.createElement("tr");
+        tr.className = `cursor-pointer transition ${i === currentIndex ? 'bg-emerald-950/40 text-white font-bold' : 'hover:bg-slate-800/40 text-slate-300'}`;
+        tr.onclick = () => selectProspect(i);
+
+        let statusColor = "text-slate-500";
+        if (t.status === "Form Submitted" || t.status === "Direct Email Sent") statusColor = "text-emerald-400 font-bold";
+        if (t.status.includes("Called")) statusColor = "text-amber-400 font-bold";
+        if (t.status.includes("Skipped")) statusColor = "text-rose-400";
+
+        tr.innerHTML = `
+          <td class="p-3 text-slate-500">${i + 1}</td>
+          <td class="p-3 text-white font-semibold">${t.name}</td>
+          <td class="p-3 text-slate-400">${t.metro}</td>
+          <td class="p-3 text-teal-400">${t.email}</td>
+          <td class="p-3 ${statusColor}">${t.status}</td>
+          <td class="p-3 text-right">
+            <span class="text-xs text-emerald-400 hover:text-emerald-300"><i class="fa-solid fa-chevron-right"></i></span>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function updateMetrics() {
+      let sentCount = 0;
+      activityLog.forEach(item => {
+        if (item.action === "Form Submitted" || item.action === "Direct Email Sent") sentCount++;
+      });
+      document.getElementById("metricForms").innerText = sentCount;
+    }
+
+    function filterQueue() {
+      const query = document.getElementById("filterInput").value.toLowerCase();
+      const rows = document.getElementById("queueTableBody").getElementsByTagName("tr");
+      for (let r of rows) {
+        const text = r.innerText.toLowerCase();
+        r.style.display = text.includes(query) ? "" : "none";
+      }
+    }
+
+    function exportActivityCSV() {
+      if (activityLog.length === 0) {
+        alert("No activity logged yet today.");
+        return;
+      }
+      let csv = "Timestamp,Company Name,Metro,Phone,Email,Action Outcome,Notes\n";
+      activityLog.forEach(row => {
+        csv += `"${row.timestamp}","${row.company}","${row.metro}","${row.phone}","${row.email || ''}","${row.action}","${row.note || ''}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      link.setAttribute("download", `ToolsVault_Outreach_Log_${new Date().toISOString().slice(0,10)}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    window.addEventListener("DOMContentLoaded", init);
+  </script>
+</body>
+</html>
