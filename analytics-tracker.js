@@ -81,6 +81,14 @@
     document.head.appendChild(udemyScript);
   }
 
+  // 1i. Auto-Initialize High-CTR EasyClaw AI Automation Partner Card (Awin ID: 126975)
+  if (!isHome && !isStore && !document.getElementById('easyclaw-card-container') && !document.querySelector('script[src*="easyclaw-ai-card.js"]')) {
+    const easyclawScript = document.createElement('script');
+    easyclawScript.defer = true;
+    easyclawScript.src = '/easyclaw-ai-card.js';
+    document.head.appendChild(easyclawScript);
+  }
+
 
   // 2. Track Local Telemetry (Stored in localStorage for MyRevenueDesk)
   function recordLocalEvent(category, action, label = '', value = 0) {
@@ -154,6 +162,8 @@
         recordLocalEvent('Affiliate', 'click_benjamin_perk', 'Benjamin Cash Back');
       } else if (href.includes('trk.udemy.com') || href.includes('udemy.com')) {
         recordLocalEvent('Affiliate', 'click_udemy_partner', link.textContent.trim() || href);
+      } else if (href.includes('awinmid=126975') || href.includes('easyclaw.com')) {
+        recordLocalEvent('Affiliate', 'click_easyclaw_ai', link.textContent.trim() || href);
       } else if (href.includes('netlify.app') && !href.includes(window.location.host)) {
         recordLocalEvent('Navigation', 'cross_network_launch', href);
       }
