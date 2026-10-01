@@ -98,6 +98,21 @@ window.AFFILIATE_CONFIG = {
   florida_premium_beef: 'https://floridapremiumbeef.sjv.io/dyP0q3',
   goodstone_jewels: 'https://goodstone.sjv.io/R0NjD2',
   protoarc: 'https://protoarc.sjv.io/NGvDYP',
+  protoarc_campaign: {
+    event: 'ProtoArc Prime Big Deal Days',
+    dates: 'October 6–7',
+    impact_id: '56905',
+    media_partner_id: '7704556',
+    discount: 'Up to 37.5% OFF',
+    tracking_link: 'https://protoarc.sjv.io/NGvDYP',
+    deals: [
+      { model: 'EC200 Pro', original: '$289.99', sale: '$218.99', save: '$71.00 (24.5% OFF)' },
+      { model: 'EM11 NL Ergonomic Vertical Mouse', original: '$31.99', sale: '$21.99', save: '$10.00 (31.3% OFF)' },
+      { model: 'XK01 Foldable Bluetooth Keyboard', original: '$53.99', sale: '$33.99', save: '$20.00 (37.0% OFF)' },
+      { model: 'XK04 Compact Keyboard', original: '$39.99', sale: '$24.99', save: '$15.00 (37.5% OFF)' },
+      { model: 'XKM01 CaseUp Keyboard & Mouse Combo', original: '$99.99', sale: '$79.99', save: '$20.00 (20.0% OFF)' }
+    ]
+  },
   xtiles: 'https://xtiles.sjv.io/vD93gW',
   rouvy: 'https://rouvy.pxf.io/xJj3q3',
   izone: 'https://izone.pxf.io/6kQ9RE',
