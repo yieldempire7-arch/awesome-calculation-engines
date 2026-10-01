@@ -79,7 +79,7 @@
         </div>
         <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">Contractor Closing & Partner Lock Desk</h1>
         <p class="text-xs md:text-sm text-slate-400 mt-1 max-w-2xl leading-relaxed">
-          Aggregate weekly dispatch telemetry, track active commercial negotiations, and close exclusive territory reservations ($299/mo) and enterprise software licenses.
+          Aggregate weekly dispatch telemetry, track active commercial negotiations, and close exclusive territory reservations ($49/mo – $299/mo) and enterprise software licenses.
         </p>
       </div>
 
@@ -225,7 +225,7 @@
         <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-4 flex justify-between items-center text-xs">
           <div>
             <span class="text-slate-400">Target Deal Terms:</span>
-            <span class="text-white font-black ml-1">$299/mo Exclusive Regional Lock</span>
+            <span class="text-white font-black ml-1">$49/mo Exclusive ZIP / $299/mo Regional Lock</span>
           </div>
           <a href="https://buy.stripe.com/9B68wI0z72t422McoEaMU04" target="_blank" rel="noopener" class="text-sky-400 font-bold hover:underline flex items-center gap-1">
             Stripe Gateway &rarr;
@@ -301,8 +301,9 @@
         body = `Hi ${contact},\n\n` +
           `Thanks for following up. We operate a direct engineering & estimating network that routes commercial ${trade} bid inquiries across ${metro}.\n\n` +
           `We offer two partnership tiers:\n` +
-          `1. Exclusive Regional Territory: You lock down exclusive project routing for ${trade} in ${metro} on our directory: https://tools-vault-4ml.pages.dev/contractor_network ($299/mo, cancel anytime).\n` +
-          `2. Custom Estimating Suite: Embed our CSI MasterFormat estimating solver directly on your website to capture high-margin inbound bids: https://tools-vault-4ml.pages.dev/white_label_enterprise_licensing\n\n` +
+          `1. Exclusive Territory Reservation: You lock down exclusive project routing for ${trade} in ${metro} on our directory: https://tools-vault-4ml.pages.dev/contractor_network ($49/mo Starter, cancel anytime).\n` +
+          `2. Regional Enterprise Lock: Full metro exclusive routing across all adjacent ZIPs: https://tools-vault-4ml.pages.dev/contractor_network ($299/mo Regional Lock).\n` +
+          `3. Custom Estimating Suite: Embed our CSI MasterFormat estimating solver directly on your website: https://tools-vault-4ml.pages.dev/white_label_enterprise_licensing\n\n` +
           `Do you have 10 minutes Wednesday morning for a quick phone call to see if your team has the field capacity to handle the scope?\n\n` +
           `Best regards,\nJohn Granbridge\nToolsVault Commercial Network\ntoolsvault78@gmail.com`;
       } else if (currentScenario === 'B') {
@@ -424,8 +425,9 @@
             <select onchange="updateDealStage(${idx}, this.value)" class="bg-slate-900 border border-slate-700 text-xs rounded-lg px-2.5 py-1.5 text-white font-bold outline-none">
               <option value="In Conversation" ${d.stage === 'In Conversation' ? 'selected' : ''}>In Conversation</option>
               <option value="Demo Sent" ${d.stage === 'Demo Sent' ? 'selected' : ''}>Demo Sent</option>
-              <option value="Term Sheet Out ($299/mo)" ${d.stage === 'Term Sheet Out ($299/mo)' ? 'selected' : ''}>Term Sheet Out ($299/mo)</option>
-              <option value="Closed Partner ($299/mo)" ${d.stage === 'Closed Partner ($299/mo)' ? 'selected' : ''}>Closed Partner ($299/mo) 🏆</option>
+              <option value="Term Sheet Out ($49/mo)" ${d.stage === 'Term Sheet Out ($49/mo)' ? 'selected' : ''}>Term Sheet Out ($49/mo)</option>
+              <option value="Closed Partner ($49/mo)" ${d.stage === 'Closed Partner ($49/mo)' ? 'selected' : ''}>Closed Partner ($49/mo) ✅</option>
+              <option value="Closed Enterprise ($299/mo)" ${d.stage === 'Closed Enterprise ($299/mo)' ? 'selected' : ''}>Closed Enterprise ($299/mo) 🏆</option>
             </select>
             <button onclick="deleteDeal(${idx})" class="text-slate-600 hover:text-red-400 text-xs px-2 py-1 transition">&times;</button>
           </div>
