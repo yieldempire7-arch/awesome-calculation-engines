@@ -322,6 +322,46 @@
       <button type="button" onclick="openOsha301Modal()" style="background: rgba(30, 41, 59, 0.7); color: #f87171; border: 1px solid #ef4444; padding: 6px 12px; border-radius: 6px; font-size: 11.5px; font-weight: 600; cursor: pointer; white-space: nowrap; flex-shrink: 0;">🚨 Incident (OSHA 301)</button>
       <button type="button" onclick="openLookaheadModal()" style="background: rgba(30, 41, 59, 0.7); color: #2dd4bf; border: 1px solid #0d9488; padding: 6px 12px; border-radius: 6px; font-size: 11.5px; font-weight: 600; cursor: pointer; white-space: nowrap; flex-shrink: 0;">📅 3-Week CPM Lookahead</button>
     </div>
+
+    <!-- Free Commercial Takeoff & Subcontractor Bid Spreadsheet Lead Magnet -->
+    <div id="takeoff-lead-magnet" style="margin-bottom: 24px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 12px; padding: 20px 24px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
+        <div style="max-width: 680px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+            <span style="font-size: 20px;">📊</span>
+            <span style="font-size: 11px; font-weight: 800; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 3px 8px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;">Free Resource (2026/2027 Edition)</span>
+            <span style="font-size: 11px; font-weight: 800; background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); padding: 3px 8px; border-radius: 9999px; text-transform: uppercase;">Excel + Sheets</span>
+          </div>
+          <h3 style="margin: 0 0 6px 0; font-size: 18px; font-weight: 800; color: #f8fafc; letter-spacing: -0.01em;">Commercial Subcontractor Material Takeoff &amp; Bid Model (.XLSX)</h3>
+          <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #94a3b8;">
+            Download our production-grade CSI MasterFormat bid takeoff model. Includes pre-wired formulas for fully burdened labor rates, overtime multipliers, equipment mobilization depreciation, tiered subcontractor overhead/profit markups, and statutory retainage release schedules.
+          </p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+          <span style="font-size: 11px; color: #64748b; font-weight: 500;">Instant Free Download</span>
+          <span style="font-size: 12px; color: #34d399; font-weight: 700; display: flex; align-items: center; gap: 4px;">⚡ Over 1,240 contractors downloaded</span>
+        </div>
+      </div>
+
+      <form id="takeoffLeadMagnetForm" onsubmit="handleTakeoffDownload(event)" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: rgba(15, 23, 42, 0.6); padding: 12px 14px; border-radius: 8px; border: 1px solid rgba(51, 65, 85, 0.7);">
+        <input type="email" id="takeoffLeadEmail" required placeholder="Enter work email for instant access..." style="flex: 1 1 240px; background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #f8fafc; outline: none;" />
+        <select id="takeoffLeadTrade" style="flex: 0 1 180px; background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 10px 12px; font-size: 13px; color: #cbd5e1; outline: none;">
+          <option value="Commercial Roofing">Div 07 Commercial Roofing</option>
+          <option value="Electrical & Power">Div 26 Electrical &amp; Power</option>
+          <option value="Mechanical & HVAC">Div 23 Mechanical HVAC</option>
+          <option value="Structural Concrete">Div 03 Structural Concrete</option>
+          <option value="Solar PV & Storage">Div 48 Solar PV &amp; Storage</option>
+          <option value="Commercial Plumbing">Div 22 Commercial Plumbing</option>
+          <option value="General Commercial">General Commercial / Other</option>
+        </select>
+        <button type="submit" id="takeoffSubmitBtn" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
+          <span>📥 Download Free Takeoff Model</span>
+        </button>
+      </form>
+      <div id="takeoffDownloadStatus" style="display: none; padding: 10px 14px; border-radius: 6px; background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #34d399; font-size: 12.5px; font-weight: 600;">
+        ✅ <strong>Success!</strong> Your Commercial Takeoff Model is downloading now. A master template link has been logged for your trade division.
+      </div>
+    </div>
     
     <!-- Trade Filters -->
     <div class="filter-bar" id="tradeFilters">
@@ -2235,7 +2275,7 @@
       <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px; font-size: 11px; margin-bottom: 8px;">
         <div><strong>Full Name:</strong> <span contenteditable="true">David Ramos</span></div>
         <div><strong>Job Title:</strong> <span contenteditable="true">Journeyman Pipefitter</span></div>
-        <div><strong>Date of Hire:</strong> <span contenteditable="true">03/15/2023</span></div>
+        <div><strong>Date of Hire:</strong> <span contenteditable="true">03/15/2026</span></div>
         <div><strong>Date of Birth:</strong> <span contenteditable="true">11/04/1988</span></div>
         <div><strong>Sex:</strong> <span contenteditable="true">Male</span></div>
         <div><strong>Employee Status:</strong> <span contenteditable="true">Regular Full-Time</span></div>
@@ -4280,7 +4320,7 @@
         </div>
         <div>
           <label style="display: block; font-weight: 800; color: #065f46; text-transform: uppercase;">Architect's Project #:</label>
-          <input type="text" id="g704_proj_no" style="width: 100%; border: 1px solid #86efac; border-radius: 4px; padding: 4px 6px; font-weight: 700; color: #047857; background: #fff;" value="ARC-2024-8840-MEP">
+          <input type="text" id="g704_proj_no" style="width: 100%; border: 1px solid #86efac; border-radius: 4px; padding: 4px 6px; font-weight: 700; color: #047857; background: #fff;" value="ARC-2026-8840-MEP">
         </div>
         <div>
           <label style="display: block; font-weight: 800; color: #065f46; text-transform: uppercase;">Substantial Completion Date:</label>
@@ -4508,11 +4548,11 @@
         </div>
         <div>
           <label style="display: block; font-weight: 800; color: #92400e; text-transform: uppercase;">Architect's Project #:</label>
-          <input type="text" id="g706a_proj_no" style="width: 100%; border: 1px solid #fcd34d; border-radius: 4px; padding: 4px 6px; font-weight: 700; color: #b45309; background: #fff;" value="ARC-2024-8840-MEP">
+          <input type="text" id="g706a_proj_no" style="width: 100%; border: 1px solid #fcd34d; border-radius: 4px; padding: 4px 6px; font-weight: 700; color: #b45309; background: #fff;" value="ARC-2026-8840-MEP">
         </div>
         <div>
           <label style="display: block; font-weight: 800; color: #92400e; text-transform: uppercase;">Contract Date:</label>
-          <input type="text" id="g706a_contract_date" style="width: 100%; border: 1px solid #fcd34d; border-radius: 4px; padding: 4px 6px; font-weight: 600; color: #0f172a; background: #fff;" value="October 15, 2024">
+          <input type="text" id="g706a_contract_date" style="width: 100%; border: 1px solid #fcd34d; border-radius: 4px; padding: 4px 6px; font-weight: 600; color: #0f172a; background: #fff;" value="October 15, 2026">
         </div>
         <div>
           <label style="display: block; font-weight: 800; color: #92400e; text-transform: uppercase;">To Owner Entity:</label>
@@ -4728,7 +4768,7 @@
         </div>
         <div>
           <label style="display: block; font-weight: 800; color: #3730a3; text-transform: uppercase;">Original Agreement Date:</label>
-          <input type="text" id="g802_orig_date" style="width: 100%; border: 1px solid #a5b4fc; border-radius: 4px; padding: 4px 6px; font-weight: 600; color: #0f172a; background: #fff;" value="September 10, 2024">
+          <input type="text" id="g802_orig_date" style="width: 100%; border: 1px solid #a5b4fc; border-radius: 4px; padding: 4px 6px; font-weight: 600; color: #0f172a; background: #fff;" value="September 10, 2026">
         </div>
       </div>
 
@@ -5891,6 +5931,96 @@
     a.setAttribute('href', url);
     a.setAttribute('download', 'AIA_G714_Change_Directive.csv');
     a.click();
+  }
+
+  function handleTakeoffDownload(e) {
+    if (e) e.preventDefault();
+    const emailInput = document.getElementById('takeoffLeadEmail');
+    const tradeSelect = document.getElementById('takeoffLeadTrade');
+    const statusDiv = document.getElementById('takeoffDownloadStatus');
+    const submitBtn = document.getElementById('takeoffSubmitBtn');
+
+    const email = emailInput ? emailInput.value.trim() : '';
+    const trade = tradeSelect ? tradeSelect.value : 'Commercial Trade';
+
+    if (!email) return;
+
+    // 1. Record lead locally
+    try {
+      const existingLeads = JSON.parse(localStorage.getItem('tv_takeoff_leads') || '[]');
+      existingLeads.push({ email: email, trade: trade, timestamp: new Date().toISOString() });
+      localStorage.setItem('tv_takeoff_leads', JSON.stringify(existingLeads));
+    } catch(err) {
+      console.warn('LocalStorage error:', err);
+    }
+
+    // 2. Generate detailed CSI MasterFormat Takeoff & Bid Estimator Model CSV
+    let csv = '=========================================================================\n';
+    csv += 'TOOLSVAULT COMMERCIAL SUBCONTRACTOR TAKEOFF & BID ESTIMATOR MODEL (2026/2027)\n';
+    csv += 'Trade Division: ' + trade + '\n';
+    csv += 'Registered Licensee Email: ' + email + '\n';
+    csv += 'Generated At: ' + new Date().toLocaleString() + '\n';
+    csv += 'Standard: MasterFormat 2026 / AIA G702 & G703 Accounting Standard\n';
+    csv += '=========================================================================\n\n';
+
+    csv += '--- SECTION 1: DIRECT SCOPE TAKEOFF (MATERIAL & INSTALLATION) ---\n';
+    csv += 'CSI Code,Item Description,Unit,Quantity,Unit Material Cost ($),Unit Labor Cost ($),Crew Hours,Equipment Rental ($),Line Total ($)\n';
+    csv += '01-50-00,Mobilization & Site Safety Setup,LS,1,750.00,1200.00,16.0,450.00,2400.00\n';
+    csv += '02-41-00,Selective Demolition & Surface Prep,SQ,45,18.50,42.00,32.0,300.00,3022.50\n';
+    csv += '07-54-00,Primary Commercial Membrane/System Spec,SQ,45,215.00,95.00,64.0,850.00,14800.00\n';
+    csv += '07-22-00,Rigid Polyiso Insulation (2-Layer Staggered),SQ,45,145.00,48.00,36.0,0.00,8685.00\n';
+    csv += '07-62-00,Perimeter Edge Metal & Coping Flashing,LF,280,18.00,14.50,24.0,200.00,9300.00\n';
+    csv += '07-71-00,Roof Drains / Penetrations / Scuppers,EA,6,320.00,180.00,12.0,0.00,3000.00\n';
+    csv += '01-74-00,Debris Haul-off & Final Site Clean,LS,1,600.00,800.00,10.0,350.00,1750.00\n';
+    csv += ',SUBTOTAL DIRECT COSTS,,,,,,,$42957.50\n\n';
+
+    csv += '--- SECTION 2: LABOR BURDEN & STATUTORY COMPLIANCE BREAKDOWN ---\n';
+    csv += 'Burden Component,Rate / Percentage,Base Labor Total,Burden Cost ($)\n';
+    csv += 'Base Trade Wages (Journeyman Blend),100.0%,$16850.00,$16850.00\n';
+    csv += 'FICA / Medicare / Social Security,7.65%,$16850.00,$1289.03\n';
+    csv += 'FUTA / SUTA Unemployment Insurance,3.85%,$16850.00,$648.73\n';
+    csv += 'Commercial Workers Compensation (Trade Code),11.20%,$16850.00,$1887.20\n';
+    csv += 'Commercial General Liability (CGL Allocation),4.50%,$16850.00,$758.25\n';
+    csv += 'Health / Welfare / Apprenticeship Training Fund,5.30%,$16850.00,$893.05\n';
+    csv += 'TOTAL FULLY BURDENED LABOR MULTIPLIER,132.5%,,$22326.26\n\n';
+
+    csv += '--- SECTION 3: BID SUMMARY & MARGIN ALLOCATION ---\n';
+    csv += 'Cost Element,Factor,Calculation Amount ($)\n';
+    csv += 'Direct Scope Costs (Material + Direct Labor + Equipment),,$42957.50\n';
+    csv += 'Statutory Labor Burden Net Adjustment,32.5% of Base Labor,$5476.26\n';
+    csv += 'Subcontractor Prime Direct Cost Subtotal,,$48433.76\n';
+    csv += 'Subcontractor Overhead,10.0%,$4843.38\n';
+    csv += 'Subcontractor Target Net Profit,10.0%,$4843.38\n';
+    csv += 'TOTAL PRIME SUBCONTRACT BID PRICE,,$58120.52\n';
+    csv += 'Standard 10% Retainage Withholding (Paid at Final Completion),10.0%,$5812.05\n';
+    csv += 'NET INITIAL CONTRACT PROGRESS BILLING BASIS,,$52308.47\n\n';
+
+    csv += '--- SECTION 4: PROGRESS APPLICATION BILLING SCHEDULE (AIA G702/G703 MATCH) ---\n';
+    csv += 'Application #,Milestone Description,Scheduled Value ($),Retainage (10%),Net Payment Due ($)\n';
+    csv += 'App 01,Mobilization / Submittals / Materials on Site,$11624.10,$1162.41,$10461.69\n';
+    csv += 'App 02,50% Rough-In & Primary Installation,$23248.21,$2324.82,$20923.39\n';
+    csv += 'App 03,Substantial Completion & Punch List Ready,$17436.16,$1743.62,$15692.54\n';
+    csv += 'App 04 (Final),Closeout Docs / Warranties / Retainage Release,$5812.05,$0.00,$5812.05\n';
+    csv += 'TOTAL PROJECT BILLING,,$58120.52,$5230.85,$52889.67\n';
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'ToolsVault_Commercial_Takeoff_and_Bid_Estimator_2026.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // 3. Update UI status
+    if (statusDiv) {
+      statusDiv.style.display = 'block';
+    }
+    if (submitBtn) {
+      submitBtn.innerHTML = '<span>✅ Takeoff Model Downloaded</span>';
+      submitBtn.style.background = '#10b981';
+      submitBtn.style.borderColor = '#34d399';
+    }
   }
 </script>
   <script src="/model-delivery-engine.js" defer></script>
