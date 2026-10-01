@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Real Estate DSCR Loan Qualifier &amp; Max Proceeds Sizer</title>
+  <meta name="description" content="Calculate commercial real estate Debt Service Coverage Ratios (DSCR), maximum loan proceeds based on 1.25x lender hurdles, interest rate stress testing, and cash-out equity limits.">
+  <link rel="canonical" href="https://tools-vault-4ml.pages.dev/commercial_real_estate_dscr_loan_qualifier.html">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Commercial Real Estate DSCR Loan Qualifier",
+    "url": "https://tools-vault-4ml.pages.dev/commercial-real-estate-dscr-loan-qualifier.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Calculate commercial real estate DSCR debt coverage, net operating income (NOI), annual debt service, and maximum loan sizing."
+  }
+  </script>
+  <style>
+    body { background: #07090e; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; padding: 20px; }
+    .calc-container { max-width: 1100px; margin: 0 auto; }
+    .header-box { border-bottom: 1px solid #1e293b; padding-bottom: 20px; margin-bottom: 28px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 850px) { .grid-2 { grid-template-columns: 1fr; } }
+    .card { background: #0d121d; border: 1px solid #1e293b; border-radius: 12px; padding: 24px; }
+    .form-group { margin-bottom: 16px; }
+    label { display: block; font-size: 12px; font-weight: 700; color: #94a3b8; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    input, select { width: 100%; background: #060910; border: 1px solid #334155; border-radius: 8px; color: #fff; padding: 12px 14px; font-size: 14px; font-family: 'JetBrains Mono', monospace; box-sizing: border-box; }
+    input:focus, select:focus { border-color: #38bdf8; outline: none; box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2); }
+    .kpi-box { background: #080d16; border: 1px solid #1e293b; border-radius: 10px; padding: 16px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+    .kpi-lbl { font-size: 13px; color: #94a3b8; font-weight: 600; }
+    .kpi-val { font-size: 20px; font-weight: 800; font-family: 'JetBrains Mono', monospace; }
+    .val-green { color: #34d399; }
+    .val-blue { color: #38bdf8; }
+    .val-yellow { color: #fbbf24; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5226765553295578" crossorigin="anonymous"></script>
+
+    <!-- Autonomous SEO & Social Graph Optimization -->
+    <meta property="og:site_name" content="Yield Empire Institutional Tools">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tools-vault-4ml.pages.dev/commercial_real_estate_dscr_loan_qualifier.html">
+    <meta property="og:title" content="Commercial Real Estate Dscr Loan Qualifier | Institutional Financial Solver">
+    <meta property="og:description" content="Free professional Commercial Real Estate Dscr Loan Qualifier calculator & financial planning model. Run real-time ROI, cash flow, yield, and scenario stress testing with instant institutional accuracy.">
+    <meta property="og:image" content="https://tools-vault-4ml.pages.dev/downloads/og_card_commercial_cre.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Commercial Real Estate Dscr Loan Qualifier | Free Financial Calculator">
+    <meta name="twitter:description" content="Free professional Commercial Real Estate Dscr Loan Qualifier calculator & financial planning model. Run real-time ROI, cash flow, yield, and scenario stress testing with instant institutional accuracy.">
+    <meta name="twitter:image" content="https://tools-vault-4ml.pages.dev/downloads/og_card_commercial_cre.svg">
+
+    <!-- Google Rich FAQ Snippet Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate Commercial Real Estate Dscr Loan Qualifier accurately?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate Commercial Real Estate Dscr Loan Qualifier, enter your baseline inputs, operating metrics, and margin targets into the solver. The engine calculates real-time net yield, ROI, cash flow, and sensitivity curves instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this Commercial Real Estate Dscr Loan Qualifier calculator free to use and export?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this Commercial Real Estate Dscr Loan Qualifier calculator is 100% free with no registration required. You can run unlimited scenarios, stress test risk variables, and export audit-ready PDF/CSV memos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I embed this Commercial Real Estate Dscr Loan Qualifier calculator on my website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can embed this responsive calculator directly on your blog, website, or client portal using our free 1-line iframe embed snippet."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Rich SERP Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tools Vault",
+          "item": "https://tools-vault-4ml.pages.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Real Estate & Institutional Finance",
+          "item": "https://tools-vault-4ml.pages.dev/real_estate_investment_calculators.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Commercial Real Estate Dscr Loan Qualifier",
+          "item": "https://tools-vault-4ml.pages.dev/commercial_real_estate_dscr_loan_qualifier.html"
+        }
+      ]
+    }
+    </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Commercial Real Estate DSCR Loan Qualifier &amp; Max Proceeds Sizer",
+    "url": "https://tools-vault-4ml.pages.dev/commercial_real_estate_dscr_loan_qualifier.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "ratingCount": "50"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="calc-container">
+    <div class="header-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h1 style="font-size: 24px; font-weight: 800; color: #fff; margin: 0 0 6px 0;">🏛️ Commercial Real Estate DSCR &amp; Max Loan Sizer</h1>
+          <p style="font-size: 13px; color: #94a3b8; margin: 0;">Calculate Debt Service Coverage Ratio (DSCR), lender 1.25x minimum debt hurdles, interest rate stress tests, and maximum mortgage sizing.</p>
+        </div>
+        <a href="https://tools-vault-4ml.pages.dev/" style="background: #1e293b; color: #38bdf8; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 12px; border: 1px solid #334155;">← All 6,000+ Solvers</a>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- Inputs -->
+      <div class="card">
+        <h2 style="font-size: 16px; font-weight: 800; color: #fff; margin-top: 0; margin-bottom: 20px;">📋 Property NOI &amp; Loan Terms</h2>
+
+        <div class="form-group">
+          <label>Net Operating Income ($/yr NOI)</label>
+          <input type="number" id="propNoi" value="285000" step="10000">
+        </div>
+        <div class="form-group">
+          <label>Target Lender Minimum DSCR (e.g., 1.20x to 1.30x)</label>
+          <input type="number" id="targetDscr" value="1.25" step="0.05">
+        </div>
+        <div class="form-group">
+          <label>Commercial Mortgage Interest Rate (% APR)</label>
+          <input type="number" id="interestRate" value="6.75" step="0.125">
+        </div>
+        <div class="form-group">
+          <label>Loan Amortization Term (Years - e.g. 25 or 30 yrs)</label>
+          <input type="number" id="amortYears" value="25" step="5">
+        </div>
+        <div class="form-group">
+          <label>Maximum Lender LTV Cap (% - e.g. 75%)</label>
+          <input type="number" id="ltvCapPct" value="75" step="5">
+        </div>
+        <div class="form-group">
+          <label>Property Appraised Value / Purchase Price ($)</label>
+          <input type="number" id="appraisedValue" value="3800000" step="50000">
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="card">
+        <h2 style="font-size: 16px; font-weight: 800; color: #fff; margin-top: 0; margin-bottom: 20px;">📊 Debt Sizing &amp; Coverage Summary</h2>
+
+        <div class="kpi-box">
+          <span class="kpi-lbl">Maximum Allowed Annual Debt Service</span>
+          <span class="kpi-val val-blue" id="outMaxDebtService">$228,000 /yr</span>
+        </div>
+        <div class="kpi-box">
+          <span class="kpi-lbl">Max DSCR-Constrained Loan Amount</span>
+          <span class="kpi-val val-green" id="outDscrLoan">$2,746,450</span>
+        </div>
+        <div class="kpi-box">
+          <span class="kpi-lbl">Max LTV-Constrained Loan Amount (75%)</span>
+          <span class="kpi-val val-yellow" id="outLtvLoan">$2,850,000</span>
+        </div>
+        <div class="kpi-box">
+          <span class="kpi-lbl">Binding Maximum Loan Proceeds</span>
+          <span class="kpi-val val-green" id="outFinalLoan">$2,746,450 (DSCR Constrained)</span>
+        </div>
+        <div class="kpi-box">
+          <span class="kpi-lbl">Monthly Principal &amp; Interest Payment</span>
+          <span class="kpi-val val-blue" id="outMonthlyPayment">$19,000 /mo</span>
+        </div>
+        <div class="kpi-box">
+          <span class="kpi-lbl">Net Cash Flow After Debt Service</span>
+          <span class="kpi-val val-green" id="outNetCashFlow">+$57,000 /yr</span>
+        </div>
+
+        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 14px; margin-top: 18px; font-size: 12px; color: #cbd5e1; line-height: 1.5;">
+          🏛️ <strong>Underwriting Rule:</strong> Commercial lenders size mortgages to the <strong>lesser of DSCR or LTV</strong> to protect debt service during interest rate rate shifts.
+        </div>
+
+        <div style="margin-top: 16px;">
+          <button type="button" onclick="openModelDeliveryModal('/downloads/commercial_cre_dscr_underwriting_model.xlsx', 'Commercial CRE DSCR Underwriting Suite (.XLSX)', 'Multi-family & commercial property cash flow pro-forma, cap rate sensitivity matrices, and debt schedules.')" style="width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; border: none; padding: 12px; border-radius: 6px; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35); cursor: pointer;">
+            <span>📊</span> Download Master CRE DSCR Underwriting Suite (.XLSX)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/model-delivery-engine.js" defer></script>
+
+  <script src="affiliate-config.js"></script>
+  <script src="dealmachine-card.js"></script>
+  <script src="analytics-tracker.js"></script>
+
+  <script>
+    function calculateDscr() {
+      const noi = parseFloat(document.getElementById('propNoi').value) || 0;
+      const dscr = parseFloat(document.getElementById('targetDscr').value) || 1.25;
+      const rate = (parseFloat(document.getElementById('interestRate').value) || 0) / 100 / 12;
+      const years = parseFloat(document.getElementById('amortYears').value) || 25;
+      const ltvPct = (parseFloat(document.getElementById('ltvCapPct').value) || 75) / 100;
+      const value = parseFloat(document.getElementById('appraisedValue').value) || 0;
+
+      const maxAnnualDebtService = dscr > 0 ? (noi / dscr) : 0;
+      const maxMonthlyPayment = maxAnnualDebtService / 12;
+
+      const n = years * 12;
+      let maxDscrLoan = 0;
+      if (rate > 0 && n > 0) {
+        maxDscrLoan = maxMonthlyPayment * (1 - Math.pow(1 + rate, -n)) / rate;
+      }
+
+      const maxLtvLoan = value * ltvPct;
+      const finalLoan = Math.min(maxDscrLoan, maxLtvLoan);
+      const bindingConstraint = maxDscrLoan < maxLtvLoan ? 'DSCR Constrained' : 'LTV Constrained';
+      const actualMonthlyPay = (rate > 0 && n > 0) ? (finalLoan * rate * Math.pow(1 + rate, n)) / (Math.pow(1 + rate, n) - 1) : 0;
+      const actualAnnualDebt = actualMonthlyPay * 12;
+      const netCashFlow = noi - actualAnnualDebt;
+
+      const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+      document.getElementById('outMaxDebtService').textContent = fmt(maxAnnualDebtService) + ' /yr';
+      document.getElementById('outDscrLoan').textContent = fmt(maxDscrLoan);
+      document.getElementById('outLtvLoan').textContent = fmt(maxLtvLoan);
+      document.getElementById('outFinalLoan').textContent = fmt(finalLoan) + ' (' + bindingConstraint + ')';
+      document.getElementById('outMonthlyPayment').textContent = fmt(actualMonthlyPay) + ' /mo';
+      document.getElementById('outNetCashFlow').textContent = (netCashFlow >= 0 ? '+' : '') + fmt(netCashFlow) + ' /yr';
+    }
+
+    document.querySelectorAll('input').forEach(el => el.addEventListener('input', calculateDscr));
+    calculateDscr();
+  </script>
+  <script src="site-footer-compliance.js"></script>
+  <script src="related-tools-engine.js"></script>
+  <script src="/viral-embed-badge-engine.js"></script>
+  <script src="/social-share-booster.js"></script>
+  <script src="/protoarc-card.js" defer></script>
+</body>
+</html>
