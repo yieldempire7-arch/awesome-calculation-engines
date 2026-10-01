@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg_protoarc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="accent_cyan_amber" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <pattern id="grid_deals" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Base & Grid -->
+  <rect width="1200" height="630" fill="url(#bg_protoarc)"/>
+  <rect width="1200" height="630" fill="url(#grid_deals)"/>
+  
+  <!-- Outer Card Frame -->
+  <rect x="50" y="50" width="1100" height="530" rx="28" fill="#0b1329" fill-opacity="0.9" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Top Event Pill -->
+  <rect x="90" y="90" width="380" height="40" rx="20" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-opacity="0.4"/>
+  <text x="280" y="115" fill="#fbbf24" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="900" letter-spacing="2" text-anchor="middle">PRIME BIG DEAL DAYS • OCT 6–7</text>
+  
+  <!-- Main Title -->
+  <text x="90" y="185" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="46" font-weight="900" letter-spacing="-0.02em">ProtoArc Ergonomic Hardware</text>
+  <text x="90" y="240" fill="url(#accent_cyan_amber)" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="800" letter-spacing="-0.01em">Save Up to 37.5% OFF Executive Tech</text>
+  
+  <!-- Subtitle -->
+  <text x="90" y="295" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="20">Official Partner Deals for Commercial Estimators, Engineers &amp; Remote Professionals</text>
+  
+  <!-- Deal Grid Boxes -->
+  <g transform="translate(90, 340)">
+    <!-- Deal 1: EC200 Pro -->
+    <rect x="0" y="0" width="225" height="150" rx="16" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.5"/>
+    <text x="20" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">EXECUTIVE CHAIR</text>
+    <text x="20" y="58" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">EC200 Pro</text>
+    <text x="20" y="92" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="26" font-weight="900">$218.99</text>
+    <text x="20" y="122" fill="#ef4444" font-family="system-ui, sans-serif" font-size="13" text-decoration="line-through">$289.99</text>
+    <text x="95" y="122" fill="#10b981" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">Save 24.5%</text>
+
+    <!-- Deal 2: EM11 NL Mouse -->
+    <rect x="245" y="0" width="225" height="150" rx="16" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="265" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">VERTICAL MOUSE</text>
+    <text x="265" y="58" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">EM11 NL RGB</text>
+    <text x="265" y="92" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="26" font-weight="900">$21.99</text>
+    <text x="265" y="122" fill="#ef4444" font-family="system-ui, sans-serif" font-size="13" text-decoration="line-through">$31.99</text>
+    <text x="330" y="122" fill="#10b981" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">Save 31.3%</text>
+
+    <!-- Deal 3: XK01 Tri-Fold -->
+    <rect x="490" y="0" width="225" height="150" rx="16" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="510" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">FOLDABLE KEYBOARD</text>
+    <text x="510" y="58" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">XK01 Tri-Fold</text>
+    <text x="510" y="92" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="26" font-weight="900">$33.99</text>
+    <text x="510" y="122" fill="#ef4444" font-family="system-ui, sans-serif" font-size="13" text-decoration="line-through">$53.99</text>
+    <text x="575" y="122" fill="#10b981" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">Save 37.0%</text>
+
+    <!-- Deal 4: XKM01 Combo -->
+    <rect x="735" y="0" width="225" height="150" rx="16" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="755" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">TRAVEL CASE KIT</text>
+    <text x="755" y="58" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">XKM01 CaseUp</text>
+    <text x="755" y="92" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="26" font-weight="900">$79.99</text>
+    <text x="755" y="122" fill="#ef4444" font-family="system-ui, sans-serif" font-size="13" text-decoration="line-through">$99.99</text>
+    <text x="825" y="122" fill="#10b981" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">Save 20.0%</text>
+  </g>
+
+  <!-- Bottom Brand Footer -->
+  <text x="90" y="540" fill="#64748b" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">ToolsVault Commercial Network • Verified Hardware Partner (Impact ID: 56905)</text>
+  <text x="1090" y="540" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" text-anchor="end">tools-vault-4ml.pages.dev/deals</text>
+</svg>
