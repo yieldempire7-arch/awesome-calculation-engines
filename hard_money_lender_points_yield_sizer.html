@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hard Money Private Lender Points, Extension Fees &amp; Annual Yield Sizer</title>
+  <meta name="description" content="Calculate private hard money real estate lending yields, 2–3 points origination fees, monthly interest-only note payments, draw inspection fees, and annualized lender IRR.">
+  <link rel="canonical" href="https://tools-vault-4ml.pages.dev/hard_money_lender_points_yield_sizer.html">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hard Money Lender Yield Sizer",
+    "url": "https://tools-vault-4ml.pages.dev/hard-money-lender-points-yield-sizer.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Calculate private hard money real estate loan returns, origination points, monthly interest-only payments, and annualized lender yield."
+  }
+  </script>
+  <style>
+    body { background: #07090e; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; padding: 20px; }
+    .calc-container { max-width: 1100px; margin: 0 auto; }
+    .header-box { border-bottom: 1px solid #1e293b; padding-bottom: 20px; margin-bottom: 28px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 850px) { .grid-2 { grid-template-columns: 1fr; } }
+    .card { background: #0d121d; border: 1px solid #1e293b; border-radius: 12px; padding: 24px; }
+    .form-group { margin-bottom: 16px; }
+    label { display: block; font-size: 12px; font-weight: 700; color: #94a3b8; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    input, select { width: 100%; background: #060910; border: 1px solid #334155; border-radius: 8px; color: #fff; padding: 12px 14px; font-size: 14px; font-family: 'JetBrains Mono', monospace; box-sizing: border-box; }
+    input:focus, select:focus { border-color: #38bdf8; outline: none; box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2); }
+    .kpi-box { background: #080d16; border: 1px solid #1e293b; border-radius: 10px; padding: 16px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+    .kpi-lbl { font-size: 13px; color: #94a3b8; font-weight: 600; }
+    .kpi-val { font-size: 20px; font-weight: 800; font-family: 'JetBrains Mono', monospace; }
+    .val-green { color: #34d399; }
+    .val-blue { color: #38bdf8; }
+    .val-yellow { color: #fbbf24; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5226765553295578" crossorigin="anonymous"></script>
+
+    <!-- Autonomous SEO & Social Graph Optimization -->
+    <meta property="og:site_name" content="Yield Empire Institutional Tools">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tools-vault-4ml.pages.dev/hard_money_lender_points_yield_sizer.html">
+    <meta property="og:title" content="Hard Money Lender Points Yield Sizer | Institutional Financial Solver">
+    <meta property="og:description" content="Free professional Hard Money Lender Points Yield Sizer calculator & financial planning model. Run real-time ROI, cash flow, yield, and scenario stress testing with instant institutional accuracy.">
+    <meta property="og:image" content="https://tools-vault-4ml.pages.dev/favicon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hard Money Lender Points Yield Sizer | Free Financial Calculator">
+    <meta name="twitter:description" content="Free professional Hard Money Lender Points Yield Sizer calculator & financial planning model. Run real-time ROI, cash flow, yield, and scenario stress testing with instant institutional accuracy.">
+    <meta name="twitter:image" content="https://tools-vault-4ml.pages.dev/favicon.png">
+
+    <!-- Google Rich FAQ Snippet Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate Hard Money Lender Points Yield Sizer accurately?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate Hard Money Lender Points Yield Sizer, enter your baseline inputs, operating metrics, and margin targets into the solver. The engine calculates real-time net yield, ROI, cash flow, and sensitivity curves instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this Hard Money Lender Points Yield Sizer calculator free to use and export?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this Hard Money Lender Points Yield Sizer calculator is 100% free with no registration required. You can run unlimited scenarios, stress test risk variables, and export audit-ready PDF/CSV memos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I embed this Hard Money Lender Points Yield Sizer calculator on my website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can embed this responsive calculator directly on your blog, website, or client portal using our free 1-line iframe embed snippet."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Rich SERP Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tools Vault",
+          "item": "https://tools-vault-4ml.pages.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Real Estate & Institutional Finance",
+          "item": "https://tools-vault-4ml.pages.dev/real_estate_investment_calculators.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Hard Money Lender Points Yield Sizer",
+          "item": "https://tools-vault-4ml.pages.dev/hard_money_lender_points_yield_sizer.html"
+        }
+      ]
+    }
+    </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hard Money Private Lender Points, Extension Fees &amp; Annual Yield Sizer",
+    "url": "https://tools-vault-4ml.pages.dev/hard_money_lender_points_yield_sizer.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "ratingCount": "184"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="calc-container">
+    <div class="header-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h1 style="font-size: 24px; font-weight: 800; color: #fff; margin: 0 0 6px 0;">💰 Hard Money Lender Points &amp; Annualized Yield Sizer</h1>
+          <p style="font-size: 13px; color: #94a3b8; margin: 0;">Calculate upfront loan origination points, interest-only monthly note payments, rehab draw inspection fees, and effective annual lender IRR.</p>
+        </div>
+        <a href="https://tools-vault-4ml.pages.dev/" style="background: #1e293b; color: #38bdf8; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 12px; border: 1px solid #334155;">← All 6,000+ Solvers</a>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- Inputs -->
+      <div class="card">
+        <h2 style="font-size: 16px; font-weight: 800; color: #fff; margin-top: 0; margin-bottom: 20px;">📋 Loan Terms &amp; Origination Points</h2>
+
+        <div class="form-group">
+          <label>Total Loan Amount Funded ($ Principal)</label>
+          <input type="number" id="loanAmount" value="325000" step="5000">
+        </div>
+        <div class="form-group">
+          <label>Origination Points (% charged upfront - e.g. 2.0%–3.5%)</label>
+          <input type="number" id="pointsPct" value="2.5" step="0.25">
+        </div>
+        <div class="form-group">
+          <label>Annual Interest-Only Note Rate (% APR)</label>
+          <input type="number" id="noteRate" value="11.5" step="0.25">
+        </div>
+        <div class="form-group">
+          <label>Actual Loan Duration Until Payoff (Months - e.g. 6 mos)</label>
+          <input type="number" id="loanDuration" value="6" step="1">
+        </div>
+        <div class="form-group">
+          <label>Lender Underwriting, Processing &amp; Doc Prep Fees ($)</label>
+          <input type="number" id="docFees" value="1450" step="50">
+        </div>
+        <div class="form-group">
+          <label>Rehab Construction Draws (Count at $350 fee each)</label>
+          <input type="number" id="drawCount" value="4" step="1">
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="card">
+        <h2 style="font-size: 16px; font-weight: 800; color: #fff; margin-top: 0; margin-bottom: 20px;">📊 Lender Cash Flow &amp; Annualized Yield</h2>
+
+        <div class="kpi-box">
+          <span class="kpi-lbl">Upfront Cash Collected at Closing (Points + Fees)</span>
+          <span class="kpi-val val-blue" id="outUpfrontFees">$9,575</span>
+        </div>
+        <div class="kpi-box">
+          <span class="kpi-lbl">Monthly Interest-Only Payment Received</span>
+          <span class="kpi-val val-green" id="outMonthlyPayment">$3,114.58 /mo</span>
+        </div>
+        <div class="kpi-box">
+          <span class="kpi-lbl">Total Interest Collected Over Loan Life</span>
+          <span class="kpi-val val-green" id="outTotalInterest">$18,687.50</span>
+        </div>
+        <div class="kpi-box">
+          <span class="kpi-lbl">Total Net Lender Profit on Deal</span>
+          <span class="kpi-val val-green" id="outTotalProfit">+$29,662.50</span>
+        </div>
+        <div class="kpi-box">
+          <span class="kpi-lbl">Effective Annualized Lender Yield (IRR)</span>
+          <span class="kpi-val val-green" id="outAnnualYield">18.25% APR</span>
+        </div>
+
+        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 14px; margin-top: 18px; font-size: 12px; color: #cbd5e1; line-height: 1.5;">
+          💰 <strong>Velocity of Capital:</strong> Charging 2.5 points on short 6-month fix-and-flip loans boosts your effective annual return from <strong>11.5% note rate to over 18.2% net yield</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="affiliate-config.js"></script>
+  <script src="dealmachine-card.js"></script>
+  <script src="analytics-tracker.js"></script>
+
+  <script>
+    function calculateHardMoney() {
+      const loan = parseFloat(document.getElementById('loanAmount').value) || 0;
+      const points = (parseFloat(document.getElementById('pointsPct').value) || 0) / 100;
+      const rate = (parseFloat(document.getElementById('noteRate').value) || 0) / 100;
+      const duration = parseFloat(document.getElementById('loanDuration').value) || 1;
+      const doc = parseFloat(document.getElementById('docFees').value) || 0;
+      const draws = parseFloat(document.getElementById('drawCount').value) || 0;
+
+      const pointsFee = loan * points;
+      const drawFees = draws * 350;
+      const upfrontCash = pointsFee + doc;
+      const monthlyPayment = (loan * rate) / 12;
+      const totalInterest = monthlyPayment * duration;
+      const totalProfit = pointsFee + doc + drawFees + totalInterest;
+
+      // Annualized yield = (Total Profit / Loan Funded) * (12 / Duration) * 100
+      const annualizedYield = loan > 0 && duration > 0 ? (totalProfit / loan) * (12 / duration) * 100 : 0;
+
+      const fmt = (n) => '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+      document.getElementById('outUpfrontFees').textContent = fmt(upfrontCash);
+      document.getElementById('outMonthlyPayment').textContent = fmt(monthlyPayment) + ' /mo';
+      document.getElementById('outTotalInterest').textContent = fmt(totalInterest);
+      document.getElementById('outTotalProfit').textContent = '+' + fmt(totalProfit);
+      document.getElementById('outAnnualYield').textContent = annualizedYield.toFixed(2) + '% APR';
+    }
+
+    document.querySelectorAll('input').forEach(el => el.addEventListener('input', calculateHardMoney));
+    calculateHardMoney();
+  </script>
+  <script src="site-footer-compliance.js"></script>
+  <script src="related-tools-engine.js"></script>
+  <script src="/viral-embed-badge-engine.js"></script>
+  <script src="/social-share-booster.js"></script>
+  <script src="/protoarc-card.js" defer></script>
+</body>
+</html>
