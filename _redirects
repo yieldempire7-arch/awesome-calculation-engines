@@ -5,6 +5,8 @@
 /deals/protoarc https://protoarc.sjv.io/NGvDYP 302
 /easyclaw https://www.awin1.com/cread.php?s=3842104&v=126975&q=481239&r=3064767 302
 /deals/easyclaw https://www.awin1.com/cread.php?s=3842104&v=126975&q=481239&r=3064767 302
+/contractor/* /contractor_network.html 302
+/contractor /contractor_network.html 301
 
 /developers /developer_api_pricing_and_documentation.html 301
 /developers.html /developer_api_pricing_and_documentation.html 301
