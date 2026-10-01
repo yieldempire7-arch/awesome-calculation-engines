@@ -58,8 +58,19 @@
 /make_com_social_syndication_blueprint_2026.json /make_com_social_syndication_blueprint_2026.json 200
 /downloads/*.csv /downloads/:splat.csv 200
 /downloads/*.svg /downloads/:splat.svg 200
+/downloads/*.zip /downloads/:splat.zip 200
 /order_confirmed_vault_access.html /order_confirmed_vault_access.html 200
-/order-success /order_confirmed_vault_access.html 301
+/contractor_onboarding_welcome.html /contractor_onboarding_welcome.html 200
+/order-success /order_confirmed_vault_access.html 302
+/thank-you /order_confirmed_vault_access.html 302
+/thanks /order_confirmed_vault_access.html 302
+/success /order_confirmed_vault_access.html 302
+/confirmation /order_confirmed_vault_access.html 302
+/order-confirmed /order_confirmed_vault_access.html 302
+/order_confirmed /order_confirmed_vault_access.html 302
+/onboarding /contractor_onboarding_welcome.html 302
+/contractor-onboarding /contractor_onboarding_welcome.html 302
+/welcome /contractor_onboarding_welcome.html 302
 /ai-plugin.json /ai-plugin.json 200
 /.well-known/ai-plugin.json /.well-known/ai-plugin.json 200
 # Cloudflare Pages Redirects & Fallbacks
