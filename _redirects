@@ -71,6 +71,12 @@
 /onboarding /contractor_onboarding_welcome.html 302
 /contractor-onboarding /contractor_onboarding_welcome.html 302
 /welcome /contractor_onboarding_welcome.html 302
+/admin /admin_pulse.html 302
+/pulse /admin_pulse.html 302
+/ops /admin_pulse.html 302
+/closing /friday_contractor_closing_desk.html 302
+/dealdesk /friday_contractor_closing_desk.html 302
+/desk /friday_contractor_closing_desk.html 302
 /ai-plugin.json /ai-plugin.json 200
 /.well-known/ai-plugin.json /.well-known/ai-plugin.json 200
 # Cloudflare Pages Redirects & Fallbacks
