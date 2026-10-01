@@ -1,0 +1,87 @@
+# Advanced Robots.txt for Comprehensive Search & AI Crawler Indexing
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin_pulse.html
+Disallow: /pulse
+Disallow: /ops
+Disallow: /closing
+Disallow: /dealdesk
+Disallow: /desk
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# AI Search & LLM Discovery Crawlers (Perplexity, ChatGPT, Claude, Gemini)
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Social Media Previews & Embed Scrapers
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+# Sitemaps & Machine-Readable Feeds
+Sitemap: https://tools-vault-4ml.pages.dev/sitemap_index.xml
+Sitemap: https://tools-vault-4ml.pages.dev/sitemap.xml
+Sitemap: https://tools-vault-4ml.pages.dev/sitemap_contractor.xml
+Sitemap: https://tools-vault-4ml.pages.dev/sitemap_solar.xml
+Sitemap: https://tools-vault-4ml.pages.dev/sitemap_realestate.xml
+Sitemap: https://tools-vault-4ml.pages.dev/sitemap_ecommerce.xml
+Sitemap: https://tools-vault-4ml.pages.dev/sitemap_fire.xml
+Sitemap: https://tools-vault-4ml.pages.dev/sitemap_health.xml
+Sitemap: https://tools-vault-4ml.pages.dev/sitemap_ai.xml
+Sitemap: https://tools-vault-4ml.pages.dev/sitemap_news.xml
+Sitemap: https://tools-vault-4ml.pages.dev/rss.xml
+Sitemap: https://tools-vault-4ml.pages.dev/feed.xml
+
+# AI & Developer Discovery Standards
+# Developer Portal: https://tools-vault-4ml.pages.dev/developers
+# Web Component SDK: https://tools-vault-4ml.pages.dev/toolsvault-widget.js
+# API Catalog: https://tools-vault-4ml.pages.dev/api/catalog
+# LLMs.txt: https://tools-vault-4ml.pages.dev/llms.txt
