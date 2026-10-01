@@ -89,6 +89,16 @@
     document.head.appendChild(easyclawScript);
   }
 
+  // 1j. Auto-Initialize ProtoArc Ergonomics & Prime Big Deal Days Card (Impact ID: 56905)
+  const isErgoOrDesk = curPath.includes('desk') || curPath.includes('ergo') || curPath.includes('remote') || curPath.includes('freelance') || curPath.includes('office') || curPath.includes('commute') || curPath.includes('work') || curPath.includes('developer') || curPath.includes('productivity') || curPath.includes('standing');
+  if (!isHome && !isStore && isErgoOrDesk && !document.getElementById('protoarc-card-container') && !document.querySelector('script[src*="protoarc-card.js"]')) {
+    const protoScript = document.createElement('script');
+    protoScript.defer = true;
+    protoScript.src = '/protoarc-card.js';
+    document.head.appendChild(protoScript);
+  }
+
+
 
   // 2. Track Local Telemetry (Stored in localStorage for MyRevenueDesk)
   function recordLocalEvent(category, action, label = '', value = 0) {
