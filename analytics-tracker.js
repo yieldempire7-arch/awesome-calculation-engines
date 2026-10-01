@@ -98,6 +98,15 @@
     document.head.appendChild(protoScript);
   }
 
+  // 1k. Auto-Initialize Commercial Contractor Exit-Intent Downsell ($19 Starter Toolkit)
+  const isCommercialOrTrade = curPath.includes('commercial') || curPath.includes('contractor') || curPath.includes('subcontractor') || curPath.includes('construction') || curPath.includes('bess') || curPath.includes('dscr') || curPath.includes('lender') || curPath.includes('roofing') || curPath.includes('hvac') || curPath.includes('plumbing') || curPath.includes('electrical') || curPath.includes('concrete') || curPath.includes('framing') || curPath.includes('cleaning');
+  if (!isHome && !isStore && isCommercialOrTrade && !document.getElementById('tv-exit-downsell-modal') && !document.querySelector('script[src*="exit-intent-downsell.js"]')) {
+    const downsellScript = document.createElement('script');
+    downsellScript.defer = true;
+    downsellScript.src = '/exit-intent-downsell.js';
+    document.head.appendChild(downsellScript);
+  }
+
 
 
   // 2. Track Local Telemetry (Stored in localStorage for MyRevenueDesk)
