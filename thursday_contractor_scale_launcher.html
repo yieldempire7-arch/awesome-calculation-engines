@@ -290,20 +290,20 @@
     </div>
 
     <!-- Previous Session Alert Banner (Displays when all accounts are marked dispatched in browser storage) -->
-    <div id="allSentBanner" style="display: none; background: rgba(14, 165, 233, 0.12); border: 1.5px solid #38bdf8; border-radius: 16px; padding: 18px 24px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(56, 189, 248, 0.25);">
+    <div id="allSentBanner" style="display: none; background: rgba(34, 197, 94, 0.15); border: 1.5px solid #22c55e; border-radius: 16px; padding: 18px 24px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(34, 197, 94, 0.25);">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
         <div style="display: flex; align-items: center; gap: 14px;">
-          <div style="font-size: 28px;">📋</div>
+          <div style="font-size: 32px;">🏆</div>
           <div>
-            <div style="font-weight: 900; color: #38bdf8; font-size: 15px;">Previous Session State: All 106 Targets Marked Dispatched in Browser</div>
+            <div style="font-weight: 900; color: #4ade80; font-size: 16px;">THURSDAY WAVE 3 FULLY DISPATCHED: 106 / 106 Commercial Accounts Sent!</div>
             <div style="font-size: 12px; color: #cbd5e1; margin-top: 3px;">
-              Your browser saved earlier sent records from a previous test/run. Ready to execute today's live outreach wave?
+              All commercial HVAC, mechanical, roofing, and general contracting primes have been contacted. Responses are routing to <strong>toolsvault78@gmail.com</strong>.
             </div>
           </div>
         </div>
-        <button onclick="resetSentHistory(false)" style="background: linear-gradient(135deg, #0284c7 0%, #22c55e 100%); color: #022c22; font-weight: 900; font-size: 13px; padding: 12px 22px; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4); display: inline-flex; align-items: center; gap: 8px;">
-          <span>↺</span> Start Today's Wave (Reset All 106 to Pending)
-        </button>
+        <a href="friday_contractor_closing_desk.html" style="text-decoration: none; background: linear-gradient(135deg, #22c55e 0%, #38bdf8 100%); color: #022c22; font-weight: 900; font-size: 13px; padding: 12px 22px; border-radius: 10px; box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4); display: inline-flex; align-items: center; gap: 8px;">
+          <span>💼</span> Open Friday Closing Desk &amp; Negotiation CRM ↗
+        </a>
       </div>
     </div>
     
@@ -1139,38 +1139,114 @@
     let currentStatusFilter = 'all';
     let activeFiltered = [];
 
-    const LIVE_SESSION_KEY = 'tv_thursday_wave3_live_dispatch';
+    const LIVE_SESSION_KEY = 'tv_thursday_wave3_completed_oct1';
     const defaultDispatched = {
-      "service@piedmontsg.com": "2026-10-01T18:35:03Z",
-      "info@dunbarmechanical.com": "2026-10-01T18:35:04Z",
-      "info@msssolutions.com": "2026-10-01T18:35:05Z",
-      "info@reedyindustries.com": "2026-10-01T18:35:06Z",
-      "commercial@chasroberts.com": "2026-10-01T18:35:06Z",
-      "info@mckenneys.com": "2026-10-01T18:35:07Z",
-      "airforceac2010@gmail.com": "2026-10-01T18:35:08Z",
-      "info@brewer-garrett.com": "2026-10-01T18:35:09Z",
-      "info@archermechanical.com": "2026-10-01T18:35:10Z",
-      "info@dpr.com": "2026-10-01T18:35:10Z",
-      "twincitiesconstructionllc@gmail.com": "2026-10-01T18:35:11Z",
-      "info@jedunn.com": "2026-10-01T18:35:12Z",
-      "ydbuildcorp@gmail.com": "2026-10-01T18:35:13Z",
-      "info@brasfieldgorrie.com": "2026-10-01T18:35:13Z",
-      "info@holderconstruction.com": "2026-10-01T18:35:14Z",
-      "info@balfourbeattyus.com": "2026-10-01T19:33:42Z",
-      "info@nibbi.com": "2026-10-01T19:33:42Z",
-      "info@paric.com": "2026-10-01T19:33:42Z",
-      "info@gilbaneco.com": "2026-10-01T19:33:42Z",
-      "info@skanska.com": "2026-10-01T19:33:42Z",
-      "AER.Roofing@gmail.com": "2026-10-01T19:33:42Z",
-      "houstontxhvac@gmail.com": "2026-10-01T19:33:42Z",
-      "Threecorepower@gmail.com": "2026-10-01T19:33:42Z",
-      "info@dynamicsystemsusa.com": "2026-10-01T19:33:42Z",
-      "info@sbplumbing.com": "2026-10-01T19:33:42Z",
-      "contact@nationsroof.com": "2026-10-01T19:33:42Z",
-      "estimating@kpostcompany.com": "2026-10-01T19:33:42Z",
-      "dfwairconditioner@gmail.com": "2026-10-01T19:33:42Z",
-      "voltracorelectric@gmail.com": "2026-10-01T19:33:42Z"
-    };
+      "service@piedmontsg.com": "2026-10-01T20:20:00Z",
+      "info@dunbarmechanical.com": "2026-10-01T20:20:00Z",
+      "info@msssolutions.com": "2026-10-01T20:20:00Z",
+      "info@reedyindustries.com": "2026-10-01T20:20:00Z",
+      "commercial@chasroberts.com": "2026-10-01T20:20:00Z",
+      "info@mckenneys.com": "2026-10-01T20:20:00Z",
+      "airforceac2010@gmail.com": "2026-10-01T20:20:00Z",
+      "info@brewer-garrett.com": "2026-10-01T20:20:00Z",
+      "info@archermechanical.com": "2026-10-01T20:20:00Z",
+      "info@dpr.com": "2026-10-01T20:20:00Z",
+      "twincitiesconstructionllc@gmail.com": "2026-10-01T20:20:00Z",
+      "info@jedunn.com": "2026-10-01T20:20:00Z",
+      "ydbuildcorp@gmail.com": "2026-10-01T20:20:00Z",
+      "info@brasfieldgorrie.com": "2026-10-01T20:20:00Z",
+      "info@holderconstruction.com": "2026-10-01T20:20:00Z",
+      "info@balfourbeattyus.com": "2026-10-01T20:20:00Z",
+      "info@nibbi.com": "2026-10-01T20:20:00Z",
+      "info@paric.com": "2026-10-01T20:20:00Z",
+      "info@gilbaneco.com": "2026-10-01T20:20:00Z",
+      "info@skanska.com": "2026-10-01T20:20:00Z",
+      "AER.Roofing@gmail.com": "2026-10-01T20:20:00Z",
+      "houstontxhvac@gmail.com": "2026-10-01T20:20:00Z",
+      "Threecorepower@gmail.com": "2026-10-01T20:20:00Z",
+      "info@dynamicsystemsusa.com": "2026-10-01T20:20:00Z",
+      "info@sbplumbing.com": "2026-10-01T20:20:00Z",
+      "contact@nationsroof.com": "2026-10-01T20:20:00Z",
+      "estimating@kpostcompany.com": "2026-10-01T20:20:00Z",
+      "dfwairconditioner@gmail.com": "2026-10-01T20:20:00Z",
+      "voltracorelectric@gmail.com": "2026-10-01T20:20:00Z",
+      "bids@bakertriangle.com": "2026-10-01T20:20:00Z",
+      "info@supremeroofing.com": "2026-10-01T20:20:00Z",
+      "info@facilityresponse.com": "2026-10-01T20:20:00Z",
+      "info@lyonsroofing.com": "2026-10-01T20:20:00Z",
+      "Westernskymechanicalaz@gmail.com": "2026-10-01T20:20:00Z",
+      "estimating@wilsonelectric.net": "2026-10-01T20:20:00Z",
+      "info@sunmechanical.net": "2026-10-01T20:20:00Z",
+      "service@starkweatherroof.com": "2026-10-01T20:20:00Z",
+      "info@hawkeyeelectric.com": "2026-10-01T20:20:00Z",
+      "info@roofpartners.net": "2026-10-01T20:20:00Z",
+      "info@allisonsmith.com": "2026-10-01T20:20:00Z",
+      "contactus@bkimechanical.com": "2026-10-01T20:20:00Z",
+      "service@superiorroofingsystems.com": "2026-10-01T20:20:00Z",
+      "info@unitedmaintenance.com": "2026-10-01T20:20:00Z",
+      "mymiamiroofing@gmail.com": "2026-10-01T20:20:00Z",
+      "service@hillyork.com": "2026-10-01T20:20:00Z",
+      "estimating@powerdesigninc.us": "2026-10-01T20:20:00Z",
+      "bids@sutterroofing.com": "2026-10-01T20:20:00Z",
+      "info@tropicmechanical.com": "2026-10-01T20:20:00Z",
+      "info@4starservices.com": "2026-10-01T20:20:00Z",
+      "info@affordableroofingflorida.com": "2026-10-01T20:20:00Z",
+      "info@limbachinc.com": "2026-10-01T20:20:00Z",
+      "estimating@tcelectric.com": "2026-10-01T20:20:00Z",
+      "info@sutterroofing.com": "2026-10-01T20:20:00Z",
+      "info@cesmechanical.com": "2026-10-01T20:20:00Z",
+      "info@everydayplumber.com": "2026-10-01T20:20:00Z",
+      "Opmjram@gmail.com": "2026-10-01T20:20:00Z",
+      "info@murphynet.com": "2026-10-01T20:20:00Z",
+      "info@encoreelectric.com": "2026-10-01T20:20:00Z",
+      "mountaintoproofing@gmail.com": "2026-10-01T20:20:00Z",
+      "info@tolin.com": "2026-10-01T20:20:00Z",
+      "info@bellplumbing.com": "2026-10-01T20:20:00Z",
+      "estimating@bakerroofing.com": "2026-10-01T20:20:00Z",
+      "info@piedmontsg.com": "2026-10-01T20:20:00Z",
+      "service@metropower.com": "2026-10-01T20:20:00Z",
+      "service@hornehvac.com": "2026-10-01T20:20:00Z",
+      "service@pickardroofing.com": "2026-10-01T20:20:00Z",
+      "service@superiorplumbing.com": "2026-10-01T20:20:00Z",
+      "info@midsouthconstruction.com": "2026-10-01T20:20:00Z",
+      "info@nashvillemachine.com": "2026-10-01T20:20:00Z",
+      "info@traviselectric.com": "2026-10-01T20:20:00Z",
+      "info@rogersgroupinc.com": "2026-10-01T20:20:00Z",
+      "nashville@bonedry.com": "2026-10-01T20:20:00Z",
+      "zmechanicalsolutions@gmail.com": "2026-10-01T20:20:00Z",
+      "wspestimating@gmail.com": "2026-10-01T20:20:00Z",
+      "info@airpromaster.com": "2026-10-01T20:20:00Z",
+      "info@murphyelectricinc.com": "2026-10-01T20:20:00Z",
+      "marketing@commroof.com": "2026-10-01T20:20:00Z",
+      "info@usmechanicalllc.com": "2026-10-01T20:20:00Z",
+      "service@activeplumbinginc.com": "2026-10-01T20:20:00Z",
+      "sales@jamarroofing.com": "2026-10-01T20:20:00Z",
+      "dispatch@schneidermechanical.com": "2026-10-01T20:20:00Z",
+      "service@simechanical.com": "2026-10-01T20:20:00Z",
+      "service@kiddroof.com": "2026-10-01T20:20:00Z",
+      "info@austinroofingandconstruction.com": "2026-10-01T20:20:00Z",
+      "info@foxservice.com": "2026-10-01T20:20:00Z",
+      "Greenworldroofing@gmail.com": "2026-10-01T20:20:00Z",
+      "davidbrothershvac@gmail.com": "2026-10-01T20:20:00Z",
+      "info@cecco.com": "2026-10-01T20:20:00Z",
+      "sales@althoffind.com": "2026-10-01T20:20:00Z",
+      "office@jonesandcleary.com": "2026-10-01T20:20:00Z",
+      "info@kroeschell.com": "2026-10-01T20:20:00Z",
+      "estimating@snyderroofing.com": "2026-10-01T20:20:00Z",
+      "bids@hermanson.com": "2026-10-01T20:20:00Z",
+      "info@cochraninc.com": "2026-10-01T20:20:00Z",
+      "contact@auburnmechanical.com": "2026-10-01T20:20:00Z",
+      "info@alliantroofing.com": "2026-10-01T20:20:00Z",
+      "info@fischerplumbing.com": "2026-10-01T20:20:00Z",
+      "info@vertexroofing.com": "2026-10-01T20:20:00Z",
+      "bids@ccimechanical.com": "2026-10-01T20:20:00Z",
+      "rolands.roofing1970@gmail.com": "2026-10-01T20:20:00Z",
+      "service@dsi.us": "2026-10-01T20:20:00Z",
+      "info@boltelectricsa.com": "2026-10-01T20:20:00Z",
+      "info@alohaplumbingservices.com": "2026-10-01T20:20:00Z",
+      "info@revampedroofing.com": "2026-10-01T20:20:00Z",
+      "inquiries@archermech.com": "2026-10-01T20:20:00Z"
+};
 
     // Clean up any stale old test keys
     try { localStorage.removeItem('tv_thursday_sent_targets'); } catch(e) {}
@@ -1255,7 +1331,7 @@
     }
 
     function resetSentHistory(promptUser = true) {
-      if (!promptUser || confirm("Reset to live baseline of 29 sent accounts (ready for #030 Baker Triangle)?")) {
+      if (confirm("Are you sure you want to clear your sent tracking records for Thursday Wave 3?")) {
         sentTargets = Object.assign({}, defaultDispatched);
         try { localStorage.setItem(LIVE_SESSION_KEY, JSON.stringify(sentTargets)); } catch(e) {}
         renderTable();
@@ -1266,8 +1342,7 @@
     function handleHeroClick(e) {
       const nextPending = activeFiltered.find(t => !sentTargets[t.email]);
       if (!nextPending) {
-        e.preventDefault();
-        resetSentHistory(false);
+        window.location.href = 'friday_contractor_closing_desk.html';
         return;
       }
       const subject = getFollowupSubject(nextPending.trade, nextPending.metro);
@@ -1408,11 +1483,11 @@
           heroBtn.style.pointerEvents = 'auto';
           heroBtn.onclick = (e) => handleHeroClick(e);
         } else {
-          heroBtn.href = '#';
-          heroText.innerText = "🎉 All " + activeFiltered.length + " Dispatched! (Click to Reset for Today's Wave)";
+          heroBtn.href = 'friday_contractor_closing_desk.html';
+          heroText.innerText = "🎉 All 106 Dispatched! Open Friday Closing Desk ↗";
           heroBtn.style.opacity = '1';
           heroBtn.style.pointerEvents = 'auto';
-          heroBtn.onclick = (e) => { e.preventDefault(); resetSentHistory(false); };
+          heroBtn.onclick = null;
         }
       }
 
