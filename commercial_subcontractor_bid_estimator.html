@@ -5954,6 +5954,40 @@
       console.warn('LocalStorage error:', err);
     }
 
+    // 1b. Dispatch instant lead notification to Make.com Webhook & toolsvault78@gmail.com
+    const leadPayload = {
+      event: 'TAKEOFF_LEAD_MAGNET_DOWNLOAD',
+      email: email,
+      trade: trade,
+      source: 'ToolsVault Subcontractor Estimator (commercial_subcontractor_bid_estimator.html)',
+      timestamp: new Date().toISOString(),
+      recommended_action: 'Offer $49/mo Exclusive Metro ZIP Territory Rights'
+    };
+
+    try {
+      // Endpoint 1: Make.com Lead Processing Webhook
+      fetch('https://hook.us2.make.com/usoismxy4do6jxquwhvh0opi7fv7rf7l', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(leadPayload)
+      }).catch(function(err) { console.log('Make.com ping status:', err); });
+    } catch(e) {}
+
+    try {
+      // Endpoint 2: Direct email dispatch to John Granbridge (toolsvault78@gmail.com)
+      fetch('https://formsubmit.co/ajax/toolsvault78@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `⚡ New Takeoff Model Download: ${trade} (${email})`,
+          email: email,
+          trade: trade,
+          source: 'ToolsVault Takeoff Lead Magnet',
+          timestamp: new Date().toISOString()
+        })
+      }).catch(function(err) { console.log('FormSubmit status:', err); });
+    } catch(e) {}
+
     // 2. Generate detailed CSI MasterFormat Takeoff & Bid Estimator Model CSV
     let csv = '=========================================================================\n';
     csv += 'TOOLSVAULT COMMERCIAL SUBCONTRACTOR TAKEOFF & BID ESTIMATOR MODEL (2026/2027)\n';
@@ -6047,5 +6081,6 @@
   </script>
 
   <script src="/contractor-quote-engine.js" defer></script>
+  <script src="/protoarc-card.js" defer></script>
 </body>
 </html>
