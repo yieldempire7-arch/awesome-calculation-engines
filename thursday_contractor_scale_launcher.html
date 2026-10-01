@@ -363,6 +363,8 @@
       <button class="filter-btn" onclick="setTradeFilter('HVAC', this)">HVAC / Mechanical</button>
       <button class="filter-btn" onclick="setTradeFilter('Electrical', this)">Electrical</button>
       <button class="filter-btn" onclick="setTradeFilter('Asset Management', this)">Asset Managers</button>
+      <button class="filter-btn" id="filterStatusPendingBtn" style="border-color: #fbbf24; color: #fbbf24;" onclick="setStatusFilter('pending', this)">⏳ Pending Only (<span id="pendingBtnCount">77</span>)</button>
+      <button class="filter-btn" id="filterStatusSentBtn" style="border-color: #22c55e; color: #4ade80;" onclick="setStatusFilter('sent', this)">✓ Dispatched (<span id="sentBtnCount">29</span>)</button>
     </div>
 
     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 15px;">
@@ -1134,15 +1136,60 @@
 ];
 
     let currentTradeFilter = 'all';
+    let currentStatusFilter = 'all';
     let activeFiltered = [];
+
+    const LIVE_SESSION_KEY = 'tv_thursday_wave3_live_dispatch';
+    const defaultDispatched = {
+      "service@piedmontsg.com": "2026-10-01T18:35:03Z",
+      "info@dunbarmechanical.com": "2026-10-01T18:35:04Z",
+      "info@msssolutions.com": "2026-10-01T18:35:05Z",
+      "info@reedyindustries.com": "2026-10-01T18:35:06Z",
+      "commercial@chasroberts.com": "2026-10-01T18:35:06Z",
+      "info@mckenneys.com": "2026-10-01T18:35:07Z",
+      "airforceac2010@gmail.com": "2026-10-01T18:35:08Z",
+      "info@brewer-garrett.com": "2026-10-01T18:35:09Z",
+      "info@archermechanical.com": "2026-10-01T18:35:10Z",
+      "info@dpr.com": "2026-10-01T18:35:10Z",
+      "twincitiesconstructionllc@gmail.com": "2026-10-01T18:35:11Z",
+      "info@jedunn.com": "2026-10-01T18:35:12Z",
+      "ydbuildcorp@gmail.com": "2026-10-01T18:35:13Z",
+      "info@brasfieldgorrie.com": "2026-10-01T18:35:13Z",
+      "info@holderconstruction.com": "2026-10-01T18:35:14Z",
+      "info@balfourbeattyus.com": "2026-10-01T19:33:42Z",
+      "info@nibbi.com": "2026-10-01T19:33:42Z",
+      "info@paric.com": "2026-10-01T19:33:42Z",
+      "info@gilbaneco.com": "2026-10-01T19:33:42Z",
+      "info@skanska.com": "2026-10-01T19:33:42Z",
+      "AER.Roofing@gmail.com": "2026-10-01T19:33:42Z",
+      "houstontxhvac@gmail.com": "2026-10-01T19:33:42Z",
+      "Threecorepower@gmail.com": "2026-10-01T19:33:42Z",
+      "info@dynamicsystemsusa.com": "2026-10-01T19:33:42Z",
+      "info@sbplumbing.com": "2026-10-01T19:33:42Z",
+      "contact@nationsroof.com": "2026-10-01T19:33:42Z",
+      "estimating@kpostcompany.com": "2026-10-01T19:33:42Z",
+      "dfwairconditioner@gmail.com": "2026-10-01T19:33:42Z",
+      "voltracorelectric@gmail.com": "2026-10-01T19:33:42Z"
+    };
+
+    // Clean up any stale old test keys
+    try { localStorage.removeItem('tv_thursday_sent_targets'); } catch(e) {}
 
     // Support instant URL reset via ?reset=1 or ?fresh=1
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('reset') === '1' || urlParams.get('fresh') === '1') {
-      try { localStorage.removeItem('tv_thursday_sent_targets'); } catch(e) {}
+      try { localStorage.removeItem(LIVE_SESSION_KEY); } catch(e) {}
     }
 
-    let sentTargets = JSON.parse(localStorage.getItem('tv_thursday_sent_targets') || '{}');
+    let savedData = null;
+    try {
+      savedData = localStorage.getItem(LIVE_SESSION_KEY);
+    } catch(e) {}
+
+    let sentTargets = savedData ? JSON.parse(savedData) : Object.assign({}, defaultDispatched);
+    if (!savedData) {
+      try { localStorage.setItem(LIVE_SESSION_KEY, JSON.stringify(sentTargets)); } catch(e) {}
+    }
 
     function getBusinessGmail() {
       return localStorage.getItem('tv_business_gmail') || 'toolsvault78@gmail.com';
@@ -1193,7 +1240,7 @@
 
     function recordSent(email) {
       sentTargets[email] = new Date().toISOString();
-      localStorage.setItem('tv_thursday_sent_targets', JSON.stringify(sentTargets));
+      try { localStorage.setItem(LIVE_SESSION_KEY, JSON.stringify(sentTargets)); } catch(e) {}
       setTimeout(renderTable, 300);
     }
 
@@ -1203,16 +1250,16 @@
       } else {
         sentTargets[email] = new Date().toISOString();
       }
-      localStorage.setItem('tv_thursday_sent_targets', JSON.stringify(sentTargets));
+      try { localStorage.setItem(LIVE_SESSION_KEY, JSON.stringify(sentTargets)); } catch(e) {}
       renderTable();
     }
 
     function resetSentHistory(promptUser = true) {
-      if (!promptUser || confirm("Reset all 106 contractors back to Pending? This will clear previous session records so you can run today's wave.")) {
-        sentTargets = {};
-        try { localStorage.removeItem('tv_thursday_sent_targets'); } catch(e) {}
+      if (!promptUser || confirm("Reset to live baseline of 29 sent accounts (ready for #030 Baker Triangle)?")) {
+        sentTargets = Object.assign({}, defaultDispatched);
+        try { localStorage.setItem(LIVE_SESSION_KEY, JSON.stringify(sentTargets)); } catch(e) {}
         renderTable();
-        showToast("✓ All 106 contractors reset to Pending! Ready to dispatch.");
+        showToast("✓ Reset to live session baseline (29 Sent / #030 Next Up)");
       }
     }
 
@@ -1300,13 +1347,17 @@
 
       activeFiltered = allTargets.filter(t => {
         const matchesTrade = (currentTradeFilter === 'all' || t.trade === currentTradeFilter);
+        const matchesStatus = (currentStatusFilter === 'all' || 
+          (currentStatusFilter === 'pending' && !sentTargets[t.email]) ||
+          (currentStatusFilter === 'sent' && !!sentTargets[t.email])
+        );
         const matchesSearch = (!search || 
           t.name.toLowerCase().includes(search) || 
           t.email.toLowerCase().includes(search) || 
           t.metro.toLowerCase().includes(search) || 
           t.trade.toLowerCase().includes(search)
         );
-        return matchesTrade && matchesSearch;
+        return matchesTrade && matchesStatus && matchesSearch;
       });
 
       const totalCountEl = document.getElementById('totalCount');
@@ -1316,6 +1367,11 @@
       const sentCount = Object.keys(sentTargets).length;
       const totalAll = allTargets.length;
       const pct = Math.min(100, Math.round((sentCount / totalAll) * 100));
+
+      const pendingBtnCount = document.getElementById('pendingBtnCount');
+      if (pendingBtnCount) pendingBtnCount.innerText = totalAll - sentCount;
+      const sentBtnCount = document.getElementById('sentBtnCount');
+      if (sentBtnCount) sentBtnCount.innerText = sentCount;
 
       const progressCountEl = document.getElementById('progressCount');
       if (progressCountEl) progressCountEl.innerText = sentCount;
@@ -1434,8 +1490,15 @@
 
     function setTradeFilter(trade, btn) {
       currentTradeFilter = trade;
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-btn:not(#filterStatusPendingBtn):not(#filterStatusSentBtn)').forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
+      renderTable();
+    }
+
+    function setStatusFilter(status, btn) {
+      currentStatusFilter = (currentStatusFilter === status) ? 'all' : status;
+      document.querySelectorAll('#filterStatusPendingBtn, #filterStatusSentBtn').forEach(b => b.classList.remove('active'));
+      if (currentStatusFilter !== 'all' && btn) btn.classList.add('active');
       renderTable();
     }
 
