@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contractor Territory Onboarding & Activation | ToolsVault</title>
+  <link rel="canonical" href="https://tools-vault-4ml.pages.dev/contractor_onboarding_welcome.html">
+  <meta name="description" content="Official onboarding and territory lock intake portal for ToolsVault verified premier commercial contractors.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { background-color: #030712; color: #f3f4f6; font-family: system-ui, -apple-system, sans-serif; }
+    .glass-card { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+  </style>
+  <meta property="og:image" content="https://tools-vault-4ml.pages.dev/downloads/og_card_contractor_takeoff.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://tools-vault-4ml.pages.dev/downloads/og_card_contractor_takeoff.svg">
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center p-4 sm:p-8">
+
+  <div class="max-w-2xl w-full glass-card rounded-3xl p-6 sm:p-10 border border-emerald-500/40 shadow-2xl space-y-8 relative overflow-hidden">
+    
+    <!-- Top Badge -->
+    <div class="flex items-center justify-between border-b border-slate-800 pb-5">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-lg border border-emerald-500/30">
+          <i class="fa-solid fa-shield-check"></i>
+        </div>
+        <div>
+          <h1 class="text-lg font-black text-white">Territory Lock Activation</h1>
+          <span class="text-xs text-slate-400 font-medium">ToolsVault Verified Premier Contractor Network</span>
+        </div>
+      </div>
+      <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full text-xs font-bold font-mono">
+        Active Subscription
+      </span>
+    </div>
+
+    <!-- Instructions -->
+    <div class="space-y-2">
+      <h2 class="text-xl font-bold text-white">Complete Your Contractor Profile</h2>
+      <p class="text-xs text-slate-400 leading-relaxed">
+        Your exclusive $49/mo territory lock is confirmed. Submit your operating details below so incoming commercial RFP quotes and calculation leads in your ZIP codes route directly to your team via SMS and email.
+      </p>
+    </div>
+
+    <!-- Intake Form -->
+    <form id="onboarding-form" onsubmit="handleOnboardingSubmit(event)" class="space-y-5">
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1">Company Legal Name *</label>
+          <input type="text" id="ob-company" required placeholder="e.g. Apex Commercial Roofing LLC" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-emerald-400">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1">Primary Trade Specialization *</label>
+          <select id="ob-trade" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-emerald-400">
+            <option value="Commercial Roofing">Commercial Roofing & TPO Membranes</option>
+            <option value="Commercial HVAC">Commercial HVAC & Mechanical Chillers</option>
+            <option value="Commercial Solar">Commercial Solar & Microgrids (BESS)</option>
+            <option value="Commercial Electrical">Commercial Electrical & EV Fast Charging</option>
+            <option value="Concrete & Civil">Concrete, Civil & Structural Steel</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1">Primary 5-Digit Locked ZIP Code *</label>
+          <input type="text" id="ob-zip" required maxlength="5" placeholder="e.g. 75201, 85001, 33601" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white font-mono text-sm focus:outline-none focus:border-emerald-400">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1">Metro Market *</label>
+          <input type="text" id="ob-metro" required placeholder="e.g. Dallas-Fort Worth, Phoenix, Tampa" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-emerald-400">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1">Lead Dispatch Email *</label>
+          <input type="email" id="ob-email" required placeholder="bids@yourcompany.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-emerald-400">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1">Instant SMS Dispatch Mobile Phone *</label>
+          <input type="tel" id="ob-phone" required placeholder="(Your Direct Estimating Line)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white font-mono text-sm focus:outline-none focus:border-emerald-400">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1">State Contractor License # (Optional)</label>
+          <input type="text" id="ob-license" placeholder="e.g. ROC# 329104" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white font-mono text-sm focus:outline-none focus:border-emerald-400">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1">Company Website</label>
+          <input type="url" id="ob-website" placeholder="https://yourcompany.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-emerald-400">
+        </div>
+      </div>
+
+      <button type="submit" id="ob-submit-btn" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-slate-950 font-black text-sm rounded-xl transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
+        <span>Activate My Exclusive Territory Lock &rarr;</span>
+      </button>
+
+      <div id="ob-success-msg" class="hidden p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-center space-y-2">
+        <span class="text-emerald-400 font-bold text-sm block">🎉 Territory Lock Active & Verified!</span>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Your profile has been registered in the ToolsVault dispatch engine. Incoming RFP quotes for your ZIP code will route instantly to your email and phone.
+        </p>
+        <a href="/contractor_network.html" class="inline-block mt-2 text-xs font-bold text-amber-400 hover:underline">
+          Return to Contractor Network Directory &rarr;
+        </a>
+      </div>
+
+    </form>
+
+  </div>
+
+  <script>
+    function handleOnboardingSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('ob-submit-btn');
+      btn.innerHTML = 'Activating Territory...';
+      btn.disabled = true;
+
+      const profile = {
+        company: document.getElementById('ob-company').value,
+        trade: document.getElementById('ob-trade').value,
+        zip: document.getElementById('ob-zip').value,
+        metro: document.getElementById('ob-metro').value,
+        email: document.getElementById('ob-email').value,
+        phone: document.getElementById('ob-phone').value,
+        license: document.getElementById('ob-license').value,
+        website: document.getElementById('ob-website').value,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        let registry = JSON.parse(localStorage.getItem('tv_contractor_profiles') || '[]');
+        registry.push(profile);
+        localStorage.setItem('tv_contractor_profiles', JSON.stringify(registry));
+      } catch (err) {}
+
+      setTimeout(() => {
+        btn.classList.add('hidden');
+        document.getElementById('ob-success-msg').classList.remove('hidden');
+      }, 800);
+    }
+  </script>
+
+</body>
+</html>
