@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial BESS Peak Demand Shaving &amp; Battery Storage Sizer | IRA §48 ITC</title>
+  <meta name="description" content="Institutional Commercial Battery Energy Storage System (BESS) & Peak Demand Shaving Sizer. Model 2-hour & 4-hour LFP storage, 15-minute kW demand charge reductions, IRA §48 30%-50% ITC, and 15-yr IRR.">
+  <link rel="canonical" href="https://tools-vault-4ml.pages.dev/commercial_bess_peak_shaving_calculator.html">
+  <meta property="og:title" content="Commercial BESS Peak Demand Shaving & Battery Sizer">
+  <meta property="og:description" content="Model 2-hour and 4-hour commercial BESS storage capacity, utility peak kW demand shaving, IRA §48 standalone storage tax credits, and 15-year lifecycle cash flows.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #0f172a;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #10b981;
+      --amber: #f59e0b;
+      --cyan: #06b6d4;
+      --purple: #a855f7;
+      --rose: #f43f5e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+    }
+    .container { max-width: 1080px; margin: 0 auto; }
+    .header-box {
+      background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    .badge {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+    }
+    p.lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      max-width: 850px;
+    }
+    .quick-presets {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .preset-btn {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #6ee7b7;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .preset-btn:hover {
+      background: rgba(16, 185, 129, 0.25);
+      border-color: #10b981;
+      color: #fff;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 800px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    }
+    .section-title {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6ee7b7;
+      margin: 0 0 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.6);
+      padding-bottom: 8px;
+    }
+    .form-group { margin-bottom: 14px; }
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    input, select {
+      width: 100%;
+      background: #090d16;
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #10b981;
+    }
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .stat-box {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .stat-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .stat-val {
+      font-size: 24px;
+      font-weight: 900;
+      color: #fff;
+      margin: 4px 0 2px 0;
+    }
+    .stat-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .hero-stat {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+      border: 1px solid #10b981;
+    }
+    .hero-stat .stat-val {
+      color: #34d399;
+      font-size: 30px;
+    }
+    .table-container {
+      overflow-x: auto;
+      margin-top: 14px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    th, td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 10.5px;
+    }
+    .btn-action {
+      background: #10b981;
+      color: #020617;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 12px;
+      transition: all 0.2s;
+    }
+    .btn-action:hover {
+      background: #34d399;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+    .partner-banner {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 8px;
+      padding: 14px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .partner-btn {
+      background: #10b981;
+      color: #020617;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .partner-btn:hover { background: #34d399; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Commercial BESS Battery Storage Peak Shaving Calculator",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Calculate commercial battery energy storage (BESS) peak demand charge reduction, capacity sizing (kWh/kW), and payback period."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does commercial battery peak shaving reduce electric utility bills?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Commercial BESS systems discharge during peak 15-minute facility power demand windows, reducing the maximum kW spike recorded by the utility meter and saving up to 50% on commercial demand tariff charges."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does battery energy storage qualify for the federal ITC tax credit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, standalone commercial energy storage systems with a capacity of 5 kWh or greater qualify for the 30% Section 48 Investment Tax Credit (ITC) under the Inflation Reduction Act."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta property="og:image" content="https://tools-vault-4ml.pages.dev/downloads/og_card_solar_storage.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://tools-vault-4ml.pages.dev/downloads/og_card_solar_storage.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Header -->
+    <div class="header-box">
+      <div class="badge">⚡ Commercial Clean Tech &amp; MEP Suite • Tool #14</div>
+      <h1>Commercial BESS Peak Demand Shaving &amp; Battery Storage Sizer</h1>
+      <p class="lead">
+        Institutional battery energy storage system (BESS) financial &amp; dispatch underwriting model. Sizes 2-hour &amp; 4-hour utility-interconnected Lithium Iron Phosphate (LiFePO4) storage, computes 15-minute monthly peak kW demand charge avoidance, models IRA Section 48 standalone storage Investment Tax Credits (30%–50% ITC), and delivers 15-year lifecycle NPV and internal rates of return (IRR).
+      </p>
+
+      <div class="quick-presets">
+        <span style="font-size: 11px; font-weight: 800; color: #6ee7b7; align-self: center;">Quick Scenarios:</span>
+        <button type="button" class="preset-btn" onclick="loadPreset('mfg')">🏭 Industrial Manufacturing (500 kW / 1,000 kWh - 2hr)</button>
+        <button type="button" class="preset-btn" onclick="loadPreset('grocery')">🛒 Cold Storage / Supermarket (250 kW / 1,000 kWh - 4hr)</button>
+        <button type="button" class="preset-btn" onclick="loadPreset('campus')">🏢 Corporate Campus / Data Center (1,000 kW / 4,000 kWh - 4hr)</button>
+      </div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid-2">
+      
+      <!-- Inputs Column -->
+      <div class="card">
+        <div class="section-title">⚡ 1. Facility Load &amp; Utility Tariff</div>
+        
+        <div class="input-row">
+          <div class="form-group">
+            <label for="facilityPeakKw">Facility Peak Load (kW)</label>
+            <input type="number" id="facilityPeakKw" value="850" min="50" max="10000" step="10" oninput="calculateBess()">
+          </div>
+          <div class="form-group">
+            <label for="demandChargeRate">Demand Charge Rate ($/kW/mo)</label>
+            <input type="number" id="demandChargeRate" value="24.50" min="5" max="60" step="0.50" oninput="calculateBess()">
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="form-group">
+            <label for="targetShaveKw">Target Peak Shaving (kW)</label>
+            <input type="number" id="targetShaveKw" value="300" min="20" max="5000" step="10" oninput="calculateBess()">
+          </div>
+          <div class="form-group">
+            <label for="batteryDuration">Battery Duration (Hours)</label>
+            <select id="batteryDuration" onchange="calculateBess()">
+              <option value="2">2-Hour C-Rate (Fast Peak Shaving)</option>
+              <option value="4" selected>4-Hour C-Rate (Extended Peak Shaving)</option>
+              <option value="1">1-Hour C-Rate (Ultra-Fast Spike Suppression)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 20px;">🔋 2. BESS Hardware &amp; Efficiency</div>
+
+        <div class="input-row">
+          <div class="form-group">
+            <label for="bessCostPerKwh">Turnkey Installed Cost ($/kWh)</label>
+            <input type="number" id="bessCostPerKwh" value="580" min="300" max="1100" step="10" oninput="calculateBess()">
+          </div>
+          <div class="form-group">
+            <label for="roundTripEff">Round-Trip Efficiency (RTE %)</label>
+            <input type="number" id="roundTripEff" value="88" min="75" max="95" step="1" oninput="calculateBess()">
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="form-group">
+            <label for="annualDegradation">Annual Degradation (%/yr)</label>
+            <input type="number" id="annualDegradation" value="2.2" min="1.0" max="5.0" step="0.1" oninput="calculateBess()">
+          </div>
+          <div class="form-group">
+            <label for="omCostPerKwYr">Annual O&amp;M Maintenance ($/kW-yr)</label>
+            <input type="number" id="omCostPerKwYr" value="12.00" min="5" max="30" step="1" oninput="calculateBess()">
+          </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 20px;">🏛️ 3. IRA Section 48 Clean Energy ITC</div>
+
+        <div class="form-group">
+          <label for="itcRate">Standalone Energy Storage ITC Rate</label>
+          <select id="itcRate" onchange="calculateBess()">
+            <option value="0.30">30% Base Investment Tax Credit (Prevailing Wage &amp; Appr)</option>
+            <option value="0.40" selected>40% ITC (30% Base + 10% Energy Community Bonus)</option>
+            <option value="0.50">50% ITC (30% Base + 10% Energy Comm + 10% Domestic Content)</option>
+            <option value="0.06">6% ITC (Base without prevailing wage requirements)</option>
+          </select>
+        </div>
+
+        <div class="input-row">
+          <div class="form-group">
+            <label for="discountRate">Discount Rate for NPV (%)</label>
+            <input type="number" id="discountRate" value="7.5" min="4" max="15" step="0.5" oninput="calculateBess()">
+          </div>
+          <div class="form-group">
+            <label for="rateEscalator">Utility Tariff Escalation (%/yr)</label>
+            <input type="number" id="rateEscalator" value="3.0" min="0" max="8" step="0.5" oninput="calculateBess()">
+          </div>
+        </div>
+
+        <button type="button" class="btn-action" onclick="exportBessCsv()">📥 Export BESS Takeoff (CSV)</button>
+
+      </div>
+
+      <!-- Outputs Column -->
+      <div class="card">
+        <div class="section-title">📊 4. Storage Sizing &amp; Financial Returns</div>
+
+        <div class="stat-box hero-stat">
+          <div class="stat-label">15-Year Cumulative Net Present Value (NPV)</div>
+          <div class="stat-val" id="resNpv">$462,800</div>
+          <div class="stat-sub" id="resNpvSub">IRR: 19.4% &bull; Simple Payback: 4.8 Years</div>
+        </div>
+
+        <div class="input-row">
+          <div class="stat-box">
+            <div class="stat-label">BESS Sized Capacity</div>
+            <div class="stat-val" style="color: #6ee7b7;" id="resStorageCapacity">1,200 kWh</div>
+            <div class="stat-sub" id="resPowerRating">300 kW (4-Hour Duration)</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Annual Demand Savings</div>
+            <div class="stat-val" style="color: #fbbf24;" id="resAnnualSavings">$88,200/yr</div>
+            <div class="stat-sub" id="resMonthlySavings">$7,350/mo utility bill credit</div>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="stat-box">
+            <div class="stat-label">Gross Turnkey CapEx</div>
+            <div class="stat-val" style="color: #f87171;" id="resGrossCapex">$696,000</div>
+            <div class="stat-sub" id="resCapexPerKwh">$580/kWh all-in installed</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">IRA Section 48 ITC Credit</div>
+            <div class="stat-val" style="color: #34d399;" id="resItcCredit">-$278,400</div>
+            <div class="stat-sub" id="resItcRateDisplay">40% Federal Tax Shield / Direct Pay</div>
+          </div>
+        </div>
+
+        <div class="stat-box" style="background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.4);">
+          <div class="stat-label" style="color: #6ee7b7;">Net Out-of-Pocket CapEx (Post-ITC)</div>
+          <div class="stat-val" style="color: #34d399;" id="resNetCapex">$417,600</div>
+          <div class="stat-sub" id="resMacrsSub">Eligible for 5-Year MACRS Accelerated Depreciation</div>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Metric Description</th>
+                <th>Underwritten Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monthly Peak Demand Reduction</td>
+                <td id="tableDemandShave" style="font-weight: 700; color: #6ee7b7;">300 kW</td>
+              </tr>
+              <tr>
+                <td>Effective Annual Usable Throughput</td>
+                <td id="tableThroughput">385,440 kWh/yr</td>
+              </tr>
+              <tr>
+                <td>Annual O&amp;M Service Contract</td>
+                <td id="tableOmCost">$3,600/yr ($12/kW)</td>
+              </tr>
+              <tr>
+                <td>Net First-Year Operating Cash Flow</td>
+                <td id="tableNetCashFlow" style="font-weight: 700; color: #34d399;">$84,600/yr</td>
+              </tr>
+              <tr>
+                <td>15-Year Cumulative Protected Cash Flow</td>
+                <td id="tableCumulativeCashFlow" style="font-weight: 700; color: #38bdf8;">$1,185,400</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Verified Contractor Partner Card -->
+        <div class="partner-banner">
+          <div>
+            <div style="font-size: 11px; font-weight: 800; color: #34d399; text-transform: uppercase;">Verified BESS &amp; Microgrid EPCs</div>
+            <div style="font-size: 12.5px; font-weight: 700; color: #fff; margin-top: 2px;">Deploy Commercial Storage in Your Territory</div>
+            <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">Connect with UL 9540 &amp; NFPA 855 certified commercial storage integrators.</div>
+          </div>
+          <a href="/find_commercial_subcontractors.html" class="partner-btn">Match EPC Contractors &rarr;</a>
+        </div>
+
+        <!-- Official LiTime Commercial BESS & LiFePO4 Equipment Card -->
+        <div class="partner-banner" style="background: rgba(14, 165, 233, 0.08); border-color: rgba(14, 165, 233, 0.35); margin-top: 12px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 800; color: #38bdf8; text-transform: uppercase;">Featured Storage Partner &bull; LiTime Commercial</div>
+            <div style="font-size: 12.5px; font-weight: 700; color: #fff; margin-top: 2px;">Commercial LiFePO4 Battery Systems &amp; Server Racks</div>
+            <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">High-density 48V/51.2V rack batteries, built-in smart BMS, and modular peak shaving storage.</div>
+          </div>
+          <a href="https://www.awin1.com/cread.php?awinmid=71451&awinaffid=3064767&ued=https%3A%2F%2Fwww.litime.com%2F" target="_blank" rel="noopener sponsored" class="partner-btn" style="background: #0284c7; color: #fff;">Explore LiTime Systems &rarr;</a>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    function loadPreset(type) {
+      if (type === 'mfg') {
+        document.getElementById('facilityPeakKw').value = 1200;
+        document.getElementById('demandChargeRate').value = 26.00;
+        document.getElementById('targetShaveKw').value = 500;
+        document.getElementById('batteryDuration').value = '2';
+        document.getElementById('bessCostPerKwh').value = 560;
+        document.getElementById('roundTripEff').value = 88;
+        document.getElementById('itcRate').value = '0.40';
+      } else if (type === 'grocery') {
+        document.getElementById('facilityPeakKw').value = 450;
+        document.getElementById('demandChargeRate').value = 28.50;
+        document.getElementById('targetShaveKw').value = 250;
+        document.getElementById('batteryDuration').value = '4';
+        document.getElementById('bessCostPerKwh').value = 590;
+        document.getElementById('roundTripEff').value = 87;
+        document.getElementById('itcRate').value = '0.40';
+      } else if (type === 'campus') {
+        document.getElementById('facilityPeakKw').value = 2500;
+        document.getElementById('demandChargeRate').value = 22.00;
+        document.getElementById('targetShaveKw').value = 1000;
+        document.getElementById('batteryDuration').value = '4';
+        document.getElementById('bessCostPerKwh').value = 520;
+        document.getElementById('roundTripEff').value = 89;
+        document.getElementById('itcRate').value = '0.50';
+      }
+      calculateBess();
+    }
+
+    function calculateBess() {
+      const facilityPeakKw = parseFloat(document.getElementById('facilityPeakKw').value) || 850;
+      const demandChargeRate = parseFloat(document.getElementById('demandChargeRate').value) || 24.50;
+      let targetShaveKw = parseFloat(document.getElementById('targetShaveKw').value) || 300;
+      if (targetShaveKw > facilityPeakKw) targetShaveKw = facilityPeakKw * 0.8;
+
+      const batteryDuration = parseFloat(document.getElementById('batteryDuration').value) || 4;
+      const bessCostPerKwh = parseFloat(document.getElementById('bessCostPerKwh').value) || 580;
+      const roundTripEff = (parseFloat(document.getElementById('roundTripEff').value) || 88) / 100;
+      const annualDegradation = (parseFloat(document.getElementById('annualDegradation').value) || 2.2) / 100;
+      const omCostPerKwYr = parseFloat(document.getElementById('omCostPerKwYr').value) || 12.00;
+      const itcRate = parseFloat(document.getElementById('itcRate').value) || 0.40;
+      const discountRate = (parseFloat(document.getElementById('discountRate').value) || 7.5) / 100;
+      const rateEscalator = (parseFloat(document.getElementById('rateEscalator').value) || 3.0) / 100;
+
+      // Sizing calculation
+      const storageCapacityKwh = targetShaveKw * batteryDuration;
+      const grossCapex = storageCapacityKwh * bessCostPerKwh;
+      const itcCredit = grossCapex * itcRate;
+      const netCapex = grossCapex - itcCredit;
+
+      // Demand savings (12 months)
+      const monthlySavings = targetShaveKw * demandChargeRate;
+      const annualDemandSavings = monthlySavings * 12;
+      const annualOmCost = targetShaveKw * omCostPerKwYr;
+      const netYear1Savings = annualDemandSavings - annualOmCost;
+
+      // 15-year DCF & NPV
+      let npv = -netCapex;
+      let cumulativeCashFlow = 0;
+      let payback = null;
+      let runningCash = -netCapex;
+
+      for (let yr = 1; yr <= 15; yr++) {
+        // Compound degradation and tariff escalation
+        const degFactor = Math.pow(1 - annualDegradation, yr - 1);
+        const escFactor = Math.pow(1 + rateEscalator, yr - 1);
+        const yrSavings = (annualDemandSavings * degFactor * escFactor) - (annualOmCost * escFactor);
+        cumulativeCashFlow += yrSavings;
+
+        // Discounted cash flow
+        npv += yrSavings / Math.pow(1 + discountRate, yr);
+
+        runningCash += yrSavings;
+        if (runningCash >= 0 && payback === null) {
+          const prevCash = runningCash - yrSavings;
+          const fraction = Math.abs(prevCash) / yrSavings;
+          payback = ((yr - 1) + fraction).toFixed(1);
+        }
+      }
+
+      if (payback === null) {
+        payback = (netCapex / netYear1Savings).toFixed(1);
+      }
+
+      // Simple IRR approximation
+      const avgAnnualCash = cumulativeCashFlow / 15;
+      const approxIrr = ((avgAnnualCash / netCapex) * 100 * 0.82).toFixed(1);
+
+      // Usable annual energy throughput (approx 260 peak shaving cycles/yr)
+      const annualThroughput = Math.round(storageCapacityKwh * roundTripEff * 260);
+
+      // Render UI
+      document.getElementById('resNpv').textContent = '$' + Math.round(npv).toLocaleString();
+      document.getElementById('resNpvSub').textContent = 'IRR: ' + approxIrr + '% • Simple Payback: ' + payback + ' Years';
+      
+      document.getElementById('resStorageCapacity').textContent = storageCapacityKwh.toLocaleString() + ' kWh';
+      document.getElementById('resPowerRating').textContent = targetShaveKw.toLocaleString() + ' kW (' + batteryDuration + '-Hour Duration)';
+
+      document.getElementById('resAnnualSavings').textContent = '$' + Math.round(annualDemandSavings).toLocaleString() + '/yr';
+      document.getElementById('resMonthlySavings').textContent = '$' + Math.round(monthlySavings).toLocaleString() + '/mo utility bill credit';
+
+      document.getElementById('resGrossCapex').textContent = '$' + Math.round(grossCapex).toLocaleString();
+      document.getElementById('resCapexPerKwh').textContent = '$' + Math.round(bessCostPerKwh) + '/kWh all-in installed';
+
+      document.getElementById('resItcCredit').textContent = '-$' + Math.round(itcCredit).toLocaleString();
+      document.getElementById('resItcRateDisplay').textContent = Math.round(itcRate * 100) + '% Federal Tax Shield / Direct Pay';
+
+      document.getElementById('resNetCapex').textContent = '$' + Math.round(netCapex).toLocaleString();
+
+      document.getElementById('tableDemandShave').textContent = targetShaveKw.toLocaleString() + ' kW';
+      document.getElementById('tableThroughput').textContent = annualThroughput.toLocaleString() + ' kWh/yr';
+      document.getElementById('tableOmCost').textContent = '$' + Math.round(annualOmCost).toLocaleString() + '/yr ($' + omCostPerKwYr + '/kW)';
+      document.getElementById('tableNetCashFlow').textContent = '$' + Math.round(netYear1Savings).toLocaleString() + '/yr';
+      document.getElementById('tableCumulativeCashFlow').textContent = '$' + Math.round(cumulativeCashFlow).toLocaleString();
+    }
+
+    function exportBessCsv() {
+      const facilityPeakKw = document.getElementById('facilityPeakKw').value;
+      const demandChargeRate = document.getElementById('demandChargeRate').value;
+      const targetShaveKw = document.getElementById('targetShaveKw').value;
+      const batteryDuration = document.getElementById('batteryDuration').value;
+      const bessCostPerKwh = document.getElementById('bessCostPerKwh').value;
+      const itcRate = document.getElementById('itcRate').value;
+
+      const storageCapacity = document.getElementById('resStorageCapacity').textContent;
+      const grossCapex = document.getElementById('resGrossCapex').textContent;
+      const itcCredit = document.getElementById('resItcCredit').textContent;
+      const netCapex = document.getElementById('resNetCapex').textContent;
+      const annualSavings = document.getElementById('resAnnualSavings').textContent;
+      const npv = document.getElementById('resNpv').textContent;
+
+      const rows = [
+        ["Commercial BESS Peak Demand Shaving Takeoff Report", new Date().toISOString().split('T')[0]],
+        [],
+        ["FACILITY & UTILITY PARAMETERS", ""],
+        ["Facility Peak Electrical Load (kW)", facilityPeakKw],
+        ["Utility Demand Charge Rate ($/kW/mo)", demandChargeRate],
+        ["Target Peak Shaving Capacity (kW)", targetShaveKw],
+        ["Storage Duration (Hours)", batteryDuration],
+        ["BESS Turnkey Unit Cost ($/kWh)", bessCostPerKwh],
+        ["IRA Section 48 ITC Rate", (parseFloat(itcRate) * 100) + "%"],
+        [],
+        ["UNDERWRITTEN FINANCIAL & CAPACITY OUTPUTS", ""],
+        ["Total BESS Storage Capacity", storageCapacity],
+        ["Gross Turnkey CapEx", grossCapex],
+        ["IRA Section 48 ITC Tax Shield", itcCredit],
+        ["Net Out-of-Pocket CapEx", netCapex],
+        ["Annual Demand Charge Savings", annualSavings],
+        ["15-Year Cumulative NPV", npv]
+      ];
+
+      const csvContent = "data:text/csv;charset=utf-8," + rows.map(e => e.map(i => '"' + (i + '').replace(/"/g, '""') + '"').join(",")).join("\n");
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "Commercial_BESS_Peak_Shaving_Takeoff.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', calculateBess);
+  </script>
+  <script src="/contractor-quote-engine.js" defer></script>
+  <script src="/protoarc-card.js" defer></script>
+</body>
+</html>
