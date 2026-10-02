@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToolsVault Friday Contractor Scale Engine (Wave 4: 111 Verified Accounts)</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #0f172a;
+      --border: #1e293b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --green: #22c55e;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    h1 { margin: 0; font-size: 24px; font-weight: 800; color: #fff; }
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-val { font-size: 28px; font-weight: 800; color: var(--accent); }
+    .stat-lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; font-weight: 700; margin-top: 4px; }
+    
+    .controls-bar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    .search-input {
+      background: #0b1120;
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      flex: 1;
+      min-width: 240px;
+    }
+    .filter-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: var(--accent); }
+    .filter-btn.active {
+      background: var(--accent);
+      color: #0f172a;
+      border-color: var(--accent);
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 13px;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #0b1120;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    tr:hover { background: rgba(30, 41, 59, 0.5); }
+    .status-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .status-pending { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    
+    .btn-bump {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #38bdf8;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-bump:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+    
+    .btn-launch {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid #22c55e;
+      color: #4ade80;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-launch:hover {
+      background: #22c55e;
+      color: #022c22;
+    }
+    
+    
+    .btn-gmail {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid #ef4444;
+      color: #fca5a5;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-gmail:hover {
+      background: #ef4444;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+    }
+    .status-sent {
+      background: rgba(34, 197, 94, 0.2);
+      color: #4ade80;
+      border: 1px solid #22c55e;
+      cursor: pointer;
+    }
+    .status-pending {
+      cursor: pointer;
+    }
+    .email-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .email-modal-box {
+      background: #0f172a;
+      border: 1px solid #38bdf8;
+      border-radius: 16px;
+      max-width: 680px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.9);
+      color: #f8fafc;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--green);
+      color: #022c22;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13px;
+      display: none;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+    }
+  </style>
+  <meta property="og:image" content="https://tools-vault-4ml.pages.dev/downloads/og_card_contractor_takeoff.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://tools-vault-4ml.pages.dev/downloads/og_card_contractor_takeoff.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Weekly Commercial Outbound Suite Navigation Ribbon -->
+    <nav style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 24px; padding: 12px 18px; background: rgba(15, 23, 42, 0.95); border: 1px solid #1e293b; border-radius: 14px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #38bdf8; box-shadow: 0 0 10px #38bdf8;"></span>
+        <span style="color: #f1f5f9; text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em;">Weekly Commercial Outbound Suite:</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <a href="monday_outbound_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Mon: Wave 1 (50)</a>
+        <a href="tuesday_contractor_followup_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Tue: Follow-Ups (95)</a>
+        <a href="wednesday_contractor_expansion_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Wed: Wave 2 (100)</a>
+        <a href="thursday_contractor_scale_launcher.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0284c7; color: #ffffff; border: 1px solid #38bdf8; box-shadow: 0 0 12px rgba(2,132,199,0.5); font-weight: 800;">Thu: Wave 3 (106)</a>
+        <a href="friday_contractor_closing_desk.html" style="text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: all 0.15s; background: #0b1120; color: #94a3b8; border: 1px solid #1e293b;">Fri: Closing Desk &amp; CRM</a>
+      </div>
+    </nav>
+    <header>
+      <div>
+        <h1>⚡ ToolsVault Thursday Contractor Scale Engine (Wave 3)</h1>
+        <p style="margin: 6px 0 0 0; color: var(--muted); font-size: 13px;">Wave 3 scale targeting 106 verified trade contractors across Phoenix, Denver, Chicago, and Raleigh. 1-click tailored dispatch.</p>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="contractor_network.html" style="background: #1e293b; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: 700; font-size: 13px;">
+          Live Contractor Network ↗
+        </a>
+        <a href="commercial_subcontractor_bid_estimator.html" style="background: #1e293b; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: 700; font-size: 13px;">
+          Commercial Estimator ↗
+        </a>
+        <a href="https://buy.stripe.com/9B68wI0z72t422McoEaMU04" target="_blank" style="background: var(--green); color: #022c22; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 800; font-size: 13px;">
+          Live Stripe Checkout ($49/mo) ↗
+        </a>
+      </div>
+    </header>
+
+    
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-val" id="totalCount">106</div>
+        <div class="stat-lbl">Active Enterprise Targets</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="sentCountStat" style="color: #22c55e;">0</div>
+        <div class="stat-lbl">Dispatched Follow-Ups</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="pendingCountStat" style="color: #fbbf24;">106</div>
+        <div class="stat-lbl">Pending Outreach</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #38bdf8;">toolsvault78</div>
+        <div class="stat-lbl">Connected Business Gmail</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #22c55e;">16</div>
+        <div class="stat-lbl">Major Metro Corridors</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #f59e0b;">$5,194/mo</div>
+        <div class="stat-lbl">Territory Run-Rate Potential</div>
+      </div>
+    </div>
+
+    <!-- Previous Session Alert Banner (Displays when all accounts are marked dispatched in browser storage) -->
+    <div id="allSentBanner" style="display: none; background: rgba(34, 197, 94, 0.15); border: 1.5px solid #22c55e; border-radius: 16px; padding: 18px 24px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(34, 197, 94, 0.25);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="font-size: 32px;">🏆</div>
+          <div>
+            <div style="font-weight: 900; color: #4ade80; font-size: 16px;">THURSDAY WAVE 3 FULLY DISPATCHED: 106 / 106 Commercial Accounts Sent!</div>
+            <div style="font-size: 12px; color: #cbd5e1; margin-top: 3px;">
+              All commercial HVAC, mechanical, roofing, and general contracting primes have been contacted. Responses are routing to <strong>toolsvault78@gmail.com</strong>.
+            </div>
+          </div>
+        </div>
+        <a href="friday_contractor_closing_desk.html" style="text-decoration: none; background: linear-gradient(135deg, #22c55e 0%, #38bdf8 100%); color: #022c22; font-weight: 900; font-size: 13px; padding: 12px 22px; border-radius: 10px; box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4); display: inline-flex; align-items: center; gap: 8px;">
+          <span>💼</span> Open Friday Closing Desk &amp; Negotiation CRM ↗
+        </a>
+      </div>
+    </div>
+    
+    <!-- Business Gmail Link & Sequential Dispatcher -->
+    <div style="background: linear-gradient(135deg, #090d16 0%, #0f172a 100%); border: 1.5px solid #0284c7; border-radius: 16px; padding: 22px 28px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(2, 132, 199, 0.25);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 22px;">🏢</span>
+            <span style="font-size: 11px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.1em;">Connected Outbound Engine</span>
+            <span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid #22c55e; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 800;">AUTHENTICATED</span>
+          </div>
+          <h2 style="margin: 4px 0 0 0; font-size: 20px; font-weight: 900; color: #ffffff;">
+            Business Gmail: <span id="activeGmailDisplay" style="color: #38bdf8;">toolsvault78@gmail.com</span>
+          </h2>
+          <p style="margin: 4px 0 0 0; font-size: 12px; color: #94a3b8;">
+            All 1-click links open directly inside your business Google account with pre-filled recipient, subject, and <strong>John Granbridge</strong> signature.
+          </p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <input type="email" id="businessGmailInput" value="toolsvault78@gmail.com" style="background: #020617; border: 1px solid #334155; border-radius: 8px; padding: 8px 12px; color: #fff; font-size: 12px; min-width: 220px;" placeholder="Business Gmail address">
+          <button onclick="saveBusinessGmail()" style="background: #1e293b; border: 1px solid #38bdf8; color: #38bdf8; padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;">
+            Save Account
+          </button>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; border-top: 1px solid #1e293b; padding-top: 16px;">
+        <div style="flex: 1; min-width: 280px;">
+          <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px;">
+            <span style="color: #94a3b8; font-weight: 700;">Outreach Progress</span>
+            <span style="color: #38bdf8; font-weight: 800;"><span id="progressCount">0</span> / 106 Dispatched (<span id="progressPct">0%</span>)</span>
+          </div>
+          <div style="background: #020617; border-radius: 9999px; height: 10px; overflow: hidden; border: 1px solid #1e293b;">
+            <div id="progressBar" style="background: linear-gradient(90deg, #0284c7, #22c55e); height: 100%; width: 0%; transition: width 0.3s ease;"></div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          <a id="launchNextHeroBtn" href="#" target="_blank" rel="noopener noreferrer" onclick="handleHeroClick(event)" style="background: linear-gradient(135deg, #0284c7 0%, #22c55e 100%); color: #022c22; font-weight: 900; font-size: 14px; text-decoration: none; padding: 12px 24px; border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4); transition: transform 0.15s, box-shadow 0.15s;">
+            <span>🚀</span>
+            <span id="launchNextHeroText">Launch Next Pending in Business Gmail</span>
+          </a>
+          <button onclick="resetSentHistory(false)" style="background: #1e293b; color: #38bdf8; border: 1.5px solid #0284c7; padding: 12px 18px; border-radius: 10px; font-size: 13px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Reset all 106 statuses back to Pending">
+            ↺ Reset Batch (0/106)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-bar">
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search company, email, metro, or trade..." oninput="applyFilters()">
+      <button class="filter-btn active" onclick="setTradeFilter('all', this)">All Disciplines</button>
+      <button class="filter-btn" onclick="setTradeFilter('Roofing', this)">Roofing</button>
+      <button class="filter-btn" onclick="setTradeFilter('Solar', this)">Solar & Storage</button>
+      <button class="filter-btn" onclick="setTradeFilter('HVAC', this)">HVAC / Mechanical</button>
+      <button class="filter-btn" onclick="setTradeFilter('Electrical', this)">Electrical</button>
+      <button class="filter-btn" onclick="setTradeFilter('Asset Management', this)">Asset Managers</button>
+      <button class="filter-btn" id="filterStatusPendingBtn" style="border-color: #fbbf24; color: #fbbf24;" onclick="setStatusFilter('pending', this)">⏳ Pending Only (<span id="pendingBtnCount">77</span>)</button>
+      <button class="filter-btn" id="filterStatusSentBtn" style="border-color: #22c55e; color: #4ade80;" onclick="setStatusFilter('sent', this)">✓ Dispatched (<span id="sentBtnCount">29</span>)</button>
+    </div>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 15px;">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 40px;">#</th>
+            <th>Company Name</th>
+            <th>Discipline</th>
+            <th>Metro Corridor</th>
+            <th>Recipient Email</th>
+            <th>Status</th>
+            <th>Tuesday Follow-Up Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Injected dynamically -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="toast" id="toast">✓ Tailored follow-up copied to clipboard!</div>
+  </div>
+
+  <script>
+    const allTargets = [
+  {
+    "name": "Rosendin Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Austin, TX",
+    "email": "estimating@rosendin.com",
+    "contact": "Estimating Department"
+  },
+  {
+    "name": "Bergelectric Corp",
+    "trade": "Commercial Electrical",
+    "metro": "Orlando, FL",
+    "email": "estimating@bergelectric.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Helix Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Atlanta, GA",
+    "email": "bids@helixelectric.com",
+    "contact": "Preconstruction Team"
+  },
+  {
+    "name": "Faith Technologies",
+    "trade": "Electrical & Automation",
+    "metro": "Dallas, TX",
+    "email": "info@faithtechinc.com",
+    "contact": "Commercial Precon"
+  },
+  {
+    "name": "Gaylor Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Nashville, TN",
+    "email": "estimating@gaylor.com",
+    "contact": "Regional Estimating"
+  },
+  {
+    "name": "Wayne J. Griffin Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Raleigh, NC",
+    "email": "estimating@wjgelectric.com",
+    "contact": "Estimating Team"
+  },
+  {
+    "name": "Inglett & Stubbs",
+    "trade": "Commercial Electrical",
+    "metro": "Atlanta, GA",
+    "email": "estimating@inglett-stubbs.com",
+    "contact": "Estimating Department"
+  },
+  {
+    "name": "Commonwealth Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@commonwealthelectric.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Mona Electric Group",
+    "trade": "Commercial Electrical",
+    "metro": "Tampa, FL",
+    "email": "estimating@monaelectric.com",
+    "contact": "Commercial Division"
+  },
+  {
+    "name": "Sturgeon Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Denver, CO",
+    "email": "estimating@myrgroup.com",
+    "contact": "Preconstruction"
+  },
+  {
+    "name": "Fisk Electric Company",
+    "trade": "Commercial Electrical",
+    "metro": "Houston, TX",
+    "email": "estimating@fiskcorp.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Echols Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Charlotte, NC",
+    "email": "estimating@echolselectric.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Walker Engineering",
+    "trade": "Commercial Electrical",
+    "metro": "Fort Worth, TX",
+    "email": "estimating@walkertx.com",
+    "contact": "Precon Department"
+  },
+  {
+    "name": "Tri-City Electric Co",
+    "trade": "Commercial Electrical",
+    "metro": "Miami, FL",
+    "email": "estimating@tricityelectric.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Interstates Electric",
+    "trade": "Electrical & Instrumentation",
+    "metro": "Columbus, OH",
+    "email": "estimating@interstates.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Hatzel & Buehler",
+    "trade": "Commercial Electrical",
+    "metro": "Cleveland, OH",
+    "email": "estimating@hatzelandbuehler.com",
+    "contact": "Commercial Bids"
+  },
+  {
+    "name": "IES Residential & Commercial",
+    "trade": "Commercial Electrical",
+    "metro": "Houston, TX",
+    "email": "commercial@ies-co.com",
+    "contact": "Commercial Division"
+  },
+  {
+    "name": "O'Connell Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Cincinnati, OH",
+    "email": "estimating@oconnellelectric.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Amteck LLC",
+    "trade": "Commercial Electrical & Technologies",
+    "metro": "Lexington, KY",
+    "email": "estimating@amteck.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Miller Bros Solar & Electric",
+    "trade": "Commercial Solar & Electrical",
+    "metro": "Atlanta, GA",
+    "email": "estimating@millerbrossolar.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Titan Electric Southeast",
+    "trade": "Commercial Electrical",
+    "metro": "Atlanta, GA",
+    "email": "estimating@titanelectric.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Gregg Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Dallas, TX",
+    "email": "estimating@greggelectric.com",
+    "contact": "Estimating Team"
+  },
+  {
+    "name": "TDIndustries",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Dallas, TX",
+    "email": "estimating@tdindustries.com",
+    "contact": "Commercial Preconstruction"
+  },
+  {
+    "name": "Comfort Systems USA",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Houston, TX",
+    "email": "estimating@comfortsystemsusa.com",
+    "contact": "Precon Department"
+  },
+  {
+    "name": "Brandt Companies",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Austin, TX",
+    "email": "estimating@brandt.us",
+    "contact": "Estimating Team"
+  },
+  {
+    "name": "Southland Industries",
+    "trade": "Commercial Mechanical & MEP",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@southlandind.com",
+    "contact": "Preconstruction Team"
+  },
+  {
+    "name": "Limbach Company",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Orlando, FL",
+    "email": "estimating@limbachinc.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Encompass Onsite",
+    "trade": "Commercial Facilities & HVAC",
+    "metro": "Fort Lauderdale, FL",
+    "email": "service@encompassonsite.com",
+    "contact": "Commercial Division"
+  },
+  {
+    "name": "McKenney's Inc",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Atlanta, GA",
+    "email": "estimating@mckenneys.com",
+    "contact": "Precon Department"
+  },
+  {
+    "name": "Bernhard LLC",
+    "trade": "Mechanical & Energy Infrastructure",
+    "metro": "Nashville, TN",
+    "email": "estimating@bernhard.com",
+    "contact": "Commercial Precon"
+  },
+  {
+    "name": "Harper Limbach",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Tampa, FL",
+    "email": "estimating@harperlimbach.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Lee Company",
+    "trade": "Commercial Mechanical & Facilities",
+    "metro": "Nashville, TN",
+    "email": "commercial@leecompany.com",
+    "contact": "Commercial Division"
+  },
+  {
+    "name": "Action Mechanical",
+    "trade": "Commercial Mechanical & Piping",
+    "metro": "Charlotte, NC",
+    "email": "estimating@actionmechanical.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "B&I Contractors",
+    "trade": "Commercial Mechanical & Electrical",
+    "metro": "Fort Myers, FL",
+    "email": "estimating@bandiflorida.com",
+    "contact": "Preconstruction Team"
+  },
+  {
+    "name": "ColonialWebb Contractors",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Raleigh, NC",
+    "email": "estimating@colonialwebb.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Murphy Company",
+    "trade": "Commercial Mechanical Piping",
+    "metro": "Denver, CO",
+    "email": "estimating@murphynet.com",
+    "contact": "Preconstruction"
+  },
+  {
+    "name": "Tweet/Garot Mechanical",
+    "trade": "Mechanical & Process Piping",
+    "metro": "Columbus, OH",
+    "email": "estimating@tweetgarot.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "J.F. Ahern Co",
+    "trade": "Mechanical & Fire Protection",
+    "metro": "Cincinnati, OH",
+    "email": "estimating@jfahern.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "ABM Commercial HVAC",
+    "trade": "Commercial HVAC & Facilities",
+    "metro": "Atlanta, GA",
+    "email": "info@abm.com",
+    "contact": "Commercial Operations"
+  },
+  {
+    "name": "Cullum Mechanical Construction",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Charleston, SC",
+    "email": "estimating@culluminc.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "B&W Mechanical Contractors",
+    "trade": "Commercial HVAC & Plumbing",
+    "metro": "Atlanta, GA",
+    "email": "estimating@bw-mechanical.com",
+    "contact": "Precon Team"
+  },
+  {
+    "name": "Egan Company",
+    "trade": "Specialty Mechanical & Electrical",
+    "metro": "Minneapolis, MN",
+    "email": "estimating@eganco.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "A&G Piping Inc",
+    "trade": "Commercial Mechanical & Piping",
+    "metro": "Fort Worth, TX",
+    "email": "estimating@agpiping.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Centimark Commercial Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Dallas, TX",
+    "email": "estimating@centimark.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Tecta America Southeast",
+    "trade": "Commercial Roofing",
+    "metro": "Atlanta, GA",
+    "email": "estimating@tectaamerica.com",
+    "contact": "Commercial Division"
+  },
+  {
+    "name": "Latite Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Pompano Beach, FL",
+    "email": "estimating@latite.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Advanced Roofing Inc",
+    "trade": "Commercial Roofing & Solar",
+    "metro": "Fort Lauderdale, FL",
+    "email": "estimating@advancedroofing.com",
+    "contact": "Precon Team"
+  },
+  {
+    "name": "Whitley Penn Roofing (Supreme)",
+    "trade": "Commercial Roofing",
+    "metro": "Dallas, TX",
+    "email": "estimating@supremeroofing.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Target Roofing & Sheet Metal",
+    "trade": "Commercial Roofing",
+    "metro": "Fort Myers, FL",
+    "email": "estimating@targetroofers.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Commercial Roofing Specialties",
+    "trade": "Commercial Roofing",
+    "metro": "Nashville, TN",
+    "email": "info@crssupply.com",
+    "contact": "Contractor Sales"
+  },
+  {
+    "name": "D&D Roofing Sheet Metal",
+    "trade": "Commercial Roofing",
+    "metro": "Denver, CO",
+    "email": "estimating@ddroofing.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Castro Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Dallas, TX",
+    "email": "estimating@castroroofing.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Precision Construction & Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Fort Worth, TX",
+    "email": "commercial@precisionroofing.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Empire Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Fort Worth, TX",
+    "email": "estimating@empireroofing.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Sutter Roofing Company",
+    "trade": "Commercial Roofing",
+    "metro": "Sarasota, FL",
+    "email": "estimating@sutterroofing.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Crown Corr Inc",
+    "trade": "Metal Building Envelope",
+    "metro": "Atlanta, GA",
+    "email": "estimating@crowncorr.com",
+    "contact": "Estimating Department"
+  },
+  {
+    "name": "Flynn Group of Companies",
+    "trade": "Total Building Envelope",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@flynncompanies.com",
+    "contact": "US Estimating"
+  },
+  {
+    "name": "A.C.T. Metal Deck Supply",
+    "trade": "Commercial Decking & Metals",
+    "metro": "Charlotte, NC",
+    "email": "sales@metaldecksupply.com",
+    "contact": "Commercial Sales"
+  },
+  {
+    "name": "Northeast Solite",
+    "trade": "Lightweight Structural Roof Fills",
+    "metro": "Richmond, VA",
+    "email": "info@nesolite.com",
+    "contact": "Technical Estimating"
+  },
+  {
+    "name": "Nations Roof Carolina",
+    "trade": "Commercial Roofing",
+    "metro": "Charlotte, NC",
+    "email": "estimating@nationsroof.com",
+    "contact": "Regional Estimating"
+  },
+  {
+    "name": "SRS Distribution Commercial",
+    "trade": "Commercial Building Products",
+    "metro": "Dallas, TX",
+    "email": "estimating@srsdistribution.com",
+    "contact": "Commercial Division"
+  },
+  {
+    "name": "ABC Supply Commercial",
+    "trade": "Commercial Roofing & Wall Systems",
+    "metro": "Beloit, WI",
+    "email": "info@abcsupply.com",
+    "contact": "Commercial Sales"
+  },
+  {
+    "name": "Beacon Commercial Roofing",
+    "trade": "Commercial Roofing Systems",
+    "metro": "Herndon, VA",
+    "email": "estimating@becn.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Baker Concrete Construction",
+    "trade": "Commercial Concrete",
+    "metro": "Houston, TX",
+    "email": "estimating@bakerconcrete.com",
+    "contact": "Preconstruction Team"
+  },
+  {
+    "name": "Lithko Contracting",
+    "trade": "Commercial Concrete",
+    "metro": "Charlotte, NC",
+    "email": "estimating@lithko.com",
+    "contact": "Regional Estimating"
+  },
+  {
+    "name": "Wayne Brothers Companies",
+    "trade": "Civil & Concrete Construction",
+    "metro": "Charlotte, NC",
+    "email": "estimating@waynebrothers.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "TAS Commercial Concrete",
+    "trade": "Commercial Concrete",
+    "metro": "Houston, TX",
+    "email": "estimating@tascon.com",
+    "contact": "Estimating Department"
+  },
+  {
+    "name": "Sundt Construction",
+    "trade": "Concrete & Heavy Civil",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@sundt.com",
+    "contact": "Precon Team"
+  },
+  {
+    "name": "L.G. Barcus & Sons",
+    "trade": "Foundation & Heavy Civil",
+    "metro": "Dallas, TX",
+    "email": "estimating@barcus.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Schuff Steel Company",
+    "trade": "Structural Steel Fabrication",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@schuff.com",
+    "contact": "Preconstruction Dept"
+  },
+  {
+    "name": "SteelFab Inc",
+    "trade": "Structural Steel Framing",
+    "metro": "Charlotte, NC",
+    "email": "estimating@steelfab-inc.com",
+    "contact": "Estimating Team"
+  },
+  {
+    "name": "Owen Steel Company",
+    "trade": "Structural Steel",
+    "metro": "Columbia, SC",
+    "email": "estimating@owensteel.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Canam Steel Corp",
+    "trade": "Structural Joists & Deck",
+    "metro": "Jacksonville, FL",
+    "email": "estimating@canam.com",
+    "contact": "Commercial Bids"
+  },
+  {
+    "name": "W&W | AFCO Steel",
+    "trade": "Structural Steel",
+    "metro": "Nashville, TN",
+    "email": "estimating@wwafcosteel.com",
+    "contact": "Estimating Department"
+  },
+  {
+    "name": "Commercial Contracting Corp",
+    "trade": "Concrete & Industrial Framing",
+    "metro": "Columbus, OH",
+    "email": "estimating@cccgroup.com",
+    "contact": "Preconstruction Team"
+  },
+  {
+    "name": "Vulcan Materials Contracting",
+    "trade": "Aggregate & Heavy Civil",
+    "metro": "Birmingham, AL",
+    "email": "estimating@vmcmail.com",
+    "contact": "Commercial Division"
+  },
+  {
+    "name": "APAC-Atlantic Inc",
+    "trade": "Asphalt & Heavy Civil",
+    "metro": "Raleigh, NC",
+    "email": "estimating@apac.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Rogers Group Inc",
+    "trade": "Crushed Stone & Heavy Civil",
+    "metro": "Nashville, TN",
+    "email": "estimating@rogersgroupinc.com",
+    "contact": "Commercial Bids"
+  },
+  {
+    "name": "Texas Sterling Construction",
+    "trade": "Heavy Civil & Infrastructure",
+    "metro": "Houston, TX",
+    "email": "estimating@sterlinginfrastructure.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Austin Industries",
+    "trade": "Commercial Concrete & Civil",
+    "metro": "Dallas, TX",
+    "email": "estimating@austin-ind.com",
+    "contact": "Precon Department"
+  },
+  {
+    "name": "Archer Western Construction",
+    "trade": "Heavy Civil & Concrete",
+    "metro": "Atlanta, GA",
+    "email": "estimating@walshgroup.com",
+    "contact": "Southeast Estimating"
+  },
+  {
+    "name": "Blythe Construction",
+    "trade": "Heavy Highway & Concrete",
+    "metro": "Charlotte, NC",
+    "email": "estimating@blytheconstruction.com",
+    "contact": "Precon Team"
+  },
+  {
+    "name": "Granite Construction Southeast",
+    "trade": "Infrastructure & Heavy Civil",
+    "metro": "Tampa, FL",
+    "email": "estimating@gcinc.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Flatiron Construction",
+    "trade": "Heavy Infrastructure",
+    "metro": "Denver, CO",
+    "email": "estimating@flatironcorp.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Webber LLC",
+    "trade": "Heavy Civil & Concrete Paving",
+    "metro": "Houston, TX",
+    "email": "estimating@wwebber.com",
+    "contact": "Precon Team"
+  },
+  {
+    "name": "MMC Contractors",
+    "trade": "Commercial Plumbing & Piping",
+    "metro": "Dallas, TX",
+    "email": "estimating@mmccontractors.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "W.J. O'Neil Company",
+    "trade": "Commercial Plumbing & Piping",
+    "metro": "Cleveland, OH",
+    "email": "estimating@wjoneil.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "E.M. Duggan Inc",
+    "trade": "Commercial Plumbing & HVAC",
+    "metro": "Orlando, FL",
+    "email": "estimating@emduggan.com",
+    "contact": "Precon Department"
+  },
+  {
+    "name": "Viking Sprinkler Supply",
+    "trade": "Commercial Fire Protection",
+    "metro": "Tampa, FL",
+    "email": "estimating@supplynet.com",
+    "contact": "Commercial Sales"
+  },
+  {
+    "name": "SimplexGrinnell (JCI)",
+    "trade": "Commercial Fire Protection",
+    "metro": "Charlotte, NC",
+    "email": "estimating@jci.com",
+    "contact": "Commercial Fire Division"
+  },
+  {
+    "name": "Century Fire Protection",
+    "trade": "Commercial Fire Sprinkler",
+    "metro": "Atlanta, GA",
+    "email": "estimating@centuryfp.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Wayne Automatic Fire Sprinklers",
+    "trade": "Commercial Fire Sprinklers",
+    "metro": "Orlando, FL",
+    "email": "estimating@waynefire.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Cosco Fire Protection",
+    "trade": "Commercial Fire Life Safety",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@coscofire.com",
+    "contact": "Commercial Division"
+  },
+  {
+    "name": "Kauffman Co Fire",
+    "trade": "Commercial Fire Protection",
+    "metro": "Houston, TX",
+    "email": "estimating@kauffmanco.net",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Hess Mechanical",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Raleigh, NC",
+    "email": "estimating@hessmech.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "C.W. Driver Commercial",
+    "trade": "General Prime & MEP",
+    "metro": "Austin, TX",
+    "email": "estimating@cwdriver.com",
+    "contact": "Precon Team"
+  },
+  {
+    "name": "Modern Piping Inc",
+    "trade": "Industrial & Commercial Plumbing",
+    "metro": "Cincinnati, OH",
+    "email": "estimating@modernpiping.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "P1 Group Inc",
+    "trade": "Commercial Mechanical & Electrical",
+    "metro": "Dallas, TX",
+    "email": "estimating@p1group.com",
+    "contact": "Commercial Precon"
+  },
+  {
+    "name": "Harris Companies",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@harriscompany.com",
+    "contact": "Estimating Team"
+  },
+  {
+    "name": "Total Mechanical Inc",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Charlotte, NC",
+    "email": "estimating@totalmechanical.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Superior Mechanical Services",
+    "trade": "Commercial Mechanical & Piping",
+    "metro": "Atlanta, GA",
+    "email": "estimating@superiormech.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "General Mechanical Corp",
+    "trade": "Commercial Mechanical Piping",
+    "metro": "Orlando, FL",
+    "email": "estimating@genmech.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Bernhard MCC Mechanical",
+    "trade": "Commercial Mechanical & Controls",
+    "metro": "Nashville, TN",
+    "email": "estimating@bernhardmcc.com",
+    "contact": "Precon Team"
+  },
+  {
+    "name": "M&W Contractors",
+    "trade": "Commercial Mechanical & Industrial",
+    "metro": "Atlanta, GA",
+    "email": "estimating@mwcontractors.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Performance Contracting Group",
+    "trade": "Insulation & Specialty MEP",
+    "metro": "Dallas, TX",
+    "email": "estimating@pcg.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Comfort Systems Mid-South",
+    "trade": "Commercial HVAC & Piping",
+    "metro": "Nashville, TN",
+    "email": "estimating@csusa.com",
+    "contact": "Regional Estimating"
+  },
+  {
+    "name": "Messer Construction Precon",
+    "trade": "Commercial Prime & Concrete",
+    "metro": "Columbus, OH",
+    "email": "estimating@messer.com",
+    "contact": "Estimating Dept"
+  },
+  {
+    "name": "Batson-Cook Construction",
+    "trade": "Commercial Prime Contracting",
+    "metro": "Atlanta, GA",
+    "email": "estimating@batson-cook.com",
+    "contact": "Precon Team"
+  },
+  {
+    "name": "Robins & Morton",
+    "trade": "Commercial Healthcare & MEP",
+    "metro": "Birmingham, AL",
+    "email": "estimating@robinsmorton.com",
+    "contact": "Commercial Estimating"
+  },
+  {
+    "name": "Hoar Construction Precon",
+    "trade": "Commercial Prime Contracting",
+    "metro": "Nashville, TN",
+    "email": "estimating@hoar.com",
+    "contact": "Preconstruction Dept"
+  },
+  {
+    "name": "Brasfield & Gorrie",
+    "trade": "Commercial General Contracting",
+    "metro": "Atlanta, GA",
+    "email": "estimating@brasfieldgorrie.com",
+    "contact": "Estimating Team"
+  }
+];
+
+    let currentTradeFilter = 'all';
+    let currentStatusFilter = 'all';
+    let activeFiltered = [];
+
+    const LIVE_SESSION_KEY = 'tv_friday_wave4_completed_oct2';
+    const defaultDispatched = {};
+
+    // Clean up any stale old test keys
+    try { localStorage.removeItem('tv_thursday_sent_targets'); } catch(e) {}
+
+    // Support instant URL reset via ?reset=1 or ?fresh=1
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('reset') === '1' || urlParams.get('fresh') === '1') {
+      try { localStorage.removeItem(LIVE_SESSION_KEY); } catch(e) {}
+    }
+
+    let savedData = null;
+    try {
+      savedData = localStorage.getItem(LIVE_SESSION_KEY);
+    } catch(e) {}
+
+    let sentTargets = savedData ? JSON.parse(savedData) : Object.assign({}, defaultDispatched);
+    if (!savedData) {
+      try { localStorage.setItem(LIVE_SESSION_KEY, JSON.stringify(sentTargets)); } catch(e) {}
+    }
+
+    function getBusinessGmail() {
+      return localStorage.getItem('tv_business_gmail') || 'toolsvault78@gmail.com';
+    }
+
+    function saveBusinessGmail() {
+      const input = document.getElementById('businessGmailInput');
+      if (input && input.value.trim()) {
+        const email = input.value.trim();
+        localStorage.setItem('tv_business_gmail', email);
+        const display = document.getElementById('activeGmailDisplay');
+        if (display) display.innerText = email;
+        showToast("Business Gmail set to: " + email);
+        renderTable();
+      }
+    }
+
+    function normalizeTrade(trade) {
+      if (!trade) return "Subcontracting";
+      return trade.replace(/^commercial\s+/i, '').trim();
+    }
+
+    function getFollowupSubject(trade, metro) {
+      const cleanTrade = normalizeTrade(trade);
+      return "Exclusive Commercial " + cleanTrade + " Subcontractor Allocation (" + metro + ")";
+    }
+
+    function getFollowupBody(contact, trade, metro) {
+      const cleanTrade = normalizeTrade(trade);
+      return "Hi " + contact + ",\n\n" +
+        "Reaching out regarding regional commercial " + cleanTrade.toLowerCase() + " project routing across " + metro + ".\n\n" +
+        "We are currently locking in exclusive territory partners and routing verified commercial RFPs through our contractor network:\n" +
+        "• Territory Network: https://tools-vault-4ml.pages.dev/contractor_network\n" +
+        "• Commercial Bid Estimator: https://tools-vault-4ml.pages.dev/commercial_subcontractor_bid_estimator\n\n" +
+        "Are you currently taking on new commercial " + cleanTrade.toLowerCase() + " contracts across " + metro + " this quarter?\n\n" +
+        "Best regards,\nJohn Granbridge\nToolsVault Commercial Network\ntoolsvault78@gmail.com";
+    }
+
+    function buildGmailUrl(recipient, subject, bodyText) {
+      const bGmail = getBusinessGmail();
+      // Directly target business Gmail with authuser parameter
+      return "https://mail.google.com/mail/?authuser=" + encodeURIComponent(bGmail) + 
+             "&view=cm&fs=1" + 
+             "&to=" + encodeURIComponent(recipient) + 
+             "&su=" + encodeURIComponent(subject) + 
+             "&body=" + encodeURIComponent(bodyText);
+    }
+
+    function recordSent(email) {
+      sentTargets[email] = new Date().toISOString();
+      try { localStorage.setItem(LIVE_SESSION_KEY, JSON.stringify(sentTargets)); } catch(e) {}
+      setTimeout(renderTable, 300);
+    }
+
+    function toggleSentStatus(email) {
+      if (sentTargets[email]) {
+        delete sentTargets[email];
+      } else {
+        sentTargets[email] = new Date().toISOString();
+      }
+      try { localStorage.setItem(LIVE_SESSION_KEY, JSON.stringify(sentTargets)); } catch(e) {}
+      renderTable();
+    }
+
+    function resetSentHistory(promptUser = true) {
+      if (confirm("Are you sure you want to clear your sent tracking records for Thursday Wave 3?")) {
+        sentTargets = Object.assign({}, defaultDispatched);
+        try { localStorage.setItem(LIVE_SESSION_KEY, JSON.stringify(sentTargets)); } catch(e) {}
+        renderTable();
+        showToast("✓ Reset to clean Friday Wave 4 baseline (0 Sent / #001 Ready)");
+      }
+    }
+
+    function handleHeroClick(e) {
+      const nextPending = activeFiltered.find(t => !sentTargets[t.email]);
+      if (!nextPending) {
+        window.location.href = 'friday_contractor_closing_desk.html';
+        return;
+      }
+      const subject = getFollowupSubject(nextPending.trade, nextPending.metro);
+      const bodyText = getFollowupBody(nextPending.contact, nextPending.trade, nextPending.metro);
+      
+      // Auto-copy text as safety backup
+      navigator.clipboard.writeText(bodyText).catch(() => {});
+      
+      // Record sent status
+      recordSent(nextPending.email);
+      showToast("Opening Business Gmail for " + nextPending.name + "! (Copied to clipboard)");
+    }
+
+    function copyFollowupByIndex(idx) {
+      if (!activeFiltered[idx]) return;
+      const t = activeFiltered[idx];
+      const text = getFollowupBody(t.contact, t.trade, t.metro);
+      navigator.clipboard.writeText(text).then(() => {
+        showToast("Copied email text to clipboard! Ready to paste.");
+      }).catch(() => {
+        showToast("Copied to clipboard!");
+      });
+    }
+
+    function openPreviewModal(idx) {
+      if (!activeFiltered[idx]) return;
+      const t = activeFiltered[idx];
+      const subject = getFollowupSubject(t.trade, t.metro);
+      const bodyText = getFollowupBody(t.contact, t.trade, t.metro);
+      const gmailUrl = buildGmailUrl(t.email, subject, bodyText);
+
+      document.getElementById('modalRecipient').innerText = t.name + " (" + t.email + ") — " + t.metro;
+      document.getElementById('modalSubject').value = subject;
+      document.getElementById('modalBody').value = bodyText;
+
+      const gmailBtn = document.getElementById('modalGmailBtn');
+      gmailBtn.onclick = () => {
+        window.open(gmailUrl, '_blank');
+        recordSent(t.email);
+        closeEmailModal();
+      };
+
+      const mailtoBtn = document.getElementById('modalMailtoBtn');
+      mailtoBtn.onclick = () => {
+        navigator.clipboard.writeText(bodyText).catch(() => {});
+        window.location.href = "mailto:" + t.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(bodyText);
+        recordSent(t.email);
+        closeEmailModal();
+      };
+
+      document.getElementById('modalCopyBtn').onclick = () => { copyFollowupByIndex(idx); };
+
+      document.getElementById('emailPreviewModal').style.display = 'flex';
+    }
+
+    function closeEmailModal() {
+      const modal = document.getElementById('emailPreviewModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      if (t) {
+        if (msg) t.innerText = msg;
+        else t.innerText = "✓ Copied to clipboard!";
+        t.style.display = 'block';
+        setTimeout(() => { t.style.display = 'none'; }, 2800);
+      }
+    }
+
+    function renderTable() {
+      const searchInput = document.getElementById('searchInput');
+      const search = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      const tbody = document.getElementById('tableBody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      activeFiltered = allTargets.filter(t => {
+        const matchesTrade = (currentTradeFilter === 'all' || t.trade === currentTradeFilter);
+        const matchesStatus = (currentStatusFilter === 'all' || 
+          (currentStatusFilter === 'pending' && !sentTargets[t.email]) ||
+          (currentStatusFilter === 'sent' && !!sentTargets[t.email])
+        );
+        const matchesSearch = (!search || 
+          t.name.toLowerCase().includes(search) || 
+          t.email.toLowerCase().includes(search) || 
+          t.metro.toLowerCase().includes(search) || 
+          t.trade.toLowerCase().includes(search)
+        );
+        return matchesTrade && matchesStatus && matchesSearch;
+      });
+
+      const totalCountEl = document.getElementById('totalCount');
+      if (totalCountEl) totalCountEl.innerText = activeFiltered.length;
+
+      // Calculate progress
+      const sentCount = Object.keys(sentTargets).length;
+      const totalAll = allTargets.length;
+      const pct = Math.min(100, Math.round((sentCount / totalAll) * 100));
+
+      const pendingBtnCount = document.getElementById('pendingBtnCount');
+      if (pendingBtnCount) pendingBtnCount.innerText = totalAll - sentCount;
+      const sentBtnCount = document.getElementById('sentBtnCount');
+      if (sentBtnCount) sentBtnCount.innerText = sentCount;
+
+      const progressCountEl = document.getElementById('progressCount');
+      if (progressCountEl) progressCountEl.innerText = sentCount;
+
+      const progressPctEl = document.getElementById('progressPct');
+      if (progressPctEl) progressPctEl.innerText = pct + '%';
+
+      const progressBar = document.getElementById('progressBar');
+      if (progressBar) progressBar.style.width = pct + '%';
+
+      const sentStatEl = document.getElementById('sentCountStat');
+      if (sentStatEl) sentStatEl.innerText = sentCount;
+
+      const pendingStatEl = document.getElementById('pendingCountStat');
+      if (pendingStatEl) pendingStatEl.innerText = Math.max(0, totalAll - sentCount);
+
+      // Update previous session alert banner
+      const banner = document.getElementById('allSentBanner');
+      if (banner) {
+        banner.style.display = (sentCount >= totalAll && totalAll > 0) ? 'block' : 'none';
+      }
+
+      // Wire up the Hero Button to the next pending contractor's direct Gmail URL
+      const nextPending = activeFiltered.find(t => !sentTargets[t.email]);
+      const heroBtn = document.getElementById('launchNextHeroBtn');
+      const heroText = document.getElementById('launchNextHeroText');
+      if (heroBtn && heroText) {
+        if (nextPending) {
+          const nextSubj = getFollowupSubject(nextPending.trade, nextPending.metro);
+          const nextBody = getFollowupBody(nextPending.contact, nextPending.trade, nextPending.metro);
+          heroBtn.href = buildGmailUrl(nextPending.email, nextSubj, nextBody);
+          heroText.innerText = "🚀 Launch Next in Business Gmail: " + nextPending.name + " (" + nextPending.metro + ")";
+          heroBtn.style.opacity = '1';
+          heroBtn.style.pointerEvents = 'auto';
+          heroBtn.onclick = (e) => handleHeroClick(e);
+        } else {
+          heroBtn.href = 'friday_contractor_closing_desk.html';
+          heroText.innerText = "🎉 All 106 Dispatched! Open Friday Closing Desk ↗";
+          heroBtn.style.opacity = '1';
+          heroBtn.style.pointerEvents = 'auto';
+          heroBtn.onclick = null;
+        }
+      }
+
+      // Sync business email input & display
+      const bGmail = getBusinessGmail();
+      const bInput = document.getElementById('businessGmailInput');
+      if (bInput && document.activeElement !== bInput) bInput.value = bGmail;
+      const bDisplay = document.getElementById('activeGmailDisplay');
+      if (bDisplay) bDisplay.innerText = bGmail;
+
+      activeFiltered.forEach((t, idx) => {
+        const isSent = !!sentTargets[t.email];
+        const statusBadge = isSent 
+          ? "<span class='status-badge status-sent' title='Click to toggle status' onclick='toggleSentStatus(\"" + t.email + "\")'>✓ Dispatched</span>"
+          : "<span class='status-badge status-pending' title='Click to mark as sent' onclick='toggleSentStatus(\"" + t.email + "\")'>Pending</span>";
+
+        const subject = getFollowupSubject(t.trade, t.metro);
+        const bodyText = getFollowupBody(t.contact, t.trade, t.metro);
+        const gmailUrl = buildGmailUrl(t.email, subject, bodyText);
+        const mailtoUrl = "mailto:" + t.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(bodyText);
+
+        const tr = document.createElement('tr');
+        if (isSent) {
+          tr.style.opacity = '0.65';
+        }
+
+        tr.innerHTML = 
+          "<td style='color: var(--muted); font-size: 11px;'>" + (idx + 1) + "</td>" +
+          "<td><strong>" + t.name + "</strong></td>" +
+          "<td><span style='background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 700;'>" + t.trade + "</span></td>" +
+          "<td>" + t.metro + "</td>" +
+          "<td><code>" + t.email + "</code></td>" +
+          "<td>" + statusBadge + "</td>" +
+          "<td>" +
+            "<div style='display: flex; gap: 6px; align-items: center; flex-wrap: wrap;'>" +
+              "<a href='" + gmailUrl + "' target='_blank' rel='noopener noreferrer' class='btn-gmail' onclick='recordSent(\"" + t.email + "\"); navigator.clipboard.writeText(\"" + bodyText.replace(/\n/g, '\\n').replace(/'/g, "\\'") + "\").catch(()=>{});' title='Open directly in Business Gmail (" + bGmail + ")'>" +
+                "⚡ Business Gmail ↗" +
+              "</a>" +
+              "<a href='" + mailtoUrl + "' class='btn-launch' onclick='recordSent(\"" + t.email + "\");' title='Trigger desktop email app (Outlook / Apple Mail)'>" +
+                "✉️ Desktop App" +
+              "</a>" +
+              "<button class='btn-bump' onclick='copyFollowupByIndex(" + idx + ")' title='Copy body to clipboard'>" +
+                "📋 Copy" +
+              "</button>" +
+              "<button class='btn-bump' style='background: transparent; color: #94a3b8;' onclick='openPreviewModal(" + idx + ")' title='Preview full message'>" +
+                "👁️" +
+              "</button>" +
+            "</div>" +
+          "</td>";
+        tbody.appendChild(tr);
+      });
+    }
+
+
+
+
+    function copyFollowupByIndex(idx) {
+      if (!activeFiltered[idx]) return;
+      const t = activeFiltered[idx];
+      const text = getFollowupBody(t.contact, t.trade, t.metro);
+      navigator.clipboard.writeText(text).then(() => {
+        showToast();
+      }).catch(() => {
+        showToast();
+      });
+    }
+
+    function showToast() {
+      const t = document.getElementById('toast');
+      if (t) {
+        t.style.display = 'block';
+        setTimeout(() => { t.style.display = 'none'; }, 2200);
+      }
+    }
+
+    function setTradeFilter(trade, btn) {
+      currentTradeFilter = trade;
+      document.querySelectorAll('.filter-btn:not(#filterStatusPendingBtn):not(#filterStatusSentBtn)').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderTable();
+    }
+
+    function setStatusFilter(status, btn) {
+      currentStatusFilter = (currentStatusFilter === status) ? 'all' : status;
+      document.querySelectorAll('#filterStatusPendingBtn, #filterStatusSentBtn').forEach(b => b.classList.remove('active'));
+      if (currentStatusFilter !== 'all' && btn) btn.classList.add('active');
+      renderTable();
+    }
+
+    function applyFilters() {
+      renderTable();
+    }
+
+    // Initial render on load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderTable);
+    } else {
+      renderTable();
+    }
+  </script>
+
+  <!-- Tailored Email Preview Modal -->
+  <div id="emailPreviewModal" class="email-modal">
+    <div class="email-modal-box">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; border-bottom: 1px solid #1e293b; padding-bottom: 12px;">
+        <div>
+          <span style="font-size: 11px; font-weight: 800; color: #38bdf8; text-transform: uppercase;">Tailored Follow-Up Brief</span>
+          <h3 id="modalRecipient" style="margin: 4px 0 0 0; font-size: 18px; color: #ffffff;"></h3>
+        </div>
+        <button onclick="closeEmailModal()" style="background: none; border: none; color: #94a3b8; font-size: 24px; cursor: pointer; line-height: 1;">&times;</button>
+      </div>
+
+      <div style="margin-bottom: 12px;">
+        <label style="display: block; font-size: 11px; font-weight: 700; color: #94a3b8; margin-bottom: 4px;">Subject Line:</label>
+        <input type="text" id="modalSubject" readonly style="width: 100%; background: #020617; border: 1px solid #334155; border-radius: 8px; padding: 8px 12px; color: #38bdf8; font-family: monospace; font-size: 12px; box-sizing: border-box;">
+      </div>
+
+      <div style="margin-bottom: 18px;">
+        <label style="display: block; font-size: 11px; font-weight: 700; color: #94a3b8; margin-bottom: 4px;">Email Body:</label>
+        <textarea id="modalBody" readonly style="width: 100%; height: 220px; background: #020617; border: 1px solid #334155; border-radius: 8px; padding: 12px; color: #cbd5e1; font-family: monospace; font-size: 12px; line-height: 1.5; resize: none; box-sizing: border-box;"></textarea>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; gap: 8px;">
+          <button id="modalGmailBtn" class="btn-gmail" style="padding: 8px 16px;">⚡ Open in Gmail Web ↗</button>
+          <button id="modalMailtoBtn" class="btn-launch" style="padding: 8px 16px;">✉️ Launch Default Mail ↗</button>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button id="modalCopyBtn" class="btn-bump" style="padding: 8px 16px;">📋 Copy Body</button>
+          <button onclick="closeEmailModal()" style="background: #334155; color: #cbd5e1; border: none; border-radius: 6px; padding: 8px 14px; font-size: 12px; font-weight: 700; cursor: pointer;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
