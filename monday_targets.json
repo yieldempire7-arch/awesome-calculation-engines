@@ -1,0 +1,890 @@
+[
+  {
+    "name": "Avid Electrical Contracting",
+    "trade": "Commercial Electrical",
+    "metro": "Austin, TX",
+    "email": "estimating@avid-electric.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Miller Electric Company",
+    "trade": "Commercial Electrical",
+    "metro": "Orlando / Jacksonville, FL",
+    "email": "estimating@mecojax.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Allison-Smith Company",
+    "trade": "Commercial Electrical",
+    "metro": "Atlanta, GA",
+    "email": "estimating@allisonsmith.com",
+    "contact": "Preconstruction Department",
+    "wave": 1
+  },
+  {
+    "name": "Alterman Inc",
+    "trade": "Commercial Electrical & Technologies",
+    "metro": "Austin / San Antonio, TX",
+    "email": "estimating@alterman.com",
+    "contact": "Commercial Preconstruction",
+    "wave": 1
+  },
+  {
+    "name": "Rosendin Electric",
+    "trade": "Commercial Electrical Engineering",
+    "metro": "Nashville, TN",
+    "email": "estimating@rosendin.com",
+    "contact": "Commercial Estimating Desk",
+    "wave": 1
+  },
+  {
+    "name": "Watson Electrical Construction",
+    "trade": "Commercial Electrical",
+    "metro": "Raleigh, NC",
+    "email": "estimating@watsonelec.com",
+    "contact": "Estimating Team",
+    "wave": 1
+  },
+  {
+    "name": "E.C. Company",
+    "trade": "Commercial Electrical & Infrastructure",
+    "metro": "Pacific NW / National",
+    "email": "estimating@ec-company.com",
+    "contact": "Preconstruction Department",
+    "wave": 1
+  },
+  {
+    "name": "Corbins Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@corbins.com",
+    "contact": "Estimating Dept",
+    "wave": 1
+  },
+  {
+    "name": "Mona Electric Group",
+    "trade": "Commercial Electrical",
+    "metro": "Tampa, FL",
+    "email": "estimating@monaelectric.com",
+    "contact": "Commercial Division",
+    "wave": 1
+  },
+  {
+    "name": "Sturgeon Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Denver, CO",
+    "email": "estimating@myrgroup.com",
+    "contact": "Preconstruction",
+    "wave": 1
+  },
+  {
+    "name": "Fisk Electric Company",
+    "trade": "Commercial Electrical",
+    "metro": "Houston, TX",
+    "email": "estimating@fiskcorp.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Watson Electrical Construction",
+    "trade": "Commercial Electrical",
+    "metro": "Charlotte / Raleigh, NC",
+    "email": "estimating@watsonelec.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Guarantee Electrical Company",
+    "trade": "Commercial Electrical",
+    "metro": "Fort Worth, TX / Midwest",
+    "email": "estimating@geco.com",
+    "contact": "Precon Department",
+    "wave": 1
+  },
+  {
+    "name": "Tri-City Electric Co",
+    "trade": "Commercial Electrical",
+    "metro": "Miami, FL",
+    "email": "estimating@tricityelectric.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Aldridge Electric",
+    "trade": "Commercial Electrical & Infrastructure",
+    "metro": "Columbus, OH / Midwest",
+    "email": "estimating@aldridgegroup.com",
+    "contact": "Preconstruction Team",
+    "wave": 1
+  },
+  {
+    "name": "Hatzel & Buehler",
+    "trade": "Commercial Electrical",
+    "metro": "Cleveland, OH",
+    "email": "estimating@hatzelandbuehler.com",
+    "contact": "Commercial Bids",
+    "wave": 1
+  },
+  {
+    "name": "IES Residential & Commercial",
+    "trade": "Commercial Electrical",
+    "metro": "Houston, TX",
+    "email": "commercial@ies-co.com",
+    "contact": "Commercial Division",
+    "wave": 1
+  },
+  {
+    "name": "Glenwood Electric Inc",
+    "trade": "Commercial Electrical",
+    "metro": "Cincinnati, OH",
+    "email": "estimating@glenwoodelectric.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Amteck LLC",
+    "trade": "Commercial Electrical & Technologies",
+    "metro": "Lexington, KY",
+    "email": "estimating@amteck.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Miller Bros Solar & Electric",
+    "trade": "Commercial Solar & Electrical",
+    "metro": "Atlanta, GA",
+    "email": "MBSinfo@millerbros.us",
+    "contact": "Commercial Operations",
+    "wave": 1
+  },
+  {
+    "name": "Cleveland Electric Company",
+    "trade": "Commercial Electrical",
+    "metro": "Atlanta, GA",
+    "email": "estimating@clevelandelectric.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Facility Solutions Group (FSG)",
+    "trade": "Commercial Electrical & Technologies",
+    "metro": "Dallas / Austin, TX",
+    "email": "estimating@fsg.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "TDIndustries",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Dallas, TX",
+    "email": "estimating@tdindustries.com",
+    "contact": "Commercial Preconstruction",
+    "wave": 1
+  },
+  {
+    "name": "Comfort Systems USA",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Houston, TX",
+    "email": "estimating@comfortsystemsusa.com",
+    "contact": "Precon Department",
+    "wave": 1
+  },
+  {
+    "name": "Turner Industries",
+    "trade": "Commercial Mechanical & Industrial Piping",
+    "metro": "Houston / Austin, TX",
+    "email": "estimating@turner-industries.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Bel-Aire Mechanical",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@belaire.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Limbach Company",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Orlando, FL",
+    "email": "estimating@limbachinc.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Encompass Onsite",
+    "trade": "Commercial Facilities & HVAC",
+    "metro": "Fort Lauderdale, FL",
+    "email": "service@encompassonsite.com",
+    "contact": "Commercial Division",
+    "wave": 1
+  },
+  {
+    "name": "McKenney's Inc",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Atlanta, GA",
+    "email": "estimating@mckenneys.com",
+    "contact": "Precon Department",
+    "wave": 1
+  },
+  {
+    "name": "Bernhard LLC",
+    "trade": "Mechanical & Energy Infrastructure",
+    "metro": "Nashville, TN",
+    "email": "estimating@bernhard.com",
+    "contact": "Commercial Precon",
+    "wave": 1
+  },
+  {
+    "name": "Harper Limbach",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Tampa, FL",
+    "email": "estimating@harperlimbach.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Lee Company",
+    "trade": "Commercial Mechanical & Facilities",
+    "metro": "Nashville, TN",
+    "email": "commercial@leecompany.com",
+    "contact": "Commercial Division",
+    "wave": 1
+  },
+  {
+    "name": "Carolina Piping & Rigging",
+    "trade": "Commercial Mechanical & Piping",
+    "metro": "Charlotte, NC",
+    "email": "estimating@carolinapiping.com",
+    "contact": "Estimating Dept",
+    "wave": 1
+  },
+  {
+    "name": "B&I Contractors",
+    "trade": "Commercial Mechanical & Electrical",
+    "metro": "Fort Myers, FL",
+    "email": "estimating@bandiflorida.com",
+    "contact": "Preconstruction Team",
+    "wave": 1
+  },
+  {
+    "name": "ColonialWebb Contractors",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Raleigh, NC",
+    "email": "estimating@colonialwebb.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Murphy Company",
+    "trade": "Commercial Mechanical Piping",
+    "metro": "Denver, CO",
+    "email": "estimating@murphynet.com",
+    "contact": "Preconstruction",
+    "wave": 1
+  },
+  {
+    "name": "Tweet/Garot Mechanical",
+    "trade": "Mechanical & Process Piping",
+    "metro": "Columbus, OH",
+    "email": "estimating@tweetgarot.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "J.F. Ahern Co",
+    "trade": "Mechanical & Fire Protection",
+    "metro": "Cincinnati, OH",
+    "email": "estimating@jfahern.com",
+    "contact": "Estimating Dept",
+    "wave": 2
+  },
+  {
+    "name": "ABM Commercial HVAC",
+    "trade": "Commercial HVAC & Facilities",
+    "metro": "Atlanta, GA",
+    "email": "info@abm.com",
+    "contact": "Commercial Operations",
+    "wave": 2
+  },
+  {
+    "name": "Cullum Mechanical Construction",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Charleston, SC",
+    "email": "estimating@culluminc.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "B&W Mechanical Contractors",
+    "trade": "Commercial HVAC & Plumbing",
+    "metro": "Atlanta, GA",
+    "email": "estimating@bw-mechanical.com",
+    "contact": "Precon Team",
+    "wave": 2
+  },
+  {
+    "name": "Egan Company",
+    "trade": "Specialty Mechanical & Electrical",
+    "metro": "Minneapolis, MN",
+    "email": "estimating@eganco.com",
+    "contact": "Estimating Dept",
+    "wave": 2
+  },
+  {
+    "name": "A&G Piping Inc",
+    "trade": "Commercial Mechanical & Piping",
+    "metro": "Fort Worth, TX",
+    "email": "estimating@agpiping.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Centimark Commercial Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Dallas, TX",
+    "email": "estimating@centimark.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Tecta America Southeast",
+    "trade": "Commercial Roofing",
+    "metro": "Atlanta, GA",
+    "email": "estimating@tectaamerica.com",
+    "contact": "Commercial Division",
+    "wave": 2
+  },
+  {
+    "name": "Latite Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Pompano Beach, FL",
+    "email": "estimating@latite.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Advanced Roofing Inc",
+    "trade": "Commercial Roofing & Solar",
+    "metro": "Fort Lauderdale, FL",
+    "email": "estimating@advancedroofing.com",
+    "contact": "Precon Team",
+    "wave": 2
+  },
+  {
+    "name": "Whitley Penn Roofing (Supreme)",
+    "trade": "Commercial Roofing",
+    "metro": "Dallas, TX",
+    "email": "estimating@supremeroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Target Roofing & Sheet Metal",
+    "trade": "Commercial Roofing",
+    "metro": "Fort Myers, FL",
+    "email": "estimating@targetroofers.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Commercial Roofing Specialties",
+    "trade": "Commercial Roofing",
+    "metro": "Nashville, TN",
+    "email": "info@crssupply.com",
+    "contact": "Contractor Sales",
+    "wave": 2
+  },
+  {
+    "name": "D&D Roofing Sheet Metal",
+    "trade": "Commercial Roofing",
+    "metro": "Denver, CO",
+    "email": "estimating@ddroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Castro Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Dallas, TX",
+    "email": "estimating@castroroofing.com",
+    "contact": "Estimating Dept",
+    "wave": 2
+  },
+  {
+    "name": "Precision Construction & Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Fort Worth, TX",
+    "email": "commercial@precisionroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Empire Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Fort Worth, TX",
+    "email": "estimating@empireroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Sutter Roofing Company",
+    "trade": "Commercial Roofing",
+    "metro": "Sarasota, FL",
+    "email": "estimating@sutterroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Crown Corr Inc",
+    "trade": "Metal Building Envelope",
+    "metro": "Atlanta, GA",
+    "email": "estimating@crowncorr.com",
+    "contact": "Estimating Department",
+    "wave": 2
+  },
+  {
+    "name": "Flynn Group of Companies",
+    "trade": "Total Building Envelope",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@flynncompanies.com",
+    "contact": "US Estimating",
+    "wave": 2
+  },
+  {
+    "name": "A.C.T. Metal Deck Supply",
+    "trade": "Commercial Decking & Metals",
+    "metro": "Charlotte, NC",
+    "email": "sales@metaldecksupply.com",
+    "contact": "Commercial Sales",
+    "wave": 2
+  },
+  {
+    "name": "Northeast Solite",
+    "trade": "Lightweight Structural Roof Fills",
+    "metro": "Richmond, VA",
+    "email": "info@nesolite.com",
+    "contact": "Technical Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Nations Roof Carolina",
+    "trade": "Commercial Roofing",
+    "metro": "Charlotte, NC",
+    "email": "estimating@bakerroofing.com",
+    "contact": "Regional Estimating",
+    "wave": 2
+  },
+  {
+    "name": "SRS Distribution Commercial",
+    "trade": "Commercial Building Products",
+    "metro": "Dallas, TX",
+    "email": "estimating@srsdistribution.com",
+    "contact": "Commercial Division",
+    "wave": 2
+  },
+  {
+    "name": "ABC Supply Commercial",
+    "trade": "Commercial Roofing & Wall Systems",
+    "metro": "Beloit, WI",
+    "email": "info@abcsupply.com",
+    "contact": "Commercial Sales",
+    "wave": 2
+  },
+  {
+    "name": "Beacon Commercial Roofing",
+    "trade": "Commercial Roofing Systems",
+    "metro": "Herndon, VA",
+    "email": "estimating@becn.com",
+    "contact": "Estimating Dept",
+    "wave": 2
+  },
+  {
+    "name": "Baker Concrete Construction",
+    "trade": "Commercial Concrete",
+    "metro": "Houston, TX",
+    "email": "estimating@bakerconcrete.com",
+    "contact": "Preconstruction Team",
+    "wave": 2
+  },
+  {
+    "name": "Lithko Contracting",
+    "trade": "Commercial Concrete",
+    "metro": "Charlotte, NC",
+    "email": "estimating@lithko.com",
+    "contact": "Regional Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Wayne Brothers Companies",
+    "trade": "Civil & Concrete Construction",
+    "metro": "Charlotte, NC",
+    "email": "estimating@waynebrothers.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "D.L. Meacham Construction",
+    "trade": "Commercial Concrete",
+    "metro": "Houston, TX",
+    "email": "bids@dlmeacham.com",
+    "contact": "Estimating Department",
+    "wave": 2
+  },
+  {
+    "name": "Sundt Construction",
+    "trade": "Concrete & Heavy Civil",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@sundt.com",
+    "contact": "Precon Team",
+    "wave": 2
+  },
+  {
+    "name": "L.G. Barcus & Sons",
+    "trade": "Foundation & Heavy Civil",
+    "metro": "Dallas, TX",
+    "email": "estimating@barcus.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Schuff Steel Company",
+    "trade": "Structural Steel Fabrication",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@schuff.com",
+    "contact": "Preconstruction Dept",
+    "wave": 2
+  },
+  {
+    "name": "SteelFab Inc",
+    "trade": "Structural Steel Framing",
+    "metro": "Charlotte, NC",
+    "email": "estimating@steelfab-inc.com",
+    "contact": "Estimating Team",
+    "wave": 2
+  },
+  {
+    "name": "Owen Steel Company",
+    "trade": "Structural Steel",
+    "metro": "Columbia, SC",
+    "email": "estimating@owensteel.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Canam Steel Corp",
+    "trade": "Structural Joists & Deck",
+    "metro": "Jacksonville, FL",
+    "email": "estimating@canam.com",
+    "contact": "Commercial Bids",
+    "wave": 2
+  },
+  {
+    "name": "W&W | AFCO Steel",
+    "trade": "Structural Steel",
+    "metro": "Nashville, TN",
+    "email": "estimating@wwafcosteel.com",
+    "contact": "Estimating Department",
+    "wave": 2
+  },
+  {
+    "name": "Commercial Contracting Corp",
+    "trade": "Concrete & Industrial Framing",
+    "metro": "Columbus, OH",
+    "email": "estimating@cccgroup.com",
+    "contact": "Preconstruction Team",
+    "wave": 3
+  },
+  {
+    "name": "Vulcan Materials Contracting",
+    "trade": "Aggregate & Heavy Civil",
+    "metro": "Birmingham, AL",
+    "email": "estimating@vmcmail.com",
+    "contact": "Commercial Division",
+    "wave": 3
+  },
+  {
+    "name": "APAC-Atlantic Inc",
+    "trade": "Asphalt & Heavy Civil",
+    "metro": "Raleigh, NC",
+    "email": "estimating@apac.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Rogers Group Inc",
+    "trade": "Crushed Stone & Heavy Civil",
+    "metro": "Nashville, TN",
+    "email": "estimating@rogersgroupinc.com",
+    "contact": "Commercial Bids",
+    "wave": 3
+  },
+  {
+    "name": "Texas Sterling Construction",
+    "trade": "Heavy Civil & Infrastructure",
+    "metro": "Houston, TX",
+    "email": "estimating@sterlinginfrastructure.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Austin Industries",
+    "trade": "Commercial Concrete & Civil",
+    "metro": "Dallas, TX",
+    "email": "estimating@austin-ind.com",
+    "contact": "Precon Department",
+    "wave": 3
+  },
+  {
+    "name": "Archer Western Construction",
+    "trade": "Heavy Civil & Concrete",
+    "metro": "Atlanta, GA",
+    "email": "estimating@walshgroup.com",
+    "contact": "Southeast Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Blythe Construction",
+    "trade": "Heavy Highway & Concrete",
+    "metro": "Charlotte, NC",
+    "email": "estimating@blytheconstruction.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "Granite Construction Southeast",
+    "trade": "Infrastructure & Heavy Civil",
+    "metro": "Tampa, FL",
+    "email": "estimating@gcinc.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Flatiron Construction",
+    "trade": "Heavy Infrastructure",
+    "metro": "Denver, CO",
+    "email": "estimating@flatironcorp.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Webber LLC",
+    "trade": "Heavy Civil & Concrete Paving",
+    "metro": "Houston, TX",
+    "email": "estimating@wwebber.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "MMC Contractors",
+    "trade": "Commercial Plumbing & Piping",
+    "metro": "Dallas, TX",
+    "email": "estimating@mmccontractors.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "W.J. O'Neil Company",
+    "trade": "Commercial Plumbing & Piping",
+    "metro": "Cleveland, OH",
+    "email": "estimating@wjoneil.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "E.M. Duggan Inc",
+    "trade": "Commercial Plumbing & HVAC",
+    "metro": "Orlando, FL",
+    "email": "estimating@emduggan.com",
+    "contact": "Precon Department",
+    "wave": 3
+  },
+  {
+    "name": "Viking Sprinkler Supply",
+    "trade": "Commercial Fire Protection",
+    "metro": "Tampa, FL",
+    "email": "estimating@supplynet.com",
+    "contact": "Commercial Sales",
+    "wave": 3
+  },
+  {
+    "name": "SimplexGrinnell (JCI)",
+    "trade": "Commercial Fire Protection",
+    "metro": "Charlotte, NC",
+    "email": "estimating@jci.com",
+    "contact": "Commercial Fire Division",
+    "wave": 3
+  },
+  {
+    "name": "Century Fire Protection",
+    "trade": "Commercial Fire Sprinkler",
+    "metro": "Atlanta, GA",
+    "email": "estimating@centuryfp.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Wayne Automatic Fire Sprinklers",
+    "trade": "Commercial Fire Sprinklers",
+    "metro": "Orlando, FL",
+    "email": "estimating@waynefire.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Cosco Fire Protection",
+    "trade": "Commercial Fire Life Safety",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@coscofire.com",
+    "contact": "Commercial Division",
+    "wave": 3
+  },
+  {
+    "name": "Kauffman Co Fire",
+    "trade": "Commercial Fire Protection",
+    "metro": "Houston, TX",
+    "email": "estimating@kauffmanco.net",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Hess Mechanical",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Raleigh, NC",
+    "email": "estimating@hessmech.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "C.W. Driver Commercial",
+    "trade": "General Prime & MEP",
+    "metro": "Austin, TX",
+    "email": "estimating@cwdriver.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "Modern Piping Inc",
+    "trade": "Industrial & Commercial Plumbing",
+    "metro": "Cincinnati, OH",
+    "email": "estimating@modernpiping.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "P1 Group Inc",
+    "trade": "Commercial Mechanical & Electrical",
+    "metro": "Dallas, TX",
+    "email": "estimating@p1group.com",
+    "contact": "Commercial Precon",
+    "wave": 3
+  },
+  {
+    "name": "Harris Companies",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@harriscompany.com",
+    "contact": "Estimating Team",
+    "wave": 3
+  },
+  {
+    "name": "Total Mechanical Inc",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Charlotte, NC",
+    "email": "estimating@totalmechanical.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Superior Mechanical Services",
+    "trade": "Commercial Mechanical & Piping",
+    "metro": "Atlanta, GA",
+    "email": "estimating@superiormech.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "General Mechanical Corp",
+    "trade": "Commercial Mechanical Piping",
+    "metro": "Orlando, FL",
+    "email": "estimating@genmech.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Bernhard MCC Mechanical",
+    "trade": "Commercial Mechanical & Controls",
+    "metro": "Nashville, TN",
+    "email": "estimating@bernhardmcc.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "M&W Contractors",
+    "trade": "Commercial Mechanical & Industrial",
+    "metro": "Atlanta, GA",
+    "email": "estimating@mwcontractors.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Performance Contracting Group",
+    "trade": "Insulation & Specialty MEP",
+    "metro": "Dallas, TX",
+    "email": "estimating@pcg.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Comfort Systems Mid-South",
+    "trade": "Commercial HVAC & Piping",
+    "metro": "Nashville, TN",
+    "email": "estimating@csusa.com",
+    "contact": "Regional Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Messer Construction Precon",
+    "trade": "Commercial Prime & Concrete",
+    "metro": "Columbus, OH",
+    "email": "estimating@messer.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Batson-Cook Construction",
+    "trade": "Commercial Prime Contracting",
+    "metro": "Atlanta, GA",
+    "email": "estimating@batson-cook.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "Robins & Morton",
+    "trade": "Commercial Healthcare & MEP",
+    "metro": "Birmingham, AL",
+    "email": "estimating@robinsmorton.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Hoar Construction Precon",
+    "trade": "Commercial Prime Contracting",
+    "metro": "Nashville, TN",
+    "email": "estimating@hoar.com",
+    "contact": "Preconstruction Dept",
+    "wave": 3
+  },
+  {
+    "name": "Brasfield & Gorrie",
+    "trade": "Commercial General Contracting",
+    "metro": "Atlanta, GA",
+    "email": "estimating@brasfieldgorrie.com",
+    "contact": "Estimating Team",
+    "wave": 3
+  }
+]
