@@ -3,8 +3,36 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /admin_pulse.html
+Disallow: /admin_private_contractor_leads_vault.html
+Disallow: /monday_outbound_desk.html
+Disallow: /monday_outbound_launcher.html
+Disallow: /tuesday_contractor_followup_launcher.html
+Disallow: /wednesday_contractor_expansion_launcher.html
+Disallow: /thursday_contractor_scale_launcher.html
+Disallow: /friday_contractor_closing_desk.html
+Disallow: /contact_us_and_cold_call_launcher.html
+Disallow: /contractor_web_form_blitz_100.html
+Disallow: /pinterest-studio.html
+Disallow: /pinterest_and_social_syndication_hub.html
+Disallow: /social_launcher.html
+Disallow: /newsletter-studio.html
+Disallow: /empire_command_center.html
+Disallow: /inbound_response_and_deal_closer.html
+Disallow: /instant_traffic_ping.html
+Disallow: /outreach_desk.html
+Disallow: /reddit-growth-desk.html
+Disallow: /sponsor-pitch-desk.html
+Disallow: /video_creator_studio.html
+Disallow: /viral-social-desk.html
+Disallow: /alignerr_resume.html
+Disallow: /alignerr_lua_resume.html
+
 Disallow: /pulse
 Disallow: /ops
+Disallow: /leads
+Disallow: /crm
+Disallow: /vault
+Disallow: /outbound
 Disallow: /closing
 Disallow: /dealdesk
 Disallow: /desk
@@ -58,7 +86,7 @@ User-agent: facebookexternalhit
 Allow: /
 
 User-agent: Pinterestbot
-Allow: /
+Disallow: /
 
 User-agent: LinkedInBot
 Allow: /
