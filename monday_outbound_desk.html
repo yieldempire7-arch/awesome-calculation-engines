@@ -1,0 +1,2855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta property="og:url" content="https://tools-vault-4ml.pages.dev/monday_outbound_desk.html">
+  <link rel="canonical" href="https://tools-vault-4ml.pages.dev/monday_outbound_desk.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToolsVault Monday Morning Outbound Desk | 200 Commercial Accounts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { background-color: #030712; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .glass-panel { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .table-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+    .table-scroll::-webkit-scrollbar-thumb { background: #334155; border-radius: 9999px; }
+  </style>
+
+  <meta property="og:title" content="ToolsVault Monday Morning Outbound Desk | 200 Commercial Accounts">
+  <meta property="og:image" content="https://tools-vault-4ml.pages.dev/favicon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ToolsVault Monday Morning Outbound Desk | 200 Commercial Accounts">
+</head>
+<body class="min-h-screen p-4 md:p-8">
+  <div class="max-w-7xl mx-auto space-y-6">
+    
+    <!-- Top Header -->
+    <header class="glass-panel p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border border-blue-500/20 shadow-2xl">
+      <div>
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="flex items-center gap-1.5 p-1 bg-slate-900/90 rounded-xl border border-slate-800 shadow-inner">
+            <button id="btnModeMonday" onclick="switchCampaignMode('monday')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white transition flex items-center gap-1.5">
+              <i class="fa-solid fa-paper-plane text-[10px]"></i> Monday Initial (<span id="mondayTotalCount">200</span>)
+            </button>
+            <button id="btnModeWednesday" onclick="switchCampaignMode('wednesday')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5">
+              <i class="fa-solid fa-rotate-right text-[10px] text-amber-400"></i> Wednesday 48-Hr Bump (<span id="bumpDueCount" class="text-amber-400 font-mono">0</span>)
+            </button>
+            <button id="btnModeFriday" onclick="switchCampaignMode('friday')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5">
+              <i class="fa-solid fa-flag-checkered text-[10px] text-emerald-400"></i> Friday Final Call (<span id="fridayDueCount" class="text-emerald-400 font-mono">0</span>)
+            </button>
+          </div>
+          <span id="headerModeBadge" class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold rounded-lg"><i class="fa-solid fa-circle-check mr-1"></i> Monday Launch Mode</span>
+        </div>
+        <h1 id="headerTitle" class="text-2xl md:text-3xl font-black text-white mt-2 tracking-tight">ToolsVault Monday Commercial Outbound Desk</h1>
+        <p id="headerSubtitle" class="text-slate-400 text-sm mt-1">
+          Outbound Persona: <strong class="text-blue-300">John Granbridge</strong> (<span class="text-emerald-300">toolsvault78@gmail.com</span>) | Staggered 3-Wave Protocol
+        </p>
+        <div class="flex flex-wrap items-center gap-2 mt-2 pt-2 border-t border-slate-800/80 text-[11px]">
+          <span class="text-slate-400 font-bold">CSI Precon Suites:</span>
+          <a href="/commercial_electrical_subcontractors" target="_blank" class="text-blue-400 hover:underline">Div 26 Electrical</a>
+          <span class="text-slate-600">•</span>
+          <a href="/commercial_roofing_subcontractors" target="_blank" class="text-amber-400 hover:underline">Div 07 Roofing</a>
+          <span class="text-slate-600">•</span>
+          <a href="/commercial_mechanical_hvac_subcontractors" target="_blank" class="text-cyan-400 hover:underline">Div 23 HVAC</a>
+          <span class="text-slate-600">•</span>
+          <a href="/commercial_plumbing_subcontractors" target="_blank" class="text-teal-400 hover:underline">Div 22 Plumbing</a>
+          <span class="text-slate-600">•</span>
+          <a href="/commercial_concrete_civil_subcontractors" target="_blank" class="text-orange-400 hover:underline">Div 03 Concrete</a>
+          <span class="text-slate-600">•</span>
+          <a href="/commercial_subcontractor_agreement" target="_blank" class="text-indigo-300 hover:underline font-bold">Licensing Agreement (TV-AGMT-2026)</a>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap items-center gap-3">
+        <button id="btnStartRapid" onclick="startRapidDispatch()" class="px-4 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-black uppercase tracking-wider rounded-xl transition shadow-lg shadow-emerald-950/50 flex items-center gap-2">
+          <i class="fa-solid fa-bolt-lightning text-amber-300"></i> <span id="btnRapidLabel">Rapid Dispatch Runner</span>
+        </button>
+        <button onclick="openPlaybookModal()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-bold rounded-xl transition flex items-center gap-2">
+          <i class="fa-solid fa-bolt text-amber-400"></i> Instant Reply Playbook
+        </button>
+        <button onclick="exportDispatchAuditCSV()" class="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-bold rounded-xl transition flex items-center gap-2" title="Export Live 200-Account Dispatch &amp; Sent Status Audit">
+          <i class="fa-solid fa-file-csv text-emerald-400"></i> Export Audit (CSV)
+        </button>
+        <button onclick="resetAllHistory()" class="px-3 py-2 bg-red-950/40 hover:bg-red-900/60 border border-red-800/40 text-red-300 text-xs font-medium rounded-xl transition">
+          <i class="fa-solid fa-rotate-left mr-1"></i> Reset Progress
+        </button>
+      </div>
+    </header>
+
+    <!-- Staggered Wave Schedule & Stats Bar -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="glass-panel p-5 rounded-2xl border-l-4 border-blue-500" id="statMainCard">
+        <div class="flex justify-between items-center text-xs text-slate-400 font-bold uppercase tracking-wider">
+          <span id="statProgressLabel">Overall Progress</span>
+          <i id="statProgressIcon" class="fa-solid fa-chart-pie text-blue-400"></i>
+        </div>
+        <div class="mt-3 flex items-baseline gap-2">
+          <span id="statSent" class="text-3xl font-black text-white">0</span>
+          <span id="statTotalLabel" class="text-slate-400 text-sm">/ 200 sent</span>
+          <span id="statPercent" class="ml-auto text-sm font-bold text-blue-400">0%</span>
+        </div>
+        <div class="w-full bg-slate-800 h-2 rounded-full mt-3 overflow-hidden">
+          <div id="statProgressBar" class="bg-gradient-to-r from-blue-500 to-emerald-400 h-full w-0 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <!-- Wave 1 Card -->
+      <div onclick="setWaveFilter(1)" class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 cursor-pointer transition relative group">
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Wave 1 • 8:00 AM - 9:30 AM</span>
+          <span id="w1Badge" class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono">0/37</span>
+        </div>
+        <div class="mt-2 text-base font-bold text-white">Morning Dispatch</div>
+        <div class="text-xs text-slate-400 mt-1">Electrical, Mechanical & Roofing Primes</div>
+        <div class="mt-3 text-[11px] text-blue-300 font-medium group-hover:underline flex items-center gap-1">
+          <span>Filter to Wave 1</span> <i class="fa-solid fa-arrow-right text-[9px]"></i>
+        </div>
+      </div>
+
+      <!-- Wave 2 Card -->
+      <div onclick="setWaveFilter(2)" class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-amber-500/50 cursor-pointer transition relative group">
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Wave 2 • 11:30 AM - 1:00 PM</span>
+          <span id="w2Badge" class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono">0/37</span>
+        </div>
+        <div class="mt-2 text-base font-bold text-white">Midday Bid Review</div>
+        <div class="text-xs text-slate-400 mt-1">HVAC, Plumbing & Specialized MEP</div>
+        <div class="mt-3 text-[11px] text-amber-300 font-medium group-hover:underline flex items-center gap-1">
+          <span>Filter to Wave 2</span> <i class="fa-solid fa-arrow-right text-[9px]"></i>
+        </div>
+      </div>
+
+      <!-- Wave 3 Card -->
+      <div onclick="setWaveFilter(3)" class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-emerald-500/50 cursor-pointer transition relative group">
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Wave 3 • 2:00 PM - 3:30 PM</span>
+          <span id="w3Badge" class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono">0/37</span>
+        </div>
+        <div class="mt-2 text-base font-bold text-white">Afternoon Wrap-Up</div>
+        <div class="text-xs text-slate-400 mt-1">Concrete, Structural & Heavy Civil</div>
+        <div class="mt-3 text-[11px] text-emerald-300 font-medium group-hover:underline flex items-center gap-1">
+          <span>Filter to Wave 3</span> <i class="fa-solid fa-arrow-right text-[9px]"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter & Control Bar -->
+    <div class="glass-panel p-4 rounded-2xl flex flex-wrap items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs text-slate-400 font-bold uppercase mr-1">Wave:</span>
+        <button id="btnWaveAll" onclick="setWaveFilter('all')" class="px-3 py-1.5 bg-blue-600 text-white text-xs font-bold rounded-lg transition">All (111)</button>
+        <button id="btnWave1" onclick="setWaveFilter(1)" class="px-3 py-1.5 bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs font-medium rounded-lg transition">Wave 1 (37)</button>
+        <button id="btnWave2" onclick="setWaveFilter(2)" class="px-3 py-1.5 bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs font-medium rounded-lg transition">Wave 2 (37)</button>
+        <button id="btnWave3" onclick="setWaveFilter(3)" class="px-3 py-1.5 bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs font-medium rounded-lg transition">Wave 3 (37)</button>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-slate-400 font-bold uppercase">Status:</span>
+          <select id="statusFilter" onchange="applyFilters()" class="bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500">
+            <option value="all">All Accounts</option>
+            <option value="pending" selected>Pending Send</option>
+            <option value="sent">Already Sent</option>
+          </select>
+        </div>
+
+        <input type="text" id="searchBox" oninput="applyFilters()" placeholder="Search company, city, trade..." class="bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 w-56 focus:outline-none focus:border-blue-500">
+      </div>
+    </div>
+
+    <!-- Accounts Table -->
+    <div class="glass-panel rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+      <div class="overflow-x-auto table-scroll max-h-[650px]">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-900/90 sticky top-0 z-10 border-b border-slate-800 text-slate-400 uppercase text-[10px] tracking-wider">
+            <tr>
+              <th class="py-3.5 px-4 w-12 text-center">#</th>
+              <th class="py-3.5 px-4">Contractor / Account</th>
+              <th class="py-3.5 px-4">Trade & Metro</th>
+              <th class="py-3.5 px-4">Direct Estimating Email</th>
+              <th class="py-3.5 px-4 text-center">Wave</th>
+              <th class="py-3.5 px-4 text-center">Status</th>
+              <th class="py-3.5 px-4 text-right">1-Click Dispatch Actions</th>
+            </tr>
+          </thead>
+          <tbody id="targetTableBody" class="divide-y divide-slate-800/60">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Email Template Preview Accordion -->
+    <div class="glass-panel p-5 rounded-2xl border border-slate-800">
+      <div class="flex justify-between items-center cursor-pointer" onclick="toggleTemplateBox()">
+        <div class="flex items-center gap-2">
+          <i class="fa-regular fa-envelope text-blue-400"></i>
+          <span class="text-xs font-bold text-slate-200 uppercase tracking-wider">Active Outbound Copy Template (Signed: John Granbridge)</span>
+        </div>
+        <i id="templateChevron" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+      </div>
+      <div id="templateContent" class="mt-4 hidden border-t border-slate-800 pt-4 space-y-2 text-xs font-mono text-slate-300 bg-slate-950/60 p-4 rounded-xl">
+        <p><strong class="text-slate-400">Subject:</strong> Exclusive Commercial [Trade] Subcontractor Allocation ([Metro])</p>
+        <p class="mt-2"><strong class="text-slate-400">Body:</strong><br>
+        Hi [Commercial Estimating / Contact],<br><br>
+        Reaching out regarding commercial [trade] subcontractor allocations across [metro].<br><br>
+        We are currently locking in regional territory trade partners and routing verified commercial preconstruction estimating packages through the ToolsVault contractor network.<br><br>
+        Are you currently taking on new commercial [trade] contracts across [metro] this quarter?<br><br>
+        If so, let me know what commercial scope your estimating desk is currently bidding on and I will forward the relevant project specs and directory allocation details over to your team.<br><br>
+        Best regards,<br>
+        John Granbridge<br>
+        Commercial Trade Allocations | ToolsVault Network<br>
+        toolsvault78@gmail.com<br>
+        <span class="text-emerald-400 font-bold text-[11px]">&bull; 100% Microsoft 365 &amp; Google Workspace Exchange Bypass (Zero Links in Initial Cold Outreach)</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Playbook Modal -->
+  <div id="playbookModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="glass-panel bg-slate-900 border border-slate-700 max-w-2xl w-full rounded-2xl p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+        <h3 class="text-lg font-black text-white flex items-center gap-2">
+          <i class="fa-solid fa-bolt text-amber-400"></i> Inbound Reply Playbook (1-Click Copy)
+        </h3>
+        <button onclick="closePlaybookModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+      </div>
+
+      <div class="space-y-3">
+        <!-- Reply 1 -->
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-bold text-amber-400 uppercase">If they ask: "How much does this cost?"</span>
+            <button onclick="copyText(this, 'cost')" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-[11px] font-bold">Copy Reply</button>
+          </div>
+          <p id="reply-cost" class="text-xs text-slate-300 font-mono">Hi [Name],&#10;&#10;Contractor network inclusion and territory directory registration is 100% complimentary for vetted commercial trade subcontractors.&#10;&#10;Our estimators and takeoff suites run free in your browser at https://tools-vault-4ml.pages.dev/commercial_subcontractor_bid_estimator. Unlocked spreadsheet libraries with AIA payment apps and Excel suites are available in our digital store if your team ever needs them.&#10;&#10;What is the primary commercial scope you are estimating this month?&#10;&#10;Best regards,&#10;John Granbridge&#10;ToolsVault Commercial Network</p>
+        </div>
+
+        <!-- Reply 2 -->
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-bold text-blue-400 uppercase">If they ask: "Send me more info / Add us to bid list"</span>
+            <button onclick="copyText(this, 'moreinfo')" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-[11px] font-bold">Copy Reply</button>
+          </div>
+          <p id="reply-moreinfo" class="text-xs text-slate-300 font-mono">Hi [Name],&#10;&#10;Glad to connect. You can view our territory commercial directory here: https://tools-vault-4ml.pages.dev/contractor_network&#10;&#10;If you would like to review active commercial planroom allocations or verify exclusive ZIP code rights for your trade, you can schedule a quick 15-minute briefing directly on my calendar here:&#10;https://tools-vault-4ml.pages.dev/contractor_territory_consultation&#10;&#10;Also, our free CSI estimating &amp; AIA takeoff suite is live here:&#10;https://tools-vault-4ml.pages.dev/commercial_subcontractor_bid_estimator&#10;&#10;Best regards,&#10;John Granbridge&#10;ToolsVault Commercial Network</p>
+        </div>
+
+        <!-- Reply 3 -->
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-bold text-emerald-400 uppercase">If they say: "We already use Procore / Jobber"</span>
+            <button onclick="copyText(this, 'competitor')" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-[11px] font-bold">Copy Reply</button>
+          </div>
+          <p id="reply-competitor" class="text-xs text-slate-300 font-mono">Hi [Name],&#10;&#10;Procore and Jobber are fantastic platforms—we don't replace your project management stack at all. ToolsVault is a lightweight pre-bid rapid calculator and regional trade territory index designed for field superintendents and estimators doing instant 60-second feasibility checks.&#10;&#10;Keep us bookmarked for zero-friction calculations: https://tools-vault-4ml.pages.dev/commercial_subcontractor_bid_estimator&#10;&#10;Best regards,&#10;John Granbridge&#10;ToolsVault Commercial Network</p>
+        </div>
+
+        <!-- Reply 4: 48-Hour Bump -->
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-bold text-purple-400 uppercase">48-Hour Follow-Up (Wednesday No-Reply Bump)</span>
+            <button onclick="copyText(this, 'bump')" class="px-2.5 py-1 bg-purple-600 hover:bg-purple-500 text-white rounded text-[11px] font-bold">Copy Bump</button>
+          </div>
+          <p id="reply-bump" class="text-xs text-slate-300 font-mono">Hi [Name],&#10;&#10;Following up briefly on my note from Monday. Wanted to make sure your commercial estimating team had our pre-bid labor & material multipliers handy ahead of Friday bid openings.&#10;&#10;Are you active on commercial invites in your territory this week?&#10;&#10;Best regards,&#10;John Granbridge&#10;ToolsVault Commercial Network</p>
+        </div>
+
+        <!-- Reply 5: Lead Magnet Delivery -->
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-bold text-cyan-400 uppercase">Deliver Lead Magnet (Pre-Bid Checklist PDF & Web Sheet)</span>
+            <button onclick="copyText(this, 'leadmagnet')" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded text-[11px] font-bold">Copy Delivery</button>
+          </div>
+          <p id="reply-leadmagnet" class="text-xs text-slate-300 font-mono">Hi [Name],&#10;&#10;Here is the direct link to download the 2026 Commercial Subcontractor Pre-Bid Checklist & Change Order Shield (Doc TV-DOC-PB2026):&#10;&#10;PDF Edition (Free Download): https://tools-vault-4ml.pages.dev/downloads/ToolsVault_2026_PreBid_Checklist_and_Change_Order_Shield.pdf&#10;&#10;Interactive Web Audit Suite: https://tools-vault-4ml.pages.dev/commercial_contractor_prebid_checklist&#10;&#10;It includes 24 essential scope verifications across AIA document requirements, overtime thresholds, and prompt payment statutory deadlines. Hope this protects your margins on the next submittal!&#10;&#10;Best regards,&#10;John Granbridge&#10;ToolsVault Commercial Network</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rapid Dispatch Floating HUD -->
+  <div id="rapidDispatchHUD" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-11/12 max-w-4xl glass-panel border border-emerald-500/50 bg-slate-950/95 shadow-2xl rounded-2xl p-4 z-50 hidden transition-all duration-300 backdrop-blur-xl">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-mono font-black text-sm shadow-inner">
+          <span id="rapidIndexBadge">1/37</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span id="rapidTargetName" class="text-white font-black text-sm md:text-base">Target Company</span>
+            <span id="rapidWaveBadge" class="px-2 py-0.5 rounded text-[10px] font-bold border border-blue-500/40 bg-blue-950/40 text-blue-300">Wave 1</span>
+            <span id="rapidTradeBadge" class="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-300 border border-slate-700">Trade</span>
+          </div>
+          <div class="text-xs text-slate-400 mt-0.5 flex flex-wrap items-center gap-x-2">
+            <span id="rapidContact" class="text-slate-300 font-medium">Attn: Estimating</span> •
+            <span id="rapidMetro" class="text-slate-400">Metro</span> •
+            <span id="rapidEmail" class="font-mono text-emerald-300 font-bold">email@domain.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <button id="rapidLaunchBtn" onclick="rapidLaunchCurrent()" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl shadow-lg transition flex items-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i> 1. Open Gmail
+        </button>
+        <button onclick="rapidCopyCurrent()" class="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-xs rounded-xl transition flex items-center gap-2" title="Copy Personalized Pitch Text">
+          <i class="fa-regular fa-copy"></i> Copy Pitch
+        </button>
+        <button onclick="rapidMarkSentAndNext()" class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl shadow-lg transition flex items-center gap-2">
+          <i class="fa-solid fa-check"></i> Mark Sent &amp; Next &rarr;
+        </button>
+        <button onclick="rapidSkipNext()" class="px-3 py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-slate-200 text-xs rounded-xl transition" title="Skip to next target without marking sent">
+          Skip <i class="fa-solid fa-forward-step ml-1"></i>
+        </button>
+        <button onclick="exitRapidDispatch()" class="p-2 text-slate-500 hover:text-red-400 text-sm transition ml-1" title="Close Runner (Esc)">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+    <div class="mt-2 text-[10px] text-slate-500 text-center flex justify-between px-1">
+      <span>Hotkeys: <kbd class="px-1.5 py-0.5 bg-slate-800 rounded text-slate-400 border border-slate-700">Space</kbd> Open &amp; Advance | <kbd class="px-1.5 py-0.5 bg-slate-800 rounded text-slate-400 border border-slate-700">&rarr;</kbd> Skip | <kbd class="px-1.5 py-0.5 bg-slate-800 rounded text-slate-400 border border-slate-700">Esc</kbd> Close</span>
+      <span id="rapidRemainingText" class="text-emerald-400 font-medium">37 remaining in queue</span>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 border border-emerald-500/50 text-emerald-300 px-4 py-3 rounded-xl text-xs font-bold shadow-2xl z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
+    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+    <span id="toastMsg">Copied!</span>
+  </div>
+
+  <script>
+    const ALL_TARGETS = [
+  {
+    "name": "Avid Electrical Contracting",
+    "trade": "Commercial Electrical",
+    "metro": "Austin, TX",
+    "email": "estimating@avid-electric.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Miller Electric Company",
+    "trade": "Commercial Electrical",
+    "metro": "Orlando / Jacksonville, FL",
+    "email": "estimating@mecojax.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Allison-Smith Company",
+    "trade": "Commercial Electrical",
+    "metro": "Atlanta, GA",
+    "email": "estimating@allisonsmith.com",
+    "contact": "Preconstruction Department",
+    "wave": 1
+  },
+  {
+    "name": "Alterman Inc",
+    "trade": "Commercial Electrical & Technologies",
+    "metro": "Austin / San Antonio, TX",
+    "email": "marketing@goalterman.com",
+    "contact": "Marketing & BizDev",
+    "wave": 1
+  },
+  {
+    "name": "Rosendin Electric",
+    "trade": "Commercial Electrical Engineering",
+    "metro": "Nashville, TN",
+    "email": "estimating@rosendin.com",
+    "contact": "Commercial Estimating Desk",
+    "wave": 1
+  },
+  {
+    "name": "Watson Electrical Construction",
+    "trade": "Commercial Electrical",
+    "metro": "Raleigh, NC",
+    "email": "estimating@watsonelec.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "E.C. Company",
+    "trade": "Commercial Electrical & Infrastructure",
+    "metro": "Pacific NW / National",
+    "email": "estimating@ec-company.com",
+    "contact": "Preconstruction Department",
+    "wave": 1
+  },
+  {
+    "name": "Corbins Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@corbins.com",
+    "contact": "Estimating Dept",
+    "wave": 1
+  },
+  {
+    "name": "ArchKey Mona (formerly Mona Electric)",
+    "trade": "Commercial Electrical & Systems",
+    "metro": "Washington, DC / Mid-Atlantic",
+    "email": "david.howell@archkey.com",
+    "contact": "David Howell (President)",
+    "wave": 1
+  },
+  {
+    "name": "Sturgeon Electric",
+    "trade": "Commercial Electrical",
+    "metro": "Denver, CO",
+    "email": "estimating@myrgroup.com",
+    "contact": "Preconstruction",
+    "wave": 1
+  },
+  {
+    "name": "Fisk Electric Company",
+    "trade": "Commercial Electrical",
+    "metro": "Houston, TX",
+    "email": "estimating@fiskcorp.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Watson Electrical Construction",
+    "trade": "Commercial Electrical",
+    "metro": "Charlotte / Raleigh, NC",
+    "email": "preconstruction@watsonelec.com",
+    "contact": "Precon Department",
+    "wave": 1
+  },
+  {
+    "name": "Guarantee Electrical Company",
+    "trade": "Commercial Electrical",
+    "metro": "Fort Worth, TX / Midwest",
+    "email": "gecoestimating@geco.com",
+    "contact": "GECO Estimating Desk",
+    "wave": 1
+  },
+  {
+    "name": "Tri-City Electric Co",
+    "trade": "Commercial Electrical",
+    "metro": "Miami, FL",
+    "email": "estimating@tricityelectric.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Aldridge Electric",
+    "trade": "Commercial Electrical & Infrastructure",
+    "metro": "Columbus, OH / Midwest",
+    "email": "info@aldridgegroup.com",
+    "contact": "Corporate Inquiries",
+    "wave": 1
+  },
+  {
+    "name": "Hatzel & Buehler",
+    "trade": "Commercial Electrical",
+    "metro": "Cleveland, OH",
+    "email": "estimating@hatzelandbuehler.com",
+    "contact": "Commercial Bids",
+    "wave": 1
+  },
+  {
+    "name": "IES Residential & Commercial",
+    "trade": "Commercial Electrical",
+    "metro": "Houston, TX",
+    "email": "commercial@ies-co.com",
+    "contact": "Commercial Division",
+    "wave": 1
+  },
+  {
+    "name": "Glenwood Electric Inc",
+    "trade": "Commercial Electrical",
+    "metro": "Cincinnati, OH",
+    "email": "pat@glenwoodelectric.com",
+    "contact": "Pat (Executive Desk)",
+    "wave": 1
+  },
+  {
+    "name": "Amteck LLC",
+    "trade": "Commercial Electrical & Technologies",
+    "metro": "Lexington, KY",
+    "email": "estimating@amteck.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Miller Bros Solar & Electric",
+    "trade": "Commercial Solar & Electrical",
+    "metro": "Atlanta, GA",
+    "email": "MBSinfo@millerbros.us",
+    "contact": "Commercial Operations",
+    "wave": 1
+  },
+  {
+    "name": "Cleveland Electric Company",
+    "trade": "Commercial Electrical",
+    "metro": "Atlanta, GA",
+    "email": "contact@clevelandgroup.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Facility Solutions Group (FSG)",
+    "trade": "Commercial Electrical & Technologies",
+    "metro": "Dallas / Austin, TX",
+    "email": "estimating@fsg.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "TDIndustries",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Dallas, TX",
+    "email": "estimating@tdindustries.com",
+    "contact": "Commercial Preconstruction",
+    "wave": 1
+  },
+  {
+    "name": "Comfort Systems USA",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Houston, TX",
+    "email": "estimating@comfortsystemsusa.com",
+    "contact": "Precon Department",
+    "wave": 1
+  },
+  {
+    "name": "Turner Industries",
+    "trade": "Commercial Mechanical & Industrial Piping",
+    "metro": "Houston / Austin, TX",
+    "email": "estimating@turner-industries.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Bel-Aire Mechanical",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Phoenix, AZ",
+    "email": "dfox@belairemechanical.com",
+    "contact": "D. Fox (Estimating)",
+    "wave": 1
+  },
+  {
+    "name": "Limbach Company",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Orlando, FL",
+    "email": "info@limbachinc.com",
+    "contact": "Corporate Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Encompass Onsite",
+    "trade": "Commercial Facilities & HVAC",
+    "metro": "Fort Lauderdale, FL",
+    "email": "Sales@encompassonsite.com",
+    "contact": "Commercial Sales",
+    "wave": 1
+  },
+  {
+    "name": "McKenney's Inc",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Atlanta, GA",
+    "email": "info@mckenneys.com",
+    "contact": "Corporate Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Bernhard LLC",
+    "trade": "Mechanical & Energy Infrastructure",
+    "metro": "Nashville, TN",
+    "email": "estimating@bernhard.com",
+    "contact": "Commercial Precon",
+    "wave": 1
+  },
+  {
+    "name": "Harper Limbach",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Tampa, FL",
+    "email": "tony.white@harperlimbach.com",
+    "contact": "Tony White (VP Sales)",
+    "wave": 1
+  },
+  {
+    "name": "Lee Company",
+    "trade": "Commercial Mechanical & Facilities",
+    "metro": "Nashville, TN",
+    "email": "service@leecompany.com",
+    "contact": "Commercial Service",
+    "wave": 1
+  },
+  {
+    "name": "Carolina Piping & Rigging",
+    "trade": "Commercial Mechanical & Piping",
+    "metro": "Charlotte, NC",
+    "email": "sales@carolinapiping.com",
+    "contact": "Commercial Sales",
+    "wave": 1
+  },
+  {
+    "name": "B&I Contractors",
+    "trade": "Commercial Mechanical & Electrical",
+    "metro": "Fort Myers, FL",
+    "email": "estimating@bandiflorida.com",
+    "contact": "Preconstruction Team",
+    "wave": 1
+  },
+  {
+    "name": "ColonialWebb Contractors",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Raleigh, NC",
+    "email": "estimating@colonialwebb.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Murphy Company",
+    "trade": "Commercial Mechanical Piping",
+    "metro": "Denver, CO",
+    "email": "murphybids@murphynet.com",
+    "contact": "Preconstruction Dept",
+    "wave": 1
+  },
+  {
+    "name": "Tweet/Garot Mechanical",
+    "trade": "Mechanical & Process Piping",
+    "metro": "Columbus, OH",
+    "email": "estimating@tweetgarot.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "J.F. Ahern Co",
+    "trade": "Mechanical & Fire Protection",
+    "metro": "Cincinnati, OH",
+    "email": "info@jfahern.com",
+    "contact": "Corporate Estimating",
+    "wave": 2
+  },
+  {
+    "name": "ABM Commercial HVAC",
+    "trade": "Commercial HVAC & Facilities",
+    "metro": "Atlanta, GA",
+    "email": "info@abm.com",
+    "contact": "Commercial Operations",
+    "wave": 2
+  },
+  {
+    "name": "Cullum Mechanical Construction",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Charleston, SC",
+    "email": "estimating@culluminc.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "B&W Mechanical Contractors",
+    "trade": "Commercial HVAC & Plumbing",
+    "metro": "Atlanta, GA",
+    "email": "shane.box@bwmech.com",
+    "contact": "Shane Box (Precon & Bids)",
+    "wave": 2
+  },
+  {
+    "name": "Egan Company",
+    "trade": "Specialty Mechanical & Electrical",
+    "metro": "Minneapolis, MN",
+    "email": "helpdesk@eganco.com",
+    "contact": "Corporate Inquiry Desk",
+    "wave": 2
+  },
+  {
+    "name": "A&G Piping Inc",
+    "trade": "Commercial Mechanical & Piping",
+    "metro": "Fort Worth, TX",
+    "email": "bids@agpiping.com",
+    "contact": "Commercial Bids Desk",
+    "wave": 2
+  },
+  {
+    "name": "Centimark Commercial Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Dallas, TX",
+    "email": "contact@centimark.com",
+    "contact": "Commercial Inbound Desk",
+    "wave": 2
+  },
+  {
+    "name": "Tecta America Southeast",
+    "trade": "Commercial Roofing",
+    "metro": "Atlanta, GA",
+    "email": "estimating@tectaamerica.com",
+    "contact": "Commercial Division",
+    "wave": 2
+  },
+  {
+    "name": "Latite Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Pompano Beach, FL",
+    "email": "info@latite.com",
+    "contact": "Corporate Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Advanced Roofing Inc",
+    "trade": "Commercial Roofing & Solar",
+    "metro": "Fort Lauderdale, FL",
+    "email": "ServiceSFL@advancedroofing.com",
+    "contact": "Commercial Service SFL",
+    "wave": 2
+  },
+  {
+    "name": "Whitley Penn Roofing (Supreme)",
+    "trade": "Commercial Roofing",
+    "metro": "Dallas, TX",
+    "email": "estimating@supremeroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Target Roofing & Sheet Metal",
+    "trade": "Commercial Roofing",
+    "metro": "Fort Myers, FL",
+    "email": "projects@targetroofers.com",
+    "contact": "Project Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Commercial Roofing Specialties",
+    "trade": "Commercial Roofing",
+    "metro": "Nashville, TN",
+    "email": "internetsales@crssupply.com",
+    "contact": "Commercial Sales",
+    "wave": 2
+  },
+  {
+    "name": "D&D Roofing Sheet Metal",
+    "trade": "Commercial Roofing",
+    "metro": "Denver, CO",
+    "email": "estimating@ddroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Castro Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Dallas, TX",
+    "email": "estimating@castroroofing.com",
+    "contact": "Estimating Dept",
+    "wave": 2
+  },
+  {
+    "name": "Precision Construction & Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Fort Worth, TX",
+    "email": "info@precisioncandr.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Empire Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Fort Worth, TX",
+    "email": "info@empireroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Sutter Roofing Company",
+    "trade": "Commercial Roofing",
+    "metro": "Sarasota, FL",
+    "email": "estimating@sutterroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Crown Corr Inc",
+    "trade": "Metal Building Envelope",
+    "metro": "Atlanta, GA",
+    "email": "info@crowncorr.com",
+    "contact": "Preconstruction Dept",
+    "wave": 2
+  },
+  {
+    "name": "Flynn Group of Companies",
+    "trade": "Total Building Envelope",
+    "metro": "Phoenix, AZ",
+    "email": "info@flynncompanies.com",
+    "contact": "Corporate Estimating",
+    "wave": 2
+  },
+  {
+    "name": "A.C.T. Metal Deck Supply",
+    "trade": "Commercial Decking & Metals",
+    "metro": "Charlotte, NC",
+    "email": "sales@metaldecksupply.com",
+    "contact": "Commercial Sales",
+    "wave": 2
+  },
+  {
+    "name": "Northeast Solite",
+    "trade": "Lightweight Structural Roof Fills",
+    "metro": "Richmond, VA",
+    "email": "sales@nesolite.com",
+    "contact": "Commercial Sales",
+    "wave": 2
+  },
+  {
+    "name": "Nations Roof Carolina",
+    "trade": "Commercial Roofing",
+    "metro": "Charlotte, NC",
+    "email": "estimating@bakerroofing.com",
+    "contact": "Regional Estimating",
+    "wave": 2
+  },
+  {
+    "name": "SRS Distribution Commercial",
+    "trade": "Commercial Building Products",
+    "metro": "Dallas, TX",
+    "email": "estimating@srsdistribution.com",
+    "contact": "Commercial Division",
+    "wave": 2
+  },
+  {
+    "name": "ABC Supply Commercial",
+    "trade": "Commercial Roofing & Wall Systems",
+    "metro": "Beloit, WI",
+    "email": "info@abcsupply.com",
+    "contact": "Commercial Sales",
+    "wave": 2
+  },
+  {
+    "name": "Beacon Commercial Roofing",
+    "trade": "Commercial Roofing Systems",
+    "metro": "Herndon, VA",
+    "email": "estimating@becn.com",
+    "contact": "Estimating Dept",
+    "wave": 2
+  },
+  {
+    "name": "Baker Concrete Construction",
+    "trade": "Commercial Concrete",
+    "metro": "Houston, TX",
+    "email": "estimating@bakerconcrete.com",
+    "contact": "Preconstruction Team",
+    "wave": 2
+  },
+  {
+    "name": "Lithko Contracting",
+    "trade": "Commercial Concrete",
+    "metro": "Charlotte, NC",
+    "email": "graffk@lithko.com",
+    "contact": "Kenny Graff (Precon Bids)",
+    "wave": 2
+  },
+  {
+    "name": "Wayne Brothers Companies",
+    "trade": "Civil & Concrete Construction",
+    "metro": "Charlotte, NC",
+    "email": "estimating@waynebrothers.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "TAS Commercial Concrete",
+    "trade": "Commercial Concrete",
+    "metro": "Houston, TX",
+    "email": "estimating@tascon.com",
+    "contact": "Estimating Department",
+    "wave": 2
+  },
+  {
+    "name": "Sundt Construction",
+    "trade": "Concrete & Heavy Civil",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@sundt.com",
+    "contact": "Precon Team",
+    "wave": 2
+  },
+  {
+    "name": "L.G. Barcus & Sons",
+    "trade": "Foundation & Heavy Civil",
+    "metro": "Dallas, TX",
+    "email": "estimating@barcus.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Schuff Steel Company",
+    "trade": "Structural Steel Fabrication",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@schuff.com",
+    "contact": "Preconstruction Dept",
+    "wave": 2
+  },
+  {
+    "name": "SteelFab Inc",
+    "trade": "Structural Steel Framing",
+    "metro": "Charlotte, NC",
+    "email": "estimating@steelfab-inc.com",
+    "contact": "Estimating Team",
+    "wave": 2
+  },
+  {
+    "name": "Owen Steel Company",
+    "trade": "Structural Steel",
+    "metro": "Columbia, SC",
+    "email": "info@owensteel.com",
+    "contact": "Corporate Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Canam Steel Corp",
+    "trade": "Structural Joists & Deck",
+    "metro": "Jacksonville, FL",
+    "email": "estimating@canam.com",
+    "contact": "Commercial Bids",
+    "wave": 2
+  },
+  {
+    "name": "W&W | AFCO Steel",
+    "trade": "Structural Steel",
+    "metro": "Nashville, TN",
+    "email": "estimating@wwafcosteel.com",
+    "contact": "Estimating Department",
+    "wave": 2
+  },
+  {
+    "name": "Commercial Contracting Corp",
+    "trade": "Concrete & Industrial Framing",
+    "metro": "Columbus, OH",
+    "email": "estimating@cccnetwork.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Vulcan Materials Contracting",
+    "trade": "Aggregate & Heavy Civil",
+    "metro": "Birmingham, AL",
+    "email": "estimating@vmcmail.com",
+    "contact": "Commercial Division",
+    "wave": 3
+  },
+  {
+    "name": "APAC-Atlantic Inc",
+    "trade": "Asphalt & Heavy Civil",
+    "metro": "Raleigh, NC",
+    "email": "estimating@apac.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Rogers Group Inc",
+    "trade": "Crushed Stone & Heavy Civil",
+    "metro": "Nashville, TN",
+    "email": "estimating@rogersgroupinc.com",
+    "contact": "Commercial Bids",
+    "wave": 3
+  },
+  {
+    "name": "Texas Sterling Construction",
+    "trade": "Heavy Civil & Infrastructure",
+    "metro": "Houston, TX",
+    "email": "contactTSC@strlco.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "Austin Industries",
+    "trade": "Commercial Concrete & Civil",
+    "metro": "Dallas, TX",
+    "email": "estimating@austin-ind.com",
+    "contact": "Precon Department",
+    "wave": 3
+  },
+  {
+    "name": "Archer Western Construction",
+    "trade": "Heavy Civil & Concrete",
+    "metro": "Atlanta, GA",
+    "email": "estimating@walshgroup.com",
+    "contact": "Southeast Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Blythe Construction",
+    "trade": "Heavy Highway & Concrete",
+    "metro": "Charlotte, NC",
+    "email": "estimating@blytheconstruction.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "Granite Construction Southeast",
+    "trade": "Infrastructure & Heavy Civil",
+    "metro": "Tampa, FL",
+    "email": "estimating@gcinc.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Flatiron Construction",
+    "trade": "Heavy Infrastructure",
+    "metro": "Denver, CO",
+    "email": "estimating@flatironcorp.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Webber LLC",
+    "trade": "Heavy Civil & Concrete Paving",
+    "metro": "Houston, TX",
+    "email": "estimating@wwebber.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "MMC Contractors",
+    "trade": "Commercial Plumbing & Piping",
+    "metro": "Dallas, TX",
+    "email": "estimating@mmccontractors.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "W.J. O'Neil Company",
+    "trade": "Commercial Plumbing & Piping",
+    "metro": "Cleveland, OH",
+    "email": "estimating@wjoneil.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "E.M. Duggan Inc",
+    "trade": "Commercial Plumbing & HVAC",
+    "metro": "Orlando, FL",
+    "email": "estimating@emduggan.com",
+    "contact": "Precon Department",
+    "wave": 3
+  },
+  {
+    "name": "Viking Sprinkler Supply",
+    "trade": "Commercial Fire Protection",
+    "metro": "Tampa, FL",
+    "email": "estimating@supplynet.com",
+    "contact": "Commercial Sales",
+    "wave": 3
+  },
+  {
+    "name": "SimplexGrinnell (JCI)",
+    "trade": "Commercial Fire Protection",
+    "metro": "Charlotte, NC",
+    "email": "estimating@jci.com",
+    "contact": "Commercial Fire Division",
+    "wave": 3
+  },
+  {
+    "name": "Century Fire Protection",
+    "trade": "Commercial Fire Sprinkler",
+    "metro": "Atlanta, GA",
+    "email": "estimating@centuryfp.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Wayne Automatic Fire Sprinklers",
+    "trade": "Commercial Fire Sprinklers",
+    "metro": "Orlando, FL",
+    "email": "kevinr@waynefire.com",
+    "contact": "Kevin R. (VP Sales)",
+    "wave": 3
+  },
+  {
+    "name": "Cosco Fire Protection",
+    "trade": "Commercial Fire Life Safety",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@coscofire.com",
+    "contact": "Commercial Division",
+    "wave": 3
+  },
+  {
+    "name": "Kauffman Co Fire",
+    "trade": "Commercial Fire Protection",
+    "metro": "Houston, TX",
+    "email": "bids@kauffmanco.net",
+    "contact": "Commercial Bids",
+    "wave": 3
+  },
+  {
+    "name": "Hess Mechanical",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Raleigh, NC",
+    "email": "estimating@hessmech.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "C.W. Driver Commercial",
+    "trade": "General Prime & MEP",
+    "metro": "Austin, TX",
+    "email": "prequalification@cwdriver.com",
+    "contact": "Prequalification Desk",
+    "wave": 3
+  },
+  {
+    "name": "Modern Piping Inc",
+    "trade": "Industrial & Commercial Plumbing",
+    "metro": "Cincinnati, OH",
+    "email": "estimating@modernpiping.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "P1 Group Inc",
+    "trade": "Commercial Mechanical & Electrical",
+    "metro": "Dallas, TX",
+    "email": "estimating@p1group.com",
+    "contact": "Commercial Precon",
+    "wave": 3
+  },
+  {
+    "name": "Harris Companies",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Phoenix, AZ",
+    "email": "estimating@harriscompany.com",
+    "contact": "Estimating Team",
+    "wave": 3
+  },
+  {
+    "name": "Total Mechanical Inc",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Charlotte, NC",
+    "email": "estimating@totalmechanical.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Superior Mechanical Services",
+    "trade": "Commercial Mechanical & Piping",
+    "metro": "Atlanta, GA",
+    "email": "estimating@superiormech.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "General Mechanical Corp",
+    "trade": "Commercial Mechanical Piping",
+    "metro": "Orlando, FL",
+    "email": "estimating@genmech.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Bernhard MCC Mechanical",
+    "trade": "Commercial Mechanical & Controls",
+    "metro": "Nashville, TN",
+    "email": "estimating@bernhardmcc.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "M&W Contractors",
+    "trade": "Commercial Mechanical & Industrial",
+    "metro": "Atlanta, GA",
+    "email": "estimating@mwcontractors.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Performance Contracting Group",
+    "trade": "Insulation & Specialty MEP",
+    "metro": "Dallas, TX",
+    "email": "estimating@pcg.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Comfort Systems Mid-South",
+    "trade": "Commercial HVAC & Piping",
+    "metro": "Nashville, TN",
+    "email": "estimating@csusa.com",
+    "contact": "Regional Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Messer Construction Precon",
+    "trade": "Commercial Prime & Concrete",
+    "metro": "Columbus, OH",
+    "email": "estimating@messer.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Batson-Cook Construction",
+    "trade": "Commercial Prime Contracting",
+    "metro": "Atlanta, GA",
+    "email": "estimating@batson-cook.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "Robins & Morton",
+    "trade": "Commercial Healthcare & MEP",
+    "metro": "Birmingham, AL",
+    "email": "estimating@robinsmorton.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Hoar Construction Precon",
+    "trade": "Commercial Prime Contracting",
+    "metro": "Nashville, TN",
+    "email": "estimating@hoar.com",
+    "contact": "Preconstruction Dept",
+    "wave": 3
+  },
+  {
+    "name": "Brasfield & Gorrie",
+    "trade": "Commercial General Contracting",
+    "metro": "Atlanta, GA",
+    "email": "estimating@brasfieldgorrie.com",
+    "contact": "Estimating Team",
+    "wave": 3
+  },
+  {
+    "name": "Continental Electrical Construction Co",
+    "trade": "Commercial Electrical",
+    "metro": "Chicago, IL",
+    "email": "estimating@cecco.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Kelso-Burnett Co.",
+    "trade": "Commercial Electrical",
+    "metro": "Chicago, IL",
+    "email": "estimating@kelso-burnett.com",
+    "contact": "Preconstruction Dept",
+    "wave": 1
+  },
+  {
+    "name": "Bombard Electric Nevada",
+    "trade": "Commercial Electrical",
+    "metro": "Las Vegas, NV",
+    "email": "estimating@bombardelec.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Cache Valley Electric",
+    "trade": "Commercial Electrical & Technologies",
+    "metro": "Salt Lake City, UT",
+    "email": "estimating@cve.com",
+    "contact": "Preconstruction Team",
+    "wave": 1
+  },
+  {
+    "name": "Cochran Inc",
+    "trade": "Commercial Electrical & Technologies",
+    "metro": "Seattle, WA",
+    "email": "estimating@cochraninc.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Prime Electric Inc",
+    "trade": "Commercial Electrical Engineering",
+    "metro": "Seattle, WA",
+    "email": "estimating@primeelectric.com",
+    "contact": "Estimating Team",
+    "wave": 1
+  },
+  {
+    "name": "ERMCO Inc",
+    "trade": "Commercial Electrical & Systems",
+    "metro": "Indianapolis, IN",
+    "email": "servicenow@ermco.com",
+    "contact": "Service & Dispatch",
+    "wave": 1
+  },
+  {
+    "name": "Sachs Electric (ArchKey)",
+    "trade": "Commercial Electrical",
+    "metro": "St. Louis, MO",
+    "email": "estimating@sachsco.com",
+    "contact": "Commercial Precon",
+    "wave": 1
+  },
+  {
+    "name": "Capital Electric Construction",
+    "trade": "Commercial Electrical",
+    "metro": "Kansas City, MO",
+    "email": "service@capitalelectric.com",
+    "contact": "Commercial Service",
+    "wave": 1
+  },
+  {
+    "name": "Faith Technologies",
+    "trade": "Commercial Electrical & Energy",
+    "metro": "Minneapolis, MN",
+    "email": "estimating@faithtech.com",
+    "contact": "Estimating Dept",
+    "wave": 1
+  },
+  {
+    "name": "PayneCrest Electric",
+    "trade": "Commercial Electrical & Industrial",
+    "metro": "St. Louis, MO",
+    "email": "estimating@paynecrest.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Motor City Electric Co",
+    "trade": "Commercial Electrical & Utilities",
+    "metro": "Detroit, MI",
+    "email": "bids@mceco.com",
+    "contact": "Commercial Bid Desk",
+    "wave": 1
+  },
+  {
+    "name": "Sargent Electric Company",
+    "trade": "Commercial Electrical & Utility",
+    "metro": "Pittsburgh, PA",
+    "email": "info@sargentelectric.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Lighthouse Electric Company",
+    "trade": "Commercial Electrical",
+    "metro": "Pittsburgh, PA",
+    "email": "estimating@lighthouseelectric.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "A-C Electric Company",
+    "trade": "Commercial Electrical & Automation",
+    "metro": "Salt Lake City / West",
+    "email": "estimating@a-celectric.com",
+    "contact": "Precon Team",
+    "wave": 1
+  },
+  {
+    "name": "Hill Mechanical Group",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Chicago, IL",
+    "email": "estimating@hillgrp.com",
+    "contact": "Commercial Precon",
+    "wave": 1
+  },
+  {
+    "name": "AMS Mechanical Systems",
+    "trade": "Commercial HVAC & Process Piping",
+    "metro": "Chicago, IL",
+    "email": "estimating@ams-pmc.com",
+    "contact": "Estimating Dept",
+    "wave": 1
+  },
+  {
+    "name": "Hansen Mechanical",
+    "trade": "Commercial HVAC & Piping",
+    "metro": "Las Vegas, NV",
+    "email": "estimating@hansenmech.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "US Mechanical LLC",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Las Vegas, NV",
+    "email": "info@usmechanicalllc.com",
+    "contact": "Commercial Precon",
+    "wave": 1
+  },
+  {
+    "name": "CCI Mechanical",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Salt Lake City, UT",
+    "email": "estimating@ccimechanical.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "MacDonald-Miller Facility Solutions",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Seattle, WA",
+    "email": "estimating@macmiller.com",
+    "contact": "Commercial Precon",
+    "wave": 1
+  },
+  {
+    "name": "Hermanson Company",
+    "trade": "Commercial Mechanical & Sheet Metal",
+    "metro": "Seattle, WA",
+    "email": "estimating@hermanson.com",
+    "contact": "Estimating Dept",
+    "wave": 1
+  },
+  {
+    "name": "Shambaugh & Son",
+    "trade": "Commercial Mechanical & Electrical",
+    "metro": "Indianapolis, IN",
+    "email": "estimating@shambaugh.com",
+    "contact": "Commercial Division",
+    "wave": 1
+  },
+  {
+    "name": "Broadway Electric & Mechanical",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Seattle, WA",
+    "email": "estimating@broadwaymechanical.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Haberberger Inc",
+    "trade": "Commercial Mechanical & Process Piping",
+    "metro": "St. Louis, MO",
+    "email": "info@haberbergerinc.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Corrigan Company",
+    "trade": "Commercial Mechanical & Piping",
+    "metro": "St. Louis, MO",
+    "email": "estimating@corriganco.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "Foley Company",
+    "trade": "Commercial Mechanical & Industrial",
+    "metro": "Kansas City, MO",
+    "email": "estimating@foleycompany.com",
+    "contact": "Estimating Team",
+    "wave": 1
+  },
+  {
+    "name": "Mechanical Contractors Inc (MCI)",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "San Antonio, TX",
+    "email": "estimating@mcicompanies.com",
+    "contact": "Commercial Precon",
+    "wave": 1
+  },
+  {
+    "name": "W.W. Gay Mechanical Contractor",
+    "trade": "Commercial Mechanical & Piping",
+    "metro": "Jacksonville, FL",
+    "email": "estimating@wwgay.com",
+    "contact": "Commercial Estimating",
+    "wave": 1
+  },
+  {
+    "name": "John E. Green Company",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "Detroit, MI",
+    "email": "estimating@johnegreen.com",
+    "contact": "Commercial Bids",
+    "wave": 1
+  },
+  {
+    "name": "McKamish Inc",
+    "trade": "Commercial Mechanical & Sheet Metal",
+    "metro": "Pittsburgh, PA",
+    "email": "estimating@mckamish.com",
+    "contact": "Estimating Dept",
+    "wave": 1
+  },
+  {
+    "name": "Ruthrauff Sauer LLC",
+    "trade": "Commercial Mechanical & HVAC",
+    "metro": "Pittsburgh, PA",
+    "email": "estimating@ruthrauff.com",
+    "contact": "Commercial Precon",
+    "wave": 1
+  },
+  {
+    "name": "A-1 Roofing Company",
+    "trade": "Commercial Roofing",
+    "metro": "Chicago, IL",
+    "email": "estimating@a1roofingcompany.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Olsson Roofing Company",
+    "trade": "Commercial Roofing",
+    "metro": "Chicago, IL",
+    "email": "info@olssonroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Commercial Roofers Inc",
+    "trade": "Commercial Roofing",
+    "metro": "Las Vegas, NV",
+    "email": "marketing@commroof.com",
+    "contact": "Marketing & Bids",
+    "wave": 2
+  },
+  {
+    "name": "The Original Roofing Company",
+    "trade": "Commercial Roofing",
+    "metro": "Las Vegas, NV",
+    "email": "info@trclv.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Western Roofing Service",
+    "trade": "Commercial Roofing",
+    "metro": "Salt Lake City, UT",
+    "email": "estimating@westernroofing.net",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Snyder Roofing & Sheet Metal",
+    "trade": "Commercial Roofing",
+    "metro": "Seattle, WA",
+    "email": "estimating@snyder-roofing.com",
+    "contact": "Precon Dept",
+    "wave": 2
+  },
+  {
+    "name": "Horning Roofing & Sheet Metal",
+    "trade": "Commercial Roofing",
+    "metro": "Indianapolis, IN",
+    "email": "info@horningroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "South Shore Roofing & Sheet Metal",
+    "trade": "Commercial Roofing",
+    "metro": "St. Louis, MO",
+    "email": "estimating@southshoreroofing.com",
+    "contact": "Estimating Team",
+    "wave": 2
+  },
+  {
+    "name": "Kirberg Company Commercial Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "St. Louis, MO",
+    "email": "estimating@kirberg.com",
+    "contact": "Commercial Precon",
+    "wave": 2
+  },
+  {
+    "name": "Delta Innovative Services",
+    "trade": "Commercial Roofing",
+    "metro": "Kansas City, MO",
+    "email": "info@deltaservices.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Berwald Roofing & Sheet Metal",
+    "trade": "Commercial Roofing",
+    "metro": "Minneapolis, MN",
+    "email": "estimating@berwaldroofing.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Beldon Roofing Company",
+    "trade": "Commercial Roofing",
+    "metro": "San Antonio, TX",
+    "email": "estimating@beldon.com",
+    "contact": "Commercial Division",
+    "wave": 2
+  },
+  {
+    "name": "McCurdy-Walden Commercial Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Jacksonville, FL",
+    "email": "josh@mccurdywalden.com",
+    "contact": "Josh Walden (Exec Desk)",
+    "wave": 2
+  },
+  {
+    "name": "Schreiber Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Detroit, MI",
+    "email": "estimating@schreiberroofing.com",
+    "contact": "Commercial Bids",
+    "wave": 2
+  },
+  {
+    "name": "Burns & Scalo Roofing",
+    "trade": "Commercial Roofing",
+    "metro": "Pittsburgh, PA",
+    "email": "estimating@burns-scalo.com",
+    "contact": "Preconstruction Team",
+    "wave": 2
+  },
+  {
+    "name": "McHugh Concrete Construction",
+    "trade": "Commercial Concrete",
+    "metro": "Chicago, IL",
+    "email": "estimating@mchughconstruction.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "F.H. Paschen Concrete",
+    "trade": "Commercial Concrete & Infrastructure",
+    "metro": "Chicago, IL",
+    "email": "estimating@fhpaschen.com",
+    "contact": "Precon Department",
+    "wave": 2
+  },
+  {
+    "name": "Las Vegas Paving Corp",
+    "trade": "Heavy Civil & Concrete Paving",
+    "metro": "Las Vegas, NV",
+    "email": "bids@lasvegaspaving.com",
+    "contact": "Estimating Team",
+    "wave": 2
+  },
+  {
+    "name": "Ralph L. Wadsworth Construction",
+    "trade": "Heavy Civil & Concrete",
+    "metro": "Salt Lake City, UT",
+    "email": "info@wadsco.com",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Conco Construction Pacific NW",
+    "trade": "Commercial Concrete",
+    "metro": "Seattle, WA",
+    "email": "estimating@conconow.com",
+    "contact": "Precon Team",
+    "wave": 2
+  },
+  {
+    "name": "Grady Brothers Concrete & Asphalt",
+    "trade": "Concrete & Heavy Civil",
+    "metro": "Indianapolis, IN",
+    "email": "estimating@gradybrothers.com",
+    "contact": "Estimating Dept",
+    "wave": 2
+  },
+  {
+    "name": "Vee-Jay Cement Contracting",
+    "trade": "Commercial Concrete",
+    "metro": "St. Louis, MO",
+    "email": "estimating@veejaycement.com",
+    "contact": "Commercial Precon",
+    "wave": 2
+  },
+  {
+    "name": "Musselman & Hall Contractors",
+    "trade": "Commercial Concrete & Rail",
+    "metro": "Kansas City, MO",
+    "email": "info@mandh.net",
+    "contact": "Commercial Estimating",
+    "wave": 2
+  },
+  {
+    "name": "Kraus-Anderson Concrete",
+    "trade": "Commercial Prime & Concrete",
+    "metro": "Minneapolis, MN",
+    "email": "estimating@krausanderson.com",
+    "contact": "Precon Department",
+    "wave": 2
+  },
+  {
+    "name": "Joeris General Contractors Precon",
+    "trade": "Commercial Prime & Concrete",
+    "metro": "San Antonio, TX",
+    "email": "bidsdfw@joeris.com",
+    "contact": "Preconstruction Team",
+    "wave": 2
+  },
+  {
+    "name": "Petticoat-Schmitt Civil Contractors",
+    "trade": "Heavy Civil & Utilities",
+    "metro": "Jacksonville, FL",
+    "email": "estimating@petticoatschmitt.com",
+    "contact": "Precon Team",
+    "wave": 2
+  },
+  {
+    "name": "Superior Materials & Concrete",
+    "trade": "Commercial Concrete & Aggregate",
+    "metro": "Detroit, MI",
+    "email": "estimating@superiormaterials.net",
+    "contact": "Commercial Sales",
+    "wave": 2
+  },
+  {
+    "name": "Mosites Construction Company",
+    "trade": "Commercial Concrete & Bridge",
+    "metro": "Pittsburgh, PA",
+    "email": "estimating@mosites.com",
+    "contact": "Estimating Dept",
+    "wave": 2
+  },
+  {
+    "name": "F.E. Moran Plumbing",
+    "trade": "Commercial Plumbing & Piping",
+    "metro": "Chicago, IL",
+    "email": "estimating@femoran.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Complete Plumbing Systems",
+    "trade": "Commercial Plumbing",
+    "metro": "Las Vegas, NV",
+    "email": "estimating@completeplumbing.com",
+    "contact": "Precon Department",
+    "wave": 3
+  },
+  {
+    "name": "Superior Air & Plumbing Commercial",
+    "trade": "Commercial Plumbing & Mechanical",
+    "metro": "Salt Lake City, UT",
+    "email": "estimating@superiorair.com",
+    "contact": "Estimating Team",
+    "wave": 3
+  },
+  {
+    "name": "Auburn Mechanical",
+    "trade": "Commercial Plumbing & Piping",
+    "metro": "Seattle, WA",
+    "email": "estimating@auburnmechanical.com",
+    "contact": "Commercial Precon",
+    "wave": 3
+  },
+  {
+    "name": "Freitag-Weinhardt Industrial Piping",
+    "trade": "Industrial & Process Piping",
+    "metro": "Indianapolis, IN",
+    "email": "estimating@freitag-weinhardt.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Murphy Company St. Louis",
+    "trade": "Commercial Plumbing & Process Piping",
+    "metro": "St. Louis, MO",
+    "email": "murphybids@murphynet.com",
+    "contact": "Preconstruction Dept",
+    "wave": 3
+  },
+  {
+    "name": "Hayes Drilling & Foundation",
+    "trade": "Deep Foundation & Heavy Civil",
+    "metro": "Kansas City, MO",
+    "email": "estimating@hayesdrilling.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Egan Company Process Piping",
+    "trade": "Commercial Plumbing & Piping",
+    "metro": "Minneapolis, MN",
+    "email": "helpdesk@eganco.com",
+    "contact": "Corporate Inquiry Desk",
+    "wave": 3
+  },
+  {
+    "name": "Dynamic Systems Inc",
+    "trade": "Commercial Mechanical & Plumbing",
+    "metro": "San Antonio, TX",
+    "email": "estimating@dynamicsystemsusa.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Ben Hur Construction MEP",
+    "trade": "Steel & Mechanical Rigging",
+    "metro": "St. Louis, MO",
+    "email": "estimating@benhurconstruction.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "Great Lakes Fire Protection",
+    "trade": "Commercial Fire Protection",
+    "metro": "Chicago, IL",
+    "email": "estimating@greatlakesfire.com",
+    "contact": "Commercial Sales",
+    "wave": 3
+  },
+  {
+    "name": "Desert Fire Protection",
+    "trade": "Commercial Fire Sprinkler",
+    "metro": "Las Vegas, NV",
+    "email": "estimating@desertfire.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Mountain States Fire Protection",
+    "trade": "Commercial Fire Systems",
+    "metro": "Salt Lake City, UT",
+    "email": "estimating@mountainstatesfire.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "Western States Fire Protection",
+    "trade": "Commercial Fire Sprinkler",
+    "metro": "Seattle, WA",
+    "email": "estimating@wsfp.com",
+    "contact": "Commercial Division",
+    "wave": 3
+  },
+  {
+    "name": "Ryan Fireprotection",
+    "trade": "Commercial Fire Protection",
+    "metro": "Indianapolis, IN",
+    "email": "estimating@ryanfp.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "St. Louis Automatic Sprinkler Co",
+    "trade": "Commercial Fire Sprinkler",
+    "metro": "St. Louis, MO",
+    "email": "estimating@slascosprinkler.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Western Fire Protection",
+    "trade": "Commercial Fire Suppression",
+    "metro": "Kansas City, MO",
+    "email": "estimating@westernfire.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "Olympic Fire Protection",
+    "trade": "Commercial Fire Protection",
+    "metro": "Minneapolis, MN",
+    "email": "estimating@olympicfireprotection.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Impact Fire Services",
+    "trade": "Commercial Fire Safety",
+    "metro": "San Antonio, TX",
+    "email": "estimating@impactfireservices.com",
+    "contact": "Commercial Division",
+    "wave": 3
+  },
+  {
+    "name": "Reliance Fire Protection",
+    "trade": "Commercial Fire Sprinkler",
+    "metro": "Baltimore / Mid-Atlantic",
+    "email": "estimating@reliancefireprotection.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Wiginton Fire Systems",
+    "trade": "Commercial Fire Protection",
+    "metro": "Jacksonville, FL",
+    "email": "jdk@wiginton.net",
+    "contact": "Jason Kirk (Jacksonville Branch Manager)",
+    "wave": 3
+  },
+  {
+    "name": "Dalmatian Fire",
+    "trade": "Commercial Fire Sprinkler",
+    "metro": "Indianapolis, IN",
+    "email": "estimating@dalmatianfire.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "S.A. Comunale Co",
+    "trade": "Commercial Fire & Mechanical",
+    "metro": "Cleveland / Pittsburgh",
+    "email": "estimating@sacomunale.com",
+    "contact": "Precon Team",
+    "wave": 3
+  },
+  {
+    "name": "Pepper Construction Precon",
+    "trade": "Commercial General Contracting",
+    "metro": "Chicago, IL",
+    "email": "estimating@pepperconstruction.com",
+    "contact": "Preconstruction Dept",
+    "wave": 3
+  },
+  {
+    "name": "The PENTA Building Group",
+    "trade": "Commercial Prime Contracting",
+    "metro": "Las Vegas, NV",
+    "email": "estimating@pentabldggroup.com",
+    "contact": "Commercial Bids",
+    "wave": 3
+  },
+  {
+    "name": "Okland Construction",
+    "trade": "Commercial Prime & Concrete",
+    "metro": "Salt Lake City, UT",
+    "email": "estimating@okland.com",
+    "contact": "Preconstruction Team",
+    "wave": 3
+  },
+  {
+    "name": "GLY Construction",
+    "trade": "Commercial General Contracting",
+    "metro": "Seattle, WA",
+    "email": "estimating@gly.com",
+    "contact": "Estimating Dept",
+    "wave": 3
+  },
+  {
+    "name": "Wilhelm Construction",
+    "trade": "Commercial Prime & Concrete",
+    "metro": "Indianapolis, IN",
+    "email": "info@fa-wilhelm.com",
+    "contact": "Commercial Estimating",
+    "wave": 3
+  },
+  {
+    "name": "Tarlton Corporation",
+    "trade": "Commercial Prime & Concrete",
+    "metro": "St. Louis, MO",
+    "email": "estimating@tarltoncorp.com",
+    "contact": "Preconstruction Dept",
+    "wave": 3
+  }
+];
+    let campaignMode = 'monday';
+    let activeWave = 'all';
+
+    function switchCampaignMode(mode) {
+      campaignMode = mode;
+      const btnMon = document.getElementById('btnModeMonday');
+      const btnWed = document.getElementById('btnModeWednesday');
+      const btnFri = document.getElementById('btnModeFriday');
+      const headerBadge = document.getElementById('headerModeBadge');
+      const headerTitle = document.getElementById('headerTitle');
+      const headerSubtitle = document.getElementById('headerSubtitle');
+      const statCard = document.getElementById('statMainCard');
+      const rapidBtnLabel = document.getElementById('btnRapidLabel');
+      const statusSelect = document.getElementById('statusFilter');
+
+      // Reset all buttons to default inactive style
+      [btnMon, btnTue, btnWed, btnFri].forEach(btn => {
+        if (btn) btn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5';
+      });
+
+      if (mode === 'tuesday') {
+        if (btnTue) btnTue.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-cyan-600 text-white transition flex items-center gap-1.5 shadow-lg shadow-cyan-900/40';
+        headerBadge.className = 'px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-bold rounded-lg';
+        headerBadge.innerHTML = '<i class="fa-solid fa-bolt mr-1 text-cyan-400"></i> Tuesday Fast-Track & Capacity Desk';
+        headerTitle.innerText = 'ToolsVault Tuesday Fast-Track Outreach & Capacity Desk';
+        headerSubtitle.innerHTML = 'Outbound Persona: <strong class="text-cyan-300">John Granbridge</strong> (<span class="text-emerald-300">toolsvault78@gmail.com</span>) | 24-Hr Territory Capacity Check & Estimator Dispatch';
+        statCard.className = 'glass-panel p-5 rounded-2xl border-l-4 border-cyan-500';
+        rapidBtnLabel.innerText = 'Rapid Tuesday Runner';
+        
+        statusSelect.innerHTML = `
+          <option value="tuesday-due" selected>Pending Tuesday Check</option>
+          <option value="tuesday-sent">Tuesday Check Sent</option>
+          <option value="all">All Accounts</option>
+          <option value="not-sent-monday">Unsent On Monday</option>
+        `;
+
+        updateTemplateAccordion('tuesday');
+        showToast('Switched to Tuesday Fast-Track Desk Mode');
+      } else if (mode === 'tuesday') {
+        box.innerHTML = `
+          <p><strong class="text-cyan-400">Subject:</strong> Follow-up: Commercial [Trade] Scope & Territory Capacity ([Metro])</p>
+          <p class="mt-2"><strong class="text-cyan-400">Body:</strong><br>
+          Hi [Commercial Estimating / Contact],<br><br>
+          Following up on my note regarding commercial [trade] project routing and estimating standards in [metro].<br><br>
+          We just updated our real-time territory reservation scanner and CSI MasterFormat bid estimator for commercial trade subcontractors:<br>
+          • Commercial Subcontractor Bid Estimator: <span class="text-cyan-400 underline font-mono">https://tools-vault-4ml.pages.dev/commercial_subcontractor_bid_estimator</span><br>
+          • Regional Territory Lock Portal: <span class="text-cyan-400 underline font-mono">https://tools-vault-4ml.pages.dev/contractor_network</span><br>
+          • Strategy Briefing &amp; Capacity Review: <span class="text-emerald-400 underline font-mono">https://tools-vault-4ml.pages.dev/contractor_territory_consultation</span><br><br>
+          Does your team currently have capacity for commercial [trade] work across [metro] this quarter before we lock down exclusive regional partner rights?<br><br>
+          Best regards,<br>
+          John Granbridge<br>
+          Director of Contractor Relations, ToolsVault<br>
+          toolsvault78@gmail.com<br>
+          <span class="text-cyan-400 font-bold text-[11px]">&bull; High-Leverage 24-Hour Scope &amp; Territory Capacity Follow-Up</span>
+          </p>
+        `;
+      } else if (mode === 'friday') {
+        if (btnFri) btnFri.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 text-white transition flex items-center gap-1.5 shadow-lg shadow-emerald-900/40';
+        headerBadge.className = 'px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold rounded-lg';
+        headerBadge.innerHTML = '<i class="fa-solid fa-flag-checkered mr-1 text-emerald-400"></i> Friday Pre-Bid Final Call Desk';
+        headerTitle.innerText = 'ToolsVault Friday Pre-Bid Closing Outbound Desk';
+        headerSubtitle.innerHTML = 'Outbound Persona: <strong class="text-emerald-300">John Granbridge</strong> (<span class="text-emerald-300">toolsvault78@gmail.com</span>) | Friday 2:00 PM Bid Cutoff Touchpoint';
+        statCard.className = 'glass-panel p-5 rounded-2xl border-l-4 border-emerald-500';
+        rapidBtnLabel.innerText = 'Rapid Friday Runner';
+        
+        statusSelect.innerHTML = `
+          <option value="friday-due" selected>Pending Friday Call</option>
+          <option value="friday-sent">Friday Final Sent</option>
+          <option value="all">All Contacted Accounts</option>
+        `;
+
+        updateTemplateAccordion('friday');
+        showToast('Switched to Friday Pre-Bid Closing Desk Mode');
+      } else if (mode === 'wednesday') {
+        if (btnWed) btnWed.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-purple-600 text-white transition flex items-center gap-1.5 shadow-lg shadow-purple-900/40';
+        headerBadge.className = 'px-3 py-1 bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-bold rounded-lg';
+        headerBadge.innerHTML = '<i class="fa-solid fa-rotate-right mr-1 text-purple-400"></i> Wednesday 48-Hr Bump Desk';
+        headerTitle.innerText = 'ToolsVault Wednesday 48-Hour Follow-Up Desk';
+        headerSubtitle.innerHTML = 'Outbound Persona: <strong class="text-purple-300">John Granbridge</strong> (<span class="text-emerald-300">toolsvault78@gmail.com</span>) | 48-Hr No-Reply Cadence with Consultation Link';
+        statCard.className = 'glass-panel p-5 rounded-2xl border-l-4 border-purple-500';
+        rapidBtnLabel.innerText = 'Rapid Bump Runner';
+        
+        statusSelect.innerHTML = `
+          <option value="bump-due" selected>Pending 48-Hr Bump</option>
+          <option value="bumped">Bump Completed</option>
+          <option value="all">All Monday Sent Accounts</option>
+          <option value="not-sent-monday">Unsent On Monday</option>
+        `;
+
+        updateTemplateAccordion('wednesday');
+        showToast('Switched to Wednesday 48-Hour Bump Desk Mode');
+      } else {
+        if (btnMon) btnMon.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white transition flex items-center gap-1.5 shadow-lg shadow-blue-900/40';
+        headerBadge.className = 'px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold rounded-lg';
+        headerBadge.innerHTML = '<i class="fa-solid fa-circle-check mr-1"></i> Monday Launch Mode';
+        headerTitle.innerText = 'ToolsVault Monday Commercial Outbound Desk';
+        headerSubtitle.innerHTML = 'Outbound Persona: <strong class="text-blue-300">John Granbridge</strong> (<span class="text-emerald-300">toolsvault78@gmail.com</span>) | Staggered 3-Wave Protocol';
+        statCard.className = 'glass-panel p-5 rounded-2xl border-l-4 border-blue-500';
+        rapidBtnLabel.innerText = 'Rapid Dispatch Runner';
+
+        statusSelect.innerHTML = `
+          <option value="pending" selected>Pending Monday Send</option>
+          <option value="sent">Already Sent Monday</option>
+          <option value="all">All Accounts (200)</option>
+        `;
+
+        updateTemplateAccordion('monday');
+        showToast('Switched to Monday Initial Launch Mode');
+      }
+
+      if (isRapidRunning) exitRapidDispatch();
+      updateStats();
+      applyFilters();
+    }
+
+    function updateTemplateAccordion(mode) {
+      const box = document.getElementById('templateContent');
+      if (!box) return;
+      if (mode === 'friday') {
+        box.innerHTML = `
+          <p><strong class="text-emerald-400">Subject:</strong> Final Check: Commercial [Trade] Pre-Bid Allocation ([Metro])</p>
+          <p class="mt-2"><strong class="text-emerald-400">Body:</strong><br>
+          Hi [Commercial Estimating / Contact],<br><br>
+          Quick follow-up before today's 2:00 PM commercial bid cutoffs across [metro].<br><br>
+          We are finalizing commercial trade partner allocations for this preconstruction cycle ahead of next week's general contractor bid package releases.<br><br>
+          If your estimating desk needs our unlocked AIA schedule of values pre-bid sheets or wants to confirm exclusive territory rights for your trade in [metro], you can review the partner briefing or lock your territory here:<br>
+          <span class="text-emerald-400 underline font-mono">https://tools-vault-4ml.pages.dev/contractor_territory_consultation</span><br><br>
+          Have a great weekend and good luck on today's bid submittals.<br><br>
+          Best regards,<br>
+          John Granbridge<br>
+          Commercial Trade Allocations | ToolsVault Network<br>
+          toolsvault78@gmail.com<br>
+          <span class="text-emerald-400 font-bold text-[11px]">&bull; High-Leverage Friday Morning Bid Cutoff Closing Touchpoint</span>
+          </p>
+        `;
+      } else if (mode === 'wednesday') {
+        box.innerHTML = `
+          <p><strong class="text-purple-400">Subject:</strong> Re: Exclusive Commercial [Trade] Subcontractor Allocation ([Metro])</p>
+          <p class="mt-2"><strong class="text-purple-400">Body:</strong><br>
+          Hi [Commercial Estimating / Contact],<br><br>
+          Following up briefly on my Monday note regarding commercial [trade] subcontractor allocations across [metro].<br><br>
+          We are finalizing regional territory trade partners before releasing this week's commercial preconstruction estimating packages and general contractor bid invitations.<br><br>
+          Did your team have a moment to review whether you are taking on additional commercial [trade] contracts in [metro] this quarter?<br><br>
+          If you'd like to inspect the active estimating packages or verify exclusive ZIP code placement for your trade, you can review our partner briefing or claim your territory here:<br>
+          <span class="text-emerald-400 underline font-mono">https://tools-vault-4ml.pages.dev/contractor_territory_consultation</span><br><br>
+          Best regards,<br>
+          John Granbridge<br>
+          Commercial Trade Allocations | ToolsVault Network<br>
+          toolsvault78@gmail.com<br>
+          <span class="text-purple-400 font-bold text-[11px]">&bull; High-Conversion 48-Hour Bump with 1-Click Territory Scheduler Link</span>
+          </p>
+        `;
+      } else {
+        box.innerHTML = `
+          <p><strong class="text-slate-400">Subject:</strong> Exclusive Commercial [Trade] Subcontractor Allocation ([Metro])</p>
+          <p class="mt-2"><strong class="text-slate-400">Body:</strong><br>
+          Hi [Commercial Estimating / Contact],<br><br>
+          Reaching out regarding commercial [trade] subcontractor allocations across [metro].<br><br>
+          We are currently locking in regional territory trade partners and routing verified commercial preconstruction estimating packages through the ToolsVault contractor network.<br><br>
+          Are you currently taking on new commercial [trade] contracts across [metro] this quarter?<br><br>
+          If so, let me know what commercial scope your estimating desk is currently bidding on and I will forward the relevant project specs and directory allocation details over to your team.<br><br>
+          Best regards,<br>
+          John Granbridge<br>
+          Commercial Trade Allocations | ToolsVault Network<br>
+          toolsvault78@gmail.com<br>
+          <span class="text-emerald-400 font-bold text-[11px]">&bull; 100% Microsoft 365 &amp; Google Workspace Exchange Bypass (Zero Links in Initial Cold Outreach)</span>
+          </p>
+        `;
+      }
+    }
+
+    function getSentHistory() {
+      try {
+        return JSON.parse(localStorage.getItem('tv_monday_outbound_sent') || '{}');
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveSentStatus(email, isSent) {
+      const history = getSentHistory();
+      if (isSent) history[email.toLowerCase()] = Date.now();
+      else delete history[email.toLowerCase()];
+      localStorage.setItem('tv_monday_outbound_sent', JSON.stringify(history));
+      updateStats();
+    }
+
+    function isSent(email) {
+      const history = getSentHistory();
+      return !!history[email.toLowerCase()];
+    }
+
+    function getFollowUpHistory() {
+      try {
+        return JSON.parse(localStorage.getItem('tv_wednesday_followup_sent') || '{}');
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveFollowUpStatus(email, isFollowedUp) {
+      const history = getFollowUpHistory();
+      if (isFollowedUp) history[email.toLowerCase()] = Date.now();
+      else delete history[email.toLowerCase()];
+      localStorage.setItem('tv_wednesday_followup_sent', JSON.stringify(history));
+      updateStats();
+    }
+
+    function isFollowUpSent(email) {
+      const history = getFollowUpHistory();
+      return !!history[email.toLowerCase()];
+    }
+
+    function getFridayHistory() {
+      try {
+        return JSON.parse(localStorage.getItem('tv_friday_final_sent') || '{}');
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveFridayStatus(email, isSent) {
+      const history = getFridayHistory();
+      if (isSent) history[email.toLowerCase()] = Date.now();
+      else delete history[email.toLowerCase()];
+      localStorage.setItem('tv_friday_final_sent', JSON.stringify(history));
+      updateStats();
+    }
+
+    function isFridaySent(email) {
+      const history = getFridayHistory();
+      return !!history[email.toLowerCase()];
+    }
+
+    function resetAllHistory() {
+      const action = prompt('Type "monday" to reset Monday, "wednesday" for Wednesday, "friday" for Friday, or "all" to reset everything:');
+      if (!action) return;
+      const clean = action.trim().toLowerCase();
+      if (clean === 'monday' || clean === 'all') {
+        localStorage.removeItem('tv_monday_outbound_sent');
+      }
+      if (clean === 'wednesday' || clean === 'all') {
+        localStorage.removeItem('tv_wednesday_followup_sent');
+      }
+      if (clean === 'friday' || clean === 'all') {
+        localStorage.removeItem('tv_friday_final_sent');
+      }
+      updateStats();
+      applyFilters();
+      showToast('Progress reset for: ' + clean);
+    }
+
+    function normalizeTrade(trade) {
+      if (!trade) return 'Trade';
+      return trade.replace('Commercial ', '').trim();
+    }
+
+    function buildSubject(trade, metro) {
+      return 'Exclusive Commercial ' + normalizeTrade(trade) + ' Subcontractor Allocation (' + metro + ')';
+    }
+
+    function buildTuesdaySubject(trade, metro) {
+      const cleanTrade = trade.replace(/^commercial\s+/i, '').trim();
+      return "Follow-up: Commercial " + cleanTrade + " Scope & Territory Capacity (" + metro + ")";
+    }
+
+    function buildTuesdayBody(contact, trade, metro) {
+      const cleanTrade = trade.replace(/^commercial\s+/i, '').trim();
+      return "Hi " + contact + ",\n\n" +
+        "Following up on my note regarding commercial " + cleanTrade.toLowerCase() + " project routing and estimating standards in " + metro + ".\n\n" +
+        "We just updated our real-time territory reservation scanner and CSI MasterFormat bid estimator for commercial trade subcontractors:\n" +
+        "• Commercial Subcontractor Bid Estimator: https://tools-vault-4ml.pages.dev/commercial_subcontractor_bid_estimator\n" +
+        "• Regional Territory Lock Portal: https://tools-vault-4ml.pages.dev/contractor_network\n" +
+        "• Strategy Briefing & Capacity Review: https://tools-vault-4ml.pages.dev/contractor_territory_consultation\n\n" +
+        "Does your team currently have capacity for commercial " + cleanTrade.toLowerCase() + " work across " + metro + " this quarter before we lock down exclusive regional partner rights?\n\n" +
+        "Best regards,\nJohn Granbridge\nDirector of Contractor Relations, ToolsVault\ntoolsvault78@gmail.com";
+    }
+
+    function getTuesdayHistory() {
+      try {
+        return JSON.parse(localStorage.getItem('tv_tuesday_followup_sent') || '{}');
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveTuesdayStatus(email, isSent) {
+      const history = getTuesdayHistory();
+      if (isSent) history[email.toLowerCase()] = Date.now();
+      else delete history[email.toLowerCase()];
+      localStorage.setItem('tv_tuesday_followup_sent', JSON.stringify(history));
+      updateStats();
+    }
+
+    function isTuesdaySent(email) {
+      const history = getTuesdayHistory();
+      return !!history[email.toLowerCase()];
+    }
+
+    function buildBumpSubject(trade, metro) {
+      return 'Re: Exclusive Commercial ' + normalizeTrade(trade) + ' Subcontractor Allocation (' + metro + ')';
+    }
+
+    function buildFridaySubject(trade, metro) {
+      return 'Final Check: Commercial ' + normalizeTrade(trade) + ' Pre-Bid Allocation (' + metro + ')';
+    }
+
+    function buildBody(contact, trade, metro) {
+      const cleanTrade = normalizeTrade(trade);
+      return `Hi ${contact || 'Commercial Estimating'},\n\n` +
+        `Reaching out regarding commercial ${cleanTrade.toLowerCase()} subcontractor allocations across ${metro}.\n\n` +
+        `We are currently locking in regional territory trade partners and routing verified commercial preconstruction estimating packages through the ToolsVault contractor network.\n\n` +
+        `Are you currently taking on new commercial ${cleanTrade.toLowerCase()} contracts across ${metro} this quarter?\n\n` +
+        `If so, let me know what commercial scope your estimating desk is currently bidding on and I will forward the relevant project specs and directory allocation details over to your team.\n\n` +
+        `Best regards,\nJohn Granbridge\nCommercial Trade Allocations | ToolsVault Network\ntoolsvault78@gmail.com`;
+    }
+
+    function buildBumpBody(contact, trade, metro) {
+      const cleanTrade = normalizeTrade(trade);
+      return `Hi ${contact || 'Commercial Estimating'},\n\n` +
+        `Following up briefly on my Monday note regarding commercial ${cleanTrade.toLowerCase()} subcontractor allocations across ${metro}.\n\n` +
+        `We are finalizing our regional territory trade partners before releasing this week's commercial preconstruction estimating packages and general contractor bid invitations.\n\n` +
+        `Did your team have a moment to review whether you are taking on additional commercial ${cleanTrade.toLowerCase()} contracts in ${metro} this quarter?\n\n` +
+        `If you'd like to inspect the active estimating packages or verify exclusive ZIP code placement for your trade, you can review our partner briefing or lock your territory here:\n` +
+        `https://tools-vault-4ml.pages.dev/contractor_territory_consultation\n\n` +
+        `Best regards,\nJohn Granbridge\nCommercial Trade Allocations | ToolsVault Network\ntoolsvault78@gmail.com`;
+    }
+
+    function buildFridayBody(contact, trade, metro) {
+      const cleanTrade = normalizeTrade(trade);
+      return `Hi ${contact || 'Commercial Estimating'},\n\n` +
+        `Quick follow-up before today's 2:00 PM commercial bid cutoffs across ${metro}.\n\n` +
+        `We are finalizing our commercial trade partner allocations for this preconstruction cycle ahead of next week's general contractor bid package releases.\n\n` +
+        `If your estimating desk needs our unlocked AIA schedule of values pre-bid sheets or wants to confirm exclusive territory rights for your trade in ${metro}, you can review the partner briefing or lock your territory here:\n` +
+        `https://tools-vault-4ml.pages.dev/contractor_territory_consultation\n\n` +
+        `Have a great weekend and good luck on today's bid submittals.\n\n` +
+        `Best regards,\nJohn Granbridge\nCommercial Trade Allocations | ToolsVault Network\ntoolsvault78@gmail.com`;
+    }
+
+    function launchGmail(email, trade, metro, contact) {
+      let subject, body;
+      if (campaignMode === 'tuesday') {
+        const sentHistory = getSentHistory();
+        const tuesdayHistory = getTuesdayHistory();
+        rapidQueue = ALL_TARGETS.filter(t => {
+          if (activeWave !== 'all' && t.wave !== activeWave) return false;
+          const sent = !!sentHistory[t.email.toLowerCase()];
+          const tuesdaySent = !!tuesdayHistory[t.email.toLowerCase()];
+          return sent && !tuesdaySent;
+        });
+
+        if (rapidQueue.length === 0) {
+          showToast('No targets currently due for Tuesday Fast-Track in ' + (activeWave === 'all' ? 'all waves' : 'Wave ' + activeWave) + '!');
+          return;
+        }
+      } else if (campaignMode === 'friday') {
+        subject = buildFridaySubject(trade, metro);
+        body = buildFridayBody(contact, trade, metro);
+        saveFridayStatus(email, true);
+        showToast('Opened Friday Final Gmail for ' + email + ' (Marked Sent)');
+      } else if (campaignMode === 'wednesday') {
+        subject = buildBumpSubject(trade, metro);
+        body = buildBumpBody(contact, trade, metro);
+        saveFollowUpStatus(email, true);
+        showToast('Opened Wednesday Bump Gmail for ' + email + ' (Marked Bumped)');
+      } else {
+        subject = buildSubject(trade, metro);
+        body = buildBody(contact, trade, metro);
+        saveSentStatus(email, true);
+        showToast('Opened Monday Gmail for ' + email + ' (Marked Sent)');
+      }
+      const url = 'https://mail.google.com/mail/?authuser=' + encodeURIComponent('toolsvault78@gmail.com') +
+                  '&view=cm&fs=1&to=' + encodeURIComponent(email) +
+                  '&su=' + encodeURIComponent(subject) +
+                  '&body=' + encodeURIComponent(body);
+      applyFilters();
+      window.open(url, '_blank');
+    }
+
+    function launchMailto(email, trade, metro, contact) {
+      const subject = campaignMode === 'friday' ? buildFridaySubject(trade, metro) : (campaignMode === 'wednesday' ? buildBumpSubject(trade, metro) : (campaignMode === 'tuesday' ? buildTuesdaySubject(trade, metro) : buildSubject(trade, metro)));
+      const body = campaignMode === 'friday' ? buildFridayBody(contact, trade, metro) : (campaignMode === 'wednesday' ? buildBumpBody(contact, trade, metro) : (campaignMode === 'tuesday' ? buildTuesdayBody(contact, trade, metro) : buildBody(contact, trade, metro)));
+      const url = 'mailto:' + encodeURIComponent(email) +
+                  '?subject=' + encodeURIComponent(subject) +
+                  '&body=' + encodeURIComponent(body);
+      if (campaignMode === 'tuesday') saveTuesdayStatus(email, true);
+      else if (campaignMode === 'friday') saveFridayStatus(email, true);
+      else if (campaignMode === 'wednesday') saveFollowUpStatus(email, true);
+      else saveSentStatus(email, true);
+      applyFilters();
+      window.location.href = url;
+      showToast('Triggered mail client for ' + email);
+    }
+
+    function copyEmailDetails(email, trade, metro, contact) {
+      const subject = campaignMode === 'friday' ? buildFridaySubject(trade, metro) : (campaignMode === 'wednesday' ? buildBumpSubject(trade, metro) : (campaignMode === 'tuesday' ? buildTuesdaySubject(trade, metro) : buildSubject(trade, metro)));
+      const body = campaignMode === 'friday' ? buildFridayBody(contact, trade, metro) : (campaignMode === 'wednesday' ? buildBumpBody(contact, trade, metro) : (campaignMode === 'tuesday' ? buildTuesdayBody(contact, trade, metro) : buildBody(contact, trade, metro)));
+      const full = `To: ${email}\nSubject: ${subject}\n\n${body}`;
+      navigator.clipboard.writeText(full).then(() => {
+        showToast('Copied email to clipboard!');
+      });
+    }
+
+    function toggleSent(email) {
+      if (campaignMode === 'friday') {
+        const current = isFridaySent(email);
+        saveFridayStatus(email, !current);
+        applyFilters();
+        showToast(current ? 'Marked Friday pending' : 'Marked Friday sent');
+      } else if (campaignMode === 'wednesday') {
+        const current = isFollowUpSent(email);
+        saveFollowUpStatus(email, !current);
+        applyFilters();
+        showToast(current ? 'Marked bump pending' : 'Marked bump completed');
+      } else {
+        const current = isSent(email);
+        saveSentStatus(email, !current);
+        applyFilters();
+        showToast(current ? 'Marked pending' : 'Marked sent');
+      }
+    }
+
+    function setWaveFilter(wave) {
+      activeWave = wave;
+      ['All', '1', '2', '3'].forEach(w => {
+        const btn = document.getElementById('btnWave' + w);
+        if (btn) {
+          if (w.toLowerCase() === String(wave).toLowerCase()) {
+            btn.className = 'px-3 py-1.5 bg-blue-600 text-white text-xs font-bold rounded-lg transition';
+          } else {
+            btn.className = 'px-3 py-1.5 bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs font-medium rounded-lg transition';
+          }
+        }
+      });
+      applyFilters();
+    }
+
+    function updateStats() {
+      const sentHistory = getSentHistory();
+      const followUpHistory = getFollowUpHistory();
+      const fridayHistory = getFridayHistory();
+
+      let sentCount = 0;
+      let bumpedCount = 0;
+      let bumpDueCount = 0;
+      let fridaySentCount = 0;
+      let fridayDueCount = 0;
+
+      let w1Sent = 0, w2Sent = 0, w3Sent = 0;
+      let w1Total = 0, w2Total = 0, w3Total = 0;
+
+      ALL_TARGETS.forEach(t => {
+        const emailLower = t.email.toLowerCase();
+        const sent = !!sentHistory[emailLower];
+        const bumped = !!followUpHistory[emailLower];
+        const friday = !!fridayHistory[emailLower];
+
+        if (sent) sentCount++;
+        if (bumped) bumpedCount++;
+        if (sent && !bumped) bumpDueCount++;
+        if (friday) fridaySentCount++;
+        if (sent && bumped && !friday) fridayDueCount++;
+
+        let isCurrentCounted = (campaignMode === 'friday' ? friday : (campaignMode === 'wednesday' ? bumped : sent));
+
+        if (t.wave === 1) { w1Total++; if (isCurrentCounted) w1Sent++; }
+        if (t.wave === 2) { w2Total++; if (isCurrentCounted) w2Sent++; }
+        if (t.wave === 3) { w3Total++; if (isCurrentCounted) w3Sent++; }
+      });
+
+      const dueBadge = document.getElementById('bumpDueCount');
+      if (dueBadge) dueBadge.innerText = bumpDueCount;
+      const friBadge = document.getElementById('fridayDueCount');
+      if (friBadge) friBadge.innerText = fridayDueCount;
+
+      if (campaignMode === 'friday') {
+        document.getElementById('statProgressLabel').innerText = 'Friday Final Call Progress';
+        document.getElementById('statSent').innerText = fridaySentCount;
+        document.getElementById('statTotalLabel').innerText = '/ ' + bumpedCount + ' Wednesday bumped';
+        const pct = bumpedCount > 0 ? Math.round((fridaySentCount / bumpedCount) * 100) : 0;
+        document.getElementById('statPercent').innerText = pct + '%';
+        document.getElementById('statProgressBar').style.width = pct + '%';
+      } else if (campaignMode === 'wednesday') {
+        document.getElementById('statProgressLabel').innerText = 'Wednesday Bump Progress';
+        document.getElementById('statSent').innerText = bumpedCount;
+        document.getElementById('statTotalLabel').innerText = '/ ' + sentCount + ' Monday sent';
+        const pct = sentCount > 0 ? Math.round((bumpedCount / sentCount) * 100) : 0;
+        document.getElementById('statPercent').innerText = pct + '%';
+        document.getElementById('statProgressBar').style.width = pct + '%';
+      } else {
+        document.getElementById('statProgressLabel').innerText = 'Monday Launch Progress';
+        document.getElementById('statSent').innerText = sentCount;
+        document.getElementById('statTotalLabel').innerText = '/ ' + ALL_TARGETS.length + ' sent';
+        const pct = Math.round((sentCount / ALL_TARGETS.length) * 100);
+        document.getElementById('statPercent').innerText = pct + '%';
+        document.getElementById('statProgressBar').style.width = pct + '%';
+      }
+
+      document.getElementById('w1Badge').innerText = w1Sent + '/' + w1Total;
+      document.getElementById('w2Badge').innerText = w2Sent + '/' + w2Total;
+      document.getElementById('w3Badge').innerText = w3Sent + '/' + w3Total;
+    }
+
+    function applyFilters() {
+      const status = document.getElementById('statusFilter').value;
+      const query = document.getElementById('searchBox').value.toLowerCase().trim();
+      const tbody = document.getElementById('targetTableBody');
+      tbody.innerHTML = '';
+
+      const filtered = ALL_TARGETS.filter(t => {
+        if (activeWave !== 'all' && t.wave !== activeWave) return false;
+        const sent = isSent(t.email);
+        const bumped = isFollowUpSent(t.email);
+        const friday = isFridaySent(t.email);
+
+        if (campaignMode === 'friday') {
+          if (status === 'friday-due' && (!sent || !bumped || friday)) return false;
+          if (status === 'friday-sent' && !friday) return false;
+          if (status === 'all' && !sent) return false;
+        } else if (campaignMode === 'tuesday') {
+          const tuesdaySent = isTuesdaySent(t.email);
+          if (tuesdaySent) {
+            statusHtml = `
+              <button onclick="toggleSent('${t.email}')" class="px-2.5 py-1 rounded text-[11px] font-bold transition bg-cyan-950/60 text-cyan-300 border border-cyan-800/60 hover:bg-cyan-900/60">
+                <i class="fa-solid fa-check-double mr-1 text-cyan-400"></i> Fast-Track Sent
+              </button>
+            `;
+          } else if (sent) {
+            statusHtml = `
+              <button onclick="toggleSent('${t.email}')" class="px-2.5 py-1 rounded text-[11px] font-bold transition bg-cyan-950/40 text-cyan-400 border border-cyan-700/60 hover:bg-cyan-900/40 animate-pulse">
+                <i class="fa-solid fa-bolt mr-1"></i> Due Today
+              </button>
+            `;
+          } else {
+            statusHtml = `
+              <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-800 text-slate-500 border border-slate-700">
+                Unsent Mon
+              </span>
+            `;
+          }
+
+          actionBtnHtml = `
+            <button onclick="launchGmail('${t.email}', '${t.trade}', '${t.metro}', '${t.contact}')" class="px-3 py-1.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-lg font-bold text-xs shadow-md transition inline-flex items-center gap-1.5" title="Send Tuesday Capacity Check via Gmail">
+              <i class="fa-solid fa-bolt"></i> Fast-Track
+            </button>
+          `;
+        } else if (campaignMode === 'wednesday') {
+          if (status === 'bump-due' && (!sent || bumped)) return false;
+          if (status === 'bumped' && !bumped) return false;
+          if (status === 'all' && !sent) return false;
+          if (status === 'not-sent-monday' && sent) return false;
+        } else {
+          if (status === 'pending' && sent) return false;
+          if (status === 'sent' && !sent) return false;
+        }
+
+        if (query) {
+          const match = t.name.toLowerCase().includes(query) ||
+                        t.trade.toLowerCase().includes(query) ||
+                        t.metro.toLowerCase().includes(query) ||
+                        t.email.toLowerCase().includes(query);
+          if (!match) return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-slate-500 font-medium">No accounts match current filters in ' + campaignMode.toUpperCase() + ' mode.</td></tr>';
+        return;
+      }
+
+      filtered.forEach((t, idx) => {
+        const sent = isSent(t.email);
+        const bumped = isFollowUpSent(t.email);
+        const friday = isFridaySent(t.email);
+
+        const tr = document.createElement('tr');
+        tr.id = 'row-' + encodeURIComponent(t.email.toLowerCase());
+        
+        const isDimmed = campaignMode === 'friday' ? friday : (campaignMode === 'wednesday' ? bumped : sent);
+        tr.className = 'hover:bg-slate-800/40 transition group ' + (isDimmed ? 'opacity-50' : '');
+
+        let waveColor = t.wave === 1 ? 'text-blue-400 bg-blue-950/40 border-blue-800/40' :
+                        t.wave === 2 ? 'text-amber-400 bg-amber-950/40 border-amber-800/40' :
+                                       'text-emerald-400 bg-emerald-950/40 border-emerald-800/40';
+
+        let statusHtml = '';
+        let actionBtnHtml = '';
+
+        if (campaignMode === 'friday') {
+          if (friday) {
+            statusHtml = `
+              <button onclick="toggleSent('${t.email}')" class="px-2.5 py-1 rounded text-[11px] font-bold transition bg-emerald-950/60 text-emerald-300 border border-emerald-800/60 hover:bg-emerald-900/60">
+                <i class="fa-solid fa-flag-checkered mr-1 text-emerald-400"></i> Fri Sent
+              </button>
+            `;
+          } else if (sent && bumped) {
+            statusHtml = `
+              <button onclick="toggleSent('${t.email}')" class="px-2.5 py-1 rounded text-[11px] font-bold transition bg-emerald-950/60 text-emerald-400 border border-emerald-500/60 hover:bg-emerald-900/60 animate-pulse">
+                <i class="fa-solid fa-hourglass-start mr-1"></i> Friday Due
+              </button>
+            `;
+          } else {
+            statusHtml = `
+              <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-800 text-slate-500 border border-slate-700">
+                Not Due
+              </span>
+            `;
+          }
+
+          actionBtnHtml = `
+            <button onclick="launchGmail('${t.email}', '${t.trade}', '${t.metro}', '${t.contact}')" class="px-3 py-1.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-lg font-bold text-xs shadow-md transition inline-flex items-center gap-1.5" title="Send Friday Final Call via Gmail">
+              <i class="fa-solid fa-flag-checkered"></i> Fri Gmail
+            </button>
+          `;
+        } else if (campaignMode === 'wednesday') {
+          if (bumped) {
+            statusHtml = `
+              <button onclick="toggleSent('${t.email}')" class="px-2.5 py-1 rounded text-[11px] font-bold transition bg-purple-950/60 text-purple-300 border border-purple-800/60 hover:bg-purple-900/60">
+                <i class="fa-solid fa-check-double mr-1 text-purple-400"></i> Bumped
+              </button>
+            `;
+          } else if (sent) {
+            statusHtml = `
+              <button onclick="toggleSent('${t.email}')" class="px-2.5 py-1 rounded text-[11px] font-bold transition bg-amber-950/60 text-amber-300 border border-amber-800/60 hover:bg-amber-900/60 animate-pulse">
+                <i class="fa-solid fa-hourglass-half mr-1"></i> Bump Due
+              </button>
+            `;
+          } else {
+            statusHtml = `
+              <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-800 text-slate-500 border border-slate-700">
+                Unsent Mon
+              </span>
+            `;
+          }
+
+          actionBtnHtml = `
+            <button onclick="launchGmail('${t.email}', '${t.trade}', '${t.metro}', '${t.contact}')" class="px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-lg font-bold text-xs shadow-md transition inline-flex items-center gap-1.5" title="Send 48-Hour Bump via Gmail">
+              <i class="fa-solid fa-rotate-right"></i> Bump Gmail
+            </button>
+          `;
+        } else {
+          statusHtml = `
+            <button onclick="toggleSent('${t.email}')" class="px-2.5 py-1 rounded text-[11px] font-bold transition ${sent ? 'bg-emerald-950/60 text-emerald-400 border border-emerald-800/60' : 'bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-700'}">
+              <i class="fa-solid ${sent ? 'fa-check-circle' : 'fa-circle-notch'} mr-1"></i> ${sent ? 'Sent' : 'Pending'}
+            </button>
+          `;
+
+          actionBtnHtml = `
+            <button onclick="launchGmail('${t.email}', '${t.trade}', '${t.metro}', '${t.contact}')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold text-xs shadow-md transition inline-flex items-center gap-1.5" title="Send Zero-Link Email via Gmail">
+              <i class="fa-solid fa-paper-plane"></i> Gmail
+            </button>
+          `;
+        }
+
+        tr.innerHTML = `
+          <td class="py-3.5 px-4 text-center text-slate-500 font-mono text-[11px]">${idx + 1}</td>
+          <td class="py-3.5 px-4">
+            <div class="font-bold text-slate-100 text-xs">${t.name}</div>
+            <div class="text-[11px] text-slate-400">Attn: ${t.contact || 'Estimating'}</div>
+          </td>
+          <td class="py-3.5 px-4">
+            <div class="text-slate-200 font-medium text-xs">${t.trade}</div>
+            <div class="text-[11px] text-slate-400"><i class="fa-solid fa-location-dot text-[10px] mr-1 text-slate-500"></i>${t.metro}</div>
+          </td>
+          <td class="py-3.5 px-4 font-mono text-[11px] text-slate-300">${t.email}</td>
+          <td class="py-3.5 px-4 text-center">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${waveColor}">Wave ${t.wave}</span>
+          </td>
+          <td class="py-3.5 px-4 text-center">
+            ${statusHtml}
+          </td>
+          <td class="py-3.5 px-4 text-right space-x-1.5">
+            ${actionBtnHtml}
+            <a href="https://www.${t.email.split('@')[1]}/contact" target="_blank" rel="noopener" class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-700 hover:border-emerald-500/40 rounded-lg text-xs transition inline-flex items-center gap-1" title="Bypass Firewall: Open Contractor Web Contact Form">
+              <i class="fa-solid fa-globe"></i> Web
+            </a>
+            <button onclick="copyEmailDetails('${t.email}', '${t.trade}', '${t.metro}', '${t.contact}')" class="px-2 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs transition inline-flex items-center gap-1" title="Copy Current Pitch Text">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function toggleTemplateBox() {
+      const box = document.getElementById('templateContent');
+      const chev = document.getElementById('templateChevron');
+      box.classList.toggle('hidden');
+      chev.classList.toggle('rotate-180');
+    }
+
+    function openPlaybookModal() {
+      document.getElementById('playbookModal').classList.remove('hidden');
+    }
+
+    function closePlaybookModal() {
+      document.getElementById('playbookModal').classList.add('hidden');
+    }
+
+    function copyText(btn, key) {
+      const p = document.getElementById('reply-' + key);
+      navigator.clipboard.writeText(p.innerText).then(() => {
+        const orig = btn.innerText;
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerText = orig, 1500);
+        showToast('Playbook reply copied!');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').innerText = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    // Rapid Dispatch Runner Logic (Unified for Monday, Wednesday & Friday Modes)
+    let isRapidRunning = false;
+    let rapidQueue = [];
+    let rapidCurrentIndex = 0;
+
+    function startRapidDispatch() {
+      const sentHistory = getSentHistory();
+      const followUpHistory = getFollowUpHistory();
+      const fridayHistory = getFridayHistory();
+
+      if (campaignMode === 'friday') {
+        rapidQueue = ALL_TARGETS.filter(t => {
+          if (activeWave !== 'all' && t.wave !== activeWave) return false;
+          const sent = !!sentHistory[t.email.toLowerCase()];
+          const bumped = !!followUpHistory[t.email.toLowerCase()];
+          const friday = !!fridayHistory[t.email.toLowerCase()];
+          return sent && bumped && !friday;
+        });
+
+        if (rapidQueue.length === 0) {
+          showToast('No targets currently due for Friday Final Call in ' + (activeWave === 'all' ? 'all waves' : 'Wave ' + activeWave) + '!');
+          return;
+        }
+      } else if (campaignMode === 'wednesday') {
+        rapidQueue = ALL_TARGETS.filter(t => {
+          if (activeWave !== 'all' && t.wave !== activeWave) return false;
+          const sent = !!sentHistory[t.email.toLowerCase()];
+          const bumped = !!followUpHistory[t.email.toLowerCase()];
+          return sent && !bumped;
+        });
+
+        if (rapidQueue.length === 0) {
+          showToast('No targets currently due for Wednesday bump in ' + (activeWave === 'all' ? 'all waves' : 'Wave ' + activeWave) + '!');
+          return;
+        }
+      } else {
+        rapidQueue = ALL_TARGETS.filter(t => {
+          if (activeWave !== 'all' && t.wave !== activeWave) return false;
+          return !sentHistory[t.email.toLowerCase()];
+        });
+
+        if (rapidQueue.length === 0) {
+          showToast('All targets in ' + (activeWave === 'all' ? 'all waves' : 'Wave ' + activeWave) + ' are already sent!');
+          return;
+        }
+      }
+
+      isRapidRunning = true;
+      rapidCurrentIndex = 0;
+      const hud = document.getElementById('rapidDispatchHUD');
+      if (hud) hud.classList.remove('hidden');
+      renderCurrentRapidTarget();
+      showToast('⚡ Rapid ' + campaignMode.toUpperCase() + ' Runner active! Space to send.');
+    }
+
+    function exitRapidDispatch() {
+      isRapidRunning = false;
+      const hud = document.getElementById('rapidDispatchHUD');
+      if (hud) hud.classList.add('hidden');
+      document.querySelectorAll('tr[id^="row-"]').forEach(r => r.classList.remove('ring-2', 'ring-emerald-500', 'ring-purple-500', 'bg-emerald-950/40', 'bg-purple-950/40'));
+      showToast('Rapid Dispatch closed.');
+    }
+
+    function renderCurrentRapidTarget() {
+      if (!isRapidRunning || rapidQueue.length === 0) {
+        exitRapidDispatch();
+        return;
+      }
+
+      if (rapidCurrentIndex >= rapidQueue.length) {
+        showToast('🎉 All ' + rapidQueue.length + ' targets in this queue completed!');
+        exitRapidDispatch();
+        return;
+      }
+
+      const target = rapidQueue[rapidCurrentIndex];
+      const badge = document.getElementById('rapidIndexBadge');
+      if (badge) badge.innerText = (rapidCurrentIndex + 1) + '/' + rapidQueue.length;
+      document.getElementById('rapidTargetName').innerText = target.name;
+      document.getElementById('rapidWaveBadge').innerText = 'Wave ' + target.wave;
+      document.getElementById('rapidTradeBadge').innerText = target.trade;
+      document.getElementById('rapidContact').innerText = 'Attn: ' + (target.contact || 'Estimating');
+      document.getElementById('rapidMetro').innerText = target.metro;
+      document.getElementById('rapidEmail').innerText = target.email;
+      
+      const remainText = document.getElementById('rapidRemainingText');
+      if (remainText) {
+        remainText.innerText = (rapidQueue.length - rapidCurrentIndex) + ' remaining in ' + campaignMode + ' queue';
+      }
+
+      // Highlight corresponding row in table and smooth-scroll
+      document.querySelectorAll('tr[id^="row-"]').forEach(r => r.classList.remove('ring-2', 'ring-emerald-500', 'ring-purple-500', 'bg-emerald-950/40', 'bg-purple-950/40'));
+      const row = document.getElementById('row-' + encodeURIComponent(target.email.toLowerCase()));
+      if (row) {
+        const ringClass = campaignMode === 'wednesday' ? 'ring-purple-500' : 'ring-emerald-500';
+        const bgClass = campaignMode === 'wednesday' ? 'bg-purple-950/40' : 'bg-emerald-950/40';
+        row.classList.add('ring-2', ringClass, bgClass);
+        row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    function rapidLaunchCurrent() {
+      if (!isRapidRunning || !rapidQueue[rapidCurrentIndex]) return;
+      const t = rapidQueue[rapidCurrentIndex];
+      const subject = campaignMode === 'friday' ? buildFridaySubject(t.trade, t.metro) : (campaignMode === 'wednesday' ? buildBumpSubject(t.trade, t.metro) : buildSubject(t.trade, t.metro));
+      const body = campaignMode === 'friday' ? buildFridayBody(t.contact, t.trade, t.metro) : (campaignMode === 'wednesday' ? buildBumpBody(t.contact, t.trade, t.metro) : buildBody(t.contact, t.trade, t.metro));
+      const url = 'https://mail.google.com/mail/?authuser=' + encodeURIComponent('toolsvault78@gmail.com') +
+                  '&view=cm&fs=1&to=' + encodeURIComponent(t.email) +
+                  '&su=' + encodeURIComponent(subject) +
+                  '&body=' + encodeURIComponent(body);
+      window.open(url, '_blank');
+      showToast('Opened Gmail draft for ' + t.name);
+    }
+
+    function rapidCopyCurrent() {
+      if (!isRapidRunning || !rapidQueue[rapidCurrentIndex]) return;
+      const t = rapidQueue[rapidCurrentIndex];
+      copyEmailDetails(t.email, t.trade, t.metro, t.contact);
+    }
+
+    function rapidMarkSentAndNext() {
+      if (!isRapidRunning || !rapidQueue[rapidCurrentIndex]) return;
+      const t = rapidQueue[rapidCurrentIndex];
+      if (campaignMode === 'friday') saveFridayStatus(t.email, true);
+      else if (campaignMode === 'wednesday') saveFollowUpStatus(t.email, true);
+      else saveSentStatus(t.email, true);
+      applyFilters();
+      rapidCurrentIndex++;
+      renderCurrentRapidTarget();
+    }
+
+    function rapidSkipNext() {
+      if (!isRapidRunning) return;
+      rapidCurrentIndex++;
+      renderCurrentRapidTarget();
+      showToast('Skipped to next target');
+    }
+
+    // Keyboard shortcuts for rapid firing
+    document.addEventListener('keydown', function(e) {
+      if (!isRapidRunning) return;
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+
+      if (e.code === 'Space') {
+        e.preventDefault();
+        rapidLaunchCurrent();
+        setTimeout(() => {
+          rapidMarkSentAndNext();
+        }, 400);
+      } else if (e.key === 'ArrowRight' || e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        rapidSkipNext();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        exitRapidDispatch();
+      }
+    });
+
+    function exportDispatchAuditCSV() {
+      const sentHistory = getSentHistory();
+      const followUpHistory = getFollowUpHistory();
+      const fridayHistory = getFridayHistory();
+      let csv = 'Index,Company Name,Contact,Specialty Trade,Metro Area,Email,Wave,Monday Initial Status,Monday Sent Timestamp,Wednesday Bump Status,Wednesday Bump Timestamp,Friday Final Status,Friday Final Timestamp,Outbound Persona\n';
+      
+      ALL_TARGETS.forEach((t, i) => {
+        const emailLower = t.email.toLowerCase();
+        const sentTime = sentHistory[emailLower];
+        const bumpTime = followUpHistory[emailLower];
+        const fridayTime = fridayHistory[emailLower];
+
+        const mondayStatus = sentTime ? 'SENT' : 'PENDING';
+        const mondayTimeFormatted = sentTime ? new Date(sentTime).toLocaleString() : 'N/A';
+        const wednesdayStatus = bumpTime ? 'BUMPED' : (sentTime ? 'BUMP_DUE' : 'NOT_SENT_MONDAY');
+        const wednesdayTimeFormatted = bumpTime ? new Date(bumpTime).toLocaleString() : 'N/A';
+        const fridayStatus = fridayTime ? 'FINAL_SENT' : (sentTime && bumpTime ? 'FRIDAY_DUE' : 'NOT_DUE');
+        const fridayTimeFormatted = fridayTime ? new Date(fridayTime).toLocaleString() : 'N/A';
+        
+        const name = t.name.replace(/"/g, '""');
+        const contact = (t.contact || 'Commercial Estimating').replace(/"/g, '""');
+        const trade = t.trade.replace(/"/g, '""');
+        const metro = t.metro.replace(/"/g, '""');
+
+        csv += `${i + 1},"${name}","${contact}","${trade}","${metro}",${t.email},Wave ${t.wave},${mondayStatus},"${mondayTimeFormatted}",${wednesdayStatus},"${wednesdayTimeFormatted}",${fridayStatus},"${fridayTimeFormatted}","John Granbridge"
+`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.setAttribute('href', url);
+      a.setAttribute('download', `ToolsVault_Full_Weekly_Outbound_Matrix_${new Date().toISOString().split('T')[0]}.csv`);
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      showToast('Exported Full 200-Account Mon-Wed-Fri Weekly Matrix CSV!');
+    }
+
+    // Initialize with URL mode param/hash support
+    const urlParams = new URLSearchParams(window.location.search);
+    const modeParam = (urlParams.get('mode') || window.location.hash.replace('#', '')).toLowerCase();
+    if (modeParam === 'tuesday' || modeParam === 'wednesday' || modeParam === 'friday') {
+      switchCampaignMode(modeParam);
+    } else {
+      updateStats();
+      applyFilters();
+    }
+  </script>
+</body>
+</html>
