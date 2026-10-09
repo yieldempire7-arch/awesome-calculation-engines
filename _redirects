@@ -1,3 +1,12 @@
+/digital_assets/* /downloads/:splat 301
+
+# Strategic Commercial, Store & Deals Aliases (Non-looping)
+/engineering /contractor_engineering_knowledge_base 301
+/contractor-network /contractor_network 301
+/downloads /download 301
+/api-docs /developer_api_pricing_and_documentation 301
+/api-pricing /developer_api_pricing_and_documentation 301
+
 # Canonical Spotlight & Developer Aliases
 # Strategic Partner & Affiliate Vanity Routes
 /protoarc https://protoarc.sjv.io/NGvDYP 302
@@ -5,9 +14,60 @@
 /deals/protoarc https://protoarc.sjv.io/NGvDYP 302
 /easyclaw https://www.awin1.com/cread.php?s=3842104&v=126975&q=481239&r=3064767 302
 /deals/easyclaw https://www.awin1.com/cread.php?s=3842104&v=126975&q=481239&r=3064767 302
-/contractor/* /contractor_network.html 302
+/perch https://www.awin1.com/cread.php?awinmid=73982&awinaffid=3064767&clickref=tools_vault_perch&ued=https%3A%2F%2Fwww.perchenergy.com 302
+/deals/perch https://www.awin1.com/cread.php?awinmid=73982&awinaffid=3064767&clickref=tools_vault_perch&ued=https%3A%2F%2Fwww.perchenergy.com 302
+/imalent https://www.awin1.com/cread.php?awinmid=94223&awinaffid=3064767&clickref=tools_vault_imalent&ued=https%3A%2F%2Fwww.imalentstore.com 302
+/deals/imalent https://www.awin1.com/cread.php?awinmid=94223&awinaffid=3064767&clickref=tools_vault_imalent&ued=https%3A%2F%2Fwww.imalentstore.com 302
+/nordvpn https://www.awin1.com/cread.php?awinmid=11227&awinaffid=3064767&clickref=tools_vault_vpn&ued=https%3A%2F%2Fnordvpn.com 302
+/deals/nordvpn https://www.awin1.com/cread.php?awinmid=11227&awinaffid=3064767&clickref=tools_vault_vpn&ued=https%3A%2F%2Fnordvpn.com 302
+/bluetti https://www.awin1.com/cread.php?awinmid=59271&awinaffid=3064767&clickref=tools_vault_solar&ued=https%3A%2F%2Fwww.bluettipower.com 302
+/deals/bluetti https://www.awin1.com/cread.php?awinmid=59271&awinaffid=3064767&clickref=tools_vault_solar&ued=https%3A%2F%2Fwww.bluettipower.com 302
 /contractor /contractor_network.html 301
+/contractor/* /find_a_contractor.html 301
+/privacy /privacy_policy.html 301
+/privacy.html /privacy_policy.html 301
+/terms /terms_of_service.html 301
+/terms.html /terms_of_service.html 301
+/state-lsv-golf-cart-laws.html /golf-cart-sheet.html 301
+/state-laser-additive-manufacturing-laws.html /laser-cladding-sheet.html 301
+/state-manufacturing-defense-laws.html /speeds-feeds-calculator.html 301
+/state-laser-safety-laws.html /laser-pierce-calculator.html 301
+/state-document-shredding-laws.html /shred-throughput-calculator.html 301
+/state-security-robot-laws.html /security-patrol-sheet.html 301
+/state-supercritical-extraction-laws.html /supercritical-extraction-sheet.html 301
+/h100-vs-b200-gpu-cluster-tco-calculator.html /h100_cluster_tco_and_token_inference_cost_calculator.html 301
+/modal-serverless-gpu-vs-sagemaker-calculator.html /on_prem_vs_cloud_gpu_depreciation_and_energy_roi_calculator.html 301
+/llm-finetuning-lora-gpu-cost-calculator.html /h100_cluster_tco_and_token_inference_cost_calculator.html 301
+/depin-gpu-compute-validator-yield-calculator.html /on_prem_vs_cloud_gpu_depreciation_and_energy_roi_calculator.html 301
+/brrrr-calc /brrrr-calculator 301
+/brrrr-calc.html /brrrr-calculator 301
 
+/agriculture/* /:splat 301
+/environment/* /:splat 301
+/build/* /:splat 301
+/transport/* /:splat 301
+/safety/* /:splat 301
+/water/* /:splat 301
+/energy/* /:splat 301
+/pet/* /:splat 301
+/business/* /:splat 301
+/auto/* /:splat 301
+/tech/* /:splat 301
+/legal/* /:splat 301
+/finance/* /:splat 301
+/contractor_quote_estimator /commercial_subcontractor_bid_estimator 301
+/contractor_quote_estimator.html /commercial_subcontractor_bid_estimator 301
+/commercial_aia_g702_g703_billing_generator /commercial_aia_g702_g703_pay_app_generator 301
+/commercial_aia_g702_g703_billing_generator.html /commercial_aia_g702_g703_pay_app_generator 301
+/hvac_electrical_calculators /commercial_mechanical_hvac_subcontractors 301
+/tiny-build-calculator /accessory_dwelling_unit_adu_cost_and_rental_roi_calculator 301
+/tiny-build-calculator.html /accessory_dwelling_unit_adu_cost_and_rental_roi_calculator 301
+/mobile-detailing-business-calculator /mobile_auto_detailing_route_profit_sizer 301
+/mobile-detailing-business-calculator.html /mobile_auto_detailing_route_profit_sizer 301
+/rv-boat-storage-calculator /rv-boat-canopy-storage-cap-rate-optimizer 301
+/rv-boat-storage-calculator.html /rv-boat-canopy-storage-cap-rate-optimizer 301
+/glp1-macro-nutrition-calculator /glp1_weight_loss_trajectory_calculator 301
+/glp1-macro-nutrition-calculator.html /glp1_weight_loss_trajectory_calculator 301
 /developers /developer_api_pricing_and_documentation.html 301
 /developers.html /developer_api_pricing_and_documentation.html 301
 /embed-widgets /webmaster_calculator_widgets_and_embed_generator.html 301
@@ -24,6 +84,10 @@
 /hard-money-loan-calculator.html /hard_money_lender_points_yield_sizer.html 301
 /commercial-cleaning-janitorial-estimator /commercial_cleaning_bid_sqft_estimator_sizer.html 301
 /commercial-cleaning-janitorial-estimator.html /commercial_cleaning_bid_sqft_estimator_sizer.html 301
+/rv-boat-storage-calculator /rv-boat-canopy-storage-cap-rate-optimizer.html 301
+/rv-boat-storage-calculator.html /rv-boat-canopy-storage-cap-rate-optimizer.html 301
+/mobile-detailing-business-calculator /mobile_auto_detailing_route_profit_sizer.html 301
+/mobile-detailing-business-calculator.html /mobile_auto_detailing_route_profit_sizer.html 301
 
 /commercial_aia_g704_substantial_completion_generator /commercial_aia_g704_substantial_completion_generator.html 200
 /commercial_aia_g706_affidavit_of_payment_generator /commercial_aia_g706_affidavit_of_payment_generator.html 200
@@ -59,6 +123,9 @@
 /downloads/*.csv /downloads/:splat.csv 200
 /downloads/*.svg /downloads/:splat.svg 200
 /downloads/*.zip /downloads/:splat.zip 200
+/downloads/*.pdf /downloads/:splat.pdf 200
+/downloads/*.xlsx /downloads/:splat.xlsx 200
+/downloads/books/*.pdf /downloads/books/:splat.pdf 200
 /order_confirmed_vault_access.html /order_confirmed_vault_access.html 200
 /contractor_onboarding_welcome.html /contractor_onboarding_welcome.html 200
 /order-success /order_confirmed_vault_access.html 302
@@ -74,6 +141,12 @@
 /admin /admin_pulse.html 302
 /pulse /admin_pulse.html 302
 /ops /admin_pulse.html 302
+/leads /admin_private_contractor_leads_vault.html 302
+/crm /admin_private_contractor_leads_vault.html 302
+/vault /admin_private_contractor_leads_vault.html 302
+/outbound /monday_outbound_desk.html 302
+/consultation /contractor_territory_consultation.html 302
+/briefing /contractor_territory_consultation.html 302
 /closing /friday_contractor_closing_desk.html 302
 /dealdesk /friday_contractor_closing_desk.html 302
 /desk /friday_contractor_closing_desk.html 302
@@ -862,13 +935,8 @@
 /hvac_mechanical.html /commercial_hvac_replacement_cost_per_ton_guide.html 301
 
 # Weekly Commercial Outbound Suite Routes
-/monday_outbound_launcher /monday_outbound_launcher.html 200
-/tuesday_contractor_followup_launcher /tuesday_contractor_followup_launcher.html 200
-/wednesday_contractor_expansion_launcher /wednesday_contractor_expansion_launcher.html 200
-/thursday_contractor_scale_launcher /thursday_contractor_scale_launcher.html 200
-/friday_contractor_closing_desk /friday_contractor_closing_desk.html 200
-/monday-launcher /monday_outbound_launcher.html 301
-/tuesday-followup /tuesday_contractor_followup_launcher.html 301
-/wednesday-expansion /wednesday_contractor_expansion_launcher.html 301
-/thursday-scale /thursday_contractor_scale_launcher.html 301
-/closing-desk /friday_contractor_closing_desk.html 301
+/monday_outbound_launcher /monday_outbound_desk.html 301
+/monday_outbound_launcher.html /monday_outbound_desk.html 301
+/monday-launcher /monday_outbound_desk.html 301
+/monday_outbound_desk /monday_outbound_desk.html 200
+/outreach_desk /outreach_desk.html 200
